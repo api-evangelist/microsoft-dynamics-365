@@ -1,0 +1,152 @@
+name: Microsoft Dynamics 365
+description: Microsoft Dynamics 365 is a cloud-based suite of business applications that unify CRM and ERP capabilities to help organizations manage sales, marketing, customer service, finance, operations, and commerce.
+url: https://dynamics.microsoft.com/
+created: '2025-01-20'
+modified: '2025-01-20'
+specificationVersion: '0.18'
+apis:
+- name: Dynamics 365 Sales API
+  description: API for managing sales processes, leads, opportunities, accounts, and contacts in Dynamics 365 Sales.
+  image: https://dynamics.microsoft.com/assets/sales-icon.png
+  humanURL: https://docs.microsoft.com/dynamics365/sales/
+  baseURL: https://[org].api.crm.dynamics.com/api/data/v9.2
+  tags:
+  - CRM
+  - Sales
+  - Leads
+  - Opportunities
+  properties:
+  - type: Documentation
+    url: https://docs.microsoft.com/dynamics365/sales/developer/developer-guide
+  - type: OpenAPI
+    url: https://[org].api.crm.dynamics.com/api/data/v9.2/$metadata
+  - type: Authentication
+    url: https://docs.microsoft.com/powerapps/developer/data-platform/authenticate
+  - type: Rate Limits
+    url: https://docs.microsoft.com/powerapps/developer/data-platform/api-limits
+  contact:
+  - FN: Microsoft Support
+    email: support@microsoft.com
+    url: https://support.microsoft.com/dynamics365
+- name: Dynamics 365 Customer Service API
+  description: API for managing customer service cases, knowledge articles, queues, and service level agreements.
+  image: https://dynamics.microsoft.com/assets/service-icon.png
+  humanURL: https://docs.microsoft.com/dynamics365/customer-service/
+  baseURL: https://[org].api.crm.dynamics.com/api/data/v9.2
+  tags:
+  - Customer Service
+  - Cases
+  - Support
+  - Knowledge Base
+  properties:
+  - type: Documentation
+    url: https://docs.microsoft.com/dynamics365/customer-service/developer/developer-guide
+  - type: OpenAPI
+    url: https://[org].api.crm.dynamics.com/api/data/v9.2/$metadata
+  - type: Webhooks
+    url: https://docs.microsoft.com/powerapps/developer/data-platform/use-webhooks
+- name: Dynamics 365 Finance & Operations API
+  description: API for managing financial operations, accounting, budgeting, and enterprise resource planning.
+  image: https://dynamics.microsoft.com/assets/finance-icon.png
+  humanURL: https://docs.microsoft.com/dynamics365/finance/
+  baseURL: https://[org].operations.dynamics.com/data
+  tags:
+  - ERP
+  - Finance
+  - Accounting
+  - Operations
+  properties:
+  - type: Documentation
+    url: https://docs.microsoft.com/dynamics365/fin-ops-core/dev-itpro/data-entities/data-entities
+  - type: OData
+    url: https://docs.microsoft.com/dynamics365/fin-ops-core/dev-itpro/data-entities/odata
+  - type: Authentication
+    url: https://docs.microsoft.com/dynamics365/fin-ops-core/dev-itpro/data-entities/services-home-page
+- name: Dynamics 365 Marketing API
+  description: API for managing marketing campaigns, customer journeys, email marketing, and lead scoring.
+  image: https://dynamics.microsoft.com/assets/marketing-icon.png
+  humanURL: https://docs.microsoft.com/dynamics365/marketing/
+  baseURL: https://[org].api.crm.dynamics.com/api/data/v9.2
+  tags:
+  - Marketing
+  - Campaigns
+  - Email Marketing
+  - Lead Scoring
+  properties:
+  - type: Documentation
+    url: https://docs.microsoft.com/dynamics365/marketing/developer/marketing-developer-guide
+  - type: API Reference
+    url: https://docs.microsoft.com/dynamics365/marketing/developer/extend-marketing-api
+- name: Dynamics 365 Supply Chain Management API
+  description: API for managing inventory, warehouse operations, procurement, and supply chain processes.
+  image: https://dynamics.microsoft.com/assets/supply-chain-icon.png
+  humanURL: https://docs.microsoft.com/dynamics365/supply-chain/
+  baseURL: https://[org].operations.dynamics.com/data
+  tags:
+  - Supply Chain
+  - Inventory
+  - Warehouse
+  - Procurement
+  properties:
+  - type: Documentation
+    url: https://docs.microsoft.com/dynamics365/supply-chain/dev-itpro/
+  - type: Data Entities
+    url: https://docs.microsoft.com/dynamics365/fin-ops-core/dev-itpro/data-entities/data-entities-data-packages
+- name: Dynamics 365 Business Central API
+  description: API for managing small to medium business operations including finance, sales, service, and operations.
+  image: https://dynamics.microsoft.com/assets/business-central-icon.png
+  humanURL: https://docs.microsoft.com/dynamics365/business-central/
+  baseURL: https://api.businesscentral.dynamics.com/v2.0/[tenant]/[environment]/api/v2.0
+  tags:
+  - SMB
+  - Business Management
+  - Finance
+  - Operations
+  properties:
+  - type: Documentation
+    url: https://docs.microsoft.com/dynamics365/business-central/dev-itpro/api-reference/v2.0/
+  - type: OpenAPI
+    url: https://docs.microsoft.com/dynamics365/business-central/dev-itpro/api-reference/v2.0/openapi
+  - type: Getting Started
+    url: https://docs.microsoft.com/dynamics365/business-central/dev-itpro/api-reference/v2.0/enabling-apis-for-dynamics-nav
+- name: Dynamics 365 Commerce API
+  description: API for managing e-commerce operations, retail stores, omnichannel commerce, and customer experiences.
+  image: https://dynamics.microsoft.com/assets/commerce-icon.png
+  humanURL: https://docs.microsoft.com/dynamics365/commerce/
+  baseURL: https://[org].commerce.dynamics.com/api
+  tags:
+  - E-commerce
+  - Retail
+  - POS
+  - Omnichannel
+  properties:
+  - type: Documentation
+    url: https://docs.microsoft.com/dynamics365/commerce/e-commerce-extensibility/overview
+  - type: Retail Server API
+    url: https://docs.microsoft.com/dynamics365/commerce/dev-itpro/retail-server-architecture
+common:
+- type: Portal
+  url: https://portal.azure.com/
+- type: Authentication
+  url: https://docs.microsoft.com/azure/active-directory/develop/
+- type: SDKs
+  url: https://docs.microsoft.com/powerapps/developer/data-platform/sdk/
+- type: Status Page
+  url: https://status.dynamics.com/
+- type: Terms of Service
+  url: https://www.microsoft.com/licensing/terms/
+- type: Privacy Policy
+  url: https://privacy.microsoft.com/
+- type: Support
+  url: https://dynamics.microsoft.com/support/
+maintainers:
+- FN: Microsoft Corporation
+  email: dynamics-support@microsoft.com
+  url: https://www.microsoft.com/
+tags:
+- CRM
+- ERP
+- Business Applications
+- Cloud
+- Microsoft
+- Enterprise
