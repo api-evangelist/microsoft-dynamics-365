@@ -2,7 +2,7 @@ name: Microsoft Dynamics 365
 description: Microsoft Dynamics 365 is a cloud-based suite of business applications that unify CRM and ERP capabilities to help organizations manage sales, marketing, customer service, finance, operations, and commerce.
 url: https://dynamics.microsoft.com/
 created: '2025-01-20'
-modified: '2025-01-20'
+modified: '2026-03-03'
 specificationVersion: '0.18'
 apis:
 - name: Dynamics 365 Sales API
@@ -62,6 +62,10 @@ apis:
     url: https://docs.microsoft.com/dynamics365/fin-ops-core/dev-itpro/data-entities/odata
   - type: Authentication
     url: https://docs.microsoft.com/dynamics365/fin-ops-core/dev-itpro/data-entities/services-home-page
+  - type: API Reference
+    url: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/dev-ref/api-reference
+  - type: Data Management REST API
+    url: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/data-entities/data-management-api
 - name: Dynamics 365 Marketing API
   description: API for managing marketing campaigns, customer journeys, email marketing, and lead scoring.
   image: https://dynamics.microsoft.com/assets/marketing-icon.png
@@ -109,6 +113,14 @@ apis:
     url: https://docs.microsoft.com/dynamics365/business-central/dev-itpro/api-reference/v2.0/openapi
   - type: Getting Started
     url: https://docs.microsoft.com/dynamics365/business-central/dev-itpro/api-reference/v2.0/enabling-apis-for-dynamics-nav
+  - type: Webhooks
+    url: https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/dynamics-subscriptions
+  - type: Custom API Development
+    url: https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/developer/devenv-develop-custom-api
+  - type: API Endpoints
+    url: https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/endpoints-apis-for-dynamics
+  - type: REST API Overview
+    url: https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/webservices/api-overview
 - name: Dynamics 365 Commerce API
   description: API for managing e-commerce operations, retail stores, omnichannel commerce, and customer experiences.
   image: https://dynamics.microsoft.com/assets/commerce-icon.png
@@ -124,6 +136,124 @@ apis:
     url: https://docs.microsoft.com/dynamics365/commerce/e-commerce-extensibility/overview
   - type: Retail Server API
     url: https://docs.microsoft.com/dynamics365/commerce/dev-itpro/retail-server-architecture
+- name: Microsoft Dataverse Web API
+  description: RESTful web service API implementing OData v4.0 for interacting with data in Microsoft Dataverse, the underlying data platform for Dynamics 365 and Power Platform applications.
+  humanURL: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/overview
+  baseURL: https://[org].api.crm.dynamics.com/api/data/v9.2
+  tags:
+  - Dataverse
+  - OData
+  - REST
+  - Power Platform
+  - Data Platform
+  properties:
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/overview
+  - type: API Reference
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/reference/about
+  - type: OpenAPI
+    url: openapi/microsoft-dynamics-365-dataverse-web-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/microsoft-dynamics-365-account-schema.json
+  - type: JSONLD
+    url: json-ld/microsoft-dynamics-365-context.jsonld
+  - type: Web API Types and Operations
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/web-api-types-operations
+  - type: Web API Service Documents
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/web-api-service-documents
+  - type: Authentication
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/authenticate-oauth
+  - type: Rate Limits
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/api-limits
+  - type: Developer Guide
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/overview
+- name: Dynamics 365 Customer Insights Data API
+  description: API for building applications based on unified customer data, enabling customer data unification, segmentation, and enrichment through programmatic access.
+  humanURL: https://learn.microsoft.com/en-us/dynamics365/customer-insights/
+  baseURL: https://api.ci.ai.dynamics.com/
+  tags:
+  - Customer Data
+  - CDP
+  - Segmentation
+  - Analytics
+  - Customer Insights
+  properties:
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/dynamics365/customer-insights/data/apis
+  - type: API Management
+    url: https://learn.microsoft.com/en-us/dynamics365/customer-insights/data/apis-manage
+  - type: Dataverse APIs
+    url: https://learn.microsoft.com/en-us/dynamics365/customer-insights/data/dv-odata
+  - type: Developer Portal
+    url: https://developer.ci.ai.dynamics.com/
+- name: Dynamics 365 Customer Insights Journeys API
+  description: API for managing real-time customer journeys, segments, and event-driven marketing interactions programmatically.
+  humanURL: https://learn.microsoft.com/en-us/dynamics365/customer-insights/journeys/
+  baseURL: https://[org].api.crm.dynamics.com/api/data/v9.2
+  tags:
+  - Journeys
+  - Marketing Automation
+  - Real-time Marketing
+  - Events
+  properties:
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/dynamics365/customer-insights/journeys/
+  - type: Segment API
+    url: https://learn.microsoft.com/en-us/dynamics365/customer-insights/journeys/real-time-marketing-api-segment
+  - type: Events API
+    url: https://learn.microsoft.com/en-us/dynamics365/customer-insights/journeys/developer/using-rtm-events-api
+- name: Dynamics 365 Field Service API
+  description: API for managing field service operations including work orders, scheduling, resource availability, and work hour calendars.
+  humanURL: https://learn.microsoft.com/en-us/dynamics365/field-service/
+  baseURL: https://[org].api.crm.dynamics.com/api/data/v9.2
+  tags:
+  - Field Service
+  - Work Orders
+  - Scheduling
+  - Resource Management
+  properties:
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/dynamics365/field-service/
+  - type: Resource Availability API
+    url: https://learn.microsoft.com/en-us/dynamics365/field-service/search-resource-availability-api
+  - type: Work Hours Calendar API
+    url: https://learn.microsoft.com/en-us/dynamics365/field-service/field-service-work-hours-calendar-api
+  - type: Entity Reference
+    url: https://learn.microsoft.com/en-us/dynamics365/field-service/developer/reference/about-entity-reference
+- name: Dynamics 365 Human Resources API
+  description: API for managing human resources operations including employee data, payroll integration, applicant tracking, and benefits administration.
+  humanURL: https://learn.microsoft.com/en-us/dynamics365/human-resources/
+  baseURL: https://[org].operations.dynamics.com/data
+  tags:
+  - Human Resources
+  - HR
+  - Payroll
+  - Recruiting
+  properties:
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/dynamics365/human-resources/hr-developer-overview
+  - type: Authentication
+    url: https://learn.microsoft.com/en-us/dynamics365/human-resources/hr-developer-api-authentication
+  - type: Payroll Integration API
+    url: https://learn.microsoft.com/en-us/dynamics365/human-resources/hr-admin-integration-payroll-api-introduction
+  - type: Applicant Tracking API
+    url: https://learn.microsoft.com/en-us/dynamics365/human-resources/hr-admin-integration-ats-api-introduction
+- name: Dynamics 365 Project Operations API
+  description: API for managing project operations including project scheduling, resource management, time and expense tracking, and project financials.
+  humanURL: https://learn.microsoft.com/en-us/dynamics365/project-operations/
+  baseURL: https://[org].api.crm.dynamics.com/api/data/v9.2
+  tags:
+  - Project Management
+  - Resource Management
+  - Time Tracking
+  - Project Accounting
+  properties:
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/dynamics365/project-operations/
+  - type: Schedule API
+    url: https://learn.microsoft.com/en-us/dynamics365/project-operations/project-management/schedule-api-preview
+  - type: Schedule API with Power Automate
+    url: https://learn.microsoft.com/en-us/dynamics365/project-operations/project-management/scheduling-apis-powerautomate
 common:
 - type: Portal
   url: https://portal.azure.com/
@@ -139,10 +269,20 @@ common:
   url: https://privacy.microsoft.com/
 - type: Support
   url: https://dynamics.microsoft.com/support/
+- type: REST API Reference
+  url: https://learn.microsoft.com/en-us/rest/dynamics365/
+- type: Release Plans
+  url: https://learn.microsoft.com/en-us/dynamics365/release-plans/
+- type: Community Forums
+  url: https://community.dynamics.com/
+- type: Power Platform Admin Center
+  url: https://learn.microsoft.com/en-us/power-platform/admin/admin-documentation
+- type: API Limits Overview
+  url: https://learn.microsoft.com/en-us/power-apps/maker/data-platform/api-limits-overview
 maintainers:
-- FN: Microsoft Corporation
-  email: dynamics-support@microsoft.com
-  url: https://www.microsoft.com/
+- FN: Kin Lane
+  email: kin@apievangelist.com
+  url: https://apievangelist.com/
 tags:
 - CRM
 - ERP

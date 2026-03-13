@@ -1,0 +1,731 @@
+{
+  "$id": "https://github.com/api-search/microsoft-dynamics-365/blob/main/json-schema/microsoft-dynamics-365-account-schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Microsoft Dynamics 365 Account",
+  "description": "Business that represents a customer or potential customer. The company that is billed in business transactions. Based on the Microsoft Dataverse account entity (Microsoft.Dynamics.CRM.account).",
+  "type": "object",
+  "required": [
+    "name"
+  ],
+  "properties": {
+    "accountid": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique identifier of the account.",
+      "readOnly": true
+    },
+    "name": {
+      "type": "string",
+      "maxLength": 160,
+      "description": "The company or business name. This is the primary name column for the account entity."
+    },
+    "accountnumber": {
+      "type": "string",
+      "maxLength": 20,
+      "description": "ID number or code for the account to quickly search and identify the account in system views."
+    },
+    "description": {
+      "type": "string",
+      "description": "Additional information to describe the account, such as an excerpt from the company website."
+    },
+    "emailaddress1": {
+      "type": "string",
+      "format": "email",
+      "maxLength": 100,
+      "description": "Primary email address for the account."
+    },
+    "emailaddress2": {
+      "type": "string",
+      "format": "email",
+      "maxLength": 100,
+      "description": "Secondary email address for the account."
+    },
+    "emailaddress3": {
+      "type": "string",
+      "format": "email",
+      "maxLength": 100,
+      "description": "Alternate email address for the account."
+    },
+    "telephone1": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Main phone number for this account."
+    },
+    "telephone2": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Second phone number for this account."
+    },
+    "telephone3": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Third phone number for this account."
+    },
+    "fax": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Fax number for the account."
+    },
+    "websiteurl": {
+      "type": "string",
+      "format": "uri",
+      "maxLength": 200,
+      "description": "Website URL for the account."
+    },
+    "revenue": {
+      "type": "number",
+      "description": "Annual revenue for the account, used as an indicator in financial performance analysis."
+    },
+    "revenue_base": {
+      "type": "number",
+      "description": "Annual revenue converted to the system default base currency.",
+      "readOnly": true
+    },
+    "numberofemployees": {
+      "type": "integer",
+      "description": "Number of employees that work at the account for use in marketing segmentation and demographic analysis."
+    },
+    "sic": {
+      "type": "string",
+      "maxLength": 20,
+      "description": "Standard Industrial Classification (SIC) code that indicates the account primary industry of business."
+    },
+    "tickersymbol": {
+      "type": "string",
+      "maxLength": 10,
+      "description": "Stock exchange symbol for the account to track financial performance."
+    },
+    "stockexchange": {
+      "type": "string",
+      "maxLength": 20,
+      "description": "Stock exchange at which the account is listed."
+    },
+    "industrycode": {
+      "type": "integer",
+      "description": "Primary industry for the account for use in marketing segmentation and demographic analysis.",
+      "enum": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33],
+      "x-enum-descriptions": {
+        "1": "Accounting",
+        "2": "Agriculture and Non-petrol Natural Resource Extraction",
+        "3": "Broadcasting Printing and Publishing",
+        "4": "Brokers",
+        "5": "Building Supply Retail",
+        "6": "Business Services",
+        "7": "Consulting",
+        "8": "Consumer Services",
+        "9": "Design, Direction and Creative Management",
+        "10": "Distributors, Dispatchers and Processors",
+        "11": "Doctor's Offices and Clinics",
+        "12": "Durable Manufacturing",
+        "13": "Eating and Drinking Places",
+        "14": "Entertainment Retail",
+        "15": "Equipment Rental and Leasing",
+        "16": "Financial",
+        "17": "Food and Tobacco Processing",
+        "18": "Inbound Capital Intensive Processing",
+        "19": "Inbound Repair and Services",
+        "20": "Insurance",
+        "21": "Legal Services",
+        "22": "Non-Durable Merchandise Retail",
+        "23": "Outbound Consumer Service",
+        "24": "Petrochemical Extraction and Distribution",
+        "25": "Service Retail",
+        "26": "SIG Affiliations",
+        "27": "Social Services",
+        "28": "Special Outbound Trade Contractors",
+        "29": "Specialty Realty",
+        "30": "Transportation",
+        "31": "Utility Creation and Distribution",
+        "32": "Vehicle Retail",
+        "33": "Wholesale"
+      }
+    },
+    "ownershipcode": {
+      "type": "integer",
+      "description": "Ownership structure of the account.",
+      "enum": [1, 2, 3, 4],
+      "x-enum-descriptions": {
+        "1": "Public",
+        "2": "Private",
+        "3": "Subsidiary",
+        "4": "Other"
+      }
+    },
+    "accountcategorycode": {
+      "type": "integer",
+      "description": "Category indicating whether the customer account is standard or preferred.",
+      "enum": [1, 2],
+      "x-enum-descriptions": {
+        "1": "Preferred Customer",
+        "2": "Standard"
+      }
+    },
+    "accountclassificationcode": {
+      "type": "integer",
+      "description": "Classification code indicating the potential value of the customer account."
+    },
+    "accountratingcode": {
+      "type": "integer",
+      "description": "Rating to indicate the value of the customer account."
+    },
+    "customertypecode": {
+      "type": "integer",
+      "description": "Category describing the relationship between the account and your organization.",
+      "enum": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      "x-enum-descriptions": {
+        "1": "Competitor",
+        "2": "Consultant",
+        "3": "Customer",
+        "4": "Investor",
+        "5": "Partner",
+        "6": "Influencer",
+        "7": "Press",
+        "8": "Prospect",
+        "9": "Reseller",
+        "10": "Supplier",
+        "11": "Vendor",
+        "12": "Other"
+      }
+    },
+    "customersizecode": {
+      "type": "integer",
+      "description": "Size category of the account for segmentation and reporting purposes."
+    },
+    "businesstypecode": {
+      "type": "integer",
+      "description": "Legal designation or other business type of the account for contracts or reporting purposes."
+    },
+    "preferredcontactmethodcode": {
+      "type": "integer",
+      "description": "Preferred method of contact.",
+      "enum": [1, 2, 3, 4, 5],
+      "x-enum-descriptions": {
+        "1": "Any",
+        "2": "Email",
+        "3": "Phone",
+        "4": "Fax",
+        "5": "Mail"
+      }
+    },
+    "paymenttermscode": {
+      "type": "integer",
+      "description": "Payment terms indicating when the customer needs to pay the total amount.",
+      "enum": [1, 2, 3, 4],
+      "x-enum-descriptions": {
+        "1": "Net 30",
+        "2": "2% 10, Net 30",
+        "3": "Net 45",
+        "4": "Net 60"
+      }
+    },
+    "shippingmethodcode": {
+      "type": "integer",
+      "description": "Shipping method for deliveries sent to the account address."
+    },
+    "creditlimit": {
+      "type": "number",
+      "description": "Credit limit of the account for reference when addressing invoice and accounting issues."
+    },
+    "creditlimit_base": {
+      "type": "number",
+      "description": "Credit limit converted to the system default base currency.",
+      "readOnly": true
+    },
+    "creditonhold": {
+      "type": "boolean",
+      "description": "Whether the credit for the account is on hold."
+    },
+    "donotemail": {
+      "type": "boolean",
+      "description": "Whether the account allows direct email sent from Microsoft Dynamics 365."
+    },
+    "donotphone": {
+      "type": "boolean",
+      "description": "Whether the account allows phone calls."
+    },
+    "donotfax": {
+      "type": "boolean",
+      "description": "Whether the account allows faxes."
+    },
+    "donotpostalmail": {
+      "type": "boolean",
+      "description": "Whether the account allows direct mail."
+    },
+    "donotbulkemail": {
+      "type": "boolean",
+      "description": "Whether the account allows bulk email sent through campaigns."
+    },
+    "donotbulkpostalmail": {
+      "type": "boolean",
+      "description": "Whether the account allows bulk postal mail sent through marketing campaigns."
+    },
+    "donotsendmm": {
+      "type": "boolean",
+      "description": "Whether the account accepts marketing materials such as brochures or catalogs."
+    },
+    "marketingonly": {
+      "type": "boolean",
+      "description": "Whether the account is only for marketing purposes."
+    },
+    "followemail": {
+      "type": "boolean",
+      "description": "Whether to allow following email activity like opens, attachment views, and link clicks."
+    },
+    "address1": {
+      "type": "object",
+      "description": "Primary address for the account.",
+      "properties": {
+        "address1_addressid": {
+          "type": "string",
+          "format": "uuid",
+          "description": "Unique identifier for address 1."
+        },
+        "address1_name": {
+          "type": "string",
+          "maxLength": 200,
+          "description": "Descriptive name for the primary address, such as Corporate Headquarters."
+        },
+        "address1_line1": {
+          "type": "string",
+          "maxLength": 250,
+          "description": "First line of the primary address."
+        },
+        "address1_line2": {
+          "type": "string",
+          "maxLength": 250,
+          "description": "Second line of the primary address."
+        },
+        "address1_line3": {
+          "type": "string",
+          "maxLength": 250,
+          "description": "Third line of the primary address."
+        },
+        "address1_city": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "City for the primary address."
+        },
+        "address1_stateorprovince": {
+          "type": "string",
+          "maxLength": 50,
+          "description": "State or province of the primary address."
+        },
+        "address1_postalcode": {
+          "type": "string",
+          "maxLength": 20,
+          "description": "ZIP Code or postal code for the primary address."
+        },
+        "address1_country": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Country or region for the primary address."
+        },
+        "address1_county": {
+          "type": "string",
+          "maxLength": 50,
+          "description": "County for the primary address."
+        },
+        "address1_telephone1": {
+          "type": "string",
+          "maxLength": 50,
+          "description": "Main phone number associated with the primary address."
+        },
+        "address1_telephone2": {
+          "type": "string",
+          "maxLength": 50,
+          "description": "Second phone number associated with the primary address."
+        },
+        "address1_telephone3": {
+          "type": "string",
+          "maxLength": 50,
+          "description": "Third phone number associated with the primary address."
+        },
+        "address1_fax": {
+          "type": "string",
+          "maxLength": 50,
+          "description": "Fax number associated with the primary address."
+        },
+        "address1_latitude": {
+          "type": "number",
+          "format": "double",
+          "description": "Latitude value for the primary address."
+        },
+        "address1_longitude": {
+          "type": "number",
+          "format": "double",
+          "description": "Longitude value for the primary address."
+        },
+        "address1_postofficebox": {
+          "type": "string",
+          "maxLength": 20,
+          "description": "Post office box number of the primary address."
+        },
+        "address1_primarycontactname": {
+          "type": "string",
+          "maxLength": 100,
+          "description": "Name of the main contact at the primary address."
+        },
+        "address1_addresstypecode": {
+          "type": "integer",
+          "description": "Primary address type.",
+          "enum": [1, 2, 3, 4],
+          "x-enum-descriptions": {
+            "1": "Bill To",
+            "2": "Ship To",
+            "3": "Primary",
+            "4": "Other"
+          }
+        },
+        "address1_shippingmethodcode": {
+          "type": "integer",
+          "description": "Shipping method for deliveries sent to the primary address.",
+          "enum": [1, 2, 3, 4, 5, 6, 7],
+          "x-enum-descriptions": {
+            "1": "Airborne",
+            "2": "DHL",
+            "3": "FedEx",
+            "4": "UPS",
+            "5": "Postal Mail",
+            "6": "Full Load",
+            "7": "Will Call"
+          }
+        },
+        "address1_freighttermscode": {
+          "type": "integer",
+          "description": "Freight terms for the primary address.",
+          "enum": [1, 2],
+          "x-enum-descriptions": {
+            "1": "FOB",
+            "2": "No Charge"
+          }
+        },
+        "address1_upszone": {
+          "type": "string",
+          "maxLength": 4,
+          "description": "UPS zone of the primary address."
+        },
+        "address1_utcoffset": {
+          "type": "integer",
+          "description": "UTC offset for the primary address time zone."
+        },
+        "address1_composite": {
+          "type": "string",
+          "description": "Complete primary address.",
+          "readOnly": true
+        }
+      }
+    },
+    "address2": {
+      "type": "object",
+      "description": "Secondary address for the account.",
+      "properties": {
+        "address2_addressid": {
+          "type": "string",
+          "format": "uuid",
+          "description": "Unique identifier for address 2."
+        },
+        "address2_name": {
+          "type": "string",
+          "maxLength": 200,
+          "description": "Descriptive name for the secondary address."
+        },
+        "address2_line1": {
+          "type": "string",
+          "maxLength": 250,
+          "description": "First line of the secondary address."
+        },
+        "address2_line2": {
+          "type": "string",
+          "maxLength": 250,
+          "description": "Second line of the secondary address."
+        },
+        "address2_line3": {
+          "type": "string",
+          "maxLength": 250,
+          "description": "Third line of the secondary address."
+        },
+        "address2_city": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "City for the secondary address."
+        },
+        "address2_stateorprovince": {
+          "type": "string",
+          "maxLength": 50,
+          "description": "State or province of the secondary address."
+        },
+        "address2_postalcode": {
+          "type": "string",
+          "maxLength": 20,
+          "description": "ZIP Code or postal code for the secondary address."
+        },
+        "address2_country": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "Country or region for the secondary address."
+        },
+        "address2_county": {
+          "type": "string",
+          "maxLength": 50,
+          "description": "County for the secondary address."
+        },
+        "address2_telephone1": {
+          "type": "string",
+          "maxLength": 50,
+          "description": "Main phone number associated with the secondary address."
+        },
+        "address2_fax": {
+          "type": "string",
+          "maxLength": 50,
+          "description": "Fax number associated with the secondary address."
+        },
+        "address2_latitude": {
+          "type": "number",
+          "format": "double",
+          "description": "Latitude value for the secondary address."
+        },
+        "address2_longitude": {
+          "type": "number",
+          "format": "double",
+          "description": "Longitude value for the secondary address."
+        },
+        "address2_composite": {
+          "type": "string",
+          "description": "Complete secondary address.",
+          "readOnly": true
+        }
+      }
+    },
+    "marketcap": {
+      "type": "number",
+      "description": "Market capitalization of the account, used as an indicator in financial performance analysis."
+    },
+    "marketcap_base": {
+      "type": "number",
+      "description": "Market capitalization converted to the system default base currency.",
+      "readOnly": true
+    },
+    "sharesoutstanding": {
+      "type": "integer",
+      "description": "Number of shares available to the public for the account."
+    },
+    "ftpsiteurl": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL for the account FTP site."
+    },
+    "yominame": {
+      "type": "string",
+      "maxLength": 160,
+      "description": "Phonetic spelling of the company name, if specified in Japanese."
+    },
+    "statecode": {
+      "type": "integer",
+      "description": "Whether the account is active or inactive.",
+      "enum": [0, 1],
+      "x-enum-descriptions": {
+        "0": "Active",
+        "1": "Inactive"
+      }
+    },
+    "statuscode": {
+      "type": "integer",
+      "description": "Account status reason.",
+      "enum": [1, 2],
+      "x-enum-descriptions": {
+        "1": "Active",
+        "2": "Inactive"
+      }
+    },
+    "aging30": {
+      "type": "number",
+      "description": "Aging 30 value for system use.",
+      "readOnly": true
+    },
+    "aging60": {
+      "type": "number",
+      "description": "Aging 60 value for system use.",
+      "readOnly": true
+    },
+    "aging90": {
+      "type": "number",
+      "description": "Aging 90 value for system use.",
+      "readOnly": true
+    },
+    "merged": {
+      "type": "boolean",
+      "description": "Whether the account has been merged with another account.",
+      "readOnly": true
+    },
+    "_primarycontactid_value": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Primary contact for the account.",
+      "readOnly": true
+    },
+    "_parentaccountid_value": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Parent account associated with this account.",
+      "readOnly": true
+    },
+    "_masterid_value": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Master account that the account was merged with.",
+      "readOnly": true
+    },
+    "_transactioncurrencyid_value": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Local currency for the record.",
+      "readOnly": true
+    },
+    "_ownerid_value": {
+      "type": "string",
+      "format": "uuid",
+      "description": "User or team assigned to manage the record.",
+      "readOnly": true
+    },
+    "_owningbusinessunit_value": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Business unit that the record owner belongs to.",
+      "readOnly": true
+    },
+    "_owningteam_value": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Team that owns the account.",
+      "readOnly": true
+    },
+    "_owninguser_value": {
+      "type": "string",
+      "format": "uuid",
+      "description": "User that owns the account.",
+      "readOnly": true
+    },
+    "_preferredsystemuserid_value": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Preferred service representative for the account.",
+      "readOnly": true
+    },
+    "_slaid_value": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Service level agreement applied to the account.",
+      "readOnly": true
+    },
+    "_createdby_value": {
+      "type": "string",
+      "format": "uuid",
+      "description": "User who created the record.",
+      "readOnly": true
+    },
+    "_createdonbehalfby_value": {
+      "type": "string",
+      "format": "uuid",
+      "description": "User who created the record on behalf of another user.",
+      "readOnly": true
+    },
+    "_modifiedby_value": {
+      "type": "string",
+      "format": "uuid",
+      "description": "User who last updated the record.",
+      "readOnly": true
+    },
+    "_modifiedonbehalfby_value": {
+      "type": "string",
+      "format": "uuid",
+      "description": "User who last updated the record on behalf of another user.",
+      "readOnly": true
+    },
+    "createdon": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time when the record was created.",
+      "readOnly": true
+    },
+    "modifiedon": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time when the record was last updated.",
+      "readOnly": true
+    },
+    "versionnumber": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Version number of the account.",
+      "readOnly": true
+    },
+    "exchangerate": {
+      "type": "number",
+      "description": "Conversion rate of the record currency.",
+      "readOnly": true
+    },
+    "participatesinworkflow": {
+      "type": "boolean",
+      "description": "For system use only. Legacy Microsoft Dynamics CRM 3.0 workflow data."
+    },
+    "processid": {
+      "type": "string",
+      "format": "uuid",
+      "description": "ID of the process associated with the account."
+    },
+    "importsequencenumber": {
+      "type": "integer",
+      "description": "Unique identifier of the data import or data migration that created this record."
+    },
+    "overriddencreatedon": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time that the record was migrated."
+    },
+    "lastonholdtime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time stamp of the last on hold time."
+    },
+    "lastusedincampaign": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date when the account was last included in a marketing campaign or quick campaign."
+    },
+    "onholdtime": {
+      "type": "integer",
+      "description": "How long, in minutes, that the record was on hold.",
+      "readOnly": true
+    }
+  },
+  "additionalProperties": true,
+  "examples": [
+    {
+      "name": "Contoso Ltd.",
+      "accountnumber": "ACC-001",
+      "description": "A global leader in technology solutions.",
+      "emailaddress1": "info@contoso.com",
+      "telephone1": "+1-425-555-0100",
+      "websiteurl": "https://www.contoso.com",
+      "revenue": 5000000.00,
+      "numberofemployees": 250,
+      "industrycode": 6,
+      "ownershipcode": 2,
+      "accountcategorycode": 1,
+      "customertypecode": 3,
+      "preferredcontactmethodcode": 2,
+      "paymenttermscode": 1,
+      "statecode": 0,
+      "statuscode": 1,
+      "address1": {
+        "address1_name": "Corporate Headquarters",
+        "address1_line1": "1 Microsoft Way",
+        "address1_city": "Redmond",
+        "address1_stateorprovince": "WA",
+        "address1_postalcode": "98052",
+        "address1_country": "United States",
+        "address1_addresstypecode": 3
+      }
+    }
+  ]
+}

@@ -1,0 +1,1992 @@
+openapi: 3.1.0
+info:
+  title: Microsoft Dynamics 365 Dataverse Web API
+  description: >-
+    RESTful web service implementing OData v4.0 for interacting with data in
+    Microsoft Dataverse, the underlying data platform for Dynamics 365 and
+    Power Platform applications. This specification covers core CRM entities
+    including accounts, contacts, and opportunities.
+  version: 9.2.0
+  contact:
+    name: Microsoft Support
+    url: https://support.microsoft.com/dynamics365
+    email: support@microsoft.com
+  license:
+    name: Microsoft API License
+    url: https://www.microsoft.com/licensing/terms/
+  termsOfService: https://www.microsoft.com/licensing/terms/
+externalDocs:
+  description: Microsoft Dataverse Web API Documentation
+  url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/overview
+servers:
+  - url: https://{org}.api.crm.dynamics.com/api/data/v9.2
+    description: Dynamics 365 Dataverse Web API (Production)
+    variables:
+      org:
+        default: yourorg
+        description: The unique name of your Dynamics 365 organization.
+security:
+  - oauth2: []
+tags:
+  - name: Accounts
+    description: >-
+      Business that represents a customer or potential customer. The company
+      that is billed in business transactions.
+    externalDocs:
+      url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/reference/account
+  - name: Contacts
+    description: >-
+      Person with whom a business unit has a relationship, such as a customer,
+      supplier, or colleague.
+    externalDocs:
+      url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/reference/contact
+  - name: Opportunities
+    description: >-
+      Potential revenue-generating event or sale to an account that needs to be
+      tracked through the sales process to completion.
+    externalDocs:
+      url: https://learn.microsoft.com/en-us/dynamics365/developer/reference/entities/opportunity
+paths:
+  /accounts:
+    get:
+      operationId: listAccounts
+      summary: List accounts
+      description: >-
+        Retrieve a list of account entity records. Supports OData query options
+        including $select, $filter, $orderby, $top, $skip, and $expand.
+      tags:
+        - Accounts
+      parameters:
+        - $ref: '#/components/parameters/Select'
+        - $ref: '#/components/parameters/Filter'
+        - $ref: '#/components/parameters/OrderBy'
+        - $ref: '#/components/parameters/Top'
+        - $ref: '#/components/parameters/Skip'
+        - $ref: '#/components/parameters/Expand'
+        - $ref: '#/components/parameters/Count'
+        - $ref: '#/components/parameters/Prefer'
+      responses:
+        '200':
+          description: Successfully retrieved accounts.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  '@odata.context':
+                    type: string
+                    description: OData context URL.
+                  '@odata.count':
+                    type: integer
+                    description: Total count of matching records when $count=true.
+                  '@odata.nextLink':
+                    type: string
+                    format: uri
+                    description: URL to retrieve the next page of results.
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Account'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+    post:
+      operationId: createAccount
+      summary: Create an account
+      description: Create a new account entity record.
+      tags:
+        - Accounts
+      parameters:
+        - $ref: '#/components/parameters/Prefer'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountCreate'
+      responses:
+        '204':
+          description: Account created successfully.
+          headers:
+            OData-EntityId:
+              description: URI of the newly created account record.
+              schema:
+                type: string
+                format: uri
+        '201':
+          description: Account created successfully (when Prefer return=representation).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+  /accounts({accountid}):
+    get:
+      operationId: getAccount
+      summary: Retrieve an account
+      description: Retrieve a single account entity record by its unique identifier.
+      tags:
+        - Accounts
+      parameters:
+        - $ref: '#/components/parameters/AccountId'
+        - $ref: '#/components/parameters/Select'
+        - $ref: '#/components/parameters/Expand'
+      responses:
+        '200':
+          description: Successfully retrieved the account.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateAccount
+      summary: Update an account
+      description: Update an existing account entity record.
+      tags:
+        - Accounts
+      parameters:
+        - $ref: '#/components/parameters/AccountId'
+        - $ref: '#/components/parameters/Prefer'
+        - $ref: '#/components/parameters/IfMatch'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountUpdate'
+      responses:
+        '204':
+          description: Account updated successfully.
+        '201':
+          description: Account updated successfully (when Prefer return=representation).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '412':
+          $ref: '#/components/responses/PreconditionFailed'
+    delete:
+      operationId: deleteAccount
+      summary: Delete an account
+      description: Delete an account entity record.
+      tags:
+        - Accounts
+      parameters:
+        - $ref: '#/components/parameters/AccountId'
+      responses:
+        '204':
+          description: Account deleted successfully.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /contacts:
+    get:
+      operationId: listContacts
+      summary: List contacts
+      description: >-
+        Retrieve a list of contact entity records. Supports OData query options
+        including $select, $filter, $orderby, $top, $skip, and $expand.
+      tags:
+        - Contacts
+      parameters:
+        - $ref: '#/components/parameters/Select'
+        - $ref: '#/components/parameters/Filter'
+        - $ref: '#/components/parameters/OrderBy'
+        - $ref: '#/components/parameters/Top'
+        - $ref: '#/components/parameters/Skip'
+        - $ref: '#/components/parameters/Expand'
+        - $ref: '#/components/parameters/Count'
+        - $ref: '#/components/parameters/Prefer'
+      responses:
+        '200':
+          description: Successfully retrieved contacts.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  '@odata.context':
+                    type: string
+                  '@odata.count':
+                    type: integer
+                  '@odata.nextLink':
+                    type: string
+                    format: uri
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Contact'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+    post:
+      operationId: createContact
+      summary: Create a contact
+      description: Create a new contact entity record.
+      tags:
+        - Contacts
+      parameters:
+        - $ref: '#/components/parameters/Prefer'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ContactCreate'
+      responses:
+        '204':
+          description: Contact created successfully.
+          headers:
+            OData-EntityId:
+              description: URI of the newly created contact record.
+              schema:
+                type: string
+                format: uri
+        '201':
+          description: Contact created successfully (when Prefer return=representation).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Contact'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+  /contacts({contactid}):
+    get:
+      operationId: getContact
+      summary: Retrieve a contact
+      description: Retrieve a single contact entity record by its unique identifier.
+      tags:
+        - Contacts
+      parameters:
+        - $ref: '#/components/parameters/ContactId'
+        - $ref: '#/components/parameters/Select'
+        - $ref: '#/components/parameters/Expand'
+      responses:
+        '200':
+          description: Successfully retrieved the contact.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Contact'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateContact
+      summary: Update a contact
+      description: Update an existing contact entity record.
+      tags:
+        - Contacts
+      parameters:
+        - $ref: '#/components/parameters/ContactId'
+        - $ref: '#/components/parameters/Prefer'
+        - $ref: '#/components/parameters/IfMatch'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ContactUpdate'
+      responses:
+        '204':
+          description: Contact updated successfully.
+        '201':
+          description: Contact updated successfully (when Prefer return=representation).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Contact'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '412':
+          $ref: '#/components/responses/PreconditionFailed'
+    delete:
+      operationId: deleteContact
+      summary: Delete a contact
+      description: Delete a contact entity record.
+      tags:
+        - Contacts
+      parameters:
+        - $ref: '#/components/parameters/ContactId'
+      responses:
+        '204':
+          description: Contact deleted successfully.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /opportunities:
+    get:
+      operationId: listOpportunities
+      summary: List opportunities
+      description: >-
+        Retrieve a list of opportunity entity records. Supports OData query
+        options including $select, $filter, $orderby, $top, $skip, and $expand.
+      tags:
+        - Opportunities
+      parameters:
+        - $ref: '#/components/parameters/Select'
+        - $ref: '#/components/parameters/Filter'
+        - $ref: '#/components/parameters/OrderBy'
+        - $ref: '#/components/parameters/Top'
+        - $ref: '#/components/parameters/Skip'
+        - $ref: '#/components/parameters/Expand'
+        - $ref: '#/components/parameters/Count'
+        - $ref: '#/components/parameters/Prefer'
+      responses:
+        '200':
+          description: Successfully retrieved opportunities.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  '@odata.context':
+                    type: string
+                  '@odata.count':
+                    type: integer
+                  '@odata.nextLink':
+                    type: string
+                    format: uri
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Opportunity'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+    post:
+      operationId: createOpportunity
+      summary: Create an opportunity
+      description: Create a new opportunity entity record.
+      tags:
+        - Opportunities
+      parameters:
+        - $ref: '#/components/parameters/Prefer'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OpportunityCreate'
+      responses:
+        '204':
+          description: Opportunity created successfully.
+          headers:
+            OData-EntityId:
+              description: URI of the newly created opportunity record.
+              schema:
+                type: string
+                format: uri
+        '201':
+          description: Opportunity created successfully (when Prefer return=representation).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Opportunity'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+  /opportunities({opportunityid}):
+    get:
+      operationId: getOpportunity
+      summary: Retrieve an opportunity
+      description: Retrieve a single opportunity entity record by its unique identifier.
+      tags:
+        - Opportunities
+      parameters:
+        - $ref: '#/components/parameters/OpportunityId'
+        - $ref: '#/components/parameters/Select'
+        - $ref: '#/components/parameters/Expand'
+      responses:
+        '200':
+          description: Successfully retrieved the opportunity.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Opportunity'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateOpportunity
+      summary: Update an opportunity
+      description: Update an existing opportunity entity record.
+      tags:
+        - Opportunities
+      parameters:
+        - $ref: '#/components/parameters/OpportunityId'
+        - $ref: '#/components/parameters/Prefer'
+        - $ref: '#/components/parameters/IfMatch'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OpportunityUpdate'
+      responses:
+        '204':
+          description: Opportunity updated successfully.
+        '201':
+          description: Opportunity updated successfully (when Prefer return=representation).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Opportunity'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '412':
+          $ref: '#/components/responses/PreconditionFailed'
+    delete:
+      operationId: deleteOpportunity
+      summary: Delete an opportunity
+      description: Delete an opportunity entity record.
+      tags:
+        - Opportunities
+      parameters:
+        - $ref: '#/components/parameters/OpportunityId'
+      responses:
+        '204':
+          description: Opportunity deleted successfully.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: >-
+        OAuth 2.0 authentication using Microsoft Entra ID (Azure Active
+        Directory). Applications must be registered in Microsoft Entra ID and
+        granted the appropriate Dynamics 365 permissions.
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/token
+          scopes:
+            https://{org}.api.crm.dynamics.com/.default: Full access to Dataverse Web API.
+  parameters:
+    AccountId:
+      name: accountid
+      in: path
+      required: true
+      description: Unique identifier of the account record (GUID).
+      schema:
+        type: string
+        format: uuid
+    ContactId:
+      name: contactid
+      in: path
+      required: true
+      description: Unique identifier of the contact record (GUID).
+      schema:
+        type: string
+        format: uuid
+    OpportunityId:
+      name: opportunityid
+      in: path
+      required: true
+      description: Unique identifier of the opportunity record (GUID).
+      schema:
+        type: string
+        format: uuid
+    Select:
+      name: $select
+      in: query
+      required: false
+      description: Comma-separated list of properties to return.
+      schema:
+        type: string
+    Filter:
+      name: $filter
+      in: query
+      required: false
+      description: OData filter expression to restrict results.
+      schema:
+        type: string
+    OrderBy:
+      name: $orderby
+      in: query
+      required: false
+      description: Comma-separated list of properties to sort by, with optional asc or desc.
+      schema:
+        type: string
+    Top:
+      name: $top
+      in: query
+      required: false
+      description: Maximum number of records to return.
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 5000
+    Skip:
+      name: $skip
+      in: query
+      required: false
+      description: Number of records to skip before returning results.
+      schema:
+        type: integer
+        minimum: 0
+    Expand:
+      name: $expand
+      in: query
+      required: false
+      description: Comma-separated list of navigation properties to expand.
+      schema:
+        type: string
+    Count:
+      name: $count
+      in: query
+      required: false
+      description: Include a count of matching records in the response.
+      schema:
+        type: boolean
+    Prefer:
+      name: Prefer
+      in: header
+      required: false
+      description: >-
+        OData preference header. Use odata.include-annotations to request
+        formatted values, or return=representation to return the created/updated
+        record.
+      schema:
+        type: string
+        examples:
+          - return=representation
+          - odata.include-annotations="*"
+          - odata.maxpagesize=100
+    IfMatch:
+      name: If-Match
+      in: header
+      required: false
+      description: >-
+        ETag value for optimistic concurrency control. Use * to match any
+        version.
+      schema:
+        type: string
+  schemas:
+    Account:
+      type: object
+      description: >-
+        Business that represents a customer or potential customer. The company
+        that is billed in business transactions.
+      properties:
+        '@odata.etag':
+          type: string
+          description: ETag value for concurrency control.
+          readOnly: true
+        accountid:
+          type: string
+          format: uuid
+          description: Unique identifier of the account.
+          readOnly: true
+        name:
+          type: string
+          maxLength: 160
+          description: The company or business name.
+        accountnumber:
+          type: string
+          maxLength: 20
+          description: ID number or code for the account for quick search and identification.
+        description:
+          type: string
+          description: Additional information to describe the account.
+        emailaddress1:
+          type: string
+          format: email
+          maxLength: 100
+          description: Primary email address for the account.
+        emailaddress2:
+          type: string
+          format: email
+          maxLength: 100
+          description: Secondary email address for the account.
+        emailaddress3:
+          type: string
+          format: email
+          maxLength: 100
+          description: Alternate email address for the account.
+        telephone1:
+          type: string
+          maxLength: 50
+          description: Main phone number for the account.
+        telephone2:
+          type: string
+          maxLength: 50
+          description: Second phone number for the account.
+        telephone3:
+          type: string
+          maxLength: 50
+          description: Third phone number for the account.
+        fax:
+          type: string
+          maxLength: 50
+          description: Fax number for the account.
+        websiteurl:
+          type: string
+          format: uri
+          maxLength: 200
+          description: Website URL for the account.
+        revenue:
+          type: number
+          description: Annual revenue for the account.
+        revenue_base:
+          type: number
+          description: Annual revenue converted to the system default base currency.
+          readOnly: true
+        numberofemployees:
+          type: integer
+          description: Number of employees that work at the account.
+        sic:
+          type: string
+          maxLength: 20
+          description: Standard Industrial Classification (SIC) code.
+        tickersymbol:
+          type: string
+          maxLength: 10
+          description: Stock exchange symbol for the account.
+        stockexchange:
+          type: string
+          maxLength: 20
+          description: Stock exchange at which the account is listed.
+        industrycode:
+          type: integer
+          description: >-
+            Primary industry for the account. Values include 1 (Accounting),
+            6 (Business Services), 7 (Consulting), 16 (Financial),
+            20 (Insurance), 30 (Transportation), and others.
+        ownershipcode:
+          type: integer
+          description: >-
+            Ownership structure. Values: 1 (Public), 2 (Private),
+            3 (Subsidiary), 4 (Other).
+        accountcategorycode:
+          type: integer
+          description: >-
+            Category indicating whether the account is standard or preferred.
+            Values: 1 (Preferred Customer), 2 (Standard).
+        accountclassificationcode:
+          type: integer
+          description: Classification code indicating potential value of the customer.
+        accountratingcode:
+          type: integer
+          description: Rating to indicate value of the customer account.
+        customertypecode:
+          type: integer
+          description: >-
+            Category describing the relationship between account and
+            organization. Values: 1 (Competitor), 3 (Customer), 5 (Partner),
+            8 (Prospect), 11 (Vendor), and others.
+        customersizecode:
+          type: integer
+          description: Size category of the account for segmentation.
+        businesstypecode:
+          type: integer
+          description: Legal designation or other business type of the account.
+        preferredcontactmethodcode:
+          type: integer
+          description: >-
+            Preferred method of contact. Values: 1 (Any), 2 (Email),
+            3 (Phone), 4 (Fax), 5 (Mail).
+        paymenttermscode:
+          type: integer
+          description: >-
+            Payment terms. Values: 1 (Net 30), 2 (2% 10 Net 30),
+            3 (Net 45), 4 (Net 60).
+        shippingmethodcode:
+          type: integer
+          description: Shipping method for deliveries.
+        creditlimit:
+          type: number
+          description: Credit limit of the account.
+        creditlimit_base:
+          type: number
+          description: Credit limit converted to system default base currency.
+          readOnly: true
+        creditonhold:
+          type: boolean
+          description: Whether the credit for the account is on hold.
+        donotemail:
+          type: boolean
+          description: Whether the account allows direct email.
+        donotphone:
+          type: boolean
+          description: Whether the account allows phone calls.
+        donotfax:
+          type: boolean
+          description: Whether the account allows faxes.
+        donotpostalmail:
+          type: boolean
+          description: Whether the account allows direct mail.
+        donotbulkemail:
+          type: boolean
+          description: Whether the account allows bulk email.
+        donotsendmm:
+          type: boolean
+          description: Whether the account accepts marketing materials.
+        marketingonly:
+          type: boolean
+          description: Whether the account is only for marketing purposes.
+        followemail:
+          type: boolean
+          description: Whether to allow following email activity.
+        address1_name:
+          type: string
+          maxLength: 200
+          description: Descriptive name for the primary address.
+        address1_line1:
+          type: string
+          maxLength: 250
+          description: First line of the primary address.
+        address1_line2:
+          type: string
+          maxLength: 250
+          description: Second line of the primary address.
+        address1_line3:
+          type: string
+          maxLength: 250
+          description: Third line of the primary address.
+        address1_city:
+          type: string
+          maxLength: 80
+          description: City for the primary address.
+        address1_stateorprovince:
+          type: string
+          maxLength: 50
+          description: State or province of the primary address.
+        address1_postalcode:
+          type: string
+          maxLength: 20
+          description: ZIP Code or postal code for the primary address.
+        address1_country:
+          type: string
+          maxLength: 80
+          description: Country or region for the primary address.
+        address1_county:
+          type: string
+          maxLength: 50
+          description: County for the primary address.
+        address1_telephone1:
+          type: string
+          maxLength: 50
+          description: Main phone number associated with the primary address.
+        address1_fax:
+          type: string
+          maxLength: 50
+          description: Fax number associated with the primary address.
+        address1_latitude:
+          type: number
+          format: double
+          description: Latitude value for the primary address.
+        address1_longitude:
+          type: number
+          format: double
+          description: Longitude value for the primary address.
+        address1_addresstypecode:
+          type: integer
+          description: >-
+            Primary address type. Values: 1 (Bill To), 2 (Ship To),
+            3 (Primary), 4 (Other).
+        address1_composite:
+          type: string
+          description: Complete primary address.
+          readOnly: true
+        address2_name:
+          type: string
+          maxLength: 200
+          description: Descriptive name for the secondary address.
+        address2_line1:
+          type: string
+          maxLength: 250
+          description: First line of the secondary address.
+        address2_line2:
+          type: string
+          maxLength: 250
+          description: Second line of the secondary address.
+        address2_city:
+          type: string
+          maxLength: 80
+          description: City for the secondary address.
+        address2_stateorprovince:
+          type: string
+          maxLength: 50
+          description: State or province of the secondary address.
+        address2_postalcode:
+          type: string
+          maxLength: 20
+          description: ZIP Code or postal code for the secondary address.
+        address2_country:
+          type: string
+          maxLength: 80
+          description: Country or region for the secondary address.
+        statecode:
+          type: integer
+          description: >-
+            Whether the account is active or inactive. Values: 0 (Active),
+            1 (Inactive).
+        statuscode:
+          type: integer
+          description: >-
+            Account status reason. Values: 1 (Active), 2 (Inactive).
+        marketcap:
+          type: number
+          description: Market capitalization of the account.
+        sharesoutstanding:
+          type: integer
+          description: Number of shares available to the public.
+        ftpsiteurl:
+          type: string
+          format: uri
+          description: URL for the account FTP site.
+        yominame:
+          type: string
+          maxLength: 160
+          description: Phonetic spelling of the company name (Japanese).
+        _primarycontactid_value:
+          type: string
+          format: uuid
+          description: Primary contact for the account.
+          readOnly: true
+        _parentaccountid_value:
+          type: string
+          format: uuid
+          description: Parent account associated with this account.
+          readOnly: true
+        _transactioncurrencyid_value:
+          type: string
+          format: uuid
+          description: Local currency for the record.
+          readOnly: true
+        _ownerid_value:
+          type: string
+          format: uuid
+          description: User or team assigned to manage the record.
+          readOnly: true
+        _owningbusinessunit_value:
+          type: string
+          format: uuid
+          description: Business unit that the record owner belongs to.
+          readOnly: true
+        _createdby_value:
+          type: string
+          format: uuid
+          description: User who created the record.
+          readOnly: true
+        _modifiedby_value:
+          type: string
+          format: uuid
+          description: User who last updated the record.
+          readOnly: true
+        createdon:
+          type: string
+          format: date-time
+          description: Date and time when the record was created.
+          readOnly: true
+        modifiedon:
+          type: string
+          format: date-time
+          description: Date and time when the record was last updated.
+          readOnly: true
+        versionnumber:
+          type: integer
+          format: int64
+          description: Version number of the account.
+          readOnly: true
+        exchangerate:
+          type: number
+          description: Conversion rate of the record currency.
+          readOnly: true
+        merged:
+          type: boolean
+          description: Whether the account has been merged with another account.
+          readOnly: true
+    AccountCreate:
+      type: object
+      description: Properties for creating a new account.
+      required:
+        - name
+      allOf:
+        - $ref: '#/components/schemas/AccountUpdate'
+        - type: object
+          properties:
+            name:
+              type: string
+              maxLength: 160
+              description: The company or business name.
+    AccountUpdate:
+      type: object
+      description: Properties for updating an existing account.
+      properties:
+        name:
+          type: string
+          maxLength: 160
+          description: The company or business name.
+        accountnumber:
+          type: string
+          maxLength: 20
+          description: ID number or code for the account.
+        description:
+          type: string
+          description: Additional information to describe the account.
+        emailaddress1:
+          type: string
+          format: email
+          maxLength: 100
+          description: Primary email address.
+        telephone1:
+          type: string
+          maxLength: 50
+          description: Main phone number.
+        fax:
+          type: string
+          maxLength: 50
+          description: Fax number.
+        websiteurl:
+          type: string
+          format: uri
+          maxLength: 200
+          description: Website URL.
+        revenue:
+          type: number
+          description: Annual revenue.
+        numberofemployees:
+          type: integer
+          description: Number of employees.
+        sic:
+          type: string
+          maxLength: 20
+          description: SIC code.
+        tickersymbol:
+          type: string
+          maxLength: 10
+          description: Stock exchange symbol.
+        industrycode:
+          type: integer
+          description: Primary industry code.
+        ownershipcode:
+          type: integer
+          description: Ownership structure code.
+        accountcategorycode:
+          type: integer
+          description: Category code.
+        customertypecode:
+          type: integer
+          description: Relationship type code.
+        preferredcontactmethodcode:
+          type: integer
+          description: Preferred method of contact code.
+        paymenttermscode:
+          type: integer
+          description: Payment terms code.
+        creditlimit:
+          type: number
+          description: Credit limit.
+        creditonhold:
+          type: boolean
+          description: Whether credit is on hold.
+        donotemail:
+          type: boolean
+          description: Whether to allow direct email.
+        donotphone:
+          type: boolean
+          description: Whether to allow phone calls.
+        donotfax:
+          type: boolean
+          description: Whether to allow faxes.
+        donotpostalmail:
+          type: boolean
+          description: Whether to allow direct mail.
+        donotbulkemail:
+          type: boolean
+          description: Whether to allow bulk email.
+        address1_name:
+          type: string
+          maxLength: 200
+        address1_line1:
+          type: string
+          maxLength: 250
+        address1_line2:
+          type: string
+          maxLength: 250
+        address1_line3:
+          type: string
+          maxLength: 250
+        address1_city:
+          type: string
+          maxLength: 80
+        address1_stateorprovince:
+          type: string
+          maxLength: 50
+        address1_postalcode:
+          type: string
+          maxLength: 20
+        address1_country:
+          type: string
+          maxLength: 80
+        address1_telephone1:
+          type: string
+          maxLength: 50
+        address1_fax:
+          type: string
+          maxLength: 50
+        address1_latitude:
+          type: number
+          format: double
+        address1_longitude:
+          type: number
+          format: double
+        address1_addresstypecode:
+          type: integer
+        statecode:
+          type: integer
+        statuscode:
+          type: integer
+        primarycontactid@odata.bind:
+          type: string
+          description: >-
+            Bind reference to a contact record. Format:
+            /contacts(GUID).
+        parentaccountid@odata.bind:
+          type: string
+          description: >-
+            Bind reference to a parent account record. Format:
+            /accounts(GUID).
+        transactioncurrencyid@odata.bind:
+          type: string
+          description: >-
+            Bind reference to a currency record. Format:
+            /transactioncurrencies(GUID).
+    Contact:
+      type: object
+      description: >-
+        Person with whom a business unit has a relationship, such as customer,
+        supplier, and colleague.
+      properties:
+        '@odata.etag':
+          type: string
+          description: ETag value for concurrency control.
+          readOnly: true
+        contactid:
+          type: string
+          format: uuid
+          description: Unique identifier of the contact.
+          readOnly: true
+        firstname:
+          type: string
+          maxLength: 50
+          description: First name of the contact.
+        middlename:
+          type: string
+          maxLength: 50
+          description: Middle name of the contact.
+        lastname:
+          type: string
+          maxLength: 50
+          description: Last name of the contact.
+        fullname:
+          type: string
+          maxLength: 160
+          description: >-
+            Combined first name, middle name, and last name. Read-only,
+            automatically generated.
+          readOnly: true
+        nickname:
+          type: string
+          maxLength: 100
+          description: Nickname of the contact.
+        salutation:
+          type: string
+          maxLength: 100
+          description: Salutation for correspondence with the contact.
+        suffix:
+          type: string
+          maxLength: 10
+          description: Suffix used in the contact name, such as Jr. or Sr.
+        jobtitle:
+          type: string
+          maxLength: 100
+          description: Job title of the contact.
+        department:
+          type: string
+          maxLength: 100
+          description: Department or business unit where the contact works.
+        managername:
+          type: string
+          maxLength: 100
+          description: Name of the contact manager.
+        assistantname:
+          type: string
+          maxLength: 100
+          description: Name of the contact assistant.
+        assistantphone:
+          type: string
+          maxLength: 50
+          description: Phone number for the contact assistant.
+        emailaddress1:
+          type: string
+          format: email
+          maxLength: 100
+          description: Primary email address for the contact.
+        emailaddress2:
+          type: string
+          format: email
+          maxLength: 100
+          description: Secondary email address for the contact.
+        emailaddress3:
+          type: string
+          format: email
+          maxLength: 100
+          description: Alternate email address for the contact.
+        telephone1:
+          type: string
+          maxLength: 50
+          description: Main phone number for the contact (business phone).
+        telephone2:
+          type: string
+          maxLength: 50
+          description: Second phone number for the contact (home phone).
+        telephone3:
+          type: string
+          maxLength: 50
+          description: Third phone number for the contact.
+        mobilephone:
+          type: string
+          maxLength: 50
+          description: Mobile phone number for the contact.
+        fax:
+          type: string
+          maxLength: 50
+          description: Fax number for the contact.
+        pager:
+          type: string
+          maxLength: 50
+          description: Pager number for the contact.
+        websiteurl:
+          type: string
+          format: uri
+          maxLength: 200
+          description: Website URL for the contact.
+        description:
+          type: string
+          description: Additional information to describe the contact.
+        gendercode:
+          type: integer
+          description: 'Gender. Values: 1 (Male), 2 (Female).'
+        familystatuscode:
+          type: integer
+          description: >-
+            Marital status. Values: 1 (Single), 2 (Married), 3 (Divorced),
+            4 (Widowed).
+        spousesname:
+          type: string
+          maxLength: 100
+          description: Name of the contact spouse or partner.
+        birthday:
+          type: string
+          format: date
+          description: Birthday of the contact.
+        anniversary:
+          type: string
+          format: date
+          description: Wedding anniversary date.
+        preferredcontactmethodcode:
+          type: integer
+          description: >-
+            Preferred method of contact. Values: 1 (Any), 2 (Email),
+            3 (Phone), 4 (Fax), 5 (Mail).
+        donotemail:
+          type: boolean
+          description: Whether the contact allows direct email.
+        donotphone:
+          type: boolean
+          description: Whether the contact allows phone calls.
+        donotfax:
+          type: boolean
+          description: Whether the contact allows faxes.
+        donotpostalmail:
+          type: boolean
+          description: Whether the contact allows direct mail.
+        donotbulkemail:
+          type: boolean
+          description: Whether the contact allows bulk email.
+        donotsendmm:
+          type: boolean
+          description: Whether the contact accepts marketing materials.
+        followemail:
+          type: boolean
+          description: Whether to allow following email activity.
+        address1_name:
+          type: string
+          maxLength: 200
+          description: Descriptive name for the primary address.
+        address1_line1:
+          type: string
+          maxLength: 250
+          description: First line of the primary address.
+        address1_line2:
+          type: string
+          maxLength: 250
+          description: Second line of the primary address.
+        address1_line3:
+          type: string
+          maxLength: 250
+          description: Third line of the primary address.
+        address1_city:
+          type: string
+          maxLength: 80
+          description: City for the primary address.
+        address1_stateorprovince:
+          type: string
+          maxLength: 50
+          description: State or province of the primary address.
+        address1_postalcode:
+          type: string
+          maxLength: 20
+          description: ZIP Code or postal code for the primary address.
+        address1_country:
+          type: string
+          maxLength: 80
+          description: Country or region for the primary address.
+        address1_county:
+          type: string
+          maxLength: 50
+          description: County for the primary address.
+        address1_telephone1:
+          type: string
+          maxLength: 50
+          description: Main phone number associated with the primary address.
+        address1_fax:
+          type: string
+          maxLength: 50
+          description: Fax number associated with the primary address.
+        address1_latitude:
+          type: number
+          format: double
+          description: Latitude value for the primary address.
+        address1_longitude:
+          type: number
+          format: double
+          description: Longitude value for the primary address.
+        address1_addresstypecode:
+          type: integer
+          description: Primary address type code.
+        address1_composite:
+          type: string
+          description: Complete primary address.
+          readOnly: true
+        address2_name:
+          type: string
+          maxLength: 200
+          description: Descriptive name for the secondary address.
+        address2_line1:
+          type: string
+          maxLength: 250
+          description: First line of the secondary address.
+        address2_line2:
+          type: string
+          maxLength: 250
+          description: Second line of the secondary address.
+        address2_city:
+          type: string
+          maxLength: 80
+          description: City for the secondary address.
+        address2_stateorprovince:
+          type: string
+          maxLength: 50
+          description: State or province of the secondary address.
+        address2_postalcode:
+          type: string
+          maxLength: 20
+          description: ZIP Code or postal code for the secondary address.
+        address2_country:
+          type: string
+          maxLength: 80
+          description: Country or region for the secondary address.
+        statecode:
+          type: integer
+          description: >-
+            Whether the contact is active or inactive. Values: 0 (Active),
+            1 (Inactive).
+        statuscode:
+          type: integer
+          description: >-
+            Contact status reason. Values: 1 (Active), 2 (Inactive).
+        annualincome:
+          type: number
+          description: Annual income of the contact.
+        creditlimit:
+          type: number
+          description: Credit limit of the contact.
+        creditonhold:
+          type: boolean
+          description: Whether credit is on hold for the contact.
+        _parentcustomerid_value:
+          type: string
+          format: uuid
+          description: Parent customer (account or contact) for the contact.
+          readOnly: true
+        _ownerid_value:
+          type: string
+          format: uuid
+          description: Owner of the record.
+          readOnly: true
+        _createdby_value:
+          type: string
+          format: uuid
+          description: User who created the record.
+          readOnly: true
+        _modifiedby_value:
+          type: string
+          format: uuid
+          description: User who last updated the record.
+          readOnly: true
+        createdon:
+          type: string
+          format: date-time
+          description: Date and time when the record was created.
+          readOnly: true
+        modifiedon:
+          type: string
+          format: date-time
+          description: Date and time when the record was last updated.
+          readOnly: true
+        versionnumber:
+          type: integer
+          format: int64
+          description: Version number of the contact.
+          readOnly: true
+        yomifirstname:
+          type: string
+          maxLength: 150
+          description: Phonetic spelling of the first name (Japanese).
+        yomilastname:
+          type: string
+          maxLength: 150
+          description: Phonetic spelling of the last name (Japanese).
+        yomimiddlename:
+          type: string
+          maxLength: 150
+          description: Phonetic spelling of the middle name (Japanese).
+        yomifullname:
+          type: string
+          maxLength: 450
+          description: Combined phonetic full name (Japanese).
+          readOnly: true
+    ContactCreate:
+      type: object
+      description: Properties for creating a new contact.
+      required:
+        - lastname
+      allOf:
+        - $ref: '#/components/schemas/ContactUpdate'
+        - type: object
+          properties:
+            lastname:
+              type: string
+              maxLength: 50
+              description: Last name of the contact.
+    ContactUpdate:
+      type: object
+      description: Properties for updating an existing contact.
+      properties:
+        firstname:
+          type: string
+          maxLength: 50
+          description: First name of the contact.
+        middlename:
+          type: string
+          maxLength: 50
+          description: Middle name of the contact.
+        lastname:
+          type: string
+          maxLength: 50
+          description: Last name of the contact.
+        suffix:
+          type: string
+          maxLength: 10
+          description: Suffix used in the contact name.
+        salutation:
+          type: string
+          maxLength: 100
+          description: Salutation for correspondence.
+        nickname:
+          type: string
+          maxLength: 100
+          description: Nickname of the contact.
+        jobtitle:
+          type: string
+          maxLength: 100
+          description: Job title of the contact.
+        department:
+          type: string
+          maxLength: 100
+          description: Department or business unit.
+        emailaddress1:
+          type: string
+          format: email
+          maxLength: 100
+          description: Primary email address.
+        emailaddress2:
+          type: string
+          format: email
+          maxLength: 100
+          description: Secondary email address.
+        telephone1:
+          type: string
+          maxLength: 50
+          description: Main phone number (business).
+        telephone2:
+          type: string
+          maxLength: 50
+          description: Second phone number (home).
+        mobilephone:
+          type: string
+          maxLength: 50
+          description: Mobile phone number.
+        fax:
+          type: string
+          maxLength: 50
+          description: Fax number.
+        websiteurl:
+          type: string
+          format: uri
+          maxLength: 200
+          description: Website URL.
+        description:
+          type: string
+          description: Additional information to describe the contact.
+        gendercode:
+          type: integer
+          description: Gender code.
+        familystatuscode:
+          type: integer
+          description: Marital status code.
+        birthday:
+          type: string
+          format: date
+          description: Birthday.
+        preferredcontactmethodcode:
+          type: integer
+          description: Preferred method of contact code.
+        donotemail:
+          type: boolean
+          description: Whether to allow direct email.
+        donotphone:
+          type: boolean
+          description: Whether to allow phone calls.
+        donotfax:
+          type: boolean
+          description: Whether to allow faxes.
+        donotpostalmail:
+          type: boolean
+          description: Whether to allow direct mail.
+        donotbulkemail:
+          type: boolean
+          description: Whether to allow bulk email.
+        address1_name:
+          type: string
+          maxLength: 200
+        address1_line1:
+          type: string
+          maxLength: 250
+        address1_line2:
+          type: string
+          maxLength: 250
+        address1_line3:
+          type: string
+          maxLength: 250
+        address1_city:
+          type: string
+          maxLength: 80
+        address1_stateorprovince:
+          type: string
+          maxLength: 50
+        address1_postalcode:
+          type: string
+          maxLength: 20
+        address1_country:
+          type: string
+          maxLength: 80
+        address1_telephone1:
+          type: string
+          maxLength: 50
+        address1_latitude:
+          type: number
+          format: double
+        address1_longitude:
+          type: number
+          format: double
+        statecode:
+          type: integer
+        statuscode:
+          type: integer
+        annualincome:
+          type: number
+          description: Annual income of the contact.
+        parentcustomerid_account@odata.bind:
+          type: string
+          description: >-
+            Bind reference to a parent account. Format:
+            /accounts(GUID).
+        parentcustomerid_contact@odata.bind:
+          type: string
+          description: >-
+            Bind reference to a parent contact. Format:
+            /contacts(GUID).
+    Opportunity:
+      type: object
+      description: >-
+        Potential revenue-generating event or sale to an account that needs to
+        be tracked through the sales process to completion.
+      properties:
+        '@odata.etag':
+          type: string
+          description: ETag value for concurrency control.
+          readOnly: true
+        opportunityid:
+          type: string
+          format: uuid
+          description: Unique identifier of the opportunity.
+          readOnly: true
+        name:
+          type: string
+          maxLength: 300
+          description: Subject or descriptive name (topic) for the opportunity.
+        description:
+          type: string
+          description: Additional information to describe the opportunity.
+        estimatedvalue:
+          type: number
+          description: Estimated revenue amount for the opportunity.
+        estimatedvalue_base:
+          type: number
+          description: Estimated revenue converted to the system default base currency.
+          readOnly: true
+        actualvalue:
+          type: number
+          description: Actual revenue amount for the opportunity.
+        actualvalue_base:
+          type: number
+          description: Actual revenue converted to the system default base currency.
+          readOnly: true
+        budgetamount:
+          type: number
+          description: Budget amount for the lead associated with the opportunity.
+        budgetamount_base:
+          type: number
+          description: Budget amount converted to the system default base currency.
+          readOnly: true
+        closeprobability:
+          type: integer
+          minimum: 0
+          maximum: 100
+          description: Likelihood of closing the opportunity, as a percentage.
+        estimatedclosedate:
+          type: string
+          format: date
+          description: Expected closing date of the opportunity.
+        actualclosedate:
+          type: string
+          format: date
+          description: Actual closing date of the opportunity.
+        stepname:
+          type: string
+          maxLength: 200
+          description: Current phase in the sales pipeline.
+        salesstage:
+          type: integer
+          description: >-
+            Sales stage. Values: 0 (Qualify), 1 (Develop), 2 (Propose),
+            3 (Close).
+        salesstagecode:
+          type: integer
+          description: Sales stage code for backward compatibility.
+        statecode:
+          type: integer
+          description: >-
+            Status of the opportunity. Values: 0 (Open), 1 (Won),
+            2 (Lost).
+        statuscode:
+          type: integer
+          description: >-
+            Status reason. Values: 1 (In Progress), 2 (On Hold), 3 (Won),
+            4 (Canceled), 5 (Out-Sold).
+        opportunityratingcode:
+          type: integer
+          description: >-
+            Rating indicating expected value based on revenue, status, and
+            probability. Values: 1 (Hot), 2 (Warm), 3 (Cold).
+        prioritycode:
+          type: integer
+          description: Priority for handling the opportunity.
+        budgetstatus:
+          type: integer
+          description: >-
+            Budget status. Values: 0 (No Committed Budget), 1 (May Buy),
+            2 (Can Buy), 3 (Will Buy).
+        purchaseprocess:
+          type: integer
+          description: >-
+            Purchase process. Values: 0 (Individual), 1 (Committee),
+            2 (Unknown).
+        purchasetimeframe:
+          type: integer
+          description: >-
+            Purchase timeframe. Values: 0 (Immediate), 1 (This Quarter),
+            2 (Next Quarter), 3 (This Year), 4 (Unknown).
+        timeline:
+          type: integer
+          description: >-
+            When the opportunity is likely to close. Values: 0 (Immediate),
+            1 (This Quarter), 2 (Next Quarter), 3 (This Year),
+            4 (Not known).
+        customerneed:
+          type: string
+          maxLength: 2000
+          description: Customer requirements to identify products and services.
+        customerpainpoints:
+          type: string
+          maxLength: 2000
+          description: Customer pain points for product and service identification.
+        currentsituation:
+          type: string
+          maxLength: 2000
+          description: Notes about the current situation of the customer.
+        proposedsolution:
+          type: string
+          maxLength: 2000
+          description: Notes about the proposed solution.
+        qualificationcomments:
+          type: string
+          maxLength: 2000
+          description: Comments about qualification or scoring.
+        decisionmaker:
+          type: boolean
+          description: Whether the contact is a decision maker.
+        developproposal:
+          type: boolean
+          description: Whether a proposal has been developed.
+        completefinalproposal:
+          type: boolean
+          description: Whether the final proposal is complete.
+        presentproposal:
+          type: boolean
+          description: Whether the proposal has been presented.
+        presentfinalproposal:
+          type: boolean
+          description: Whether the final proposal has been presented.
+        completeinternalreview:
+          type: boolean
+          description: Whether the internal review is complete.
+        captureproposalfeedback:
+          type: boolean
+          description: Whether proposal feedback has been captured.
+        resolvefeedback:
+          type: boolean
+          description: Whether feedback has been resolved.
+        discountamount:
+          type: number
+          description: Discount amount for the opportunity.
+        discountpercentage:
+          type: number
+          minimum: 0
+          maximum: 100
+          description: Discount rate as a percentage.
+        freightamount:
+          type: number
+          description: Cost of freight or shipping.
+        totalamount:
+          type: number
+          description: >-
+            Total amount due, equal to sum of products plus discounts plus
+            freight plus taxes.
+          readOnly: true
+        totallineitemamount:
+          type: number
+          description: Sum of all products included in the opportunity.
+          readOnly: true
+        totaltax:
+          type: number
+          description: Total tax amount on all products.
+        msdyn_forecastcategory:
+          type: integer
+          description: >-
+            Forecast category. Values: 100000001 (Pipeline),
+            100000002 (Best case), 100000003 (Committed),
+            100000004 (Omitted), 100000005 (Won), 100000006 (Lost).
+        _customerid_value:
+          type: string
+          format: uuid
+          description: Potential customer (account or contact).
+          readOnly: true
+        _parentaccountid_value:
+          type: string
+          format: uuid
+          description: Parent account associated with this opportunity.
+          readOnly: true
+        _parentcontactid_value:
+          type: string
+          format: uuid
+          description: Parent contact associated with this opportunity.
+          readOnly: true
+        _originatingleadid_value:
+          type: string
+          format: uuid
+          description: Lead that the opportunity was created from.
+          readOnly: true
+        _campaignid_value:
+          type: string
+          format: uuid
+          description: Campaign that the opportunity was created from.
+          readOnly: true
+        _transactioncurrencyid_value:
+          type: string
+          format: uuid
+          description: Local currency for the record.
+          readOnly: true
+        _ownerid_value:
+          type: string
+          format: uuid
+          description: Owner of the opportunity.
+          readOnly: true
+        _createdby_value:
+          type: string
+          format: uuid
+          description: User who created the record.
+          readOnly: true
+        _modifiedby_value:
+          type: string
+          format: uuid
+          description: User who last updated the record.
+          readOnly: true
+        createdon:
+          type: string
+          format: date-time
+          description: Date and time when the record was created.
+          readOnly: true
+        modifiedon:
+          type: string
+          format: date-time
+          description: Date and time when the record was last updated.
+          readOnly: true
+        versionnumber:
+          type: integer
+          format: int64
+          description: Version number of the opportunity.
+          readOnly: true
+    OpportunityCreate:
+      type: object
+      description: Properties for creating a new opportunity.
+      required:
+        - name
+      allOf:
+        - $ref: '#/components/schemas/OpportunityUpdate'
+        - type: object
+          properties:
+            name:
+              type: string
+              maxLength: 300
+              description: Subject or descriptive name (topic) for the opportunity.
+    OpportunityUpdate:
+      type: object
+      description: Properties for updating an existing opportunity.
+      properties:
+        name:
+          type: string
+          maxLength: 300
+          description: Subject or descriptive name (topic) for the opportunity.
+        description:
+          type: string
+          description: Additional information to describe the opportunity.
+        estimatedvalue:
+          type: number
+          description: Estimated revenue amount.
+        closeprobability:
+          type: integer
+          minimum: 0
+          maximum: 100
+          description: Likelihood of closing the opportunity.
+        estimatedclosedate:
+          type: string
+          format: date
+          description: Expected closing date.
+        stepname:
+          type: string
+          maxLength: 200
+          description: Current phase in the sales pipeline.
+        salesstage:
+          type: integer
+          description: Sales stage code.
+        opportunityratingcode:
+          type: integer
+          description: Rating code.
+        prioritycode:
+          type: integer
+          description: Priority code.
+        budgetamount:
+          type: number
+          description: Budget amount.
+        budgetstatus:
+          type: integer
+          description: Budget status code.
+        purchaseprocess:
+          type: integer
+          description: Purchase process code.
+        purchasetimeframe:
+          type: integer
+          description: Purchase timeframe code.
+        timeline:
+          type: integer
+          description: Timeline code.
+        customerneed:
+          type: string
+          maxLength: 2000
+          description: Customer requirements.
+        customerpainpoints:
+          type: string
+          maxLength: 2000
+          description: Customer pain points.
+        currentsituation:
+          type: string
+          maxLength: 2000
+          description: Current situation notes.
+        proposedsolution:
+          type: string
+          maxLength: 2000
+          description: Proposed solution notes.
+        decisionmaker:
+          type: boolean
+          description: Whether the contact is a decision maker.
+        discountamount:
+          type: number
+          description: Discount amount.
+        discountpercentage:
+          type: number
+          minimum: 0
+          maximum: 100
+          description: Discount rate percentage.
+        freightamount:
+          type: number
+          description: Freight or shipping cost.
+        totaltax:
+          type: number
+          description: Total tax amount.
+        statecode:
+          type: integer
+          description: Status code.
+        statuscode:
+          type: integer
+          description: Status reason code.
+        customerid_account@odata.bind:
+          type: string
+          description: >-
+            Bind reference to a customer account. Format:
+            /accounts(GUID).
+        customerid_contact@odata.bind:
+          type: string
+          description: >-
+            Bind reference to a customer contact. Format:
+            /contacts(GUID).
+        parentaccountid@odata.bind:
+          type: string
+          description: >-
+            Bind reference to a parent account. Format:
+            /accounts(GUID).
+        parentcontactid@odata.bind:
+          type: string
+          description: >-
+            Bind reference to a parent contact. Format:
+            /contacts(GUID).
+        originatingleadid@odata.bind:
+          type: string
+          description: >-
+            Bind reference to the originating lead. Format:
+            /leads(GUID).
+        campaignid@odata.bind:
+          type: string
+          description: >-
+            Bind reference to the source campaign. Format:
+            /campaigns(GUID).
+        transactioncurrencyid@odata.bind:
+          type: string
+          description: >-
+            Bind reference to a currency record. Format:
+            /transactioncurrencies(GUID).
+    ODataError:
+      type: object
+      description: OData error response from the Dataverse Web API.
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+              description: Error code.
+            message:
+              type: string
+              description: Human-readable error message.
+            innererror:
+              type: object
+              properties:
+                message:
+                  type: string
+                  description: Detailed error message.
+                type:
+                  type: string
+                  description: Exception type.
+                stacktrace:
+                  type: string
+                  description: Stack trace (available in non-production environments).
+  responses:
+    Unauthorized:
+      description: Authentication credentials are missing or invalid.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ODataError'
+    Forbidden:
+      description: The authenticated user does not have permission to perform this action.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ODataError'
+    NotFound:
+      description: The requested resource was not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ODataError'
+    PreconditionFailed:
+      description: >-
+        The ETag value provided in the If-Match header does not match the
+        current version of the record.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ODataError'

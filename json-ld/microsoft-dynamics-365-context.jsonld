@@ -1,0 +1,363 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "dynamics": "https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/reference/",
+    "odata": "http://www.odata.org/vocabularies/",
+    "crm": "https://docs.microsoft.com/en-us/dynamics365/developer/reference/entities/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "Account": {
+      "@id": "dynamics:account",
+      "@context": {
+        "accountid": {
+          "@id": "dynamics:account#accountid",
+          "@type": "xsd:string"
+        },
+        "name": {
+          "@id": "schema:name",
+          "@type": "xsd:string"
+        },
+        "accountnumber": {
+          "@id": "dynamics:account#accountnumber",
+          "@type": "xsd:string"
+        },
+        "description": {
+          "@id": "schema:description",
+          "@type": "xsd:string"
+        },
+        "emailaddress1": {
+          "@id": "schema:email",
+          "@type": "xsd:string"
+        },
+        "telephone1": {
+          "@id": "schema:telephone",
+          "@type": "xsd:string"
+        },
+        "fax": {
+          "@id": "schema:faxNumber",
+          "@type": "xsd:string"
+        },
+        "websiteurl": {
+          "@id": "schema:url",
+          "@type": "@id"
+        },
+        "revenue": {
+          "@id": "dynamics:account#revenue",
+          "@type": "xsd:decimal"
+        },
+        "numberofemployees": {
+          "@id": "schema:numberOfEmployees",
+          "@type": "xsd:integer"
+        },
+        "industrycode": {
+          "@id": "dynamics:account#industrycode",
+          "@type": "xsd:integer"
+        },
+        "ownershipcode": {
+          "@id": "dynamics:account#ownershipcode",
+          "@type": "xsd:integer"
+        },
+        "sic": {
+          "@id": "dynamics:account#sic",
+          "@type": "xsd:string"
+        },
+        "tickersymbol": {
+          "@id": "schema:tickerSymbol",
+          "@type": "xsd:string"
+        },
+        "stockexchange": {
+          "@id": "dynamics:account#stockexchange",
+          "@type": "xsd:string"
+        },
+        "creditlimit": {
+          "@id": "dynamics:account#creditlimit",
+          "@type": "xsd:decimal"
+        },
+        "creditonhold": {
+          "@id": "dynamics:account#creditonhold",
+          "@type": "xsd:boolean"
+        },
+        "marketcap": {
+          "@id": "dynamics:account#marketcap",
+          "@type": "xsd:decimal"
+        },
+        "statecode": {
+          "@id": "dynamics:account#statecode",
+          "@type": "xsd:integer"
+        },
+        "statuscode": {
+          "@id": "dynamics:account#statuscode",
+          "@type": "xsd:integer"
+        },
+        "address1_line1": {
+          "@id": "schema:streetAddress",
+          "@type": "xsd:string"
+        },
+        "address1_city": {
+          "@id": "schema:addressLocality",
+          "@type": "xsd:string"
+        },
+        "address1_stateorprovince": {
+          "@id": "schema:addressRegion",
+          "@type": "xsd:string"
+        },
+        "address1_postalcode": {
+          "@id": "schema:postalCode",
+          "@type": "xsd:string"
+        },
+        "address1_country": {
+          "@id": "schema:addressCountry",
+          "@type": "xsd:string"
+        },
+        "address1_latitude": {
+          "@id": "schema:latitude",
+          "@type": "xsd:double"
+        },
+        "address1_longitude": {
+          "@id": "schema:longitude",
+          "@type": "xsd:double"
+        },
+        "createdon": {
+          "@id": "schema:dateCreated",
+          "@type": "xsd:dateTime"
+        },
+        "modifiedon": {
+          "@id": "schema:dateModified",
+          "@type": "xsd:dateTime"
+        }
+      }
+    },
+
+    "Contact": {
+      "@id": "dynamics:contact",
+      "@context": {
+        "contactid": {
+          "@id": "dynamics:contact#contactid",
+          "@type": "xsd:string"
+        },
+        "firstname": {
+          "@id": "schema:givenName",
+          "@type": "xsd:string"
+        },
+        "middlename": {
+          "@id": "schema:additionalName",
+          "@type": "xsd:string"
+        },
+        "lastname": {
+          "@id": "schema:familyName",
+          "@type": "xsd:string"
+        },
+        "fullname": {
+          "@id": "schema:name",
+          "@type": "xsd:string"
+        },
+        "salutation": {
+          "@id": "schema:honorificPrefix",
+          "@type": "xsd:string"
+        },
+        "suffix": {
+          "@id": "schema:honorificSuffix",
+          "@type": "xsd:string"
+        },
+        "jobtitle": {
+          "@id": "schema:jobTitle",
+          "@type": "xsd:string"
+        },
+        "department": {
+          "@id": "dynamics:contact#department",
+          "@type": "xsd:string"
+        },
+        "emailaddress1": {
+          "@id": "schema:email",
+          "@type": "xsd:string"
+        },
+        "telephone1": {
+          "@id": "schema:telephone",
+          "@type": "xsd:string"
+        },
+        "mobilephone": {
+          "@id": "dynamics:contact#mobilephone",
+          "@type": "xsd:string"
+        },
+        "fax": {
+          "@id": "schema:faxNumber",
+          "@type": "xsd:string"
+        },
+        "websiteurl": {
+          "@id": "schema:url",
+          "@type": "@id"
+        },
+        "description": {
+          "@id": "schema:description",
+          "@type": "xsd:string"
+        },
+        "birthday": {
+          "@id": "schema:birthDate",
+          "@type": "xsd:date"
+        },
+        "gendercode": {
+          "@id": "schema:gender",
+          "@type": "xsd:integer"
+        },
+        "annualincome": {
+          "@id": "dynamics:contact#annualincome",
+          "@type": "xsd:decimal"
+        },
+        "statecode": {
+          "@id": "dynamics:contact#statecode",
+          "@type": "xsd:integer"
+        },
+        "statuscode": {
+          "@id": "dynamics:contact#statuscode",
+          "@type": "xsd:integer"
+        },
+        "address1_line1": {
+          "@id": "schema:streetAddress",
+          "@type": "xsd:string"
+        },
+        "address1_city": {
+          "@id": "schema:addressLocality",
+          "@type": "xsd:string"
+        },
+        "address1_stateorprovince": {
+          "@id": "schema:addressRegion",
+          "@type": "xsd:string"
+        },
+        "address1_postalcode": {
+          "@id": "schema:postalCode",
+          "@type": "xsd:string"
+        },
+        "address1_country": {
+          "@id": "schema:addressCountry",
+          "@type": "xsd:string"
+        },
+        "createdon": {
+          "@id": "schema:dateCreated",
+          "@type": "xsd:dateTime"
+        },
+        "modifiedon": {
+          "@id": "schema:dateModified",
+          "@type": "xsd:dateTime"
+        }
+      }
+    },
+
+    "Opportunity": {
+      "@id": "crm:opportunity",
+      "@context": {
+        "opportunityid": {
+          "@id": "crm:opportunity#opportunityid",
+          "@type": "xsd:string"
+        },
+        "name": {
+          "@id": "schema:name",
+          "@type": "xsd:string"
+        },
+        "description": {
+          "@id": "schema:description",
+          "@type": "xsd:string"
+        },
+        "estimatedvalue": {
+          "@id": "crm:opportunity#estimatedvalue",
+          "@type": "xsd:decimal"
+        },
+        "actualvalue": {
+          "@id": "crm:opportunity#actualvalue",
+          "@type": "xsd:decimal"
+        },
+        "closeprobability": {
+          "@id": "crm:opportunity#closeprobability",
+          "@type": "xsd:integer"
+        },
+        "estimatedclosedate": {
+          "@id": "crm:opportunity#estimatedclosedate",
+          "@type": "xsd:date"
+        },
+        "actualclosedate": {
+          "@id": "crm:opportunity#actualclosedate",
+          "@type": "xsd:date"
+        },
+        "stepname": {
+          "@id": "crm:opportunity#stepname",
+          "@type": "xsd:string"
+        },
+        "salesstage": {
+          "@id": "crm:opportunity#salesstage",
+          "@type": "xsd:integer"
+        },
+        "statecode": {
+          "@id": "crm:opportunity#statecode",
+          "@type": "xsd:integer"
+        },
+        "statuscode": {
+          "@id": "crm:opportunity#statuscode",
+          "@type": "xsd:integer"
+        },
+        "opportunityratingcode": {
+          "@id": "crm:opportunity#opportunityratingcode",
+          "@type": "xsd:integer"
+        },
+        "budgetamount": {
+          "@id": "crm:opportunity#budgetamount",
+          "@type": "xsd:decimal"
+        },
+        "budgetstatus": {
+          "@id": "crm:opportunity#budgetstatus",
+          "@type": "xsd:integer"
+        },
+        "purchaseprocess": {
+          "@id": "crm:opportunity#purchaseprocess",
+          "@type": "xsd:integer"
+        },
+        "purchasetimeframe": {
+          "@id": "crm:opportunity#purchasetimeframe",
+          "@type": "xsd:integer"
+        },
+        "discountamount": {
+          "@id": "crm:opportunity#discountamount",
+          "@type": "xsd:decimal"
+        },
+        "discountpercentage": {
+          "@id": "crm:opportunity#discountpercentage",
+          "@type": "xsd:decimal"
+        },
+        "totalamount": {
+          "@id": "crm:opportunity#totalamount",
+          "@type": "xsd:decimal"
+        },
+        "totaltax": {
+          "@id": "crm:opportunity#totaltax",
+          "@type": "xsd:decimal"
+        },
+        "freightamount": {
+          "@id": "crm:opportunity#freightamount",
+          "@type": "xsd:decimal"
+        },
+        "customerneed": {
+          "@id": "crm:opportunity#customerneed",
+          "@type": "xsd:string"
+        },
+        "customerpainpoints": {
+          "@id": "crm:opportunity#customerpainpoints",
+          "@type": "xsd:string"
+        },
+        "proposedsolution": {
+          "@id": "crm:opportunity#proposedsolution",
+          "@type": "xsd:string"
+        },
+        "decisionmaker": {
+          "@id": "crm:opportunity#decisionmaker",
+          "@type": "xsd:boolean"
+        },
+        "createdon": {
+          "@id": "schema:dateCreated",
+          "@type": "xsd:dateTime"
+        },
+        "modifiedon": {
+          "@id": "schema:dateModified",
+          "@type": "xsd:dateTime"
+        }
+      }
+    }
+  }
+}
