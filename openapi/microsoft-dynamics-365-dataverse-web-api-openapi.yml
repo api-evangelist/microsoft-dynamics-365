@@ -50,7 +50,7 @@ paths:
   /accounts:
     get:
       operationId: listAccounts
-      summary: List accounts
+      summary: Microsoft Dynamics 365 List accounts
       description: >-
         Retrieve a list of account entity records. Supports OData query options
         including $select, $filter, $orderby, $top, $skip, and $expand.
@@ -93,7 +93,7 @@ paths:
           $ref: '#/components/responses/Forbidden'
     post:
       operationId: createAccount
-      summary: Create an account
+      summary: Microsoft Dynamics 365 Create an account
       description: Create a new account entity record.
       tags:
         - Accounts
@@ -127,7 +127,7 @@ paths:
   /accounts({accountid}):
     get:
       operationId: getAccount
-      summary: Retrieve an account
+      summary: Microsoft Dynamics 365 Retrieve an account
       description: Retrieve a single account entity record by its unique identifier.
       tags:
         - Accounts
@@ -148,7 +148,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     patch:
       operationId: updateAccount
-      summary: Update an account
+      summary: Microsoft Dynamics 365 Update an account
       description: Update an existing account entity record.
       tags:
         - Accounts
@@ -179,7 +179,7 @@ paths:
           $ref: '#/components/responses/PreconditionFailed'
     delete:
       operationId: deleteAccount
-      summary: Delete an account
+      summary: Microsoft Dynamics 365 Delete an account
       description: Delete an account entity record.
       tags:
         - Accounts
@@ -195,7 +195,7 @@ paths:
   /contacts:
     get:
       operationId: listContacts
-      summary: List contacts
+      summary: Microsoft Dynamics 365 List contacts
       description: >-
         Retrieve a list of contact entity records. Supports OData query options
         including $select, $filter, $orderby, $top, $skip, and $expand.
@@ -235,7 +235,7 @@ paths:
           $ref: '#/components/responses/Forbidden'
     post:
       operationId: createContact
-      summary: Create a contact
+      summary: Microsoft Dynamics 365 Create a contact
       description: Create a new contact entity record.
       tags:
         - Contacts
@@ -269,7 +269,7 @@ paths:
   /contacts({contactid}):
     get:
       operationId: getContact
-      summary: Retrieve a contact
+      summary: Microsoft Dynamics 365 Retrieve a contact
       description: Retrieve a single contact entity record by its unique identifier.
       tags:
         - Contacts
@@ -290,7 +290,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     patch:
       operationId: updateContact
-      summary: Update a contact
+      summary: Microsoft Dynamics 365 Update a contact
       description: Update an existing contact entity record.
       tags:
         - Contacts
@@ -321,7 +321,7 @@ paths:
           $ref: '#/components/responses/PreconditionFailed'
     delete:
       operationId: deleteContact
-      summary: Delete a contact
+      summary: Microsoft Dynamics 365 Delete a contact
       description: Delete a contact entity record.
       tags:
         - Contacts
@@ -337,7 +337,7 @@ paths:
   /opportunities:
     get:
       operationId: listOpportunities
-      summary: List opportunities
+      summary: Microsoft Dynamics 365 List opportunities
       description: >-
         Retrieve a list of opportunity entity records. Supports OData query
         options including $select, $filter, $orderby, $top, $skip, and $expand.
@@ -377,7 +377,7 @@ paths:
           $ref: '#/components/responses/Forbidden'
     post:
       operationId: createOpportunity
-      summary: Create an opportunity
+      summary: Microsoft Dynamics 365 Create an opportunity
       description: Create a new opportunity entity record.
       tags:
         - Opportunities
@@ -411,7 +411,7 @@ paths:
   /opportunities({opportunityid}):
     get:
       operationId: getOpportunity
-      summary: Retrieve an opportunity
+      summary: Microsoft Dynamics 365 Retrieve an opportunity
       description: Retrieve a single opportunity entity record by its unique identifier.
       tags:
         - Opportunities
@@ -432,7 +432,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     patch:
       operationId: updateOpportunity
-      summary: Update an opportunity
+      summary: Microsoft Dynamics 365 Update an opportunity
       description: Update an existing opportunity entity record.
       tags:
         - Opportunities
@@ -463,7 +463,7 @@ paths:
           $ref: '#/components/responses/PreconditionFailed'
     delete:
       operationId: deleteOpportunity
-      summary: Delete an opportunity
+      summary: Microsoft Dynamics 365 Delete an opportunity
       description: Delete an opportunity entity record.
       tags:
         - Opportunities
