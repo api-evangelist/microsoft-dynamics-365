@@ -2,7 +2,7 @@ name: Microsoft Dynamics 365
 description: Microsoft Dynamics 365 is a cloud-based suite of business applications that unify CRM and ERP capabilities to help organizations manage sales, marketing, customer service, finance, operations, and commerce.
 url: https://dynamics.microsoft.com/
 created: '2025-01-20'
-modified: '2026-03-16'
+modified: '2026-04-28'
 specificationVersion: '0.18'
 apis:
   - name: Dynamics 365 Sales API
