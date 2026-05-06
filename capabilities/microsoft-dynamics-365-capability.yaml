@@ -1,0 +1,477 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Microsoft Dynamics 365 Dataverse Web API
+  description: RESTful web service implementing OData v4.0 for interacting with data in Microsoft Dataverse, the underlying
+    data platform for Dynamics 365 and Power Platform applications. This specification covers core CRM entities including
+    accounts, contacts, and opportunities.
+  tags:
+  - Microsoft
+  - Dynamics
+  - '365'
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: microsoft-dynamics-365
+    baseUri: https://yourorg.api.crm.dynamics.com/api/data/v9.2
+    description: Microsoft Dynamics 365 Dataverse Web API HTTP API.
+    authentication:
+      type: bearer
+      token: '{{MICROSOFT_DYNAMICS_365_TOKEN}}'
+    resources:
+    - name: accounts
+      path: /accounts
+      operations:
+      - name: listaccounts
+        method: GET
+        description: Microsoft Dynamics 365 List accounts
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createaccount
+        method: POST
+        description: Microsoft Dynamics 365 Create an account
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: accounts-accountid
+      path: /accounts({accountid})
+      operations:
+      - name: getaccount
+        method: GET
+        description: Microsoft Dynamics 365 Retrieve an account
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updateaccount
+        method: PATCH
+        description: Microsoft Dynamics 365 Update an account
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deleteaccount
+        method: DELETE
+        description: Microsoft Dynamics 365 Delete an account
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: contacts
+      path: /contacts
+      operations:
+      - name: listcontacts
+        method: GET
+        description: Microsoft Dynamics 365 List contacts
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createcontact
+        method: POST
+        description: Microsoft Dynamics 365 Create a contact
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: contacts-contactid
+      path: /contacts({contactid})
+      operations:
+      - name: getcontact
+        method: GET
+        description: Microsoft Dynamics 365 Retrieve a contact
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updatecontact
+        method: PATCH
+        description: Microsoft Dynamics 365 Update a contact
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deletecontact
+        method: DELETE
+        description: Microsoft Dynamics 365 Delete a contact
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: opportunities
+      path: /opportunities
+      operations:
+      - name: listopportunities
+        method: GET
+        description: Microsoft Dynamics 365 List opportunities
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createopportunity
+        method: POST
+        description: Microsoft Dynamics 365 Create an opportunity
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: opportunities-opportunityid
+      path: /opportunities({opportunityid})
+      operations:
+      - name: getopportunity
+        method: GET
+        description: Microsoft Dynamics 365 Retrieve an opportunity
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updateopportunity
+        method: PATCH
+        description: Microsoft Dynamics 365 Update an opportunity
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deleteopportunity
+        method: DELETE
+        description: Microsoft Dynamics 365 Delete an opportunity
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: microsoft-dynamics-365-rest
+    description: REST adapter for Microsoft Dynamics 365 Dataverse Web API.
+    resources:
+    - path: /accounts
+      name: listaccounts
+      operations:
+      - method: GET
+        name: listaccounts
+        description: Microsoft Dynamics 365 List accounts
+        call: microsoft-dynamics-365.listaccounts
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /accounts
+      name: createaccount
+      operations:
+      - method: POST
+        name: createaccount
+        description: Microsoft Dynamics 365 Create an account
+        call: microsoft-dynamics-365.createaccount
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /accounts({accountid})
+      name: getaccount
+      operations:
+      - method: GET
+        name: getaccount
+        description: Microsoft Dynamics 365 Retrieve an account
+        call: microsoft-dynamics-365.getaccount
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /accounts({accountid})
+      name: updateaccount
+      operations:
+      - method: PATCH
+        name: updateaccount
+        description: Microsoft Dynamics 365 Update an account
+        call: microsoft-dynamics-365.updateaccount
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /accounts({accountid})
+      name: deleteaccount
+      operations:
+      - method: DELETE
+        name: deleteaccount
+        description: Microsoft Dynamics 365 Delete an account
+        call: microsoft-dynamics-365.deleteaccount
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /contacts
+      name: listcontacts
+      operations:
+      - method: GET
+        name: listcontacts
+        description: Microsoft Dynamics 365 List contacts
+        call: microsoft-dynamics-365.listcontacts
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /contacts
+      name: createcontact
+      operations:
+      - method: POST
+        name: createcontact
+        description: Microsoft Dynamics 365 Create a contact
+        call: microsoft-dynamics-365.createcontact
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /contacts({contactid})
+      name: getcontact
+      operations:
+      - method: GET
+        name: getcontact
+        description: Microsoft Dynamics 365 Retrieve a contact
+        call: microsoft-dynamics-365.getcontact
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /contacts({contactid})
+      name: updatecontact
+      operations:
+      - method: PATCH
+        name: updatecontact
+        description: Microsoft Dynamics 365 Update a contact
+        call: microsoft-dynamics-365.updatecontact
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /contacts({contactid})
+      name: deletecontact
+      operations:
+      - method: DELETE
+        name: deletecontact
+        description: Microsoft Dynamics 365 Delete a contact
+        call: microsoft-dynamics-365.deletecontact
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /opportunities
+      name: listopportunities
+      operations:
+      - method: GET
+        name: listopportunities
+        description: Microsoft Dynamics 365 List opportunities
+        call: microsoft-dynamics-365.listopportunities
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /opportunities
+      name: createopportunity
+      operations:
+      - method: POST
+        name: createopportunity
+        description: Microsoft Dynamics 365 Create an opportunity
+        call: microsoft-dynamics-365.createopportunity
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /opportunities({opportunityid})
+      name: getopportunity
+      operations:
+      - method: GET
+        name: getopportunity
+        description: Microsoft Dynamics 365 Retrieve an opportunity
+        call: microsoft-dynamics-365.getopportunity
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /opportunities({opportunityid})
+      name: updateopportunity
+      operations:
+      - method: PATCH
+        name: updateopportunity
+        description: Microsoft Dynamics 365 Update an opportunity
+        call: microsoft-dynamics-365.updateopportunity
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /opportunities({opportunityid})
+      name: deleteopportunity
+      operations:
+      - method: DELETE
+        name: deleteopportunity
+        description: Microsoft Dynamics 365 Delete an opportunity
+        call: microsoft-dynamics-365.deleteopportunity
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: microsoft-dynamics-365-mcp
+    transport: http
+    description: MCP adapter for Microsoft Dynamics 365 Dataverse Web API for AI agent use.
+    tools:
+    - name: listaccounts
+      description: Microsoft Dynamics 365 List accounts
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-dynamics-365.listaccounts
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createaccount
+      description: Microsoft Dynamics 365 Create an account
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: microsoft-dynamics-365.createaccount
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getaccount
+      description: Microsoft Dynamics 365 Retrieve an account
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-dynamics-365.getaccount
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updateaccount
+      description: Microsoft Dynamics 365 Update an account
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: microsoft-dynamics-365.updateaccount
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deleteaccount
+      description: Microsoft Dynamics 365 Delete an account
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: microsoft-dynamics-365.deleteaccount
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listcontacts
+      description: Microsoft Dynamics 365 List contacts
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-dynamics-365.listcontacts
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createcontact
+      description: Microsoft Dynamics 365 Create a contact
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: microsoft-dynamics-365.createcontact
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getcontact
+      description: Microsoft Dynamics 365 Retrieve a contact
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-dynamics-365.getcontact
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updatecontact
+      description: Microsoft Dynamics 365 Update a contact
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: microsoft-dynamics-365.updatecontact
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deletecontact
+      description: Microsoft Dynamics 365 Delete a contact
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: microsoft-dynamics-365.deletecontact
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listopportunities
+      description: Microsoft Dynamics 365 List opportunities
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-dynamics-365.listopportunities
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createopportunity
+      description: Microsoft Dynamics 365 Create an opportunity
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: microsoft-dynamics-365.createopportunity
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getopportunity
+      description: Microsoft Dynamics 365 Retrieve an opportunity
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-dynamics-365.getopportunity
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updateopportunity
+      description: Microsoft Dynamics 365 Update an opportunity
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: microsoft-dynamics-365.updateopportunity
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deleteopportunity
+      description: Microsoft Dynamics 365 Delete an opportunity
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: microsoft-dynamics-365.deleteopportunity
+      outputParameters:
+      - type: object
+        mapping: $.
+binds:
+- namespace: env
+  keys:
+    MICROSOFT_DYNAMICS_365_TOKEN: MICROSOFT_DYNAMICS_365_TOKEN
