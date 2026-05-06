@@ -4,7 +4,8 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Microsoft Dynamics 365
 providerId: microsoft-dynamics-365
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: true
 tags:
   - Business Applications
   - Cloud
@@ -13,139 +14,84 @@ tags:
   - ERP
   - Microsoft
   - Rate Limiting
-  - Quotas
-  - Throttling
-description: Machine-readable rate limit definitions for the Microsoft Dynamics 365 API surface. Captures
-  per-tier quotas, burst behavior, response signaling, and recovery semantics. Defaults are scaffold values
-  to be replaced with published provider limits.
+description: Dynamics 365 customer-engagement apps and the underlying Dataverse share Power
+  Platform service-protection (API request) limits. Each user / non-interactive identity is
+  capped at 6,000 API requests per 5-minute sliding window per environment, plus 20 minutes
+  of combined execution time and 52 concurrent connections. Tenants also have a daily
+  Dataverse request entitlement allocation pooled across users by license tier. Finance &
+  Operations and Business Central each apply per-environment OData throttling (BC default
+  600/min, 300 concurrent). Beyond the limit, HTTP 429 with Retry-After is returned.
+sources:
+  - https://learn.microsoft.com/en-us/power-apps/developer/data-platform/api-limits
+  - https://learn.microsoft.com/en-us/power-platform/admin/api-request-limits-allocations
+  - https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/operational-limits-online
+  - https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/data-entities/odata-limits
 headers:
-  limit: X-RateLimit-Limit
-  remaining: X-RateLimit-Remaining
-  reset: X-RateLimit-Reset
   retryAfter: Retry-After
-  policy: RateLimit-Policy
+  burstRemaining: x-ms-ratelimit-burst-remaining-xrm-requests
+  timeRemaining: x-ms-ratelimit-time-remaining-xrm-requests
+  rule: x-ms-ratelimit-rule
 responseCodes:
   throttled: 429
-  quotaExceeded: 429
   serviceUnavailable: 503
+  serviceProtection: 429
 limits:
-  - tier: free
-    name: Free Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 10
-    burst: 20
+  - name: Dataverse — per-user 5-minute sliding window
+    scope: user/environment
+    metric: requests_per_5_minutes
+    limit: 6000
     timeFrame: minute
-    applies:
-      - Dynamics 365 Sales API
-      - Dynamics 365 Customer Service API
-      - Dynamics 365 Finance & Operations API
-      - Dynamics 365 Marketing API
-      - Dynamics 365 Supply Chain Management API
-      - Dynamics 365 Business Central API
-      - Dynamics 365 Commerce API
-      - Microsoft Dataverse Web API
-      - Dynamics 365 Customer Insights Data API
-      - Dynamics 365 Customer Insights Journeys API
-      - Dynamics 365 Field Service API
-      - Dynamics 365 Human Resources API
-      - Dynamics 365 Project Operations API
-  - tier: free
-    name: Free Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 1000
-    timeFrame: month
-    applies:
-      - Dynamics 365 Sales API
-      - Dynamics 365 Customer Service API
-      - Dynamics 365 Finance & Operations API
-      - Dynamics 365 Marketing API
-      - Dynamics 365 Supply Chain Management API
-      - Dynamics 365 Business Central API
-      - Dynamics 365 Commerce API
-      - Microsoft Dataverse Web API
-      - Dynamics 365 Customer Insights Data API
-      - Dynamics 365 Customer Insights Journeys API
-      - Dynamics 365 Field Service API
-      - Dynamics 365 Human Resources API
-      - Dynamics 365 Project Operations API
-  - tier: professional
-    name: Professional Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 100
-    burst: 200
+    notes: Service-protection limit per user / non-interactive identity per environment.
+  - name: Dataverse — per-user execution time
+    scope: user/environment
+    metric: combined_execution_seconds_per_5_minutes
+    limit: 1200
     timeFrame: minute
-    applies:
-      - Dynamics 365 Sales API
-      - Dynamics 365 Customer Service API
-      - Dynamics 365 Finance & Operations API
-      - Dynamics 365 Marketing API
-      - Dynamics 365 Supply Chain Management API
-      - Dynamics 365 Business Central API
-      - Dynamics 365 Commerce API
-      - Microsoft Dataverse Web API
-      - Dynamics 365 Customer Insights Data API
-      - Dynamics 365 Customer Insights Journeys API
-      - Dynamics 365 Field Service API
-      - Dynamics 365 Human Resources API
-      - Dynamics 365 Project Operations API
-  - tier: professional
-    name: Professional Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 100000
-    timeFrame: month
-    applies:
-      - Dynamics 365 Sales API
-      - Dynamics 365 Customer Service API
-      - Dynamics 365 Finance & Operations API
-      - Dynamics 365 Marketing API
-      - Dynamics 365 Supply Chain Management API
-      - Dynamics 365 Business Central API
-      - Dynamics 365 Commerce API
-      - Microsoft Dataverse Web API
-      - Dynamics 365 Customer Insights Data API
-      - Dynamics 365 Customer Insights Journeys API
-      - Dynamics 365 Field Service API
-      - Dynamics 365 Human Resources API
-      - Dynamics 365 Project Operations API
-  - tier: enterprise
-    name: Enterprise Negotiated Limit
-    scope: contract
+    notes: 20 minutes of combined API execution time per user per 5-min window.
+  - name: Dataverse — concurrent connections per user
+    scope: user/environment
+    metric: concurrent_connections
+    limit: 52
+    notes: Concurrent connections to the Web API per user per environment.
+  - name: Power Platform — daily request entitlement (per licensed user)
+    scope: tenant
+    metric: requests_per_24h
+    limit: see vendor docs
+    notes: Per-licensed-user allocation pooled at tenant — varies by SKU (e.g., Sales/Service
+      enterprise users 40,000/day; Power Apps per-user 6,000/day). Excess goes against
+      capacity add-ons.
+  - name: Business Central — OData / SOAP per environment
+    scope: environment
     metric: requests_per_minute
-    limit: 1000
-    burst: 5000
+    limit: 600
     timeFrame: minute
-    applies:
-      - Dynamics 365 Sales API
-      - Dynamics 365 Customer Service API
-      - Dynamics 365 Finance & Operations API
-      - Dynamics 365 Marketing API
-      - Dynamics 365 Supply Chain Management API
-      - Dynamics 365 Business Central API
-      - Dynamics 365 Commerce API
-      - Microsoft Dataverse Web API
-      - Dynamics 365 Customer Insights Data API
-      - Dynamics 365 Customer Insights Journeys API
-      - Dynamics 365 Field Service API
-      - Dynamics 365 Human Resources API
-      - Dynamics 365 Project Operations API
+    notes: Default soft cap. 300 concurrent requests per environment.
+  - name: Finance & Operations — OData per user
+    scope: user/environment
+    metric: requests_per_minute
+    limit: see vendor docs
+    notes: Per-user OData throttling. Bulk loads should use Data Management Framework / Bulk
+      Data Loading APIs.
 policies:
-  - name: Backoff Strategy
-    description: Clients should implement exponential backoff with jitter, honoring the Retry-After header
-      when present.
-  - name: Burst Handling
-    description: Short bursts above the steady-state limit are tolerated up to the documented burst ceiling
-      before throttling engages.
-  - name: Quota Reset
-    description: Monthly quotas reset at the start of each calendar month in UTC. Per-minute and per-second
-      windows reset on a sliding-window basis.
-  - name: Fair Use
-    description: Even on uncapped enterprise tiers, sustained usage that materially impacts shared infrastructure
-      may be subject to fair-use throttling.
+  - name: Service Protection API limits
+    description: Dataverse throttles on three orthogonal dimensions — number of requests,
+      combined execution time, and concurrent connections. Hitting any returns 429.
+  - name: Honor Retry-After
+    description: 429 responses include Retry-After. Implement exponential backoff with jitter;
+      Dataverse SDK auto-retries.
+  - name: Use $batch / ExecuteMultiple for bulk
+    description: For high-volume creates/updates use Web API $batch (max 1000 changes per
+      batch), ExecuteMultiple, or DMF entity import.
+  - name: Spread automation across application users
+    description: Use multiple application users (service principals) for high-throughput
+      automation; each gets its own per-user envelope.
+  - name: Buy capacity add-ons
+    description: Excess daily entitlement requires add-on capacity packs; alternatively, use
+      Power Apps Pay-As-You-Go meters via an Azure subscription.
+  - name: Limit increase via support
+    description: Per-environment caps on Business Central and Finance & Operations can be
+      raised by support; Dataverse service-protection limits are fixed.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
-    url: https://apievangelist.com/
+    url: https://www.microsoft.com/dynamics-365
