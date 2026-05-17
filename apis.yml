@@ -22,7 +22,7 @@ apis:
         url: https://[org].api.crm.dynamics.com/api/data/v9.2/$metadata
       - type: Authentication
         url: https://docs.microsoft.com/powerapps/developer/data-platform/authenticate
-      - type: Rate Limits
+      - type: RateLimits
         url: https://docs.microsoft.com/powerapps/developer/data-platform/api-limits
     contact:
       - FN: Microsoft Support
@@ -62,7 +62,7 @@ apis:
         url: https://docs.microsoft.com/dynamics365/fin-ops-core/dev-itpro/data-entities/odata
       - type: Authentication
         url: https://docs.microsoft.com/dynamics365/fin-ops-core/dev-itpro/data-entities/services-home-page
-      - type: API Reference
+      - type: APIReference
         url: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/dev-ref/api-reference
       - type: Data Management REST API
         url: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/data-entities/data-management-api
@@ -79,7 +79,7 @@ apis:
     properties:
       - type: Documentation
         url: https://docs.microsoft.com/dynamics365/marketing/developer/marketing-developer-guide
-      - type: API Reference
+      - type: APIReference
         url: https://docs.microsoft.com/dynamics365/marketing/developer/extend-marketing-api
   - name: Dynamics 365 Supply Chain Management API
     description: API for managing inventory, warehouse operations, procurement, and supply chain processes.
@@ -111,7 +111,7 @@ apis:
         url: https://docs.microsoft.com/dynamics365/business-central/dev-itpro/api-reference/v2.0/
       - type: OpenAPI
         url: https://docs.microsoft.com/dynamics365/business-central/dev-itpro/api-reference/v2.0/openapi
-      - type: Getting Started
+      - type: GettingStarted
         url: https://docs.microsoft.com/dynamics365/business-central/dev-itpro/api-reference/v2.0/enabling-apis-for-dynamics-nav
       - type: Webhooks
         url: https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/dynamics-subscriptions
@@ -149,7 +149,7 @@ apis:
     properties:
       - type: Documentation
         url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/overview
-      - type: API Reference
+      - type: APIReference
         url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/reference/about
       - type: OpenAPI
         url: openapi/microsoft-dynamics-365-dataverse-web-api-openapi.yml
@@ -163,7 +163,7 @@ apis:
         url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/web-api-service-documents
       - type: Authentication
         url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/authenticate-oauth
-      - type: Rate Limits
+      - type: RateLimits
         url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/api-limits
       - type: Developer Guide
         url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/overview
@@ -261,11 +261,11 @@ common:
     url: https://docs.microsoft.com/azure/active-directory/develop/
   - type: SDKs
     url: https://docs.microsoft.com/powerapps/developer/data-platform/sdk/
-  - type: Status Page
+  - type: StatusPage
     url: https://status.dynamics.com/
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://www.microsoft.com/licensing/terms/
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://privacy.microsoft.com/
   - type: Support
     url: https://dynamics.microsoft.com/support/
