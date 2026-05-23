@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ContactCreate",
+  "title": "ContactCreate",
+  "type": "object",
+  "description": "Properties for creating a new contact.",
+  "required": [
+    "lastname"
+  ],
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/ContactUpdate"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "lastname": {
+          "type": "string",
+          "maxLength": 50,
+          "description": "Last name of the contact."
+        }
+      }
+    }
+  ]
+}

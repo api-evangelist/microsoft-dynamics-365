@@ -1,0 +1,386 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Contact",
+  "title": "Contact",
+  "type": "object",
+  "description": "Person with whom a business unit has a relationship, such as customer, supplier, and colleague.",
+  "properties": {
+    "@odata.etag": {
+      "type": "string",
+      "description": "ETag value for concurrency control.",
+      "readOnly": true
+    },
+    "contactid": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique identifier of the contact.",
+      "readOnly": true
+    },
+    "firstname": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "First name of the contact."
+    },
+    "middlename": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Middle name of the contact."
+    },
+    "lastname": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Last name of the contact."
+    },
+    "fullname": {
+      "type": "string",
+      "maxLength": 160,
+      "description": "Combined first name, middle name, and last name. Read-only, automatically generated.",
+      "readOnly": true
+    },
+    "nickname": {
+      "type": "string",
+      "maxLength": 100,
+      "description": "Nickname of the contact."
+    },
+    "salutation": {
+      "type": "string",
+      "maxLength": 100,
+      "description": "Salutation for correspondence with the contact."
+    },
+    "suffix": {
+      "type": "string",
+      "maxLength": 10,
+      "description": "Suffix used in the contact name, such as Jr. or Sr."
+    },
+    "jobtitle": {
+      "type": "string",
+      "maxLength": 100,
+      "description": "Job title of the contact."
+    },
+    "department": {
+      "type": "string",
+      "maxLength": 100,
+      "description": "Department or business unit where the contact works."
+    },
+    "managername": {
+      "type": "string",
+      "maxLength": 100,
+      "description": "Name of the contact manager."
+    },
+    "assistantname": {
+      "type": "string",
+      "maxLength": 100,
+      "description": "Name of the contact assistant."
+    },
+    "assistantphone": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Phone number for the contact assistant."
+    },
+    "emailaddress1": {
+      "type": "string",
+      "format": "email",
+      "maxLength": 100,
+      "description": "Primary email address for the contact."
+    },
+    "emailaddress2": {
+      "type": "string",
+      "format": "email",
+      "maxLength": 100,
+      "description": "Secondary email address for the contact."
+    },
+    "emailaddress3": {
+      "type": "string",
+      "format": "email",
+      "maxLength": 100,
+      "description": "Alternate email address for the contact."
+    },
+    "telephone1": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Main phone number for the contact (business phone)."
+    },
+    "telephone2": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Second phone number for the contact (home phone)."
+    },
+    "telephone3": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Third phone number for the contact."
+    },
+    "mobilephone": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Mobile phone number for the contact."
+    },
+    "fax": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Fax number for the contact."
+    },
+    "pager": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Pager number for the contact."
+    },
+    "websiteurl": {
+      "type": "string",
+      "format": "uri",
+      "maxLength": 200,
+      "description": "Website URL for the contact."
+    },
+    "description": {
+      "type": "string",
+      "description": "Additional information to describe the contact."
+    },
+    "gendercode": {
+      "type": "integer",
+      "description": "Gender. Values: 1 (Male), 2 (Female)."
+    },
+    "familystatuscode": {
+      "type": "integer",
+      "description": "Marital status. Values: 1 (Single), 2 (Married), 3 (Divorced), 4 (Widowed)."
+    },
+    "spousesname": {
+      "type": "string",
+      "maxLength": 100,
+      "description": "Name of the contact spouse or partner."
+    },
+    "birthday": {
+      "type": "string",
+      "format": "date",
+      "description": "Birthday of the contact."
+    },
+    "anniversary": {
+      "type": "string",
+      "format": "date",
+      "description": "Wedding anniversary date."
+    },
+    "preferredcontactmethodcode": {
+      "type": "integer",
+      "description": "Preferred method of contact. Values: 1 (Any), 2 (Email), 3 (Phone), 4 (Fax), 5 (Mail)."
+    },
+    "donotemail": {
+      "type": "boolean",
+      "description": "Whether the contact allows direct email."
+    },
+    "donotphone": {
+      "type": "boolean",
+      "description": "Whether the contact allows phone calls."
+    },
+    "donotfax": {
+      "type": "boolean",
+      "description": "Whether the contact allows faxes."
+    },
+    "donotpostalmail": {
+      "type": "boolean",
+      "description": "Whether the contact allows direct mail."
+    },
+    "donotbulkemail": {
+      "type": "boolean",
+      "description": "Whether the contact allows bulk email."
+    },
+    "donotsendmm": {
+      "type": "boolean",
+      "description": "Whether the contact accepts marketing materials."
+    },
+    "followemail": {
+      "type": "boolean",
+      "description": "Whether to allow following email activity."
+    },
+    "address1_name": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "Descriptive name for the primary address."
+    },
+    "address1_line1": {
+      "type": "string",
+      "maxLength": 250,
+      "description": "First line of the primary address."
+    },
+    "address1_line2": {
+      "type": "string",
+      "maxLength": 250,
+      "description": "Second line of the primary address."
+    },
+    "address1_line3": {
+      "type": "string",
+      "maxLength": 250,
+      "description": "Third line of the primary address."
+    },
+    "address1_city": {
+      "type": "string",
+      "maxLength": 80,
+      "description": "City for the primary address."
+    },
+    "address1_stateorprovince": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "State or province of the primary address."
+    },
+    "address1_postalcode": {
+      "type": "string",
+      "maxLength": 20,
+      "description": "ZIP Code or postal code for the primary address."
+    },
+    "address1_country": {
+      "type": "string",
+      "maxLength": 80,
+      "description": "Country or region for the primary address."
+    },
+    "address1_county": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "County for the primary address."
+    },
+    "address1_telephone1": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Main phone number associated with the primary address."
+    },
+    "address1_fax": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Fax number associated with the primary address."
+    },
+    "address1_latitude": {
+      "type": "number",
+      "format": "double",
+      "description": "Latitude value for the primary address."
+    },
+    "address1_longitude": {
+      "type": "number",
+      "format": "double",
+      "description": "Longitude value for the primary address."
+    },
+    "address1_addresstypecode": {
+      "type": "integer",
+      "description": "Primary address type code."
+    },
+    "address1_composite": {
+      "type": "string",
+      "description": "Complete primary address.",
+      "readOnly": true
+    },
+    "address2_name": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "Descriptive name for the secondary address."
+    },
+    "address2_line1": {
+      "type": "string",
+      "maxLength": 250,
+      "description": "First line of the secondary address."
+    },
+    "address2_line2": {
+      "type": "string",
+      "maxLength": 250,
+      "description": "Second line of the secondary address."
+    },
+    "address2_city": {
+      "type": "string",
+      "maxLength": 80,
+      "description": "City for the secondary address."
+    },
+    "address2_stateorprovince": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "State or province of the secondary address."
+    },
+    "address2_postalcode": {
+      "type": "string",
+      "maxLength": 20,
+      "description": "ZIP Code or postal code for the secondary address."
+    },
+    "address2_country": {
+      "type": "string",
+      "maxLength": 80,
+      "description": "Country or region for the secondary address."
+    },
+    "statecode": {
+      "type": "integer",
+      "description": "Whether the contact is active or inactive. Values: 0 (Active), 1 (Inactive)."
+    },
+    "statuscode": {
+      "type": "integer",
+      "description": "Contact status reason. Values: 1 (Active), 2 (Inactive)."
+    },
+    "annualincome": {
+      "type": "number",
+      "description": "Annual income of the contact."
+    },
+    "creditlimit": {
+      "type": "number",
+      "description": "Credit limit of the contact."
+    },
+    "creditonhold": {
+      "type": "boolean",
+      "description": "Whether credit is on hold for the contact."
+    },
+    "_parentcustomerid_value": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Parent customer (account or contact) for the contact.",
+      "readOnly": true
+    },
+    "_ownerid_value": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Owner of the record.",
+      "readOnly": true
+    },
+    "_createdby_value": {
+      "type": "string",
+      "format": "uuid",
+      "description": "User who created the record.",
+      "readOnly": true
+    },
+    "_modifiedby_value": {
+      "type": "string",
+      "format": "uuid",
+      "description": "User who last updated the record.",
+      "readOnly": true
+    },
+    "createdon": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time when the record was created.",
+      "readOnly": true
+    },
+    "modifiedon": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time when the record was last updated.",
+      "readOnly": true
+    },
+    "versionnumber": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Version number of the contact.",
+      "readOnly": true
+    },
+    "yomifirstname": {
+      "type": "string",
+      "maxLength": 150,
+      "description": "Phonetic spelling of the first name (Japanese)."
+    },
+    "yomilastname": {
+      "type": "string",
+      "maxLength": 150,
+      "description": "Phonetic spelling of the last name (Japanese)."
+    },
+    "yomimiddlename": {
+      "type": "string",
+      "maxLength": 150,
+      "description": "Phonetic spelling of the middle name (Japanese)."
+    },
+    "yomifullname": {
+      "type": "string",
+      "maxLength": 450,
+      "description": "Combined phonetic full name (Japanese).",
+      "readOnly": true
+    }
+  }
+}

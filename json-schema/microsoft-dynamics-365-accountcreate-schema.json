@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AccountCreate",
+  "title": "AccountCreate",
+  "type": "object",
+  "description": "Properties for creating a new account.",
+  "required": [
+    "name"
+  ],
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/AccountUpdate"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "maxLength": 160,
+          "description": "The company or business name."
+        }
+      }
+    }
+  ]
+}

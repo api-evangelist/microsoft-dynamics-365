@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OpportunityUpdate",
+  "title": "OpportunityUpdate",
+  "type": "object",
+  "description": "Properties for updating an existing opportunity.",
+  "properties": {
+    "name": {
+      "type": "string",
+      "maxLength": 300,
+      "description": "Subject or descriptive name (topic) for the opportunity."
+    },
+    "description": {
+      "type": "string",
+      "description": "Additional information to describe the opportunity."
+    },
+    "estimatedvalue": {
+      "type": "number",
+      "description": "Estimated revenue amount."
+    },
+    "closeprobability": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Likelihood of closing the opportunity."
+    },
+    "estimatedclosedate": {
+      "type": "string",
+      "format": "date",
+      "description": "Expected closing date."
+    },
+    "stepname": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "Current phase in the sales pipeline."
+    },
+    "salesstage": {
+      "type": "integer",
+      "description": "Sales stage code."
+    },
+    "opportunityratingcode": {
+      "type": "integer",
+      "description": "Rating code."
+    },
+    "prioritycode": {
+      "type": "integer",
+      "description": "Priority code."
+    },
+    "budgetamount": {
+      "type": "number",
+      "description": "Budget amount."
+    },
+    "budgetstatus": {
+      "type": "integer",
+      "description": "Budget status code."
+    },
+    "purchaseprocess": {
+      "type": "integer",
+      "description": "Purchase process code."
+    },
+    "purchasetimeframe": {
+      "type": "integer",
+      "description": "Purchase timeframe code."
+    },
+    "timeline": {
+      "type": "integer",
+      "description": "Timeline code."
+    },
+    "customerneed": {
+      "type": "string",
+      "maxLength": 2000,
+      "description": "Customer requirements."
+    },
+    "customerpainpoints": {
+      "type": "string",
+      "maxLength": 2000,
+      "description": "Customer pain points."
+    },
+    "currentsituation": {
+      "type": "string",
+      "maxLength": 2000,
+      "description": "Current situation notes."
+    },
+    "proposedsolution": {
+      "type": "string",
+      "maxLength": 2000,
+      "description": "Proposed solution notes."
+    },
+    "decisionmaker": {
+      "type": "boolean",
+      "description": "Whether the contact is a decision maker."
+    },
+    "discountamount": {
+      "type": "number",
+      "description": "Discount amount."
+    },
+    "discountpercentage": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Discount rate percentage."
+    },
+    "freightamount": {
+      "type": "number",
+      "description": "Freight or shipping cost."
+    },
+    "totaltax": {
+      "type": "number",
+      "description": "Total tax amount."
+    },
+    "statecode": {
+      "type": "integer",
+      "description": "Status code."
+    },
+    "statuscode": {
+      "type": "integer",
+      "description": "Status reason code."
+    },
+    "customerid_account@odata.bind": {
+      "type": "string",
+      "description": "Bind reference to a customer account. Format: /accounts(GUID)."
+    },
+    "customerid_contact@odata.bind": {
+      "type": "string",
+      "description": "Bind reference to a customer contact. Format: /contacts(GUID)."
+    },
+    "parentaccountid@odata.bind": {
+      "type": "string",
+      "description": "Bind reference to a parent account. Format: /accounts(GUID)."
+    },
+    "parentcontactid@odata.bind": {
+      "type": "string",
+      "description": "Bind reference to a parent contact. Format: /contacts(GUID)."
+    },
+    "originatingleadid@odata.bind": {
+      "type": "string",
+      "description": "Bind reference to the originating lead. Format: /leads(GUID)."
+    },
+    "campaignid@odata.bind": {
+      "type": "string",
+      "description": "Bind reference to the source campaign. Format: /campaigns(GUID)."
+    },
+    "transactioncurrencyid@odata.bind": {
+      "type": "string",
+      "description": "Bind reference to a currency record. Format: /transactioncurrencies(GUID)."
+    }
+  }
+}

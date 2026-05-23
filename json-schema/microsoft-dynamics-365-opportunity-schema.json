@@ -1,0 +1,278 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Opportunity",
+  "title": "Opportunity",
+  "type": "object",
+  "description": "Potential revenue-generating event or sale to an account that needs to be tracked through the sales process to completion.",
+  "properties": {
+    "@odata.etag": {
+      "type": "string",
+      "description": "ETag value for concurrency control.",
+      "readOnly": true
+    },
+    "opportunityid": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique identifier of the opportunity.",
+      "readOnly": true
+    },
+    "name": {
+      "type": "string",
+      "maxLength": 300,
+      "description": "Subject or descriptive name (topic) for the opportunity."
+    },
+    "description": {
+      "type": "string",
+      "description": "Additional information to describe the opportunity."
+    },
+    "estimatedvalue": {
+      "type": "number",
+      "description": "Estimated revenue amount for the opportunity."
+    },
+    "estimatedvalue_base": {
+      "type": "number",
+      "description": "Estimated revenue converted to the system default base currency.",
+      "readOnly": true
+    },
+    "actualvalue": {
+      "type": "number",
+      "description": "Actual revenue amount for the opportunity."
+    },
+    "actualvalue_base": {
+      "type": "number",
+      "description": "Actual revenue converted to the system default base currency.",
+      "readOnly": true
+    },
+    "budgetamount": {
+      "type": "number",
+      "description": "Budget amount for the lead associated with the opportunity."
+    },
+    "budgetamount_base": {
+      "type": "number",
+      "description": "Budget amount converted to the system default base currency.",
+      "readOnly": true
+    },
+    "closeprobability": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Likelihood of closing the opportunity, as a percentage."
+    },
+    "estimatedclosedate": {
+      "type": "string",
+      "format": "date",
+      "description": "Expected closing date of the opportunity."
+    },
+    "actualclosedate": {
+      "type": "string",
+      "format": "date",
+      "description": "Actual closing date of the opportunity."
+    },
+    "stepname": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "Current phase in the sales pipeline."
+    },
+    "salesstage": {
+      "type": "integer",
+      "description": "Sales stage. Values: 0 (Qualify), 1 (Develop), 2 (Propose), 3 (Close)."
+    },
+    "salesstagecode": {
+      "type": "integer",
+      "description": "Sales stage code for backward compatibility."
+    },
+    "statecode": {
+      "type": "integer",
+      "description": "Status of the opportunity. Values: 0 (Open), 1 (Won), 2 (Lost)."
+    },
+    "statuscode": {
+      "type": "integer",
+      "description": "Status reason. Values: 1 (In Progress), 2 (On Hold), 3 (Won), 4 (Canceled), 5 (Out-Sold)."
+    },
+    "opportunityratingcode": {
+      "type": "integer",
+      "description": "Rating indicating expected value based on revenue, status, and probability. Values: 1 (Hot), 2 (Warm), 3 (Cold)."
+    },
+    "prioritycode": {
+      "type": "integer",
+      "description": "Priority for handling the opportunity."
+    },
+    "budgetstatus": {
+      "type": "integer",
+      "description": "Budget status. Values: 0 (No Committed Budget), 1 (May Buy), 2 (Can Buy), 3 (Will Buy)."
+    },
+    "purchaseprocess": {
+      "type": "integer",
+      "description": "Purchase process. Values: 0 (Individual), 1 (Committee), 2 (Unknown)."
+    },
+    "purchasetimeframe": {
+      "type": "integer",
+      "description": "Purchase timeframe. Values: 0 (Immediate), 1 (This Quarter), 2 (Next Quarter), 3 (This Year), 4 (Unknown)."
+    },
+    "timeline": {
+      "type": "integer",
+      "description": "When the opportunity is likely to close. Values: 0 (Immediate), 1 (This Quarter), 2 (Next Quarter), 3 (This Year), 4 (Not known)."
+    },
+    "customerneed": {
+      "type": "string",
+      "maxLength": 2000,
+      "description": "Customer requirements to identify products and services."
+    },
+    "customerpainpoints": {
+      "type": "string",
+      "maxLength": 2000,
+      "description": "Customer pain points for product and service identification."
+    },
+    "currentsituation": {
+      "type": "string",
+      "maxLength": 2000,
+      "description": "Notes about the current situation of the customer."
+    },
+    "proposedsolution": {
+      "type": "string",
+      "maxLength": 2000,
+      "description": "Notes about the proposed solution."
+    },
+    "qualificationcomments": {
+      "type": "string",
+      "maxLength": 2000,
+      "description": "Comments about qualification or scoring."
+    },
+    "decisionmaker": {
+      "type": "boolean",
+      "description": "Whether the contact is a decision maker."
+    },
+    "developproposal": {
+      "type": "boolean",
+      "description": "Whether a proposal has been developed."
+    },
+    "completefinalproposal": {
+      "type": "boolean",
+      "description": "Whether the final proposal is complete."
+    },
+    "presentproposal": {
+      "type": "boolean",
+      "description": "Whether the proposal has been presented."
+    },
+    "presentfinalproposal": {
+      "type": "boolean",
+      "description": "Whether the final proposal has been presented."
+    },
+    "completeinternalreview": {
+      "type": "boolean",
+      "description": "Whether the internal review is complete."
+    },
+    "captureproposalfeedback": {
+      "type": "boolean",
+      "description": "Whether proposal feedback has been captured."
+    },
+    "resolvefeedback": {
+      "type": "boolean",
+      "description": "Whether feedback has been resolved."
+    },
+    "discountamount": {
+      "type": "number",
+      "description": "Discount amount for the opportunity."
+    },
+    "discountpercentage": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Discount rate as a percentage."
+    },
+    "freightamount": {
+      "type": "number",
+      "description": "Cost of freight or shipping."
+    },
+    "totalamount": {
+      "type": "number",
+      "description": "Total amount due, equal to sum of products plus discounts plus freight plus taxes.",
+      "readOnly": true
+    },
+    "totallineitemamount": {
+      "type": "number",
+      "description": "Sum of all products included in the opportunity.",
+      "readOnly": true
+    },
+    "totaltax": {
+      "type": "number",
+      "description": "Total tax amount on all products."
+    },
+    "msdyn_forecastcategory": {
+      "type": "integer",
+      "description": "Forecast category. Values: 100000001 (Pipeline), 100000002 (Best case), 100000003 (Committed), 100000004 (Omitted), 100000005 (Won), 100000006 (Lost)."
+    },
+    "_customerid_value": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Potential customer (account or contact).",
+      "readOnly": true
+    },
+    "_parentaccountid_value": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Parent account associated with this opportunity.",
+      "readOnly": true
+    },
+    "_parentcontactid_value": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Parent contact associated with this opportunity.",
+      "readOnly": true
+    },
+    "_originatingleadid_value": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Lead that the opportunity was created from.",
+      "readOnly": true
+    },
+    "_campaignid_value": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Campaign that the opportunity was created from.",
+      "readOnly": true
+    },
+    "_transactioncurrencyid_value": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Local currency for the record.",
+      "readOnly": true
+    },
+    "_ownerid_value": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Owner of the opportunity.",
+      "readOnly": true
+    },
+    "_createdby_value": {
+      "type": "string",
+      "format": "uuid",
+      "description": "User who created the record.",
+      "readOnly": true
+    },
+    "_modifiedby_value": {
+      "type": "string",
+      "format": "uuid",
+      "description": "User who last updated the record.",
+      "readOnly": true
+    },
+    "createdon": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time when the record was created.",
+      "readOnly": true
+    },
+    "modifiedon": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time when the record was last updated.",
+      "readOnly": true
+    },
+    "versionnumber": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Version number of the opportunity.",
+      "readOnly": true
+    }
+  }
+}

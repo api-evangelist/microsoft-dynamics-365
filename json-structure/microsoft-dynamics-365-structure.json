@@ -1,0 +1,213 @@
+{
+  "provider": "Microsoft Dynamics 365",
+  "providerId": "microsoft-dynamics-365",
+  "kind": "json-structure",
+  "description": "Structural overview of the Microsoft Dynamics 365 API surface; extracted from openapi/.",
+  "schemaCount": 10,
+  "operationCount": 15,
+  "schemas": [
+    {
+      "name": "Account",
+      "type": "object",
+      "propertyCount": 81,
+      "required": []
+    },
+    {
+      "name": "AccountCreate",
+      "type": "object",
+      "propertyCount": 0,
+      "required": [
+        "name"
+      ]
+    },
+    {
+      "name": "AccountUpdate",
+      "type": "object",
+      "propertyCount": 42,
+      "required": []
+    },
+    {
+      "name": "Contact",
+      "type": "object",
+      "propertyCount": 76,
+      "required": []
+    },
+    {
+      "name": "ContactCreate",
+      "type": "object",
+      "propertyCount": 0,
+      "required": [
+        "lastname"
+      ]
+    },
+    {
+      "name": "ContactUpdate",
+      "type": "object",
+      "propertyCount": 41,
+      "required": []
+    },
+    {
+      "name": "Opportunity",
+      "type": "object",
+      "propertyCount": 56,
+      "required": []
+    },
+    {
+      "name": "OpportunityCreate",
+      "type": "object",
+      "propertyCount": 0,
+      "required": [
+        "name"
+      ]
+    },
+    {
+      "name": "OpportunityUpdate",
+      "type": "object",
+      "propertyCount": 32,
+      "required": []
+    },
+    {
+      "name": "ODataError",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    }
+  ],
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/accounts",
+      "operationId": "listAccounts",
+      "summary": "Microsoft Dynamics 365 List accounts",
+      "tags": [
+        "Accounts"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/accounts",
+      "operationId": "createAccount",
+      "summary": "Microsoft Dynamics 365 Create an account",
+      "tags": [
+        "Accounts"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/accounts({accountid})",
+      "operationId": "getAccount",
+      "summary": "Microsoft Dynamics 365 Retrieve an account",
+      "tags": [
+        "Accounts"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/accounts({accountid})",
+      "operationId": "deleteAccount",
+      "summary": "Microsoft Dynamics 365 Delete an account",
+      "tags": [
+        "Accounts"
+      ]
+    },
+    {
+      "method": "PATCH",
+      "path": "/accounts({accountid})",
+      "operationId": "updateAccount",
+      "summary": "Microsoft Dynamics 365 Update an account",
+      "tags": [
+        "Accounts"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/contacts",
+      "operationId": "listContacts",
+      "summary": "Microsoft Dynamics 365 List contacts",
+      "tags": [
+        "Contacts"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/contacts",
+      "operationId": "createContact",
+      "summary": "Microsoft Dynamics 365 Create a contact",
+      "tags": [
+        "Contacts"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/contacts({contactid})",
+      "operationId": "getContact",
+      "summary": "Microsoft Dynamics 365 Retrieve a contact",
+      "tags": [
+        "Contacts"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/contacts({contactid})",
+      "operationId": "deleteContact",
+      "summary": "Microsoft Dynamics 365 Delete a contact",
+      "tags": [
+        "Contacts"
+      ]
+    },
+    {
+      "method": "PATCH",
+      "path": "/contacts({contactid})",
+      "operationId": "updateContact",
+      "summary": "Microsoft Dynamics 365 Update a contact",
+      "tags": [
+        "Contacts"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/opportunities",
+      "operationId": "listOpportunities",
+      "summary": "Microsoft Dynamics 365 List opportunities",
+      "tags": [
+        "Opportunities"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/opportunities",
+      "operationId": "createOpportunity",
+      "summary": "Microsoft Dynamics 365 Create an opportunity",
+      "tags": [
+        "Opportunities"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/opportunities({opportunityid})",
+      "operationId": "getOpportunity",
+      "summary": "Microsoft Dynamics 365 Retrieve an opportunity",
+      "tags": [
+        "Opportunities"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/opportunities({opportunityid})",
+      "operationId": "deleteOpportunity",
+      "summary": "Microsoft Dynamics 365 Delete an opportunity",
+      "tags": [
+        "Opportunities"
+      ]
+    },
+    {
+      "method": "PATCH",
+      "path": "/opportunities({opportunityid})",
+      "operationId": "updateOpportunity",
+      "summary": "Microsoft Dynamics 365 Update an opportunity",
+      "tags": [
+        "Opportunities"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+name: Microsoft Dynamics 365 Domain Vocabulary
+provider: Microsoft Dynamics 365
+providerId: microsoft-dynamics-365
+description: Tag-derived vocabulary for the Microsoft Dynamics 365 API surface; sourced from openapi/ tags.
+terms:
+- term: Accounts
+  description: Business that represents a customer or potential customer. The company that is billed in business transactions.
+- term: Contacts
+  description: Person with whom a business unit has a relationship, such as a customer, supplier, or colleague.
+- term: Opportunities
+  description: Potential revenue-generating event or sale to an account that needs to be tracked through the sales process
+    to completion.

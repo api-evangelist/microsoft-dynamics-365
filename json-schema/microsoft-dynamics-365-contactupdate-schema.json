@@ -1,0 +1,190 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ContactUpdate",
+  "title": "ContactUpdate",
+  "type": "object",
+  "description": "Properties for updating an existing contact.",
+  "properties": {
+    "firstname": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "First name of the contact."
+    },
+    "middlename": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Middle name of the contact."
+    },
+    "lastname": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Last name of the contact."
+    },
+    "suffix": {
+      "type": "string",
+      "maxLength": 10,
+      "description": "Suffix used in the contact name."
+    },
+    "salutation": {
+      "type": "string",
+      "maxLength": 100,
+      "description": "Salutation for correspondence."
+    },
+    "nickname": {
+      "type": "string",
+      "maxLength": 100,
+      "description": "Nickname of the contact."
+    },
+    "jobtitle": {
+      "type": "string",
+      "maxLength": 100,
+      "description": "Job title of the contact."
+    },
+    "department": {
+      "type": "string",
+      "maxLength": 100,
+      "description": "Department or business unit."
+    },
+    "emailaddress1": {
+      "type": "string",
+      "format": "email",
+      "maxLength": 100,
+      "description": "Primary email address."
+    },
+    "emailaddress2": {
+      "type": "string",
+      "format": "email",
+      "maxLength": 100,
+      "description": "Secondary email address."
+    },
+    "telephone1": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Main phone number (business)."
+    },
+    "telephone2": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Second phone number (home)."
+    },
+    "mobilephone": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Mobile phone number."
+    },
+    "fax": {
+      "type": "string",
+      "maxLength": 50,
+      "description": "Fax number."
+    },
+    "websiteurl": {
+      "type": "string",
+      "format": "uri",
+      "maxLength": 200,
+      "description": "Website URL."
+    },
+    "description": {
+      "type": "string",
+      "description": "Additional information to describe the contact."
+    },
+    "gendercode": {
+      "type": "integer",
+      "description": "Gender code."
+    },
+    "familystatuscode": {
+      "type": "integer",
+      "description": "Marital status code."
+    },
+    "birthday": {
+      "type": "string",
+      "format": "date",
+      "description": "Birthday."
+    },
+    "preferredcontactmethodcode": {
+      "type": "integer",
+      "description": "Preferred method of contact code."
+    },
+    "donotemail": {
+      "type": "boolean",
+      "description": "Whether to allow direct email."
+    },
+    "donotphone": {
+      "type": "boolean",
+      "description": "Whether to allow phone calls."
+    },
+    "donotfax": {
+      "type": "boolean",
+      "description": "Whether to allow faxes."
+    },
+    "donotpostalmail": {
+      "type": "boolean",
+      "description": "Whether to allow direct mail."
+    },
+    "donotbulkemail": {
+      "type": "boolean",
+      "description": "Whether to allow bulk email."
+    },
+    "address1_name": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "address1_line1": {
+      "type": "string",
+      "maxLength": 250
+    },
+    "address1_line2": {
+      "type": "string",
+      "maxLength": 250
+    },
+    "address1_line3": {
+      "type": "string",
+      "maxLength": 250
+    },
+    "address1_city": {
+      "type": "string",
+      "maxLength": 80
+    },
+    "address1_stateorprovince": {
+      "type": "string",
+      "maxLength": 50
+    },
+    "address1_postalcode": {
+      "type": "string",
+      "maxLength": 20
+    },
+    "address1_country": {
+      "type": "string",
+      "maxLength": 80
+    },
+    "address1_telephone1": {
+      "type": "string",
+      "maxLength": 50
+    },
+    "address1_latitude": {
+      "type": "number",
+      "format": "double"
+    },
+    "address1_longitude": {
+      "type": "number",
+      "format": "double"
+    },
+    "statecode": {
+      "type": "integer"
+    },
+    "statuscode": {
+      "type": "integer"
+    },
+    "annualincome": {
+      "type": "number",
+      "description": "Annual income of the contact."
+    },
+    "parentcustomerid_account@odata.bind": {
+      "type": "string",
+      "description": "Bind reference to a parent account. Format: /accounts(GUID)."
+    },
+    "parentcustomerid_contact@odata.bind": {
+      "type": "string",
+      "description": "Bind reference to a parent contact. Format: /contacts(GUID)."
+    }
+  }
+}

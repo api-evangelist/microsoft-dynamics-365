@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ODataError",
+  "title": "ODataError",
+  "type": "object",
+  "description": "OData error response from the Dataverse Web API.",
+  "properties": {
+    "error": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "Error code."
+        },
+        "message": {
+          "type": "string",
+          "description": "Human-readable error message."
+        },
+        "innererror": {
+          "type": "object",
+          "properties": {
+            "message": {
+              "type": "string",
+              "description": "Detailed error message."
+            },
+            "type": {
+              "type": "string",
+              "description": "Exception type."
+            },
+            "stacktrace": {
+              "type": "string",
+              "description": "Stack trace (available in non-production environments)."
+            }
+          }
+        }
+      }
+    }
+  }
+}
