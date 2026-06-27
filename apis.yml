@@ -193,7 +193,7 @@ apis:
         url: https://learn.microsoft.com/en-us/dynamics365/customer-insights/data/apis-manage
       - type: Dataverse APIs
         url: https://learn.microsoft.com/en-us/dynamics365/customer-insights/data/dv-odata
-      - type: Developer Portal
+      - type: DeveloperPortal
         url: https://developer.ci.ai.dynamics.com/
   - name: Dynamics 365 Customer Insights Journeys API
     description: API for managing real-time customer journeys, segments, and event-driven marketing interactions programmatically.
