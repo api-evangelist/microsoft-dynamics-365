@@ -271,6 +271,8 @@ apis:
         url: >-
           https://learn.microsoft.com/en-us/dynamics365/project-operations/project-management/scheduling-apis-powerautomate
 common:
+  - type: OAuthScopes
+    url: scopes/microsoft-dynamics-365-scopes.yml
   - type: GitHubOrganization
     url: https://github.com/microsoft
   - type: LinkedIn
@@ -299,6 +301,8 @@ common:
     url: https://learn.microsoft.com/en-us/power-platform/admin/admin-documentation
   - type: API Limits Overview
     url: https://learn.microsoft.com/en-us/power-apps/maker/data-platform/api-limits-overview
+  - url: https://www.microsoft.com/en-us/dynamics-365/blog/feed/
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

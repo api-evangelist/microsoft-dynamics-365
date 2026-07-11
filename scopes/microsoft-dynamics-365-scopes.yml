@@ -1,0 +1,19 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/microsoft-dynamics-365-dataverse-web-api-openapi.yml
+schemes:
+- name: oauth2
+  source: openapi/microsoft-dynamics-365-dataverse-web-api-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/authorize
+    tokenUrl: https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/token
+  description: OAuth 2.0 authentication using Microsoft Entra ID (Azure Active Directory). Applications
+    must be registered in Microsoft Entra ID and granted the appropriate Dynamics 365 permissions.
+scopes:
+- scope: https://{org}.api.crm.dynamics.com/.default
+  description: Full access to Dataverse Web API.
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/microsoft-dynamics-365-dataverse-web-api-openapi.yml
