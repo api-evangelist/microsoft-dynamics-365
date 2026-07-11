@@ -271,6 +271,10 @@ apis:
         url: >-
           https://learn.microsoft.com/en-us/dynamics365/project-operations/project-management/scheduling-apis-powerautomate
 common:
+  - type: DomainSecurity
+    url: security/microsoft-dynamics-365-domain-security.yml
+  - type: Authentication
+    url: authentication/microsoft-dynamics-365-authentication.yml
   - type: OAuthScopes
     url: scopes/microsoft-dynamics-365-scopes.yml
   - type: GitHubOrganization
