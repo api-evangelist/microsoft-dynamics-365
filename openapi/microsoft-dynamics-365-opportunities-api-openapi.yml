@@ -1,0 +1,653 @@
+openapi: 3.1.0
+info:
+  title: Microsoft Dynamics 365 Dataverse Web Accounts Opportunities API
+  description: RESTful web service implementing OData v4.0 for interacting with data in Microsoft Dataverse, the underlying data platform for Dynamics 365 and Power Platform applications. This specification covers core CRM entities including accounts, contacts, and opportunities.
+  version: 9.2.0
+  contact:
+    name: Microsoft Support
+    url: https://support.microsoft.com/dynamics365
+    email: support@microsoft.com
+  license:
+    name: Microsoft API License
+    url: https://www.microsoft.com/licensing/terms/
+  termsOfService: https://www.microsoft.com/licensing/terms/
+servers:
+- url: https://{org}.api.crm.dynamics.com/api/data/v9.2
+  description: Dynamics 365 Dataverse Web API (Production)
+  variables:
+    org:
+      default: yourorg
+      description: The unique name of your Dynamics 365 organization.
+security:
+- oauth2: []
+tags:
+- name: Opportunities
+  description: Potential revenue-generating event or sale to an account that needs to be tracked through the sales process to completion.
+  externalDocs:
+    url: https://learn.microsoft.com/en-us/dynamics365/developer/reference/entities/opportunity
+paths:
+  /opportunities:
+    get:
+      operationId: listOpportunities
+      summary: Microsoft Dynamics 365 List opportunities
+      description: Retrieve a list of opportunity entity records. Supports OData query options including $select, $filter, $orderby, $top, $skip, and $expand.
+      tags:
+      - Opportunities
+      parameters:
+      - $ref: '#/components/parameters/Select'
+      - $ref: '#/components/parameters/Filter'
+      - $ref: '#/components/parameters/OrderBy'
+      - $ref: '#/components/parameters/Top'
+      - $ref: '#/components/parameters/Skip'
+      - $ref: '#/components/parameters/Expand'
+      - $ref: '#/components/parameters/Count'
+      - $ref: '#/components/parameters/Prefer'
+      responses:
+        '200':
+          description: Successfully retrieved opportunities.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  '@odata.context':
+                    type: string
+                  '@odata.count':
+                    type: integer
+                  '@odata.nextLink':
+                    type: string
+                    format: uri
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Opportunity'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+    post:
+      operationId: createOpportunity
+      summary: Microsoft Dynamics 365 Create an opportunity
+      description: Create a new opportunity entity record.
+      tags:
+      - Opportunities
+      parameters:
+      - $ref: '#/components/parameters/Prefer'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OpportunityCreate'
+      responses:
+        '204':
+          description: Opportunity created successfully.
+          headers:
+            OData-EntityId:
+              description: URI of the newly created opportunity record.
+              schema:
+                type: string
+                format: uri
+        '201':
+          description: Opportunity created successfully (when Prefer return=representation).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Opportunity'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+  /opportunities({opportunityid}):
+    get:
+      operationId: getOpportunity
+      summary: Microsoft Dynamics 365 Retrieve an opportunity
+      description: Retrieve a single opportunity entity record by its unique identifier.
+      tags:
+      - Opportunities
+      parameters:
+      - $ref: '#/components/parameters/OpportunityId'
+      - $ref: '#/components/parameters/Select'
+      - $ref: '#/components/parameters/Expand'
+      responses:
+        '200':
+          description: Successfully retrieved the opportunity.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Opportunity'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateOpportunity
+      summary: Microsoft Dynamics 365 Update an opportunity
+      description: Update an existing opportunity entity record.
+      tags:
+      - Opportunities
+      parameters:
+      - $ref: '#/components/parameters/OpportunityId'
+      - $ref: '#/components/parameters/Prefer'
+      - $ref: '#/components/parameters/IfMatch'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OpportunityUpdate'
+      responses:
+        '204':
+          description: Opportunity updated successfully.
+        '201':
+          description: Opportunity updated successfully (when Prefer return=representation).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Opportunity'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '412':
+          $ref: '#/components/responses/PreconditionFailed'
+    delete:
+      operationId: deleteOpportunity
+      summary: Microsoft Dynamics 365 Delete an opportunity
+      description: Delete an opportunity entity record.
+      tags:
+      - Opportunities
+      parameters:
+      - $ref: '#/components/parameters/OpportunityId'
+      responses:
+        '204':
+          description: Opportunity deleted successfully.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+components:
+  parameters:
+    OrderBy:
+      name: $orderby
+      in: query
+      required: false
+      description: Comma-separated list of properties to sort by, with optional asc or desc.
+      schema:
+        type: string
+    Count:
+      name: $count
+      in: query
+      required: false
+      description: Include a count of matching records in the response.
+      schema:
+        type: boolean
+    Expand:
+      name: $expand
+      in: query
+      required: false
+      description: Comma-separated list of navigation properties to expand.
+      schema:
+        type: string
+    Filter:
+      name: $filter
+      in: query
+      required: false
+      description: OData filter expression to restrict results.
+      schema:
+        type: string
+    IfMatch:
+      name: If-Match
+      in: header
+      required: false
+      description: ETag value for optimistic concurrency control. Use * to match any version.
+      schema:
+        type: string
+    Skip:
+      name: $skip
+      in: query
+      required: false
+      description: Number of records to skip before returning results.
+      schema:
+        type: integer
+        minimum: 0
+    OpportunityId:
+      name: opportunityid
+      in: path
+      required: true
+      description: Unique identifier of the opportunity record (GUID).
+      schema:
+        type: string
+        format: uuid
+    Select:
+      name: $select
+      in: query
+      required: false
+      description: Comma-separated list of properties to return.
+      schema:
+        type: string
+    Top:
+      name: $top
+      in: query
+      required: false
+      description: Maximum number of records to return.
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 5000
+    Prefer:
+      name: Prefer
+      in: header
+      required: false
+      description: OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.
+      schema:
+        type: string
+        examples:
+        - return=representation
+        - odata.include-annotations="*"
+        - odata.maxpagesize=100
+  responses:
+    Forbidden:
+      description: The authenticated user does not have permission to perform this action.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ODataError'
+    PreconditionFailed:
+      description: The ETag value provided in the If-Match header does not match the current version of the record.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ODataError'
+    NotFound:
+      description: The requested resource was not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ODataError'
+    Unauthorized:
+      description: Authentication credentials are missing or invalid.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ODataError'
+  schemas:
+    Opportunity:
+      type: object
+      description: Potential revenue-generating event or sale to an account that needs to be tracked through the sales process to completion.
+      properties:
+        '@odata.etag':
+          type: string
+          description: ETag value for concurrency control.
+          readOnly: true
+        opportunityid:
+          type: string
+          format: uuid
+          description: Unique identifier of the opportunity.
+          readOnly: true
+        name:
+          type: string
+          maxLength: 300
+          description: Subject or descriptive name (topic) for the opportunity.
+        description:
+          type: string
+          description: Additional information to describe the opportunity.
+        estimatedvalue:
+          type: number
+          description: Estimated revenue amount for the opportunity.
+        estimatedvalue_base:
+          type: number
+          description: Estimated revenue converted to the system default base currency.
+          readOnly: true
+        actualvalue:
+          type: number
+          description: Actual revenue amount for the opportunity.
+        actualvalue_base:
+          type: number
+          description: Actual revenue converted to the system default base currency.
+          readOnly: true
+        budgetamount:
+          type: number
+          description: Budget amount for the lead associated with the opportunity.
+        budgetamount_base:
+          type: number
+          description: Budget amount converted to the system default base currency.
+          readOnly: true
+        closeprobability:
+          type: integer
+          minimum: 0
+          maximum: 100
+          description: Likelihood of closing the opportunity, as a percentage.
+        estimatedclosedate:
+          type: string
+          format: date
+          description: Expected closing date of the opportunity.
+        actualclosedate:
+          type: string
+          format: date
+          description: Actual closing date of the opportunity.
+        stepname:
+          type: string
+          maxLength: 200
+          description: Current phase in the sales pipeline.
+        salesstage:
+          type: integer
+          description: 'Sales stage. Values: 0 (Qualify), 1 (Develop), 2 (Propose), 3 (Close).'
+        salesstagecode:
+          type: integer
+          description: Sales stage code for backward compatibility.
+        statecode:
+          type: integer
+          description: 'Status of the opportunity. Values: 0 (Open), 1 (Won), 2 (Lost).'
+        statuscode:
+          type: integer
+          description: 'Status reason. Values: 1 (In Progress), 2 (On Hold), 3 (Won), 4 (Canceled), 5 (Out-Sold).'
+        opportunityratingcode:
+          type: integer
+          description: 'Rating indicating expected value based on revenue, status, and probability. Values: 1 (Hot), 2 (Warm), 3 (Cold).'
+        prioritycode:
+          type: integer
+          description: Priority for handling the opportunity.
+        budgetstatus:
+          type: integer
+          description: 'Budget status. Values: 0 (No Committed Budget), 1 (May Buy), 2 (Can Buy), 3 (Will Buy).'
+        purchaseprocess:
+          type: integer
+          description: 'Purchase process. Values: 0 (Individual), 1 (Committee), 2 (Unknown).'
+        purchasetimeframe:
+          type: integer
+          description: 'Purchase timeframe. Values: 0 (Immediate), 1 (This Quarter), 2 (Next Quarter), 3 (This Year), 4 (Unknown).'
+        timeline:
+          type: integer
+          description: 'When the opportunity is likely to close. Values: 0 (Immediate), 1 (This Quarter), 2 (Next Quarter), 3 (This Year), 4 (Not known).'
+        customerneed:
+          type: string
+          maxLength: 2000
+          description: Customer requirements to identify products and services.
+        customerpainpoints:
+          type: string
+          maxLength: 2000
+          description: Customer pain points for product and service identification.
+        currentsituation:
+          type: string
+          maxLength: 2000
+          description: Notes about the current situation of the customer.
+        proposedsolution:
+          type: string
+          maxLength: 2000
+          description: Notes about the proposed solution.
+        qualificationcomments:
+          type: string
+          maxLength: 2000
+          description: Comments about qualification or scoring.
+        decisionmaker:
+          type: boolean
+          description: Whether the contact is a decision maker.
+        developproposal:
+          type: boolean
+          description: Whether a proposal has been developed.
+        completefinalproposal:
+          type: boolean
+          description: Whether the final proposal is complete.
+        presentproposal:
+          type: boolean
+          description: Whether the proposal has been presented.
+        presentfinalproposal:
+          type: boolean
+          description: Whether the final proposal has been presented.
+        completeinternalreview:
+          type: boolean
+          description: Whether the internal review is complete.
+        captureproposalfeedback:
+          type: boolean
+          description: Whether proposal feedback has been captured.
+        resolvefeedback:
+          type: boolean
+          description: Whether feedback has been resolved.
+        discountamount:
+          type: number
+          description: Discount amount for the opportunity.
+        discountpercentage:
+          type: number
+          minimum: 0
+          maximum: 100
+          description: Discount rate as a percentage.
+        freightamount:
+          type: number
+          description: Cost of freight or shipping.
+        totalamount:
+          type: number
+          description: Total amount due, equal to sum of products plus discounts plus freight plus taxes.
+          readOnly: true
+        totallineitemamount:
+          type: number
+          description: Sum of all products included in the opportunity.
+          readOnly: true
+        totaltax:
+          type: number
+          description: Total tax amount on all products.
+        msdyn_forecastcategory:
+          type: integer
+          description: 'Forecast category. Values: 100000001 (Pipeline), 100000002 (Best case), 100000003 (Committed), 100000004 (Omitted), 100000005 (Won), 100000006 (Lost).'
+        _customerid_value:
+          type: string
+          format: uuid
+          description: Potential customer (account or contact).
+          readOnly: true
+        _parentaccountid_value:
+          type: string
+          format: uuid
+          description: Parent account associated with this opportunity.
+          readOnly: true
+        _parentcontactid_value:
+          type: string
+          format: uuid
+          description: Parent contact associated with this opportunity.
+          readOnly: true
+        _originatingleadid_value:
+          type: string
+          format: uuid
+          description: Lead that the opportunity was created from.
+          readOnly: true
+        _campaignid_value:
+          type: string
+          format: uuid
+          description: Campaign that the opportunity was created from.
+          readOnly: true
+        _transactioncurrencyid_value:
+          type: string
+          format: uuid
+          description: Local currency for the record.
+          readOnly: true
+        _ownerid_value:
+          type: string
+          format: uuid
+          description: Owner of the opportunity.
+          readOnly: true
+        _createdby_value:
+          type: string
+          format: uuid
+          description: User who created the record.
+          readOnly: true
+        _modifiedby_value:
+          type: string
+          format: uuid
+          description: User who last updated the record.
+          readOnly: true
+        createdon:
+          type: string
+          format: date-time
+          description: Date and time when the record was created.
+          readOnly: true
+        modifiedon:
+          type: string
+          format: date-time
+          description: Date and time when the record was last updated.
+          readOnly: true
+        versionnumber:
+          type: integer
+          format: int64
+          description: Version number of the opportunity.
+          readOnly: true
+    ODataError:
+      type: object
+      description: OData error response from the Dataverse Web API.
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+              description: Error code.
+            message:
+              type: string
+              description: Human-readable error message.
+            innererror:
+              type: object
+              properties:
+                message:
+                  type: string
+                  description: Detailed error message.
+                type:
+                  type: string
+                  description: Exception type.
+                stacktrace:
+                  type: string
+                  description: Stack trace (available in non-production environments).
+    OpportunityUpdate:
+      type: object
+      description: Properties for updating an existing opportunity.
+      properties:
+        name:
+          type: string
+          maxLength: 300
+          description: Subject or descriptive name (topic) for the opportunity.
+        description:
+          type: string
+          description: Additional information to describe the opportunity.
+        estimatedvalue:
+          type: number
+          description: Estimated revenue amount.
+        closeprobability:
+          type: integer
+          minimum: 0
+          maximum: 100
+          description: Likelihood of closing the opportunity.
+        estimatedclosedate:
+          type: string
+          format: date
+          description: Expected closing date.
+        stepname:
+          type: string
+          maxLength: 200
+          description: Current phase in the sales pipeline.
+        salesstage:
+          type: integer
+          description: Sales stage code.
+        opportunityratingcode:
+          type: integer
+          description: Rating code.
+        prioritycode:
+          type: integer
+          description: Priority code.
+        budgetamount:
+          type: number
+          description: Budget amount.
+        budgetstatus:
+          type: integer
+          description: Budget status code.
+        purchaseprocess:
+          type: integer
+          description: Purchase process code.
+        purchasetimeframe:
+          type: integer
+          description: Purchase timeframe code.
+        timeline:
+          type: integer
+          description: Timeline code.
+        customerneed:
+          type: string
+          maxLength: 2000
+          description: Customer requirements.
+        customerpainpoints:
+          type: string
+          maxLength: 2000
+          description: Customer pain points.
+        currentsituation:
+          type: string
+          maxLength: 2000
+          description: Current situation notes.
+        proposedsolution:
+          type: string
+          maxLength: 2000
+          description: Proposed solution notes.
+        decisionmaker:
+          type: boolean
+          description: Whether the contact is a decision maker.
+        discountamount:
+          type: number
+          description: Discount amount.
+        discountpercentage:
+          type: number
+          minimum: 0
+          maximum: 100
+          description: Discount rate percentage.
+        freightamount:
+          type: number
+          description: Freight or shipping cost.
+        totaltax:
+          type: number
+          description: Total tax amount.
+        statecode:
+          type: integer
+          description: Status code.
+        statuscode:
+          type: integer
+          description: Status reason code.
+        customerid_account@odata.bind:
+          type: string
+          description: 'Bind reference to a customer account. Format: /accounts(GUID).'
+        customerid_contact@odata.bind:
+          type: string
+          description: 'Bind reference to a customer contact. Format: /contacts(GUID).'
+        parentaccountid@odata.bind:
+          type: string
+          description: 'Bind reference to a parent account. Format: /accounts(GUID).'
+        parentcontactid@odata.bind:
+          type: string
+          description: 'Bind reference to a parent contact. Format: /contacts(GUID).'
+        originatingleadid@odata.bind:
+          type: string
+          description: 'Bind reference to the originating lead. Format: /leads(GUID).'
+        campaignid@odata.bind:
+          type: string
+          description: 'Bind reference to the source campaign. Format: /campaigns(GUID).'
+        transactioncurrencyid@odata.bind:
+          type: string
+          description: 'Bind reference to a currency record. Format: /transactioncurrencies(GUID).'
+    OpportunityCreate:
+      type: object
+      description: Properties for creating a new opportunity.
+      required:
+      - name
+      allOf:
+      - $ref: '#/components/schemas/OpportunityUpdate'
+      - type: object
+        properties:
+          name:
+            type: string
+            maxLength: 300
+            description: Subject or descriptive name (topic) for the opportunity.
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 authentication using Microsoft Entra ID (Azure Active Directory). Applications must be registered in Microsoft Entra ID and granted the appropriate Dynamics 365 permissions.
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/token
+          scopes:
+            https://{org}.api.crm.dynamics.com/.default: Full access to Dataverse Web API.
+externalDocs:
+  description: Microsoft Dataverse Web API Documentation
+  url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/overview
