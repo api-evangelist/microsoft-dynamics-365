@@ -1,0 +1,1420 @@
+{
+  "info": {
+    "_postman_id": "eda47707-e391-462c-8657-7d46a71288e7",
+    "name": "Microsoft Dynamics 365 Dataverse Web Accounts Opportunities API",
+    "description": "RESTful web service implementing OData v4.0 for interacting with data in Microsoft Dataverse, the underlying data platform for Dynamics 365 and Power Platform applications. This specification covers core CRM entities including accounts, contacts, and opportunities.\n\nContact Support:\n Name: Microsoft Support\n Email: support@microsoft.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:10:55.000Z",
+    "updatedAt": "2026-07-28T02:10:55.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-eda47707-e391-462c-8657-7d46a71288e7"
+  },
+  "item": [
+    {
+      "name": "opportunities",
+      "item": [
+        {
+          "name": "Microsoft Dynamics 365 List opportunities",
+          "id": "4f7d7906-267f-4b89-a3a0-2d03c486aec9",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                "key": "Prefer",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/opportunities?$select=<string>&$filter=<string>&$orderby=<string>&$top=<integer>&$skip=<integer>&$expand=<string>&$count=<boolean>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "opportunities"
+              ],
+              "query": [
+                {
+                  "description": "Comma-separated list of properties to return.",
+                  "key": "$select",
+                  "value": "<string>"
+                },
+                {
+                  "description": "OData filter expression to restrict results.",
+                  "key": "$filter",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Comma-separated list of properties to sort by, with optional asc or desc.",
+                  "key": "$orderby",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Maximum number of records to return.",
+                  "key": "$top",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "Number of records to skip before returning results.",
+                  "key": "$skip",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "Comma-separated list of navigation properties to expand.",
+                  "key": "$expand",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Include a count of matching records in the response.",
+                  "key": "$count",
+                  "value": "<boolean>"
+                }
+              ]
+            },
+            "description": "Retrieve a list of opportunity entity records. Supports OData query options including $select, $filter, $orderby, $top, $skip, and $expand."
+          },
+          "response": [
+            {
+              "id": "d0cd77cd-9706-4b85-aa6b-1cfeac0bde6a",
+              "name": "Successfully retrieved opportunities.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/opportunities?$select=<string>&$filter=<string>&$orderby=<string>&$top=<integer>&$skip=<integer>&$expand=<string>&$count=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "opportunities"
+                  ],
+                  "query": [
+                    {
+                      "description": "Comma-separated list of properties to return.",
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "OData filter expression to restrict results.",
+                      "key": "$filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Comma-separated list of properties to sort by, with optional asc or desc.",
+                      "key": "$orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Maximum number of records to return.",
+                      "key": "$top",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Number of records to skip before returning results.",
+                      "key": "$skip",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Comma-separated list of navigation properties to expand.",
+                      "key": "$expand",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Include a count of matching records in the response.",
+                      "key": "$count",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"@odata.context\": \"<string>\",\n  \"@odata.count\": \"<integer>\",\n  \"@odata.nextLink\": \"<uri>\",\n  \"value\": [\n    {\n      \"@odata.etag\": \"<string>\",\n      \"opportunityid\": \"<uuid>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"estimatedvalue\": \"<number>\",\n      \"estimatedvalue_base\": \"<number>\",\n      \"actualvalue\": \"<number>\",\n      \"actualvalue_base\": \"<number>\",\n      \"budgetamount\": \"<number>\",\n      \"budgetamount_base\": \"<number>\",\n      \"closeprobability\": \"<integer>\",\n      \"estimatedclosedate\": \"<date>\",\n      \"actualclosedate\": \"<date>\",\n      \"stepname\": \"<string>\",\n      \"salesstage\": \"<integer>\",\n      \"salesstagecode\": \"<integer>\",\n      \"statecode\": \"<integer>\",\n      \"statuscode\": \"<integer>\",\n      \"opportunityratingcode\": \"<integer>\",\n      \"prioritycode\": \"<integer>\",\n      \"budgetstatus\": \"<integer>\",\n      \"purchaseprocess\": \"<integer>\",\n      \"purchasetimeframe\": \"<integer>\",\n      \"timeline\": \"<integer>\",\n      \"customerneed\": \"<string>\",\n      \"customerpainpoints\": \"<string>\",\n      \"currentsituation\": \"<string>\",\n      \"proposedsolution\": \"<string>\",\n      \"qualificationcomments\": \"<string>\",\n      \"decisionmaker\": \"<boolean>\",\n      \"developproposal\": \"<boolean>\",\n      \"completefinalproposal\": \"<boolean>\",\n      \"presentproposal\": \"<boolean>\",\n      \"presentfinalproposal\": \"<boolean>\",\n      \"completeinternalreview\": \"<boolean>\",\n      \"captureproposalfeedback\": \"<boolean>\",\n      \"resolvefeedback\": \"<boolean>\",\n      \"discountamount\": \"<number>\",\n      \"discountpercentage\": \"<number>\",\n      \"freightamount\": \"<number>\",\n      \"totalamount\": \"<number>\",\n      \"totallineitemamount\": \"<number>\",\n      \"totaltax\": \"<number>\",\n      \"msdyn_forecastcategory\": \"<integer>\",\n      \"_customerid_value\": \"<uuid>\",\n      \"_parentaccountid_value\": \"<uuid>\",\n      \"_parentcontactid_value\": \"<uuid>\",\n      \"_originatingleadid_value\": \"<uuid>\",\n      \"_campaignid_value\": \"<uuid>\",\n      \"_transactioncurrencyid_value\": \"<uuid>\",\n      \"_ownerid_value\": \"<uuid>\",\n      \"_createdby_value\": \"<uuid>\",\n      \"_modifiedby_value\": \"<uuid>\",\n      \"createdon\": \"<dateTime>\",\n      \"modifiedon\": \"<dateTime>\",\n      \"versionnumber\": \"<long>\"\n    },\n    {\n      \"@odata.etag\": \"<string>\",\n      \"opportunityid\": \"<uuid>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"estimatedvalue\": \"<number>\",\n      \"estimatedvalue_base\": \"<number>\",\n      \"actualvalue\": \"<number>\",\n      \"actualvalue_base\": \"<number>\",\n      \"budgetamount\": \"<number>\",\n      \"budgetamount_base\": \"<number>\",\n      \"closeprobability\": \"<integer>\",\n      \"estimatedclosedate\": \"<date>\",\n      \"actualclosedate\": \"<date>\",\n      \"stepname\": \"<string>\",\n      \"salesstage\": \"<integer>\",\n      \"salesstagecode\": \"<integer>\",\n      \"statecode\": \"<integer>\",\n      \"statuscode\": \"<integer>\",\n      \"opportunityratingcode\": \"<integer>\",\n      \"prioritycode\": \"<integer>\",\n      \"budgetstatus\": \"<integer>\",\n      \"purchaseprocess\": \"<integer>\",\n      \"purchasetimeframe\": \"<integer>\",\n      \"timeline\": \"<integer>\",\n      \"customerneed\": \"<string>\",\n      \"customerpainpoints\": \"<string>\",\n      \"currentsituation\": \"<string>\",\n      \"proposedsolution\": \"<string>\",\n      \"qualificationcomments\": \"<string>\",\n      \"decisionmaker\": \"<boolean>\",\n      \"developproposal\": \"<boolean>\",\n      \"completefinalproposal\": \"<boolean>\",\n      \"presentproposal\": \"<boolean>\",\n      \"presentfinalproposal\": \"<boolean>\",\n      \"completeinternalreview\": \"<boolean>\",\n      \"captureproposalfeedback\": \"<boolean>\",\n      \"resolvefeedback\": \"<boolean>\",\n      \"discountamount\": \"<number>\",\n      \"discountpercentage\": \"<number>\",\n      \"freightamount\": \"<number>\",\n      \"totalamount\": \"<number>\",\n      \"totallineitemamount\": \"<number>\",\n      \"totaltax\": \"<number>\",\n      \"msdyn_forecastcategory\": \"<integer>\",\n      \"_customerid_value\": \"<uuid>\",\n      \"_parentaccountid_value\": \"<uuid>\",\n      \"_parentcontactid_value\": \"<uuid>\",\n      \"_originatingleadid_value\": \"<uuid>\",\n      \"_campaignid_value\": \"<uuid>\",\n      \"_transactioncurrencyid_value\": \"<uuid>\",\n      \"_ownerid_value\": \"<uuid>\",\n      \"_createdby_value\": \"<uuid>\",\n      \"_modifiedby_value\": \"<uuid>\",\n      \"createdon\": \"<dateTime>\",\n      \"modifiedon\": \"<dateTime>\",\n      \"versionnumber\": \"<long>\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T02:10:55.000Z",
+              "updatedAt": "2026-07-28T02:10:55.000Z",
+              "uid": "35240-d0cd77cd-9706-4b85-aa6b-1cfeac0bde6a"
+            },
+            {
+              "id": "0b557219-2c6e-4168-82a2-9304936bffac",
+              "name": "Authentication credentials are missing or invalid.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/opportunities?$select=<string>&$filter=<string>&$orderby=<string>&$top=<integer>&$skip=<integer>&$expand=<string>&$count=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "opportunities"
+                  ],
+                  "query": [
+                    {
+                      "description": "Comma-separated list of properties to return.",
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "OData filter expression to restrict results.",
+                      "key": "$filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Comma-separated list of properties to sort by, with optional asc or desc.",
+                      "key": "$orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Maximum number of records to return.",
+                      "key": "$top",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Number of records to skip before returning results.",
+                      "key": "$skip",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Comma-separated list of navigation properties to expand.",
+                      "key": "$expand",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Include a count of matching records in the response.",
+                      "key": "$count",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\",\n    \"innererror\": {\n      \"message\": \"<string>\",\n      \"type\": \"<string>\",\n      \"stacktrace\": \"<string>\"\n    }\n  }\n}",
+              "createdAt": "2026-07-28T02:10:55.000Z",
+              "updatedAt": "2026-07-28T02:10:55.000Z",
+              "uid": "35240-0b557219-2c6e-4168-82a2-9304936bffac"
+            },
+            {
+              "id": "83d4d04c-52ef-4c51-823f-3e66230428f8",
+              "name": "The authenticated user does not have permission to perform this action.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/opportunities?$select=<string>&$filter=<string>&$orderby=<string>&$top=<integer>&$skip=<integer>&$expand=<string>&$count=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "opportunities"
+                  ],
+                  "query": [
+                    {
+                      "description": "Comma-separated list of properties to return.",
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "OData filter expression to restrict results.",
+                      "key": "$filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Comma-separated list of properties to sort by, with optional asc or desc.",
+                      "key": "$orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Maximum number of records to return.",
+                      "key": "$top",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Number of records to skip before returning results.",
+                      "key": "$skip",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Comma-separated list of navigation properties to expand.",
+                      "key": "$expand",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Include a count of matching records in the response.",
+                      "key": "$count",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\",\n    \"innererror\": {\n      \"message\": \"<string>\",\n      \"type\": \"<string>\",\n      \"stacktrace\": \"<string>\"\n    }\n  }\n}",
+              "createdAt": "2026-07-28T02:10:55.000Z",
+              "updatedAt": "2026-07-28T02:10:55.000Z",
+              "uid": "35240-83d4d04c-52ef-4c51-823f-3e66230428f8"
+            }
+          ],
+          "createdAt": "2026-07-28T02:10:55.000Z",
+          "updatedAt": "2026-07-28T02:10:55.000Z",
+          "uid": "35240-4f7d7906-267f-4b89-a3a0-2d03c486aec9"
+        },
+        {
+          "name": "Microsoft Dynamics 365 Create an opportunity",
+          "id": "715b1ab9-e73c-4b55-b328-da4b8bad2ab5",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                "key": "Prefer",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"estimatedvalue\": \"<number>\",\n  \"closeprobability\": \"<integer>\",\n  \"estimatedclosedate\": \"<date>\",\n  \"stepname\": \"<string>\",\n  \"salesstage\": \"<integer>\",\n  \"opportunityratingcode\": \"<integer>\",\n  \"prioritycode\": \"<integer>\",\n  \"budgetamount\": \"<number>\",\n  \"budgetstatus\": \"<integer>\",\n  \"purchaseprocess\": \"<integer>\",\n  \"purchasetimeframe\": \"<integer>\",\n  \"timeline\": \"<integer>\",\n  \"customerneed\": \"<string>\",\n  \"customerpainpoints\": \"<string>\",\n  \"currentsituation\": \"<string>\",\n  \"proposedsolution\": \"<string>\",\n  \"decisionmaker\": \"<boolean>\",\n  \"discountamount\": \"<number>\",\n  \"discountpercentage\": \"<number>\",\n  \"freightamount\": \"<number>\",\n  \"totaltax\": \"<number>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"customerid_account@odata.bind\": \"<string>\",\n  \"customerid_contact@odata.bind\": \"<string>\",\n  \"parentaccountid@odata.bind\": \"<string>\",\n  \"parentcontactid@odata.bind\": \"<string>\",\n  \"originatingleadid@odata.bind\": \"<string>\",\n  \"campaignid@odata.bind\": \"<string>\",\n  \"transactioncurrencyid@odata.bind\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/opportunities",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "opportunities"
+              ]
+            },
+            "description": "Create a new opportunity entity record."
+          },
+          "response": [
+            {
+              "id": "9bc95692-2b43-4b91-b3c5-73a4fa5b8061",
+              "name": "Opportunity created successfully (when Prefer return=representation).",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"estimatedvalue\": \"<number>\",\n  \"closeprobability\": \"<integer>\",\n  \"estimatedclosedate\": \"<date>\",\n  \"stepname\": \"<string>\",\n  \"salesstage\": \"<integer>\",\n  \"opportunityratingcode\": \"<integer>\",\n  \"prioritycode\": \"<integer>\",\n  \"budgetamount\": \"<number>\",\n  \"budgetstatus\": \"<integer>\",\n  \"purchaseprocess\": \"<integer>\",\n  \"purchasetimeframe\": \"<integer>\",\n  \"timeline\": \"<integer>\",\n  \"customerneed\": \"<string>\",\n  \"customerpainpoints\": \"<string>\",\n  \"currentsituation\": \"<string>\",\n  \"proposedsolution\": \"<string>\",\n  \"decisionmaker\": \"<boolean>\",\n  \"discountamount\": \"<number>\",\n  \"discountpercentage\": \"<number>\",\n  \"freightamount\": \"<number>\",\n  \"totaltax\": \"<number>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"customerid_account@odata.bind\": \"<string>\",\n  \"customerid_contact@odata.bind\": \"<string>\",\n  \"parentaccountid@odata.bind\": \"<string>\",\n  \"parentcontactid@odata.bind\": \"<string>\",\n  \"originatingleadid@odata.bind\": \"<string>\",\n  \"campaignid@odata.bind\": \"<string>\",\n  \"transactioncurrencyid@odata.bind\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/opportunities",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "opportunities"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"@odata.etag\": \"<string>\",\n  \"opportunityid\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"estimatedvalue\": \"<number>\",\n  \"estimatedvalue_base\": \"<number>\",\n  \"actualvalue\": \"<number>\",\n  \"actualvalue_base\": \"<number>\",\n  \"budgetamount\": \"<number>\",\n  \"budgetamount_base\": \"<number>\",\n  \"closeprobability\": \"<integer>\",\n  \"estimatedclosedate\": \"<date>\",\n  \"actualclosedate\": \"<date>\",\n  \"stepname\": \"<string>\",\n  \"salesstage\": \"<integer>\",\n  \"salesstagecode\": \"<integer>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"opportunityratingcode\": \"<integer>\",\n  \"prioritycode\": \"<integer>\",\n  \"budgetstatus\": \"<integer>\",\n  \"purchaseprocess\": \"<integer>\",\n  \"purchasetimeframe\": \"<integer>\",\n  \"timeline\": \"<integer>\",\n  \"customerneed\": \"<string>\",\n  \"customerpainpoints\": \"<string>\",\n  \"currentsituation\": \"<string>\",\n  \"proposedsolution\": \"<string>\",\n  \"qualificationcomments\": \"<string>\",\n  \"decisionmaker\": \"<boolean>\",\n  \"developproposal\": \"<boolean>\",\n  \"completefinalproposal\": \"<boolean>\",\n  \"presentproposal\": \"<boolean>\",\n  \"presentfinalproposal\": \"<boolean>\",\n  \"completeinternalreview\": \"<boolean>\",\n  \"captureproposalfeedback\": \"<boolean>\",\n  \"resolvefeedback\": \"<boolean>\",\n  \"discountamount\": \"<number>\",\n  \"discountpercentage\": \"<number>\",\n  \"freightamount\": \"<number>\",\n  \"totalamount\": \"<number>\",\n  \"totallineitemamount\": \"<number>\",\n  \"totaltax\": \"<number>\",\n  \"msdyn_forecastcategory\": \"<integer>\",\n  \"_customerid_value\": \"<uuid>\",\n  \"_parentaccountid_value\": \"<uuid>\",\n  \"_parentcontactid_value\": \"<uuid>\",\n  \"_originatingleadid_value\": \"<uuid>\",\n  \"_campaignid_value\": \"<uuid>\",\n  \"_transactioncurrencyid_value\": \"<uuid>\",\n  \"_ownerid_value\": \"<uuid>\",\n  \"_createdby_value\": \"<uuid>\",\n  \"_modifiedby_value\": \"<uuid>\",\n  \"createdon\": \"<dateTime>\",\n  \"modifiedon\": \"<dateTime>\",\n  \"versionnumber\": \"<long>\"\n}",
+              "createdAt": "2026-07-28T02:10:55.000Z",
+              "updatedAt": "2026-07-28T02:10:55.000Z",
+              "uid": "35240-9bc95692-2b43-4b91-b3c5-73a4fa5b8061"
+            },
+            {
+              "id": "3ec5ea4e-da3b-4a48-a850-f58132bc7fec",
+              "name": "Opportunity created successfully.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"estimatedvalue\": \"<number>\",\n  \"closeprobability\": \"<integer>\",\n  \"estimatedclosedate\": \"<date>\",\n  \"stepname\": \"<string>\",\n  \"salesstage\": \"<integer>\",\n  \"opportunityratingcode\": \"<integer>\",\n  \"prioritycode\": \"<integer>\",\n  \"budgetamount\": \"<number>\",\n  \"budgetstatus\": \"<integer>\",\n  \"purchaseprocess\": \"<integer>\",\n  \"purchasetimeframe\": \"<integer>\",\n  \"timeline\": \"<integer>\",\n  \"customerneed\": \"<string>\",\n  \"customerpainpoints\": \"<string>\",\n  \"currentsituation\": \"<string>\",\n  \"proposedsolution\": \"<string>\",\n  \"decisionmaker\": \"<boolean>\",\n  \"discountamount\": \"<number>\",\n  \"discountpercentage\": \"<number>\",\n  \"freightamount\": \"<number>\",\n  \"totaltax\": \"<number>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"customerid_account@odata.bind\": \"<string>\",\n  \"customerid_contact@odata.bind\": \"<string>\",\n  \"parentaccountid@odata.bind\": \"<string>\",\n  \"parentcontactid@odata.bind\": \"<string>\",\n  \"originatingleadid@odata.bind\": \"<string>\",\n  \"campaignid@odata.bind\": \"<string>\",\n  \"transactioncurrencyid@odata.bind\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/opportunities",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "opportunities"
+                  ]
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "URI of the newly created opportunity record.",
+                    "type": "text/plain"
+                  },
+                  "key": "OData-EntityId",
+                  "value": "<uri>"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:10:55.000Z",
+              "updatedAt": "2026-07-28T02:10:55.000Z",
+              "uid": "35240-3ec5ea4e-da3b-4a48-a850-f58132bc7fec"
+            },
+            {
+              "id": "db0dd565-4d3f-4c49-ab59-893a331dc7f7",
+              "name": "Authentication credentials are missing or invalid.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"estimatedvalue\": \"<number>\",\n  \"closeprobability\": \"<integer>\",\n  \"estimatedclosedate\": \"<date>\",\n  \"stepname\": \"<string>\",\n  \"salesstage\": \"<integer>\",\n  \"opportunityratingcode\": \"<integer>\",\n  \"prioritycode\": \"<integer>\",\n  \"budgetamount\": \"<number>\",\n  \"budgetstatus\": \"<integer>\",\n  \"purchaseprocess\": \"<integer>\",\n  \"purchasetimeframe\": \"<integer>\",\n  \"timeline\": \"<integer>\",\n  \"customerneed\": \"<string>\",\n  \"customerpainpoints\": \"<string>\",\n  \"currentsituation\": \"<string>\",\n  \"proposedsolution\": \"<string>\",\n  \"decisionmaker\": \"<boolean>\",\n  \"discountamount\": \"<number>\",\n  \"discountpercentage\": \"<number>\",\n  \"freightamount\": \"<number>\",\n  \"totaltax\": \"<number>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"customerid_account@odata.bind\": \"<string>\",\n  \"customerid_contact@odata.bind\": \"<string>\",\n  \"parentaccountid@odata.bind\": \"<string>\",\n  \"parentcontactid@odata.bind\": \"<string>\",\n  \"originatingleadid@odata.bind\": \"<string>\",\n  \"campaignid@odata.bind\": \"<string>\",\n  \"transactioncurrencyid@odata.bind\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/opportunities",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "opportunities"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\",\n    \"innererror\": {\n      \"message\": \"<string>\",\n      \"type\": \"<string>\",\n      \"stacktrace\": \"<string>\"\n    }\n  }\n}",
+              "createdAt": "2026-07-28T02:10:55.000Z",
+              "updatedAt": "2026-07-28T02:10:55.000Z",
+              "uid": "35240-db0dd565-4d3f-4c49-ab59-893a331dc7f7"
+            },
+            {
+              "id": "bc4c1267-313c-4085-9d04-468402f81b34",
+              "name": "The authenticated user does not have permission to perform this action.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"estimatedvalue\": \"<number>\",\n  \"closeprobability\": \"<integer>\",\n  \"estimatedclosedate\": \"<date>\",\n  \"stepname\": \"<string>\",\n  \"salesstage\": \"<integer>\",\n  \"opportunityratingcode\": \"<integer>\",\n  \"prioritycode\": \"<integer>\",\n  \"budgetamount\": \"<number>\",\n  \"budgetstatus\": \"<integer>\",\n  \"purchaseprocess\": \"<integer>\",\n  \"purchasetimeframe\": \"<integer>\",\n  \"timeline\": \"<integer>\",\n  \"customerneed\": \"<string>\",\n  \"customerpainpoints\": \"<string>\",\n  \"currentsituation\": \"<string>\",\n  \"proposedsolution\": \"<string>\",\n  \"decisionmaker\": \"<boolean>\",\n  \"discountamount\": \"<number>\",\n  \"discountpercentage\": \"<number>\",\n  \"freightamount\": \"<number>\",\n  \"totaltax\": \"<number>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"customerid_account@odata.bind\": \"<string>\",\n  \"customerid_contact@odata.bind\": \"<string>\",\n  \"parentaccountid@odata.bind\": \"<string>\",\n  \"parentcontactid@odata.bind\": \"<string>\",\n  \"originatingleadid@odata.bind\": \"<string>\",\n  \"campaignid@odata.bind\": \"<string>\",\n  \"transactioncurrencyid@odata.bind\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/opportunities",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "opportunities"
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\",\n    \"innererror\": {\n      \"message\": \"<string>\",\n      \"type\": \"<string>\",\n      \"stacktrace\": \"<string>\"\n    }\n  }\n}",
+              "createdAt": "2026-07-28T02:10:55.000Z",
+              "updatedAt": "2026-07-28T02:10:55.000Z",
+              "uid": "35240-bc4c1267-313c-4085-9d04-468402f81b34"
+            }
+          ],
+          "createdAt": "2026-07-28T02:10:55.000Z",
+          "updatedAt": "2026-07-28T02:10:55.000Z",
+          "uid": "35240-715b1ab9-e73c-4b55-b328-da4b8bad2ab5"
+        }
+      ],
+      "id": "bfe1e53f-0c0c-4f00-abbc-8ad58d012696",
+      "createdAt": "2026-07-28T02:10:55.000Z",
+      "updatedAt": "2026-07-28T02:10:55.000Z",
+      "uid": "35240-bfe1e53f-0c0c-4f00-abbc-8ad58d012696"
+    },
+    {
+      "name": "opportunities({opportunityid})",
+      "item": [
+        {
+          "name": "Microsoft Dynamics 365 Retrieve an opportunity",
+          "id": "3555b1b8-70dd-4f74-916b-13de58b8ccea",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/opportunities({{opportunityid}})?$select=<string>&$expand=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "opportunities({{opportunityid}})"
+              ],
+              "query": [
+                {
+                  "description": "Comma-separated list of properties to return.",
+                  "key": "$select",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Comma-separated list of navigation properties to expand.",
+                  "key": "$expand",
+                  "value": "<string>"
+                }
+              ]
+            },
+            "description": "Retrieve a single opportunity entity record by its unique identifier."
+          },
+          "response": [
+            {
+              "id": "ac59240b-c111-461a-b5ff-ade8e1f3a5a2",
+              "name": "Successfully retrieved the opportunity.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/opportunities({{opportunityid}})?$select=<string>&$expand=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "opportunities({{opportunityid}})"
+                  ],
+                  "query": [
+                    {
+                      "description": "Comma-separated list of properties to return.",
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Comma-separated list of navigation properties to expand.",
+                      "key": "$expand",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"@odata.etag\": \"<string>\",\n  \"opportunityid\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"estimatedvalue\": \"<number>\",\n  \"estimatedvalue_base\": \"<number>\",\n  \"actualvalue\": \"<number>\",\n  \"actualvalue_base\": \"<number>\",\n  \"budgetamount\": \"<number>\",\n  \"budgetamount_base\": \"<number>\",\n  \"closeprobability\": \"<integer>\",\n  \"estimatedclosedate\": \"<date>\",\n  \"actualclosedate\": \"<date>\",\n  \"stepname\": \"<string>\",\n  \"salesstage\": \"<integer>\",\n  \"salesstagecode\": \"<integer>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"opportunityratingcode\": \"<integer>\",\n  \"prioritycode\": \"<integer>\",\n  \"budgetstatus\": \"<integer>\",\n  \"purchaseprocess\": \"<integer>\",\n  \"purchasetimeframe\": \"<integer>\",\n  \"timeline\": \"<integer>\",\n  \"customerneed\": \"<string>\",\n  \"customerpainpoints\": \"<string>\",\n  \"currentsituation\": \"<string>\",\n  \"proposedsolution\": \"<string>\",\n  \"qualificationcomments\": \"<string>\",\n  \"decisionmaker\": \"<boolean>\",\n  \"developproposal\": \"<boolean>\",\n  \"completefinalproposal\": \"<boolean>\",\n  \"presentproposal\": \"<boolean>\",\n  \"presentfinalproposal\": \"<boolean>\",\n  \"completeinternalreview\": \"<boolean>\",\n  \"captureproposalfeedback\": \"<boolean>\",\n  \"resolvefeedback\": \"<boolean>\",\n  \"discountamount\": \"<number>\",\n  \"discountpercentage\": \"<number>\",\n  \"freightamount\": \"<number>\",\n  \"totalamount\": \"<number>\",\n  \"totallineitemamount\": \"<number>\",\n  \"totaltax\": \"<number>\",\n  \"msdyn_forecastcategory\": \"<integer>\",\n  \"_customerid_value\": \"<uuid>\",\n  \"_parentaccountid_value\": \"<uuid>\",\n  \"_parentcontactid_value\": \"<uuid>\",\n  \"_originatingleadid_value\": \"<uuid>\",\n  \"_campaignid_value\": \"<uuid>\",\n  \"_transactioncurrencyid_value\": \"<uuid>\",\n  \"_ownerid_value\": \"<uuid>\",\n  \"_createdby_value\": \"<uuid>\",\n  \"_modifiedby_value\": \"<uuid>\",\n  \"createdon\": \"<dateTime>\",\n  \"modifiedon\": \"<dateTime>\",\n  \"versionnumber\": \"<long>\"\n}",
+              "createdAt": "2026-07-28T02:10:55.000Z",
+              "updatedAt": "2026-07-28T02:10:55.000Z",
+              "uid": "35240-ac59240b-c111-461a-b5ff-ade8e1f3a5a2"
+            },
+            {
+              "id": "1500ad69-fa50-42c3-8e05-b942836e2592",
+              "name": "Authentication credentials are missing or invalid.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/opportunities({{opportunityid}})?$select=<string>&$expand=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "opportunities({{opportunityid}})"
+                  ],
+                  "query": [
+                    {
+                      "description": "Comma-separated list of properties to return.",
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Comma-separated list of navigation properties to expand.",
+                      "key": "$expand",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\",\n    \"innererror\": {\n      \"message\": \"<string>\",\n      \"type\": \"<string>\",\n      \"stacktrace\": \"<string>\"\n    }\n  }\n}",
+              "createdAt": "2026-07-28T02:10:55.000Z",
+              "updatedAt": "2026-07-28T02:10:55.000Z",
+              "uid": "35240-1500ad69-fa50-42c3-8e05-b942836e2592"
+            },
+            {
+              "id": "8005c970-b76f-439c-b39e-d5e058fca6e0",
+              "name": "The requested resource was not found.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/opportunities({{opportunityid}})?$select=<string>&$expand=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "opportunities({{opportunityid}})"
+                  ],
+                  "query": [
+                    {
+                      "description": "Comma-separated list of properties to return.",
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Comma-separated list of navigation properties to expand.",
+                      "key": "$expand",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\",\n    \"innererror\": {\n      \"message\": \"<string>\",\n      \"type\": \"<string>\",\n      \"stacktrace\": \"<string>\"\n    }\n  }\n}",
+              "createdAt": "2026-07-28T02:10:55.000Z",
+              "updatedAt": "2026-07-28T02:10:55.000Z",
+              "uid": "35240-8005c970-b76f-439c-b39e-d5e058fca6e0"
+            }
+          ],
+          "createdAt": "2026-07-28T02:10:55.000Z",
+          "updatedAt": "2026-07-28T02:10:55.000Z",
+          "uid": "35240-3555b1b8-70dd-4f74-916b-13de58b8ccea"
+        },
+        {
+          "name": "Microsoft Dynamics 365 Update an opportunity",
+          "id": "7d9c2956-0b68-4145-8653-dfa46ad517c2",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                "key": "Prefer",
+                "value": "<string>"
+              },
+              {
+                "description": "ETag value for optimistic concurrency control. Use * to match any version.",
+                "key": "If-Match",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"estimatedvalue\": \"<number>\",\n  \"closeprobability\": \"<integer>\",\n  \"estimatedclosedate\": \"<date>\",\n  \"stepname\": \"<string>\",\n  \"salesstage\": \"<integer>\",\n  \"opportunityratingcode\": \"<integer>\",\n  \"prioritycode\": \"<integer>\",\n  \"budgetamount\": \"<number>\",\n  \"budgetstatus\": \"<integer>\",\n  \"purchaseprocess\": \"<integer>\",\n  \"purchasetimeframe\": \"<integer>\",\n  \"timeline\": \"<integer>\",\n  \"customerneed\": \"<string>\",\n  \"customerpainpoints\": \"<string>\",\n  \"currentsituation\": \"<string>\",\n  \"proposedsolution\": \"<string>\",\n  \"decisionmaker\": \"<boolean>\",\n  \"discountamount\": \"<number>\",\n  \"discountpercentage\": \"<number>\",\n  \"freightamount\": \"<number>\",\n  \"totaltax\": \"<number>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"customerid_account@odata.bind\": \"<string>\",\n  \"customerid_contact@odata.bind\": \"<string>\",\n  \"parentaccountid@odata.bind\": \"<string>\",\n  \"parentcontactid@odata.bind\": \"<string>\",\n  \"originatingleadid@odata.bind\": \"<string>\",\n  \"campaignid@odata.bind\": \"<string>\",\n  \"transactioncurrencyid@odata.bind\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/opportunities({{opportunityid}})",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "opportunities({{opportunityid}})"
+              ]
+            },
+            "description": "Update an existing opportunity entity record."
+          },
+          "response": [
+            {
+              "id": "58ca1520-b57f-4b46-96d2-3cfbde61da9b",
+              "name": "Opportunity updated successfully (when Prefer return=representation).",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "<string>"
+                  },
+                  {
+                    "description": "ETag value for optimistic concurrency control. Use * to match any version.",
+                    "key": "If-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"estimatedvalue\": \"<number>\",\n  \"closeprobability\": \"<integer>\",\n  \"estimatedclosedate\": \"<date>\",\n  \"stepname\": \"<string>\",\n  \"salesstage\": \"<integer>\",\n  \"opportunityratingcode\": \"<integer>\",\n  \"prioritycode\": \"<integer>\",\n  \"budgetamount\": \"<number>\",\n  \"budgetstatus\": \"<integer>\",\n  \"purchaseprocess\": \"<integer>\",\n  \"purchasetimeframe\": \"<integer>\",\n  \"timeline\": \"<integer>\",\n  \"customerneed\": \"<string>\",\n  \"customerpainpoints\": \"<string>\",\n  \"currentsituation\": \"<string>\",\n  \"proposedsolution\": \"<string>\",\n  \"decisionmaker\": \"<boolean>\",\n  \"discountamount\": \"<number>\",\n  \"discountpercentage\": \"<number>\",\n  \"freightamount\": \"<number>\",\n  \"totaltax\": \"<number>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"customerid_account@odata.bind\": \"<string>\",\n  \"customerid_contact@odata.bind\": \"<string>\",\n  \"parentaccountid@odata.bind\": \"<string>\",\n  \"parentcontactid@odata.bind\": \"<string>\",\n  \"originatingleadid@odata.bind\": \"<string>\",\n  \"campaignid@odata.bind\": \"<string>\",\n  \"transactioncurrencyid@odata.bind\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/opportunities({{opportunityid}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "opportunities({{opportunityid}})"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"@odata.etag\": \"<string>\",\n  \"opportunityid\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"estimatedvalue\": \"<number>\",\n  \"estimatedvalue_base\": \"<number>\",\n  \"actualvalue\": \"<number>\",\n  \"actualvalue_base\": \"<number>\",\n  \"budgetamount\": \"<number>\",\n  \"budgetamount_base\": \"<number>\",\n  \"closeprobability\": \"<integer>\",\n  \"estimatedclosedate\": \"<date>\",\n  \"actualclosedate\": \"<date>\",\n  \"stepname\": \"<string>\",\n  \"salesstage\": \"<integer>\",\n  \"salesstagecode\": \"<integer>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"opportunityratingcode\": \"<integer>\",\n  \"prioritycode\": \"<integer>\",\n  \"budgetstatus\": \"<integer>\",\n  \"purchaseprocess\": \"<integer>\",\n  \"purchasetimeframe\": \"<integer>\",\n  \"timeline\": \"<integer>\",\n  \"customerneed\": \"<string>\",\n  \"customerpainpoints\": \"<string>\",\n  \"currentsituation\": \"<string>\",\n  \"proposedsolution\": \"<string>\",\n  \"qualificationcomments\": \"<string>\",\n  \"decisionmaker\": \"<boolean>\",\n  \"developproposal\": \"<boolean>\",\n  \"completefinalproposal\": \"<boolean>\",\n  \"presentproposal\": \"<boolean>\",\n  \"presentfinalproposal\": \"<boolean>\",\n  \"completeinternalreview\": \"<boolean>\",\n  \"captureproposalfeedback\": \"<boolean>\",\n  \"resolvefeedback\": \"<boolean>\",\n  \"discountamount\": \"<number>\",\n  \"discountpercentage\": \"<number>\",\n  \"freightamount\": \"<number>\",\n  \"totalamount\": \"<number>\",\n  \"totallineitemamount\": \"<number>\",\n  \"totaltax\": \"<number>\",\n  \"msdyn_forecastcategory\": \"<integer>\",\n  \"_customerid_value\": \"<uuid>\",\n  \"_parentaccountid_value\": \"<uuid>\",\n  \"_parentcontactid_value\": \"<uuid>\",\n  \"_originatingleadid_value\": \"<uuid>\",\n  \"_campaignid_value\": \"<uuid>\",\n  \"_transactioncurrencyid_value\": \"<uuid>\",\n  \"_ownerid_value\": \"<uuid>\",\n  \"_createdby_value\": \"<uuid>\",\n  \"_modifiedby_value\": \"<uuid>\",\n  \"createdon\": \"<dateTime>\",\n  \"modifiedon\": \"<dateTime>\",\n  \"versionnumber\": \"<long>\"\n}",
+              "createdAt": "2026-07-28T02:10:55.000Z",
+              "updatedAt": "2026-07-28T02:10:55.000Z",
+              "uid": "35240-58ca1520-b57f-4b46-96d2-3cfbde61da9b"
+            },
+            {
+              "id": "34c379c6-edce-4f46-ba01-7999ba3ac53d",
+              "name": "Opportunity updated successfully.",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "<string>"
+                  },
+                  {
+                    "description": "ETag value for optimistic concurrency control. Use * to match any version.",
+                    "key": "If-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"estimatedvalue\": \"<number>\",\n  \"closeprobability\": \"<integer>\",\n  \"estimatedclosedate\": \"<date>\",\n  \"stepname\": \"<string>\",\n  \"salesstage\": \"<integer>\",\n  \"opportunityratingcode\": \"<integer>\",\n  \"prioritycode\": \"<integer>\",\n  \"budgetamount\": \"<number>\",\n  \"budgetstatus\": \"<integer>\",\n  \"purchaseprocess\": \"<integer>\",\n  \"purchasetimeframe\": \"<integer>\",\n  \"timeline\": \"<integer>\",\n  \"customerneed\": \"<string>\",\n  \"customerpainpoints\": \"<string>\",\n  \"currentsituation\": \"<string>\",\n  \"proposedsolution\": \"<string>\",\n  \"decisionmaker\": \"<boolean>\",\n  \"discountamount\": \"<number>\",\n  \"discountpercentage\": \"<number>\",\n  \"freightamount\": \"<number>\",\n  \"totaltax\": \"<number>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"customerid_account@odata.bind\": \"<string>\",\n  \"customerid_contact@odata.bind\": \"<string>\",\n  \"parentaccountid@odata.bind\": \"<string>\",\n  \"parentcontactid@odata.bind\": \"<string>\",\n  \"originatingleadid@odata.bind\": \"<string>\",\n  \"campaignid@odata.bind\": \"<string>\",\n  \"transactioncurrencyid@odata.bind\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/opportunities({{opportunityid}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "opportunities({{opportunityid}})"
+                  ]
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:10:55.000Z",
+              "updatedAt": "2026-07-28T02:10:55.000Z",
+              "uid": "35240-34c379c6-edce-4f46-ba01-7999ba3ac53d"
+            },
+            {
+              "id": "9edd3728-e7b4-43d5-bdc7-a2250775c0fd",
+              "name": "Authentication credentials are missing or invalid.",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "<string>"
+                  },
+                  {
+                    "description": "ETag value for optimistic concurrency control. Use * to match any version.",
+                    "key": "If-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"estimatedvalue\": \"<number>\",\n  \"closeprobability\": \"<integer>\",\n  \"estimatedclosedate\": \"<date>\",\n  \"stepname\": \"<string>\",\n  \"salesstage\": \"<integer>\",\n  \"opportunityratingcode\": \"<integer>\",\n  \"prioritycode\": \"<integer>\",\n  \"budgetamount\": \"<number>\",\n  \"budgetstatus\": \"<integer>\",\n  \"purchaseprocess\": \"<integer>\",\n  \"purchasetimeframe\": \"<integer>\",\n  \"timeline\": \"<integer>\",\n  \"customerneed\": \"<string>\",\n  \"customerpainpoints\": \"<string>\",\n  \"currentsituation\": \"<string>\",\n  \"proposedsolution\": \"<string>\",\n  \"decisionmaker\": \"<boolean>\",\n  \"discountamount\": \"<number>\",\n  \"discountpercentage\": \"<number>\",\n  \"freightamount\": \"<number>\",\n  \"totaltax\": \"<number>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"customerid_account@odata.bind\": \"<string>\",\n  \"customerid_contact@odata.bind\": \"<string>\",\n  \"parentaccountid@odata.bind\": \"<string>\",\n  \"parentcontactid@odata.bind\": \"<string>\",\n  \"originatingleadid@odata.bind\": \"<string>\",\n  \"campaignid@odata.bind\": \"<string>\",\n  \"transactioncurrencyid@odata.bind\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/opportunities({{opportunityid}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "opportunities({{opportunityid}})"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\",\n    \"innererror\": {\n      \"message\": \"<string>\",\n      \"type\": \"<string>\",\n      \"stacktrace\": \"<string>\"\n    }\n  }\n}",
+              "createdAt": "2026-07-28T02:10:55.000Z",
+              "updatedAt": "2026-07-28T02:10:55.000Z",
+              "uid": "35240-9edd3728-e7b4-43d5-bdc7-a2250775c0fd"
+            },
+            {
+              "id": "b660b9f6-2f96-471e-9ea6-fb2a491dfc75",
+              "name": "The requested resource was not found.",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "<string>"
+                  },
+                  {
+                    "description": "ETag value for optimistic concurrency control. Use * to match any version.",
+                    "key": "If-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"estimatedvalue\": \"<number>\",\n  \"closeprobability\": \"<integer>\",\n  \"estimatedclosedate\": \"<date>\",\n  \"stepname\": \"<string>\",\n  \"salesstage\": \"<integer>\",\n  \"opportunityratingcode\": \"<integer>\",\n  \"prioritycode\": \"<integer>\",\n  \"budgetamount\": \"<number>\",\n  \"budgetstatus\": \"<integer>\",\n  \"purchaseprocess\": \"<integer>\",\n  \"purchasetimeframe\": \"<integer>\",\n  \"timeline\": \"<integer>\",\n  \"customerneed\": \"<string>\",\n  \"customerpainpoints\": \"<string>\",\n  \"currentsituation\": \"<string>\",\n  \"proposedsolution\": \"<string>\",\n  \"decisionmaker\": \"<boolean>\",\n  \"discountamount\": \"<number>\",\n  \"discountpercentage\": \"<number>\",\n  \"freightamount\": \"<number>\",\n  \"totaltax\": \"<number>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"customerid_account@odata.bind\": \"<string>\",\n  \"customerid_contact@odata.bind\": \"<string>\",\n  \"parentaccountid@odata.bind\": \"<string>\",\n  \"parentcontactid@odata.bind\": \"<string>\",\n  \"originatingleadid@odata.bind\": \"<string>\",\n  \"campaignid@odata.bind\": \"<string>\",\n  \"transactioncurrencyid@odata.bind\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/opportunities({{opportunityid}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "opportunities({{opportunityid}})"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\",\n    \"innererror\": {\n      \"message\": \"<string>\",\n      \"type\": \"<string>\",\n      \"stacktrace\": \"<string>\"\n    }\n  }\n}",
+              "createdAt": "2026-07-28T02:10:55.000Z",
+              "updatedAt": "2026-07-28T02:10:55.000Z",
+              "uid": "35240-b660b9f6-2f96-471e-9ea6-fb2a491dfc75"
+            },
+            {
+              "id": "824c457b-4205-4594-8b28-d4c0a934db14",
+              "name": "The ETag value provided in the If-Match header does not match the current version of the record.",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "<string>"
+                  },
+                  {
+                    "description": "ETag value for optimistic concurrency control. Use * to match any version.",
+                    "key": "If-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"estimatedvalue\": \"<number>\",\n  \"closeprobability\": \"<integer>\",\n  \"estimatedclosedate\": \"<date>\",\n  \"stepname\": \"<string>\",\n  \"salesstage\": \"<integer>\",\n  \"opportunityratingcode\": \"<integer>\",\n  \"prioritycode\": \"<integer>\",\n  \"budgetamount\": \"<number>\",\n  \"budgetstatus\": \"<integer>\",\n  \"purchaseprocess\": \"<integer>\",\n  \"purchasetimeframe\": \"<integer>\",\n  \"timeline\": \"<integer>\",\n  \"customerneed\": \"<string>\",\n  \"customerpainpoints\": \"<string>\",\n  \"currentsituation\": \"<string>\",\n  \"proposedsolution\": \"<string>\",\n  \"decisionmaker\": \"<boolean>\",\n  \"discountamount\": \"<number>\",\n  \"discountpercentage\": \"<number>\",\n  \"freightamount\": \"<number>\",\n  \"totaltax\": \"<number>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"customerid_account@odata.bind\": \"<string>\",\n  \"customerid_contact@odata.bind\": \"<string>\",\n  \"parentaccountid@odata.bind\": \"<string>\",\n  \"parentcontactid@odata.bind\": \"<string>\",\n  \"originatingleadid@odata.bind\": \"<string>\",\n  \"campaignid@odata.bind\": \"<string>\",\n  \"transactioncurrencyid@odata.bind\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/opportunities({{opportunityid}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "opportunities({{opportunityid}})"
+                  ]
+                }
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\",\n    \"innererror\": {\n      \"message\": \"<string>\",\n      \"type\": \"<string>\",\n      \"stacktrace\": \"<string>\"\n    }\n  }\n}",
+              "createdAt": "2026-07-28T02:10:55.000Z",
+              "updatedAt": "2026-07-28T02:10:55.000Z",
+              "uid": "35240-824c457b-4205-4594-8b28-d4c0a934db14"
+            }
+          ],
+          "createdAt": "2026-07-28T02:10:55.000Z",
+          "updatedAt": "2026-07-28T02:10:55.000Z",
+          "uid": "35240-7d9c2956-0b68-4145-8653-dfa46ad517c2"
+        },
+        {
+          "name": "Microsoft Dynamics 365 Delete an opportunity",
+          "id": "1387bd3e-0d62-4db3-84a2-65791b17bc33",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/opportunities({{opportunityid}})",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "opportunities({{opportunityid}})"
+              ]
+            },
+            "description": "Delete an opportunity entity record."
+          },
+          "response": [
+            {
+              "id": "5d01f5dc-ad4a-4167-a4ec-67910778a22a",
+              "name": "Opportunity deleted successfully.",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/opportunities({{opportunityid}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "opportunities({{opportunityid}})"
+                  ]
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:10:55.000Z",
+              "updatedAt": "2026-07-28T02:10:55.000Z",
+              "uid": "35240-5d01f5dc-ad4a-4167-a4ec-67910778a22a"
+            },
+            {
+              "id": "7da6b9fc-c992-4b21-bc04-2f43a8d90bd0",
+              "name": "Authentication credentials are missing or invalid.",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/opportunities({{opportunityid}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "opportunities({{opportunityid}})"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\",\n    \"innererror\": {\n      \"message\": \"<string>\",\n      \"type\": \"<string>\",\n      \"stacktrace\": \"<string>\"\n    }\n  }\n}",
+              "createdAt": "2026-07-28T02:10:55.000Z",
+              "updatedAt": "2026-07-28T02:10:55.000Z",
+              "uid": "35240-7da6b9fc-c992-4b21-bc04-2f43a8d90bd0"
+            },
+            {
+              "id": "61e39b34-4490-4165-bcc6-5fc879d3c2d9",
+              "name": "The requested resource was not found.",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/opportunities({{opportunityid}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "opportunities({{opportunityid}})"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\",\n    \"innererror\": {\n      \"message\": \"<string>\",\n      \"type\": \"<string>\",\n      \"stacktrace\": \"<string>\"\n    }\n  }\n}",
+              "createdAt": "2026-07-28T02:10:55.000Z",
+              "updatedAt": "2026-07-28T02:10:55.000Z",
+              "uid": "35240-61e39b34-4490-4165-bcc6-5fc879d3c2d9"
+            }
+          ],
+          "createdAt": "2026-07-28T02:10:55.000Z",
+          "updatedAt": "2026-07-28T02:10:55.000Z",
+          "uid": "35240-1387bd3e-0d62-4db3-84a2-65791b17bc33"
+        }
+      ],
+      "id": "013645d8-c4dd-480d-89eb-d8b0b4d12cc9",
+      "createdAt": "2026-07-28T02:10:55.000Z",
+      "updatedAt": "2026-07-28T02:10:55.000Z",
+      "uid": "35240-013645d8-c4dd-480d-89eb-d8b0b4d12cc9"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://{org}.api.crm.dynamics.com/.default",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "org",
+      "value": "yourorg"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{org}}.api.crm.dynamics.com/api/data/v9.2"
+    },
+    {
+      "key": "opportunityid",
+      "value": "<uuid>"
+    }
+  ]
+}

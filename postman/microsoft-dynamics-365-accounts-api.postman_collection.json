@@ -1,0 +1,1420 @@
+{
+  "info": {
+    "_postman_id": "8de796e6-e49e-490f-9bc0-76944d7765c4",
+    "name": "Microsoft Dynamics 365 Dataverse Web Accounts API",
+    "description": "RESTful web service implementing OData v4.0 for interacting with data in Microsoft Dataverse, the underlying data platform for Dynamics 365 and Power Platform applications. This specification covers core CRM entities including accounts, contacts, and opportunities.\n\nContact Support:\n Name: Microsoft Support\n Email: support@microsoft.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:10:53.000Z",
+    "updatedAt": "2026-07-28T02:10:53.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-8de796e6-e49e-490f-9bc0-76944d7765c4"
+  },
+  "item": [
+    {
+      "name": "accounts",
+      "item": [
+        {
+          "name": "Microsoft Dynamics 365 List accounts",
+          "id": "ae67840f-9277-4ada-afa1-4d2159246f68",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                "key": "Prefer",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/accounts?$select=<string>&$filter=<string>&$orderby=<string>&$top=<integer>&$skip=<integer>&$expand=<string>&$count=<boolean>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "accounts"
+              ],
+              "query": [
+                {
+                  "description": "Comma-separated list of properties to return.",
+                  "key": "$select",
+                  "value": "<string>"
+                },
+                {
+                  "description": "OData filter expression to restrict results.",
+                  "key": "$filter",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Comma-separated list of properties to sort by, with optional asc or desc.",
+                  "key": "$orderby",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Maximum number of records to return.",
+                  "key": "$top",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "Number of records to skip before returning results.",
+                  "key": "$skip",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "Comma-separated list of navigation properties to expand.",
+                  "key": "$expand",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Include a count of matching records in the response.",
+                  "key": "$count",
+                  "value": "<boolean>"
+                }
+              ]
+            },
+            "description": "Retrieve a list of account entity records. Supports OData query options including $select, $filter, $orderby, $top, $skip, and $expand."
+          },
+          "response": [
+            {
+              "id": "61647e89-38fe-488c-93d3-8c05ce08284c",
+              "name": "Successfully retrieved accounts.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/accounts?$select=<string>&$filter=<string>&$orderby=<string>&$top=<integer>&$skip=<integer>&$expand=<string>&$count=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "accounts"
+                  ],
+                  "query": [
+                    {
+                      "description": "Comma-separated list of properties to return.",
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "OData filter expression to restrict results.",
+                      "key": "$filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Comma-separated list of properties to sort by, with optional asc or desc.",
+                      "key": "$orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Maximum number of records to return.",
+                      "key": "$top",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Number of records to skip before returning results.",
+                      "key": "$skip",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Comma-separated list of navigation properties to expand.",
+                      "key": "$expand",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Include a count of matching records in the response.",
+                      "key": "$count",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"@odata.context\": \"<string>\",\n  \"@odata.count\": \"<integer>\",\n  \"@odata.nextLink\": \"<uri>\",\n  \"value\": [\n    {\n      \"@odata.etag\": \"<string>\",\n      \"accountid\": \"<uuid>\",\n      \"name\": \"<string>\",\n      \"accountnumber\": \"<string>\",\n      \"description\": \"<string>\",\n      \"emailaddress1\": \"<email>\",\n      \"emailaddress2\": \"<email>\",\n      \"emailaddress3\": \"<email>\",\n      \"telephone1\": \"<string>\",\n      \"telephone2\": \"<string>\",\n      \"telephone3\": \"<string>\",\n      \"fax\": \"<string>\",\n      \"websiteurl\": \"<uri>\",\n      \"revenue\": \"<number>\",\n      \"revenue_base\": \"<number>\",\n      \"numberofemployees\": \"<integer>\",\n      \"sic\": \"<string>\",\n      \"tickersymbol\": \"<string>\",\n      \"stockexchange\": \"<string>\",\n      \"industrycode\": \"<integer>\",\n      \"ownershipcode\": \"<integer>\",\n      \"accountcategorycode\": \"<integer>\",\n      \"accountclassificationcode\": \"<integer>\",\n      \"accountratingcode\": \"<integer>\",\n      \"customertypecode\": \"<integer>\",\n      \"customersizecode\": \"<integer>\",\n      \"businesstypecode\": \"<integer>\",\n      \"preferredcontactmethodcode\": \"<integer>\",\n      \"paymenttermscode\": \"<integer>\",\n      \"shippingmethodcode\": \"<integer>\",\n      \"creditlimit\": \"<number>\",\n      \"creditlimit_base\": \"<number>\",\n      \"creditonhold\": \"<boolean>\",\n      \"donotemail\": \"<boolean>\",\n      \"donotphone\": \"<boolean>\",\n      \"donotfax\": \"<boolean>\",\n      \"donotpostalmail\": \"<boolean>\",\n      \"donotbulkemail\": \"<boolean>\",\n      \"donotsendmm\": \"<boolean>\",\n      \"marketingonly\": \"<boolean>\",\n      \"followemail\": \"<boolean>\",\n      \"address1_name\": \"<string>\",\n      \"address1_line1\": \"<string>\",\n      \"address1_line2\": \"<string>\",\n      \"address1_line3\": \"<string>\",\n      \"address1_city\": \"<string>\",\n      \"address1_stateorprovince\": \"<string>\",\n      \"address1_postalcode\": \"<string>\",\n      \"address1_country\": \"<string>\",\n      \"address1_county\": \"<string>\",\n      \"address1_telephone1\": \"<string>\",\n      \"address1_fax\": \"<string>\",\n      \"address1_latitude\": \"<double>\",\n      \"address1_longitude\": \"<double>\",\n      \"address1_addresstypecode\": \"<integer>\",\n      \"address1_composite\": \"<string>\",\n      \"address2_name\": \"<string>\",\n      \"address2_line1\": \"<string>\",\n      \"address2_line2\": \"<string>\",\n      \"address2_city\": \"<string>\",\n      \"address2_stateorprovince\": \"<string>\",\n      \"address2_postalcode\": \"<string>\",\n      \"address2_country\": \"<string>\",\n      \"statecode\": \"<integer>\",\n      \"statuscode\": \"<integer>\",\n      \"marketcap\": \"<number>\",\n      \"sharesoutstanding\": \"<integer>\",\n      \"ftpsiteurl\": \"<uri>\",\n      \"yominame\": \"<string>\",\n      \"_primarycontactid_value\": \"<uuid>\",\n      \"_parentaccountid_value\": \"<uuid>\",\n      \"_transactioncurrencyid_value\": \"<uuid>\",\n      \"_ownerid_value\": \"<uuid>\",\n      \"_owningbusinessunit_value\": \"<uuid>\",\n      \"_createdby_value\": \"<uuid>\",\n      \"_modifiedby_value\": \"<uuid>\",\n      \"createdon\": \"<dateTime>\",\n      \"modifiedon\": \"<dateTime>\",\n      \"versionnumber\": \"<long>\",\n      \"exchangerate\": \"<number>\",\n      \"merged\": \"<boolean>\"\n    },\n    {\n      \"@odata.etag\": \"<string>\",\n      \"accountid\": \"<uuid>\",\n      \"name\": \"<string>\",\n      \"accountnumber\": \"<string>\",\n      \"description\": \"<string>\",\n      \"emailaddress1\": \"<email>\",\n      \"emailaddress2\": \"<email>\",\n      \"emailaddress3\": \"<email>\",\n      \"telephone1\": \"<string>\",\n      \"telephone2\": \"<string>\",\n      \"telephone3\": \"<string>\",\n      \"fax\": \"<string>\",\n      \"websiteurl\": \"<uri>\",\n      \"revenue\": \"<number>\",\n      \"revenue_base\": \"<number>\",\n      \"numberofemployees\": \"<integer>\",\n      \"sic\": \"<string>\",\n      \"tickersymbol\": \"<string>\",\n      \"stockexchange\": \"<string>\",\n      \"industrycode\": \"<integer>\",\n      \"ownershipcode\": \"<integer>\",\n      \"accountcategorycode\": \"<integer>\",\n      \"accountclassificationcode\": \"<integer>\",\n      \"accountratingcode\": \"<integer>\",\n      \"customertypecode\": \"<integer>\",\n      \"customersizecode\": \"<integer>\",\n      \"businesstypecode\": \"<integer>\",\n      \"preferredcontactmethodcode\": \"<integer>\",\n      \"paymenttermscode\": \"<integer>\",\n      \"shippingmethodcode\": \"<integer>\",\n      \"creditlimit\": \"<number>\",\n      \"creditlimit_base\": \"<number>\",\n      \"creditonhold\": \"<boolean>\",\n      \"donotemail\": \"<boolean>\",\n      \"donotphone\": \"<boolean>\",\n      \"donotfax\": \"<boolean>\",\n      \"donotpostalmail\": \"<boolean>\",\n      \"donotbulkemail\": \"<boolean>\",\n      \"donotsendmm\": \"<boolean>\",\n      \"marketingonly\": \"<boolean>\",\n      \"followemail\": \"<boolean>\",\n      \"address1_name\": \"<string>\",\n      \"address1_line1\": \"<string>\",\n      \"address1_line2\": \"<string>\",\n      \"address1_line3\": \"<string>\",\n      \"address1_city\": \"<string>\",\n      \"address1_stateorprovince\": \"<string>\",\n      \"address1_postalcode\": \"<string>\",\n      \"address1_country\": \"<string>\",\n      \"address1_county\": \"<string>\",\n      \"address1_telephone1\": \"<string>\",\n      \"address1_fax\": \"<string>\",\n      \"address1_latitude\": \"<double>\",\n      \"address1_longitude\": \"<double>\",\n      \"address1_addresstypecode\": \"<integer>\",\n      \"address1_composite\": \"<string>\",\n      \"address2_name\": \"<string>\",\n      \"address2_line1\": \"<string>\",\n      \"address2_line2\": \"<string>\",\n      \"address2_city\": \"<string>\",\n      \"address2_stateorprovince\": \"<string>\",\n      \"address2_postalcode\": \"<string>\",\n      \"address2_country\": \"<string>\",\n      \"statecode\": \"<integer>\",\n      \"statuscode\": \"<integer>\",\n      \"marketcap\": \"<number>\",\n      \"sharesoutstanding\": \"<integer>\",\n      \"ftpsiteurl\": \"<uri>\",\n      \"yominame\": \"<string>\",\n      \"_primarycontactid_value\": \"<uuid>\",\n      \"_parentaccountid_value\": \"<uuid>\",\n      \"_transactioncurrencyid_value\": \"<uuid>\",\n      \"_ownerid_value\": \"<uuid>\",\n      \"_owningbusinessunit_value\": \"<uuid>\",\n      \"_createdby_value\": \"<uuid>\",\n      \"_modifiedby_value\": \"<uuid>\",\n      \"createdon\": \"<dateTime>\",\n      \"modifiedon\": \"<dateTime>\",\n      \"versionnumber\": \"<long>\",\n      \"exchangerate\": \"<number>\",\n      \"merged\": \"<boolean>\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T02:10:53.000Z",
+              "updatedAt": "2026-07-28T02:10:53.000Z",
+              "uid": "35240-61647e89-38fe-488c-93d3-8c05ce08284c"
+            },
+            {
+              "id": "5285804a-4eb6-4db0-b872-926b422b81fc",
+              "name": "Authentication credentials are missing or invalid.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/accounts?$select=<string>&$filter=<string>&$orderby=<string>&$top=<integer>&$skip=<integer>&$expand=<string>&$count=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "accounts"
+                  ],
+                  "query": [
+                    {
+                      "description": "Comma-separated list of properties to return.",
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "OData filter expression to restrict results.",
+                      "key": "$filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Comma-separated list of properties to sort by, with optional asc or desc.",
+                      "key": "$orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Maximum number of records to return.",
+                      "key": "$top",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Number of records to skip before returning results.",
+                      "key": "$skip",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Comma-separated list of navigation properties to expand.",
+                      "key": "$expand",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Include a count of matching records in the response.",
+                      "key": "$count",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\",\n    \"innererror\": {\n      \"message\": \"<string>\",\n      \"type\": \"<string>\",\n      \"stacktrace\": \"<string>\"\n    }\n  }\n}",
+              "createdAt": "2026-07-28T02:10:53.000Z",
+              "updatedAt": "2026-07-28T02:10:53.000Z",
+              "uid": "35240-5285804a-4eb6-4db0-b872-926b422b81fc"
+            },
+            {
+              "id": "330f0614-99e8-45f5-a9e5-6b7524aff2bd",
+              "name": "The authenticated user does not have permission to perform this action.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/accounts?$select=<string>&$filter=<string>&$orderby=<string>&$top=<integer>&$skip=<integer>&$expand=<string>&$count=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "accounts"
+                  ],
+                  "query": [
+                    {
+                      "description": "Comma-separated list of properties to return.",
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "OData filter expression to restrict results.",
+                      "key": "$filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Comma-separated list of properties to sort by, with optional asc or desc.",
+                      "key": "$orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Maximum number of records to return.",
+                      "key": "$top",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Number of records to skip before returning results.",
+                      "key": "$skip",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Comma-separated list of navigation properties to expand.",
+                      "key": "$expand",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Include a count of matching records in the response.",
+                      "key": "$count",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\",\n    \"innererror\": {\n      \"message\": \"<string>\",\n      \"type\": \"<string>\",\n      \"stacktrace\": \"<string>\"\n    }\n  }\n}",
+              "createdAt": "2026-07-28T02:10:53.000Z",
+              "updatedAt": "2026-07-28T02:10:53.000Z",
+              "uid": "35240-330f0614-99e8-45f5-a9e5-6b7524aff2bd"
+            }
+          ],
+          "createdAt": "2026-07-28T02:10:53.000Z",
+          "updatedAt": "2026-07-28T02:10:53.000Z",
+          "uid": "35240-ae67840f-9277-4ada-afa1-4d2159246f68"
+        },
+        {
+          "name": "Microsoft Dynamics 365 Create an account",
+          "id": "1436c84e-ab82-4e0a-89a7-b2404e187134",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                "key": "Prefer",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"accountnumber\": \"<string>\",\n  \"description\": \"<string>\",\n  \"emailaddress1\": \"<email>\",\n  \"telephone1\": \"<string>\",\n  \"fax\": \"<string>\",\n  \"websiteurl\": \"<uri>\",\n  \"revenue\": \"<number>\",\n  \"numberofemployees\": \"<integer>\",\n  \"sic\": \"<string>\",\n  \"tickersymbol\": \"<string>\",\n  \"industrycode\": \"<integer>\",\n  \"ownershipcode\": \"<integer>\",\n  \"accountcategorycode\": \"<integer>\",\n  \"customertypecode\": \"<integer>\",\n  \"preferredcontactmethodcode\": \"<integer>\",\n  \"paymenttermscode\": \"<integer>\",\n  \"creditlimit\": \"<number>\",\n  \"creditonhold\": \"<boolean>\",\n  \"donotemail\": \"<boolean>\",\n  \"donotphone\": \"<boolean>\",\n  \"donotfax\": \"<boolean>\",\n  \"donotpostalmail\": \"<boolean>\",\n  \"donotbulkemail\": \"<boolean>\",\n  \"address1_name\": \"<string>\",\n  \"address1_line1\": \"<string>\",\n  \"address1_line2\": \"<string>\",\n  \"address1_line3\": \"<string>\",\n  \"address1_city\": \"<string>\",\n  \"address1_stateorprovince\": \"<string>\",\n  \"address1_postalcode\": \"<string>\",\n  \"address1_country\": \"<string>\",\n  \"address1_telephone1\": \"<string>\",\n  \"address1_fax\": \"<string>\",\n  \"address1_latitude\": \"<double>\",\n  \"address1_longitude\": \"<double>\",\n  \"address1_addresstypecode\": \"<integer>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"primarycontactid@odata.bind\": \"<string>\",\n  \"parentaccountid@odata.bind\": \"<string>\",\n  \"transactioncurrencyid@odata.bind\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/accounts",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "accounts"
+              ]
+            },
+            "description": "Create a new account entity record."
+          },
+          "response": [
+            {
+              "id": "ed648436-773a-485c-9272-912c39312088",
+              "name": "Account created successfully (when Prefer return=representation).",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"accountnumber\": \"<string>\",\n  \"description\": \"<string>\",\n  \"emailaddress1\": \"<email>\",\n  \"telephone1\": \"<string>\",\n  \"fax\": \"<string>\",\n  \"websiteurl\": \"<uri>\",\n  \"revenue\": \"<number>\",\n  \"numberofemployees\": \"<integer>\",\n  \"sic\": \"<string>\",\n  \"tickersymbol\": \"<string>\",\n  \"industrycode\": \"<integer>\",\n  \"ownershipcode\": \"<integer>\",\n  \"accountcategorycode\": \"<integer>\",\n  \"customertypecode\": \"<integer>\",\n  \"preferredcontactmethodcode\": \"<integer>\",\n  \"paymenttermscode\": \"<integer>\",\n  \"creditlimit\": \"<number>\",\n  \"creditonhold\": \"<boolean>\",\n  \"donotemail\": \"<boolean>\",\n  \"donotphone\": \"<boolean>\",\n  \"donotfax\": \"<boolean>\",\n  \"donotpostalmail\": \"<boolean>\",\n  \"donotbulkemail\": \"<boolean>\",\n  \"address1_name\": \"<string>\",\n  \"address1_line1\": \"<string>\",\n  \"address1_line2\": \"<string>\",\n  \"address1_line3\": \"<string>\",\n  \"address1_city\": \"<string>\",\n  \"address1_stateorprovince\": \"<string>\",\n  \"address1_postalcode\": \"<string>\",\n  \"address1_country\": \"<string>\",\n  \"address1_telephone1\": \"<string>\",\n  \"address1_fax\": \"<string>\",\n  \"address1_latitude\": \"<double>\",\n  \"address1_longitude\": \"<double>\",\n  \"address1_addresstypecode\": \"<integer>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"primarycontactid@odata.bind\": \"<string>\",\n  \"parentaccountid@odata.bind\": \"<string>\",\n  \"transactioncurrencyid@odata.bind\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/accounts",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "accounts"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"@odata.etag\": \"<string>\",\n  \"accountid\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"accountnumber\": \"<string>\",\n  \"description\": \"<string>\",\n  \"emailaddress1\": \"<email>\",\n  \"emailaddress2\": \"<email>\",\n  \"emailaddress3\": \"<email>\",\n  \"telephone1\": \"<string>\",\n  \"telephone2\": \"<string>\",\n  \"telephone3\": \"<string>\",\n  \"fax\": \"<string>\",\n  \"websiteurl\": \"<uri>\",\n  \"revenue\": \"<number>\",\n  \"revenue_base\": \"<number>\",\n  \"numberofemployees\": \"<integer>\",\n  \"sic\": \"<string>\",\n  \"tickersymbol\": \"<string>\",\n  \"stockexchange\": \"<string>\",\n  \"industrycode\": \"<integer>\",\n  \"ownershipcode\": \"<integer>\",\n  \"accountcategorycode\": \"<integer>\",\n  \"accountclassificationcode\": \"<integer>\",\n  \"accountratingcode\": \"<integer>\",\n  \"customertypecode\": \"<integer>\",\n  \"customersizecode\": \"<integer>\",\n  \"businesstypecode\": \"<integer>\",\n  \"preferredcontactmethodcode\": \"<integer>\",\n  \"paymenttermscode\": \"<integer>\",\n  \"shippingmethodcode\": \"<integer>\",\n  \"creditlimit\": \"<number>\",\n  \"creditlimit_base\": \"<number>\",\n  \"creditonhold\": \"<boolean>\",\n  \"donotemail\": \"<boolean>\",\n  \"donotphone\": \"<boolean>\",\n  \"donotfax\": \"<boolean>\",\n  \"donotpostalmail\": \"<boolean>\",\n  \"donotbulkemail\": \"<boolean>\",\n  \"donotsendmm\": \"<boolean>\",\n  \"marketingonly\": \"<boolean>\",\n  \"followemail\": \"<boolean>\",\n  \"address1_name\": \"<string>\",\n  \"address1_line1\": \"<string>\",\n  \"address1_line2\": \"<string>\",\n  \"address1_line3\": \"<string>\",\n  \"address1_city\": \"<string>\",\n  \"address1_stateorprovince\": \"<string>\",\n  \"address1_postalcode\": \"<string>\",\n  \"address1_country\": \"<string>\",\n  \"address1_county\": \"<string>\",\n  \"address1_telephone1\": \"<string>\",\n  \"address1_fax\": \"<string>\",\n  \"address1_latitude\": \"<double>\",\n  \"address1_longitude\": \"<double>\",\n  \"address1_addresstypecode\": \"<integer>\",\n  \"address1_composite\": \"<string>\",\n  \"address2_name\": \"<string>\",\n  \"address2_line1\": \"<string>\",\n  \"address2_line2\": \"<string>\",\n  \"address2_city\": \"<string>\",\n  \"address2_stateorprovince\": \"<string>\",\n  \"address2_postalcode\": \"<string>\",\n  \"address2_country\": \"<string>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"marketcap\": \"<number>\",\n  \"sharesoutstanding\": \"<integer>\",\n  \"ftpsiteurl\": \"<uri>\",\n  \"yominame\": \"<string>\",\n  \"_primarycontactid_value\": \"<uuid>\",\n  \"_parentaccountid_value\": \"<uuid>\",\n  \"_transactioncurrencyid_value\": \"<uuid>\",\n  \"_ownerid_value\": \"<uuid>\",\n  \"_owningbusinessunit_value\": \"<uuid>\",\n  \"_createdby_value\": \"<uuid>\",\n  \"_modifiedby_value\": \"<uuid>\",\n  \"createdon\": \"<dateTime>\",\n  \"modifiedon\": \"<dateTime>\",\n  \"versionnumber\": \"<long>\",\n  \"exchangerate\": \"<number>\",\n  \"merged\": \"<boolean>\"\n}",
+              "createdAt": "2026-07-28T02:10:53.000Z",
+              "updatedAt": "2026-07-28T02:10:53.000Z",
+              "uid": "35240-ed648436-773a-485c-9272-912c39312088"
+            },
+            {
+              "id": "40569571-5288-4d05-8c5d-5879c2c4a05e",
+              "name": "Account created successfully.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"accountnumber\": \"<string>\",\n  \"description\": \"<string>\",\n  \"emailaddress1\": \"<email>\",\n  \"telephone1\": \"<string>\",\n  \"fax\": \"<string>\",\n  \"websiteurl\": \"<uri>\",\n  \"revenue\": \"<number>\",\n  \"numberofemployees\": \"<integer>\",\n  \"sic\": \"<string>\",\n  \"tickersymbol\": \"<string>\",\n  \"industrycode\": \"<integer>\",\n  \"ownershipcode\": \"<integer>\",\n  \"accountcategorycode\": \"<integer>\",\n  \"customertypecode\": \"<integer>\",\n  \"preferredcontactmethodcode\": \"<integer>\",\n  \"paymenttermscode\": \"<integer>\",\n  \"creditlimit\": \"<number>\",\n  \"creditonhold\": \"<boolean>\",\n  \"donotemail\": \"<boolean>\",\n  \"donotphone\": \"<boolean>\",\n  \"donotfax\": \"<boolean>\",\n  \"donotpostalmail\": \"<boolean>\",\n  \"donotbulkemail\": \"<boolean>\",\n  \"address1_name\": \"<string>\",\n  \"address1_line1\": \"<string>\",\n  \"address1_line2\": \"<string>\",\n  \"address1_line3\": \"<string>\",\n  \"address1_city\": \"<string>\",\n  \"address1_stateorprovince\": \"<string>\",\n  \"address1_postalcode\": \"<string>\",\n  \"address1_country\": \"<string>\",\n  \"address1_telephone1\": \"<string>\",\n  \"address1_fax\": \"<string>\",\n  \"address1_latitude\": \"<double>\",\n  \"address1_longitude\": \"<double>\",\n  \"address1_addresstypecode\": \"<integer>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"primarycontactid@odata.bind\": \"<string>\",\n  \"parentaccountid@odata.bind\": \"<string>\",\n  \"transactioncurrencyid@odata.bind\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/accounts",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "accounts"
+                  ]
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "URI of the newly created account record.",
+                    "type": "text/plain"
+                  },
+                  "key": "OData-EntityId",
+                  "value": "<uri>"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:10:53.000Z",
+              "updatedAt": "2026-07-28T02:10:53.000Z",
+              "uid": "35240-40569571-5288-4d05-8c5d-5879c2c4a05e"
+            },
+            {
+              "id": "991c3c93-e3d8-43a3-bf37-cf1d52412a5b",
+              "name": "Authentication credentials are missing or invalid.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"accountnumber\": \"<string>\",\n  \"description\": \"<string>\",\n  \"emailaddress1\": \"<email>\",\n  \"telephone1\": \"<string>\",\n  \"fax\": \"<string>\",\n  \"websiteurl\": \"<uri>\",\n  \"revenue\": \"<number>\",\n  \"numberofemployees\": \"<integer>\",\n  \"sic\": \"<string>\",\n  \"tickersymbol\": \"<string>\",\n  \"industrycode\": \"<integer>\",\n  \"ownershipcode\": \"<integer>\",\n  \"accountcategorycode\": \"<integer>\",\n  \"customertypecode\": \"<integer>\",\n  \"preferredcontactmethodcode\": \"<integer>\",\n  \"paymenttermscode\": \"<integer>\",\n  \"creditlimit\": \"<number>\",\n  \"creditonhold\": \"<boolean>\",\n  \"donotemail\": \"<boolean>\",\n  \"donotphone\": \"<boolean>\",\n  \"donotfax\": \"<boolean>\",\n  \"donotpostalmail\": \"<boolean>\",\n  \"donotbulkemail\": \"<boolean>\",\n  \"address1_name\": \"<string>\",\n  \"address1_line1\": \"<string>\",\n  \"address1_line2\": \"<string>\",\n  \"address1_line3\": \"<string>\",\n  \"address1_city\": \"<string>\",\n  \"address1_stateorprovince\": \"<string>\",\n  \"address1_postalcode\": \"<string>\",\n  \"address1_country\": \"<string>\",\n  \"address1_telephone1\": \"<string>\",\n  \"address1_fax\": \"<string>\",\n  \"address1_latitude\": \"<double>\",\n  \"address1_longitude\": \"<double>\",\n  \"address1_addresstypecode\": \"<integer>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"primarycontactid@odata.bind\": \"<string>\",\n  \"parentaccountid@odata.bind\": \"<string>\",\n  \"transactioncurrencyid@odata.bind\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/accounts",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "accounts"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\",\n    \"innererror\": {\n      \"message\": \"<string>\",\n      \"type\": \"<string>\",\n      \"stacktrace\": \"<string>\"\n    }\n  }\n}",
+              "createdAt": "2026-07-28T02:10:53.000Z",
+              "updatedAt": "2026-07-28T02:10:53.000Z",
+              "uid": "35240-991c3c93-e3d8-43a3-bf37-cf1d52412a5b"
+            },
+            {
+              "id": "53be9c3f-c36a-44ae-b794-08d128d98575",
+              "name": "The authenticated user does not have permission to perform this action.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"accountnumber\": \"<string>\",\n  \"description\": \"<string>\",\n  \"emailaddress1\": \"<email>\",\n  \"telephone1\": \"<string>\",\n  \"fax\": \"<string>\",\n  \"websiteurl\": \"<uri>\",\n  \"revenue\": \"<number>\",\n  \"numberofemployees\": \"<integer>\",\n  \"sic\": \"<string>\",\n  \"tickersymbol\": \"<string>\",\n  \"industrycode\": \"<integer>\",\n  \"ownershipcode\": \"<integer>\",\n  \"accountcategorycode\": \"<integer>\",\n  \"customertypecode\": \"<integer>\",\n  \"preferredcontactmethodcode\": \"<integer>\",\n  \"paymenttermscode\": \"<integer>\",\n  \"creditlimit\": \"<number>\",\n  \"creditonhold\": \"<boolean>\",\n  \"donotemail\": \"<boolean>\",\n  \"donotphone\": \"<boolean>\",\n  \"donotfax\": \"<boolean>\",\n  \"donotpostalmail\": \"<boolean>\",\n  \"donotbulkemail\": \"<boolean>\",\n  \"address1_name\": \"<string>\",\n  \"address1_line1\": \"<string>\",\n  \"address1_line2\": \"<string>\",\n  \"address1_line3\": \"<string>\",\n  \"address1_city\": \"<string>\",\n  \"address1_stateorprovince\": \"<string>\",\n  \"address1_postalcode\": \"<string>\",\n  \"address1_country\": \"<string>\",\n  \"address1_telephone1\": \"<string>\",\n  \"address1_fax\": \"<string>\",\n  \"address1_latitude\": \"<double>\",\n  \"address1_longitude\": \"<double>\",\n  \"address1_addresstypecode\": \"<integer>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"primarycontactid@odata.bind\": \"<string>\",\n  \"parentaccountid@odata.bind\": \"<string>\",\n  \"transactioncurrencyid@odata.bind\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/accounts",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "accounts"
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\",\n    \"innererror\": {\n      \"message\": \"<string>\",\n      \"type\": \"<string>\",\n      \"stacktrace\": \"<string>\"\n    }\n  }\n}",
+              "createdAt": "2026-07-28T02:10:53.000Z",
+              "updatedAt": "2026-07-28T02:10:53.000Z",
+              "uid": "35240-53be9c3f-c36a-44ae-b794-08d128d98575"
+            }
+          ],
+          "createdAt": "2026-07-28T02:10:53.000Z",
+          "updatedAt": "2026-07-28T02:10:53.000Z",
+          "uid": "35240-1436c84e-ab82-4e0a-89a7-b2404e187134"
+        }
+      ],
+      "id": "a104bd4e-0f09-42c2-b7f5-b6bb45f84a97",
+      "createdAt": "2026-07-28T02:10:53.000Z",
+      "updatedAt": "2026-07-28T02:10:53.000Z",
+      "uid": "35240-a104bd4e-0f09-42c2-b7f5-b6bb45f84a97"
+    },
+    {
+      "name": "accounts({accountid})",
+      "item": [
+        {
+          "name": "Microsoft Dynamics 365 Retrieve an account",
+          "id": "67f05c92-322e-44e2-9149-ec66337342b0",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/accounts({{accountid}})?$select=<string>&$expand=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "accounts({{accountid}})"
+              ],
+              "query": [
+                {
+                  "description": "Comma-separated list of properties to return.",
+                  "key": "$select",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Comma-separated list of navigation properties to expand.",
+                  "key": "$expand",
+                  "value": "<string>"
+                }
+              ]
+            },
+            "description": "Retrieve a single account entity record by its unique identifier."
+          },
+          "response": [
+            {
+              "id": "c57d7592-effc-4ef8-a2f2-c5c10f6a090e",
+              "name": "Successfully retrieved the account.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/accounts({{accountid}})?$select=<string>&$expand=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "accounts({{accountid}})"
+                  ],
+                  "query": [
+                    {
+                      "description": "Comma-separated list of properties to return.",
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Comma-separated list of navigation properties to expand.",
+                      "key": "$expand",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"@odata.etag\": \"<string>\",\n  \"accountid\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"accountnumber\": \"<string>\",\n  \"description\": \"<string>\",\n  \"emailaddress1\": \"<email>\",\n  \"emailaddress2\": \"<email>\",\n  \"emailaddress3\": \"<email>\",\n  \"telephone1\": \"<string>\",\n  \"telephone2\": \"<string>\",\n  \"telephone3\": \"<string>\",\n  \"fax\": \"<string>\",\n  \"websiteurl\": \"<uri>\",\n  \"revenue\": \"<number>\",\n  \"revenue_base\": \"<number>\",\n  \"numberofemployees\": \"<integer>\",\n  \"sic\": \"<string>\",\n  \"tickersymbol\": \"<string>\",\n  \"stockexchange\": \"<string>\",\n  \"industrycode\": \"<integer>\",\n  \"ownershipcode\": \"<integer>\",\n  \"accountcategorycode\": \"<integer>\",\n  \"accountclassificationcode\": \"<integer>\",\n  \"accountratingcode\": \"<integer>\",\n  \"customertypecode\": \"<integer>\",\n  \"customersizecode\": \"<integer>\",\n  \"businesstypecode\": \"<integer>\",\n  \"preferredcontactmethodcode\": \"<integer>\",\n  \"paymenttermscode\": \"<integer>\",\n  \"shippingmethodcode\": \"<integer>\",\n  \"creditlimit\": \"<number>\",\n  \"creditlimit_base\": \"<number>\",\n  \"creditonhold\": \"<boolean>\",\n  \"donotemail\": \"<boolean>\",\n  \"donotphone\": \"<boolean>\",\n  \"donotfax\": \"<boolean>\",\n  \"donotpostalmail\": \"<boolean>\",\n  \"donotbulkemail\": \"<boolean>\",\n  \"donotsendmm\": \"<boolean>\",\n  \"marketingonly\": \"<boolean>\",\n  \"followemail\": \"<boolean>\",\n  \"address1_name\": \"<string>\",\n  \"address1_line1\": \"<string>\",\n  \"address1_line2\": \"<string>\",\n  \"address1_line3\": \"<string>\",\n  \"address1_city\": \"<string>\",\n  \"address1_stateorprovince\": \"<string>\",\n  \"address1_postalcode\": \"<string>\",\n  \"address1_country\": \"<string>\",\n  \"address1_county\": \"<string>\",\n  \"address1_telephone1\": \"<string>\",\n  \"address1_fax\": \"<string>\",\n  \"address1_latitude\": \"<double>\",\n  \"address1_longitude\": \"<double>\",\n  \"address1_addresstypecode\": \"<integer>\",\n  \"address1_composite\": \"<string>\",\n  \"address2_name\": \"<string>\",\n  \"address2_line1\": \"<string>\",\n  \"address2_line2\": \"<string>\",\n  \"address2_city\": \"<string>\",\n  \"address2_stateorprovince\": \"<string>\",\n  \"address2_postalcode\": \"<string>\",\n  \"address2_country\": \"<string>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"marketcap\": \"<number>\",\n  \"sharesoutstanding\": \"<integer>\",\n  \"ftpsiteurl\": \"<uri>\",\n  \"yominame\": \"<string>\",\n  \"_primarycontactid_value\": \"<uuid>\",\n  \"_parentaccountid_value\": \"<uuid>\",\n  \"_transactioncurrencyid_value\": \"<uuid>\",\n  \"_ownerid_value\": \"<uuid>\",\n  \"_owningbusinessunit_value\": \"<uuid>\",\n  \"_createdby_value\": \"<uuid>\",\n  \"_modifiedby_value\": \"<uuid>\",\n  \"createdon\": \"<dateTime>\",\n  \"modifiedon\": \"<dateTime>\",\n  \"versionnumber\": \"<long>\",\n  \"exchangerate\": \"<number>\",\n  \"merged\": \"<boolean>\"\n}",
+              "createdAt": "2026-07-28T02:10:53.000Z",
+              "updatedAt": "2026-07-28T02:10:53.000Z",
+              "uid": "35240-c57d7592-effc-4ef8-a2f2-c5c10f6a090e"
+            },
+            {
+              "id": "465062d8-9736-4a64-872f-9a3b1a8dcabb",
+              "name": "Authentication credentials are missing or invalid.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/accounts({{accountid}})?$select=<string>&$expand=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "accounts({{accountid}})"
+                  ],
+                  "query": [
+                    {
+                      "description": "Comma-separated list of properties to return.",
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Comma-separated list of navigation properties to expand.",
+                      "key": "$expand",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\",\n    \"innererror\": {\n      \"message\": \"<string>\",\n      \"type\": \"<string>\",\n      \"stacktrace\": \"<string>\"\n    }\n  }\n}",
+              "createdAt": "2026-07-28T02:10:53.000Z",
+              "updatedAt": "2026-07-28T02:10:53.000Z",
+              "uid": "35240-465062d8-9736-4a64-872f-9a3b1a8dcabb"
+            },
+            {
+              "id": "773f0c39-80f1-453e-aafe-fa2dca65f95c",
+              "name": "The requested resource was not found.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/accounts({{accountid}})?$select=<string>&$expand=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "accounts({{accountid}})"
+                  ],
+                  "query": [
+                    {
+                      "description": "Comma-separated list of properties to return.",
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Comma-separated list of navigation properties to expand.",
+                      "key": "$expand",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\",\n    \"innererror\": {\n      \"message\": \"<string>\",\n      \"type\": \"<string>\",\n      \"stacktrace\": \"<string>\"\n    }\n  }\n}",
+              "createdAt": "2026-07-28T02:10:53.000Z",
+              "updatedAt": "2026-07-28T02:10:53.000Z",
+              "uid": "35240-773f0c39-80f1-453e-aafe-fa2dca65f95c"
+            }
+          ],
+          "createdAt": "2026-07-28T02:10:53.000Z",
+          "updatedAt": "2026-07-28T02:10:53.000Z",
+          "uid": "35240-67f05c92-322e-44e2-9149-ec66337342b0"
+        },
+        {
+          "name": "Microsoft Dynamics 365 Update an account",
+          "id": "4fc35b3e-7d0a-447c-8e01-d9dafa17d504",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                "key": "Prefer",
+                "value": "<string>"
+              },
+              {
+                "description": "ETag value for optimistic concurrency control. Use * to match any version.",
+                "key": "If-Match",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"accountnumber\": \"<string>\",\n  \"description\": \"<string>\",\n  \"emailaddress1\": \"<email>\",\n  \"telephone1\": \"<string>\",\n  \"fax\": \"<string>\",\n  \"websiteurl\": \"<uri>\",\n  \"revenue\": \"<number>\",\n  \"numberofemployees\": \"<integer>\",\n  \"sic\": \"<string>\",\n  \"tickersymbol\": \"<string>\",\n  \"industrycode\": \"<integer>\",\n  \"ownershipcode\": \"<integer>\",\n  \"accountcategorycode\": \"<integer>\",\n  \"customertypecode\": \"<integer>\",\n  \"preferredcontactmethodcode\": \"<integer>\",\n  \"paymenttermscode\": \"<integer>\",\n  \"creditlimit\": \"<number>\",\n  \"creditonhold\": \"<boolean>\",\n  \"donotemail\": \"<boolean>\",\n  \"donotphone\": \"<boolean>\",\n  \"donotfax\": \"<boolean>\",\n  \"donotpostalmail\": \"<boolean>\",\n  \"donotbulkemail\": \"<boolean>\",\n  \"address1_name\": \"<string>\",\n  \"address1_line1\": \"<string>\",\n  \"address1_line2\": \"<string>\",\n  \"address1_line3\": \"<string>\",\n  \"address1_city\": \"<string>\",\n  \"address1_stateorprovince\": \"<string>\",\n  \"address1_postalcode\": \"<string>\",\n  \"address1_country\": \"<string>\",\n  \"address1_telephone1\": \"<string>\",\n  \"address1_fax\": \"<string>\",\n  \"address1_latitude\": \"<double>\",\n  \"address1_longitude\": \"<double>\",\n  \"address1_addresstypecode\": \"<integer>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"primarycontactid@odata.bind\": \"<string>\",\n  \"parentaccountid@odata.bind\": \"<string>\",\n  \"transactioncurrencyid@odata.bind\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/accounts({{accountid}})",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "accounts({{accountid}})"
+              ]
+            },
+            "description": "Update an existing account entity record."
+          },
+          "response": [
+            {
+              "id": "985875da-2f55-4162-ae27-9c8d579e3c15",
+              "name": "Account updated successfully (when Prefer return=representation).",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "<string>"
+                  },
+                  {
+                    "description": "ETag value for optimistic concurrency control. Use * to match any version.",
+                    "key": "If-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"accountnumber\": \"<string>\",\n  \"description\": \"<string>\",\n  \"emailaddress1\": \"<email>\",\n  \"telephone1\": \"<string>\",\n  \"fax\": \"<string>\",\n  \"websiteurl\": \"<uri>\",\n  \"revenue\": \"<number>\",\n  \"numberofemployees\": \"<integer>\",\n  \"sic\": \"<string>\",\n  \"tickersymbol\": \"<string>\",\n  \"industrycode\": \"<integer>\",\n  \"ownershipcode\": \"<integer>\",\n  \"accountcategorycode\": \"<integer>\",\n  \"customertypecode\": \"<integer>\",\n  \"preferredcontactmethodcode\": \"<integer>\",\n  \"paymenttermscode\": \"<integer>\",\n  \"creditlimit\": \"<number>\",\n  \"creditonhold\": \"<boolean>\",\n  \"donotemail\": \"<boolean>\",\n  \"donotphone\": \"<boolean>\",\n  \"donotfax\": \"<boolean>\",\n  \"donotpostalmail\": \"<boolean>\",\n  \"donotbulkemail\": \"<boolean>\",\n  \"address1_name\": \"<string>\",\n  \"address1_line1\": \"<string>\",\n  \"address1_line2\": \"<string>\",\n  \"address1_line3\": \"<string>\",\n  \"address1_city\": \"<string>\",\n  \"address1_stateorprovince\": \"<string>\",\n  \"address1_postalcode\": \"<string>\",\n  \"address1_country\": \"<string>\",\n  \"address1_telephone1\": \"<string>\",\n  \"address1_fax\": \"<string>\",\n  \"address1_latitude\": \"<double>\",\n  \"address1_longitude\": \"<double>\",\n  \"address1_addresstypecode\": \"<integer>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"primarycontactid@odata.bind\": \"<string>\",\n  \"parentaccountid@odata.bind\": \"<string>\",\n  \"transactioncurrencyid@odata.bind\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/accounts({{accountid}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "accounts({{accountid}})"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"@odata.etag\": \"<string>\",\n  \"accountid\": \"<uuid>\",\n  \"name\": \"<string>\",\n  \"accountnumber\": \"<string>\",\n  \"description\": \"<string>\",\n  \"emailaddress1\": \"<email>\",\n  \"emailaddress2\": \"<email>\",\n  \"emailaddress3\": \"<email>\",\n  \"telephone1\": \"<string>\",\n  \"telephone2\": \"<string>\",\n  \"telephone3\": \"<string>\",\n  \"fax\": \"<string>\",\n  \"websiteurl\": \"<uri>\",\n  \"revenue\": \"<number>\",\n  \"revenue_base\": \"<number>\",\n  \"numberofemployees\": \"<integer>\",\n  \"sic\": \"<string>\",\n  \"tickersymbol\": \"<string>\",\n  \"stockexchange\": \"<string>\",\n  \"industrycode\": \"<integer>\",\n  \"ownershipcode\": \"<integer>\",\n  \"accountcategorycode\": \"<integer>\",\n  \"accountclassificationcode\": \"<integer>\",\n  \"accountratingcode\": \"<integer>\",\n  \"customertypecode\": \"<integer>\",\n  \"customersizecode\": \"<integer>\",\n  \"businesstypecode\": \"<integer>\",\n  \"preferredcontactmethodcode\": \"<integer>\",\n  \"paymenttermscode\": \"<integer>\",\n  \"shippingmethodcode\": \"<integer>\",\n  \"creditlimit\": \"<number>\",\n  \"creditlimit_base\": \"<number>\",\n  \"creditonhold\": \"<boolean>\",\n  \"donotemail\": \"<boolean>\",\n  \"donotphone\": \"<boolean>\",\n  \"donotfax\": \"<boolean>\",\n  \"donotpostalmail\": \"<boolean>\",\n  \"donotbulkemail\": \"<boolean>\",\n  \"donotsendmm\": \"<boolean>\",\n  \"marketingonly\": \"<boolean>\",\n  \"followemail\": \"<boolean>\",\n  \"address1_name\": \"<string>\",\n  \"address1_line1\": \"<string>\",\n  \"address1_line2\": \"<string>\",\n  \"address1_line3\": \"<string>\",\n  \"address1_city\": \"<string>\",\n  \"address1_stateorprovince\": \"<string>\",\n  \"address1_postalcode\": \"<string>\",\n  \"address1_country\": \"<string>\",\n  \"address1_county\": \"<string>\",\n  \"address1_telephone1\": \"<string>\",\n  \"address1_fax\": \"<string>\",\n  \"address1_latitude\": \"<double>\",\n  \"address1_longitude\": \"<double>\",\n  \"address1_addresstypecode\": \"<integer>\",\n  \"address1_composite\": \"<string>\",\n  \"address2_name\": \"<string>\",\n  \"address2_line1\": \"<string>\",\n  \"address2_line2\": \"<string>\",\n  \"address2_city\": \"<string>\",\n  \"address2_stateorprovince\": \"<string>\",\n  \"address2_postalcode\": \"<string>\",\n  \"address2_country\": \"<string>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"marketcap\": \"<number>\",\n  \"sharesoutstanding\": \"<integer>\",\n  \"ftpsiteurl\": \"<uri>\",\n  \"yominame\": \"<string>\",\n  \"_primarycontactid_value\": \"<uuid>\",\n  \"_parentaccountid_value\": \"<uuid>\",\n  \"_transactioncurrencyid_value\": \"<uuid>\",\n  \"_ownerid_value\": \"<uuid>\",\n  \"_owningbusinessunit_value\": \"<uuid>\",\n  \"_createdby_value\": \"<uuid>\",\n  \"_modifiedby_value\": \"<uuid>\",\n  \"createdon\": \"<dateTime>\",\n  \"modifiedon\": \"<dateTime>\",\n  \"versionnumber\": \"<long>\",\n  \"exchangerate\": \"<number>\",\n  \"merged\": \"<boolean>\"\n}",
+              "createdAt": "2026-07-28T02:10:53.000Z",
+              "updatedAt": "2026-07-28T02:10:53.000Z",
+              "uid": "35240-985875da-2f55-4162-ae27-9c8d579e3c15"
+            },
+            {
+              "id": "57fa4b51-886e-48c5-bffc-a26672ac1314",
+              "name": "Account updated successfully.",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "<string>"
+                  },
+                  {
+                    "description": "ETag value for optimistic concurrency control. Use * to match any version.",
+                    "key": "If-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"accountnumber\": \"<string>\",\n  \"description\": \"<string>\",\n  \"emailaddress1\": \"<email>\",\n  \"telephone1\": \"<string>\",\n  \"fax\": \"<string>\",\n  \"websiteurl\": \"<uri>\",\n  \"revenue\": \"<number>\",\n  \"numberofemployees\": \"<integer>\",\n  \"sic\": \"<string>\",\n  \"tickersymbol\": \"<string>\",\n  \"industrycode\": \"<integer>\",\n  \"ownershipcode\": \"<integer>\",\n  \"accountcategorycode\": \"<integer>\",\n  \"customertypecode\": \"<integer>\",\n  \"preferredcontactmethodcode\": \"<integer>\",\n  \"paymenttermscode\": \"<integer>\",\n  \"creditlimit\": \"<number>\",\n  \"creditonhold\": \"<boolean>\",\n  \"donotemail\": \"<boolean>\",\n  \"donotphone\": \"<boolean>\",\n  \"donotfax\": \"<boolean>\",\n  \"donotpostalmail\": \"<boolean>\",\n  \"donotbulkemail\": \"<boolean>\",\n  \"address1_name\": \"<string>\",\n  \"address1_line1\": \"<string>\",\n  \"address1_line2\": \"<string>\",\n  \"address1_line3\": \"<string>\",\n  \"address1_city\": \"<string>\",\n  \"address1_stateorprovince\": \"<string>\",\n  \"address1_postalcode\": \"<string>\",\n  \"address1_country\": \"<string>\",\n  \"address1_telephone1\": \"<string>\",\n  \"address1_fax\": \"<string>\",\n  \"address1_latitude\": \"<double>\",\n  \"address1_longitude\": \"<double>\",\n  \"address1_addresstypecode\": \"<integer>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"primarycontactid@odata.bind\": \"<string>\",\n  \"parentaccountid@odata.bind\": \"<string>\",\n  \"transactioncurrencyid@odata.bind\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/accounts({{accountid}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "accounts({{accountid}})"
+                  ]
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:10:53.000Z",
+              "updatedAt": "2026-07-28T02:10:53.000Z",
+              "uid": "35240-57fa4b51-886e-48c5-bffc-a26672ac1314"
+            },
+            {
+              "id": "da46de02-f32e-47f9-a2e0-231981de8599",
+              "name": "Authentication credentials are missing or invalid.",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "<string>"
+                  },
+                  {
+                    "description": "ETag value for optimistic concurrency control. Use * to match any version.",
+                    "key": "If-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"accountnumber\": \"<string>\",\n  \"description\": \"<string>\",\n  \"emailaddress1\": \"<email>\",\n  \"telephone1\": \"<string>\",\n  \"fax\": \"<string>\",\n  \"websiteurl\": \"<uri>\",\n  \"revenue\": \"<number>\",\n  \"numberofemployees\": \"<integer>\",\n  \"sic\": \"<string>\",\n  \"tickersymbol\": \"<string>\",\n  \"industrycode\": \"<integer>\",\n  \"ownershipcode\": \"<integer>\",\n  \"accountcategorycode\": \"<integer>\",\n  \"customertypecode\": \"<integer>\",\n  \"preferredcontactmethodcode\": \"<integer>\",\n  \"paymenttermscode\": \"<integer>\",\n  \"creditlimit\": \"<number>\",\n  \"creditonhold\": \"<boolean>\",\n  \"donotemail\": \"<boolean>\",\n  \"donotphone\": \"<boolean>\",\n  \"donotfax\": \"<boolean>\",\n  \"donotpostalmail\": \"<boolean>\",\n  \"donotbulkemail\": \"<boolean>\",\n  \"address1_name\": \"<string>\",\n  \"address1_line1\": \"<string>\",\n  \"address1_line2\": \"<string>\",\n  \"address1_line3\": \"<string>\",\n  \"address1_city\": \"<string>\",\n  \"address1_stateorprovince\": \"<string>\",\n  \"address1_postalcode\": \"<string>\",\n  \"address1_country\": \"<string>\",\n  \"address1_telephone1\": \"<string>\",\n  \"address1_fax\": \"<string>\",\n  \"address1_latitude\": \"<double>\",\n  \"address1_longitude\": \"<double>\",\n  \"address1_addresstypecode\": \"<integer>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"primarycontactid@odata.bind\": \"<string>\",\n  \"parentaccountid@odata.bind\": \"<string>\",\n  \"transactioncurrencyid@odata.bind\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/accounts({{accountid}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "accounts({{accountid}})"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\",\n    \"innererror\": {\n      \"message\": \"<string>\",\n      \"type\": \"<string>\",\n      \"stacktrace\": \"<string>\"\n    }\n  }\n}",
+              "createdAt": "2026-07-28T02:10:53.000Z",
+              "updatedAt": "2026-07-28T02:10:53.000Z",
+              "uid": "35240-da46de02-f32e-47f9-a2e0-231981de8599"
+            },
+            {
+              "id": "a68afac8-48fd-4e19-8876-493bc10da77c",
+              "name": "The requested resource was not found.",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "<string>"
+                  },
+                  {
+                    "description": "ETag value for optimistic concurrency control. Use * to match any version.",
+                    "key": "If-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"accountnumber\": \"<string>\",\n  \"description\": \"<string>\",\n  \"emailaddress1\": \"<email>\",\n  \"telephone1\": \"<string>\",\n  \"fax\": \"<string>\",\n  \"websiteurl\": \"<uri>\",\n  \"revenue\": \"<number>\",\n  \"numberofemployees\": \"<integer>\",\n  \"sic\": \"<string>\",\n  \"tickersymbol\": \"<string>\",\n  \"industrycode\": \"<integer>\",\n  \"ownershipcode\": \"<integer>\",\n  \"accountcategorycode\": \"<integer>\",\n  \"customertypecode\": \"<integer>\",\n  \"preferredcontactmethodcode\": \"<integer>\",\n  \"paymenttermscode\": \"<integer>\",\n  \"creditlimit\": \"<number>\",\n  \"creditonhold\": \"<boolean>\",\n  \"donotemail\": \"<boolean>\",\n  \"donotphone\": \"<boolean>\",\n  \"donotfax\": \"<boolean>\",\n  \"donotpostalmail\": \"<boolean>\",\n  \"donotbulkemail\": \"<boolean>\",\n  \"address1_name\": \"<string>\",\n  \"address1_line1\": \"<string>\",\n  \"address1_line2\": \"<string>\",\n  \"address1_line3\": \"<string>\",\n  \"address1_city\": \"<string>\",\n  \"address1_stateorprovince\": \"<string>\",\n  \"address1_postalcode\": \"<string>\",\n  \"address1_country\": \"<string>\",\n  \"address1_telephone1\": \"<string>\",\n  \"address1_fax\": \"<string>\",\n  \"address1_latitude\": \"<double>\",\n  \"address1_longitude\": \"<double>\",\n  \"address1_addresstypecode\": \"<integer>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"primarycontactid@odata.bind\": \"<string>\",\n  \"parentaccountid@odata.bind\": \"<string>\",\n  \"transactioncurrencyid@odata.bind\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/accounts({{accountid}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "accounts({{accountid}})"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\",\n    \"innererror\": {\n      \"message\": \"<string>\",\n      \"type\": \"<string>\",\n      \"stacktrace\": \"<string>\"\n    }\n  }\n}",
+              "createdAt": "2026-07-28T02:10:53.000Z",
+              "updatedAt": "2026-07-28T02:10:53.000Z",
+              "uid": "35240-a68afac8-48fd-4e19-8876-493bc10da77c"
+            },
+            {
+              "id": "578c3ee4-263b-4783-ab44-7601ac0ddd57",
+              "name": "The ETag value provided in the If-Match header does not match the current version of the record.",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "<string>"
+                  },
+                  {
+                    "description": "ETag value for optimistic concurrency control. Use * to match any version.",
+                    "key": "If-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"accountnumber\": \"<string>\",\n  \"description\": \"<string>\",\n  \"emailaddress1\": \"<email>\",\n  \"telephone1\": \"<string>\",\n  \"fax\": \"<string>\",\n  \"websiteurl\": \"<uri>\",\n  \"revenue\": \"<number>\",\n  \"numberofemployees\": \"<integer>\",\n  \"sic\": \"<string>\",\n  \"tickersymbol\": \"<string>\",\n  \"industrycode\": \"<integer>\",\n  \"ownershipcode\": \"<integer>\",\n  \"accountcategorycode\": \"<integer>\",\n  \"customertypecode\": \"<integer>\",\n  \"preferredcontactmethodcode\": \"<integer>\",\n  \"paymenttermscode\": \"<integer>\",\n  \"creditlimit\": \"<number>\",\n  \"creditonhold\": \"<boolean>\",\n  \"donotemail\": \"<boolean>\",\n  \"donotphone\": \"<boolean>\",\n  \"donotfax\": \"<boolean>\",\n  \"donotpostalmail\": \"<boolean>\",\n  \"donotbulkemail\": \"<boolean>\",\n  \"address1_name\": \"<string>\",\n  \"address1_line1\": \"<string>\",\n  \"address1_line2\": \"<string>\",\n  \"address1_line3\": \"<string>\",\n  \"address1_city\": \"<string>\",\n  \"address1_stateorprovince\": \"<string>\",\n  \"address1_postalcode\": \"<string>\",\n  \"address1_country\": \"<string>\",\n  \"address1_telephone1\": \"<string>\",\n  \"address1_fax\": \"<string>\",\n  \"address1_latitude\": \"<double>\",\n  \"address1_longitude\": \"<double>\",\n  \"address1_addresstypecode\": \"<integer>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"primarycontactid@odata.bind\": \"<string>\",\n  \"parentaccountid@odata.bind\": \"<string>\",\n  \"transactioncurrencyid@odata.bind\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/accounts({{accountid}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "accounts({{accountid}})"
+                  ]
+                }
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\",\n    \"innererror\": {\n      \"message\": \"<string>\",\n      \"type\": \"<string>\",\n      \"stacktrace\": \"<string>\"\n    }\n  }\n}",
+              "createdAt": "2026-07-28T02:10:53.000Z",
+              "updatedAt": "2026-07-28T02:10:53.000Z",
+              "uid": "35240-578c3ee4-263b-4783-ab44-7601ac0ddd57"
+            }
+          ],
+          "createdAt": "2026-07-28T02:10:53.000Z",
+          "updatedAt": "2026-07-28T02:10:53.000Z",
+          "uid": "35240-4fc35b3e-7d0a-447c-8e01-d9dafa17d504"
+        },
+        {
+          "name": "Microsoft Dynamics 365 Delete an account",
+          "id": "3d912693-f93c-46d9-9b24-d7654d2ceccd",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/accounts({{accountid}})",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "accounts({{accountid}})"
+              ]
+            },
+            "description": "Delete an account entity record."
+          },
+          "response": [
+            {
+              "id": "75dfd935-7b56-4e19-a578-d8c086807121",
+              "name": "Account deleted successfully.",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/accounts({{accountid}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "accounts({{accountid}})"
+                  ]
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:10:53.000Z",
+              "updatedAt": "2026-07-28T02:10:53.000Z",
+              "uid": "35240-75dfd935-7b56-4e19-a578-d8c086807121"
+            },
+            {
+              "id": "1d238b2d-fa60-422c-a72c-cb07ca9d021d",
+              "name": "Authentication credentials are missing or invalid.",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/accounts({{accountid}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "accounts({{accountid}})"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\",\n    \"innererror\": {\n      \"message\": \"<string>\",\n      \"type\": \"<string>\",\n      \"stacktrace\": \"<string>\"\n    }\n  }\n}",
+              "createdAt": "2026-07-28T02:10:53.000Z",
+              "updatedAt": "2026-07-28T02:10:53.000Z",
+              "uid": "35240-1d238b2d-fa60-422c-a72c-cb07ca9d021d"
+            },
+            {
+              "id": "a8243d40-cbd3-46f2-9a41-a5a8d9a8f899",
+              "name": "The requested resource was not found.",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/accounts({{accountid}})",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "accounts({{accountid}})"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\",\n    \"innererror\": {\n      \"message\": \"<string>\",\n      \"type\": \"<string>\",\n      \"stacktrace\": \"<string>\"\n    }\n  }\n}",
+              "createdAt": "2026-07-28T02:10:53.000Z",
+              "updatedAt": "2026-07-28T02:10:53.000Z",
+              "uid": "35240-a8243d40-cbd3-46f2-9a41-a5a8d9a8f899"
+            }
+          ],
+          "createdAt": "2026-07-28T02:10:53.000Z",
+          "updatedAt": "2026-07-28T02:10:53.000Z",
+          "uid": "35240-3d912693-f93c-46d9-9b24-d7654d2ceccd"
+        }
+      ],
+      "id": "a460b5ca-d1af-458a-9787-885135820341",
+      "createdAt": "2026-07-28T02:10:53.000Z",
+      "updatedAt": "2026-07-28T02:10:53.000Z",
+      "uid": "35240-a460b5ca-d1af-458a-9787-885135820341"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://{org}.api.crm.dynamics.com/.default",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "org",
+      "value": "yourorg"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{org}}.api.crm.dynamics.com/api/data/v9.2"
+    },
+    {
+      "key": "accountid",
+      "value": "<uuid>"
+    }
+  ]
+}
