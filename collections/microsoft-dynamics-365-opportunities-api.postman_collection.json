@@ -1,0 +1,1570 @@
+{
+  "item": [
+    {
+      "id": "74493866-f810-4789-98ab-36d6ff7ebb87",
+      "name": "Opportunities",
+      "description": {
+        "content": "Potential revenue-generating event or sale to an account that needs to be tracked through the sales process to completion.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "aee43942-6b24-4758-aed1-f125d6bb6606",
+          "name": "Microsoft Dynamics 365 List opportunities",
+          "request": {
+            "name": "Microsoft Dynamics 365 List opportunities",
+            "description": {
+              "content": "Retrieve a list of opportunity entity records. Supports OData query options including $select, $filter, $orderby, $top, $skip, and $expand.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "opportunities"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "$select",
+                  "value": "<string>",
+                  "description": "Comma-separated list of properties to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "$filter",
+                  "value": "<string>",
+                  "description": "OData filter expression to restrict results."
+                },
+                {
+                  "disabled": false,
+                  "key": "$orderby",
+                  "value": "<string>",
+                  "description": "Comma-separated list of properties to sort by, with optional asc or desc."
+                },
+                {
+                  "disabled": false,
+                  "key": "$top",
+                  "value": "<integer>",
+                  "description": "Maximum number of records to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "$skip",
+                  "value": "<integer>",
+                  "description": "Number of records to skip before returning results."
+                },
+                {
+                  "disabled": false,
+                  "key": "$expand",
+                  "value": "<string>",
+                  "description": "Comma-separated list of navigation properties to expand."
+                },
+                {
+                  "disabled": false,
+                  "key": "$count",
+                  "value": "<boolean>",
+                  "description": "Include a count of matching records in the response."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "The unique name of your Dynamics 365 organization.",
+                  "type": "any",
+                  "value": "{{org}}",
+                  "key": "org"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                "key": "Prefer",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4da39a1a-07d5-41b4-8cb2-2af8fd4c3d67",
+              "name": "Successfully retrieved opportunities.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "opportunities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$top",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "$skip",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "$expand",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$count",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "return=representation"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"@odata.context\": \"string\",\n  \"@odata.count\": 8414,\n  \"@odata.nextLink\": \"https://OufiyZA.uunfrl-cCbuKqTF\",\n  \"value\": [\n    {\n      \"@odata.etag\": \"string\",\n      \"opportunityid\": \"27777078-617e-9d39-10a1-c704c6a52d7f\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"estimatedvalue\": 6685.938415574117,\n      \"estimatedvalue_base\": 3404.191055042747,\n      \"actualvalue\": 3827.532558438296,\n      \"actualvalue_base\": 5641.219152667185,\n      \"budgetamount\": 3458.1519746732993,\n      \"budgetamount_base\": 6657.266812400221,\n      \"closeprobability\": 85,\n      \"estimatedclosedate\": \"1946-10-18\",\n      \"actualclosedate\": \"2008-06-16\",\n      \"stepname\": \"string\",\n      \"salesstage\": 5385,\n      \"salesstagecode\": 7517,\n      \"statecode\": 1802,\n      \"statuscode\": 2024,\n      \"opportunityratingcode\": 7737,\n      \"prioritycode\": 6763,\n      \"budgetstatus\": 9436,\n      \"purchaseprocess\": 1490,\n      \"purchasetimeframe\": 7306,\n      \"timeline\": 9369,\n      \"customerneed\": \"string\",\n      \"customerpainpoints\": \"string\",\n      \"currentsituation\": \"string\",\n      \"proposedsolution\": \"string\",\n      \"qualificationcomments\": \"string\",\n      \"decisionmaker\": true,\n      \"developproposal\": false,\n      \"completefinalproposal\": true,\n      \"presentproposal\": true,\n      \"presentfinalproposal\": true,\n      \"completeinternalreview\": false,\n      \"captureproposalfeedback\": false,\n      \"resolvefeedback\": true,\n      \"discountamount\": 1650.8891390982105,\n      \"discountpercentage\": 86.154991342341,\n      \"freightamount\": 234.10170844659683,\n      \"totalamount\": 2489.5031246673702,\n      \"totallineitemamount\": 8664.113502413824,\n      \"totaltax\": 5582.179971467407,\n      \"msdyn_forecastcategory\": 3647,\n      \"_customerid_value\": \"ee93422f-bd9a-5520-f9b2-38c1eedad0ca\",\n      \"_parentaccountid_value\": \"e6ea5886-9109-c206-9901-397d65273785\",\n      \"_parentcontactid_value\": \"0331ea66-01fd-755f-fc95-a81fd2c6eadf\",\n      \"_originatingleadid_value\": \"006e1ce9-0bea-cdf7-7116-b080b50fca2c\",\n      \"_campaignid_value\": \"009cef64-aa36-ad19-a4a3-bf5789646fe1\",\n      \"_transactioncurrencyid_value\": \"e0342006-3d3f-5a1c-6236-abb5148c4387\",\n      \"_ownerid_value\": \"99d0b3ba-048b-8d41-2be4-9085ebae6594\",\n      \"_createdby_value\": \"0a065664-42a2-1bd3-ebf2-2cea87f48b73\",\n      \"_modifiedby_value\": \"e28ecdd0-8072-46f2-a040-7999476252fd\",\n      \"createdon\": \"2011-03-05T08:14:31.223Z\",\n      \"modifiedon\": \"2012-11-01T22:15:21.530Z\",\n      \"versionnumber\": 6028\n    },\n    {\n      \"@odata.etag\": \"string\",\n      \"opportunityid\": \"f94e185e-ffeb-e9fc-2e5f-91c590d54372\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"estimatedvalue\": 6987.667817869648,\n      \"estimatedvalue_base\": 2989.975968293568,\n      \"actualvalue\": 8345.826164588341,\n      \"actualvalue_base\": 3151.7316662871854,\n      \"budgetamount\": 6504.799612605239,\n      \"budgetamount_base\": 3743.4300943103717,\n      \"closeprobability\": 92,\n      \"estimatedclosedate\": \"1982-09-09\",\n      \"actualclosedate\": \"2019-07-14\",\n      \"stepname\": \"string\",\n      \"salesstage\": 5413,\n      \"salesstagecode\": 9030,\n      \"statecode\": 8678,\n      \"statuscode\": 6821,\n      \"opportunityratingcode\": 8836,\n      \"prioritycode\": 2085,\n      \"budgetstatus\": 8590,\n      \"purchaseprocess\": 2656,\n      \"purchasetimeframe\": 5736,\n      \"timeline\": 1431,\n      \"customerneed\": \"string\",\n      \"customerpainpoints\": \"string\",\n      \"currentsituation\": \"string\",\n      \"proposedsolution\": \"string\",\n      \"qualificationcomments\": \"string\",\n      \"decisionmaker\": true,\n      \"developproposal\": true,\n      \"completefinalproposal\": false,\n      \"presentproposal\": true,\n      \"presentfinalproposal\": true,\n      \"completeinternalreview\": true,\n      \"captureproposalfeedback\": true,\n      \"resolvefeedback\": true,\n      \"discountamount\": 4177.153838997177,\n      \"discountpercentage\": 92.5597076831377,\n      \"freightamount\": 5200.875722508924,\n      \"totalamount\": 4070.2368093643095,\n      \"totallineitemamount\": 9423.414292842668,\n      \"totaltax\": 1579.9710478289442,\n      \"msdyn_forecastcategory\": 1955,\n      \"_customerid_value\": \"5bef74cb-f022-8390-7707-fd5f51d1593d\",\n      \"_parentaccountid_value\": \"de1083c1-f474-e8ac-006a-bb73745e671c\",\n      \"_parentcontactid_value\": \"c20ac5ed-529a-8a1a-b553-cc26165f9b21\",\n      \"_originatingleadid_value\": \"a7b0efdd-da6b-94ad-e9a7-4ec3138c9aa3\",\n      \"_campaignid_value\": \"7812c1d1-2663-e25c-3ce3-fa528385c83d\",\n      \"_transactioncurrencyid_value\": \"b62a0cb4-4f89-8407-f82d-41f8653b5fd5\",\n      \"_ownerid_value\": \"ae8ad946-c8ee-ec7c-7480-83eecfda4e36\",\n      \"_createdby_value\": \"7c42abb9-0889-6d32-9890-7dec056b0938\",\n      \"_modifiedby_value\": \"0eb3686e-aa4b-20a1-c70d-29659ac6e0db\",\n      \"createdon\": \"2000-12-12T17:49:14.064Z\",\n      \"modifiedon\": \"1973-03-10T03:45:27.291Z\",\n      \"versionnumber\": 8760\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4ea84c64-47d5-4f24-a705-7907c323af57",
+              "name": "Authentication credentials are missing or invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "opportunities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$top",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "$skip",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "$expand",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$count",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "return=representation"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"innererror\": {\n      \"message\": \"string\",\n      \"type\": \"string\",\n      \"stacktrace\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4ef2d7ec-055f-408c-803d-222da851003c",
+              "name": "The authenticated user does not have permission to perform this action.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "opportunities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$top",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "$skip",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "$expand",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$count",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "return=representation"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"innererror\": {\n      \"message\": \"string\",\n      \"type\": \"string\",\n      \"stacktrace\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d8623cf0-aecb-4569-ad8a-b763446d0d42",
+          "name": "Microsoft Dynamics 365 Create an opportunity",
+          "request": {
+            "name": "Microsoft Dynamics 365 Create an opportunity",
+            "description": {
+              "content": "Create a new opportunity entity record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "opportunities"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The unique name of your Dynamics 365 organization.",
+                  "type": "any",
+                  "value": "{{org}}",
+                  "key": "org"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                "key": "Prefer",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "30f22c11-207b-4e92-8849-393f801c2860",
+              "name": "Opportunity created successfully (when Prefer return=representation).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "opportunities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "return=representation"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"string\",\n  \"estimatedvalue\": 2155.9906149838794,\n  \"closeprobability\": 35,\n  \"estimatedclosedate\": \"1965-08-15\",\n  \"stepname\": \"string\",\n  \"salesstage\": 3925,\n  \"opportunityratingcode\": 7556,\n  \"prioritycode\": 2436,\n  \"budgetamount\": 4353.034187063003,\n  \"budgetstatus\": 819,\n  \"purchaseprocess\": 8546,\n  \"purchasetimeframe\": 4369,\n  \"timeline\": 9173,\n  \"customerneed\": \"string\",\n  \"customerpainpoints\": \"string\",\n  \"currentsituation\": \"string\",\n  \"proposedsolution\": \"string\",\n  \"decisionmaker\": false,\n  \"discountamount\": 3604.249626641577,\n  \"discountpercentage\": 25.542953963695737,\n  \"freightamount\": 6579.4946930994165,\n  \"totaltax\": 208.9744790587089,\n  \"statecode\": 6117,\n  \"statuscode\": 9697,\n  \"customerid_account@odata.bind\": \"string\",\n  \"customerid_contact@odata.bind\": \"string\",\n  \"parentaccountid@odata.bind\": \"string\",\n  \"parentcontactid@odata.bind\": \"string\",\n  \"originatingleadid@odata.bind\": \"string\",\n  \"campaignid@odata.bind\": \"string\",\n  \"transactioncurrencyid@odata.bind\": \"string\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"@odata.etag\": \"string\",\n  \"opportunityid\": \"2e95a1a9-07f4-c12c-6644-b9fc241dee50\",\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"estimatedvalue\": 7205.733178134058,\n  \"estimatedvalue_base\": 5290.487435005814,\n  \"actualvalue\": 9163.868099171572,\n  \"actualvalue_base\": 4136.926821180387,\n  \"budgetamount\": 2070.751602936108,\n  \"budgetamount_base\": 6502.0705226041755,\n  \"closeprobability\": 93,\n  \"estimatedclosedate\": \"1990-06-28\",\n  \"actualclosedate\": \"1954-05-15\",\n  \"stepname\": \"string\",\n  \"salesstage\": 9835,\n  \"salesstagecode\": 8478,\n  \"statecode\": 8657,\n  \"statuscode\": 5485,\n  \"opportunityratingcode\": 1678,\n  \"prioritycode\": 570,\n  \"budgetstatus\": 1118,\n  \"purchaseprocess\": 990,\n  \"purchasetimeframe\": 8527,\n  \"timeline\": 3736,\n  \"customerneed\": \"string\",\n  \"customerpainpoints\": \"string\",\n  \"currentsituation\": \"string\",\n  \"proposedsolution\": \"string\",\n  \"qualificationcomments\": \"string\",\n  \"decisionmaker\": false,\n  \"developproposal\": false,\n  \"completefinalproposal\": true,\n  \"presentproposal\": false,\n  \"presentfinalproposal\": false,\n  \"completeinternalreview\": true,\n  \"captureproposalfeedback\": false,\n  \"resolvefeedback\": false,\n  \"discountamount\": 2609.3151110344716,\n  \"discountpercentage\": 5.772522977361538,\n  \"freightamount\": 3291.2969802281323,\n  \"totalamount\": 449.86975405609917,\n  \"totallineitemamount\": 1526.4338547649782,\n  \"totaltax\": 5407.727072275128,\n  \"msdyn_forecastcategory\": 4578,\n  \"_customerid_value\": \"f222567d-a865-649f-9e34-8702bc429dc7\",\n  \"_parentaccountid_value\": \"bd2733af-5d8a-d946-6a62-eefcf827fc8d\",\n  \"_parentcontactid_value\": \"39cc034b-29aa-6659-9e0d-b5a6990325f1\",\n  \"_originatingleadid_value\": \"04dd0aa0-41e7-74a0-5c31-9f942dabacf1\",\n  \"_campaignid_value\": \"56428ea7-128a-3077-b57a-6020b2d47536\",\n  \"_transactioncurrencyid_value\": \"d32b0909-16e4-63e8-3dc8-f158ae75808f\",\n  \"_ownerid_value\": \"3cff9a7f-831f-b431-9247-d460e515b32c\",\n  \"_createdby_value\": \"e3462b6f-5ab4-3b0e-0e0d-dbc358399625\",\n  \"_modifiedby_value\": \"726ea7ec-9c87-2a93-cef6-8a7734f97b09\",\n  \"createdon\": \"2007-09-27T12:04:50.106Z\",\n  \"modifiedon\": \"1964-10-30T09:34:57.559Z\",\n  \"versionnumber\": 1749\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6dd60f5f-119d-4f95-9362-d02f5b4c7af4",
+              "name": "Opportunity created successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "opportunities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "return=representation"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"string\",\n  \"estimatedvalue\": 2155.9906149838794,\n  \"closeprobability\": 35,\n  \"estimatedclosedate\": \"1965-08-15\",\n  \"stepname\": \"string\",\n  \"salesstage\": 3925,\n  \"opportunityratingcode\": 7556,\n  \"prioritycode\": 2436,\n  \"budgetamount\": 4353.034187063003,\n  \"budgetstatus\": 819,\n  \"purchaseprocess\": 8546,\n  \"purchasetimeframe\": 4369,\n  \"timeline\": 9173,\n  \"customerneed\": \"string\",\n  \"customerpainpoints\": \"string\",\n  \"currentsituation\": \"string\",\n  \"proposedsolution\": \"string\",\n  \"decisionmaker\": false,\n  \"discountamount\": 3604.249626641577,\n  \"discountpercentage\": 25.542953963695737,\n  \"freightamount\": 6579.4946930994165,\n  \"totaltax\": 208.9744790587089,\n  \"statecode\": 6117,\n  \"statuscode\": 9697,\n  \"customerid_account@odata.bind\": \"string\",\n  \"customerid_contact@odata.bind\": \"string\",\n  \"parentaccountid@odata.bind\": \"string\",\n  \"parentcontactid@odata.bind\": \"string\",\n  \"originatingleadid@odata.bind\": \"string\",\n  \"campaignid@odata.bind\": \"string\",\n  \"transactioncurrencyid@odata.bind\": \"string\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "URI of the newly created opportunity record.",
+                  "key": "OData-EntityId",
+                  "value": "http://faDjDKNXEZCjg.qxdreoMHrMBXSbUPHgIjObgoT5vqQ88AOE.NGFdeQhTRBb40kHDGeuzdV,u1V-MD+NNAoNkslfQZ"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f7ff03fb-6551-4a45-a8bb-782535a89154",
+              "name": "Authentication credentials are missing or invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "opportunities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "return=representation"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"string\",\n  \"estimatedvalue\": 2155.9906149838794,\n  \"closeprobability\": 35,\n  \"estimatedclosedate\": \"1965-08-15\",\n  \"stepname\": \"string\",\n  \"salesstage\": 3925,\n  \"opportunityratingcode\": 7556,\n  \"prioritycode\": 2436,\n  \"budgetamount\": 4353.034187063003,\n  \"budgetstatus\": 819,\n  \"purchaseprocess\": 8546,\n  \"purchasetimeframe\": 4369,\n  \"timeline\": 9173,\n  \"customerneed\": \"string\",\n  \"customerpainpoints\": \"string\",\n  \"currentsituation\": \"string\",\n  \"proposedsolution\": \"string\",\n  \"decisionmaker\": false,\n  \"discountamount\": 3604.249626641577,\n  \"discountpercentage\": 25.542953963695737,\n  \"freightamount\": 6579.4946930994165,\n  \"totaltax\": 208.9744790587089,\n  \"statecode\": 6117,\n  \"statuscode\": 9697,\n  \"customerid_account@odata.bind\": \"string\",\n  \"customerid_contact@odata.bind\": \"string\",\n  \"parentaccountid@odata.bind\": \"string\",\n  \"parentcontactid@odata.bind\": \"string\",\n  \"originatingleadid@odata.bind\": \"string\",\n  \"campaignid@odata.bind\": \"string\",\n  \"transactioncurrencyid@odata.bind\": \"string\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"innererror\": {\n      \"message\": \"string\",\n      \"type\": \"string\",\n      \"stacktrace\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c5867680-475d-44e2-b55e-a2d2289c8eec",
+              "name": "The authenticated user does not have permission to perform this action.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "opportunities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "return=representation"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"string\",\n  \"estimatedvalue\": 2155.9906149838794,\n  \"closeprobability\": 35,\n  \"estimatedclosedate\": \"1965-08-15\",\n  \"stepname\": \"string\",\n  \"salesstage\": 3925,\n  \"opportunityratingcode\": 7556,\n  \"prioritycode\": 2436,\n  \"budgetamount\": 4353.034187063003,\n  \"budgetstatus\": 819,\n  \"purchaseprocess\": 8546,\n  \"purchasetimeframe\": 4369,\n  \"timeline\": 9173,\n  \"customerneed\": \"string\",\n  \"customerpainpoints\": \"string\",\n  \"currentsituation\": \"string\",\n  \"proposedsolution\": \"string\",\n  \"decisionmaker\": false,\n  \"discountamount\": 3604.249626641577,\n  \"discountpercentage\": 25.542953963695737,\n  \"freightamount\": 6579.4946930994165,\n  \"totaltax\": 208.9744790587089,\n  \"statecode\": 6117,\n  \"statuscode\": 9697,\n  \"customerid_account@odata.bind\": \"string\",\n  \"customerid_contact@odata.bind\": \"string\",\n  \"parentaccountid@odata.bind\": \"string\",\n  \"parentcontactid@odata.bind\": \"string\",\n  \"originatingleadid@odata.bind\": \"string\",\n  \"campaignid@odata.bind\": \"string\",\n  \"transactioncurrencyid@odata.bind\": \"string\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"innererror\": {\n      \"message\": \"string\",\n      \"type\": \"string\",\n      \"stacktrace\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7b15fc54-8a38-4ba6-b25a-67b63f331949",
+          "name": "Microsoft Dynamics 365 Retrieve an opportunity",
+          "request": {
+            "name": "Microsoft Dynamics 365 Retrieve an opportunity",
+            "description": {
+              "content": "Retrieve a single opportunity entity record by its unique identifier.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "opportunities({{opportunityid}})"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "$select",
+                  "value": "<string>",
+                  "description": "Comma-separated list of properties to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "$expand",
+                  "value": "<string>",
+                  "description": "Comma-separated list of navigation properties to expand."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "The unique name of your Dynamics 365 organization.",
+                  "type": "any",
+                  "value": "{{org}}",
+                  "key": "org"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b1d252d2-1f3f-4990-8487-add3cceadf49",
+              "name": "Successfully retrieved the opportunity.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "opportunities({{opportunityid}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$expand",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"@odata.etag\": \"string\",\n  \"opportunityid\": \"2e95a1a9-07f4-c12c-6644-b9fc241dee50\",\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"estimatedvalue\": 7205.733178134058,\n  \"estimatedvalue_base\": 5290.487435005814,\n  \"actualvalue\": 9163.868099171572,\n  \"actualvalue_base\": 4136.926821180387,\n  \"budgetamount\": 2070.751602936108,\n  \"budgetamount_base\": 6502.0705226041755,\n  \"closeprobability\": 93,\n  \"estimatedclosedate\": \"1990-06-28\",\n  \"actualclosedate\": \"1954-05-15\",\n  \"stepname\": \"string\",\n  \"salesstage\": 9835,\n  \"salesstagecode\": 8478,\n  \"statecode\": 8657,\n  \"statuscode\": 5485,\n  \"opportunityratingcode\": 1678,\n  \"prioritycode\": 570,\n  \"budgetstatus\": 1118,\n  \"purchaseprocess\": 990,\n  \"purchasetimeframe\": 8527,\n  \"timeline\": 3736,\n  \"customerneed\": \"string\",\n  \"customerpainpoints\": \"string\",\n  \"currentsituation\": \"string\",\n  \"proposedsolution\": \"string\",\n  \"qualificationcomments\": \"string\",\n  \"decisionmaker\": false,\n  \"developproposal\": false,\n  \"completefinalproposal\": true,\n  \"presentproposal\": false,\n  \"presentfinalproposal\": false,\n  \"completeinternalreview\": true,\n  \"captureproposalfeedback\": false,\n  \"resolvefeedback\": false,\n  \"discountamount\": 2609.3151110344716,\n  \"discountpercentage\": 5.772522977361538,\n  \"freightamount\": 3291.2969802281323,\n  \"totalamount\": 449.86975405609917,\n  \"totallineitemamount\": 1526.4338547649782,\n  \"totaltax\": 5407.727072275128,\n  \"msdyn_forecastcategory\": 4578,\n  \"_customerid_value\": \"f222567d-a865-649f-9e34-8702bc429dc7\",\n  \"_parentaccountid_value\": \"bd2733af-5d8a-d946-6a62-eefcf827fc8d\",\n  \"_parentcontactid_value\": \"39cc034b-29aa-6659-9e0d-b5a6990325f1\",\n  \"_originatingleadid_value\": \"04dd0aa0-41e7-74a0-5c31-9f942dabacf1\",\n  \"_campaignid_value\": \"56428ea7-128a-3077-b57a-6020b2d47536\",\n  \"_transactioncurrencyid_value\": \"d32b0909-16e4-63e8-3dc8-f158ae75808f\",\n  \"_ownerid_value\": \"3cff9a7f-831f-b431-9247-d460e515b32c\",\n  \"_createdby_value\": \"e3462b6f-5ab4-3b0e-0e0d-dbc358399625\",\n  \"_modifiedby_value\": \"726ea7ec-9c87-2a93-cef6-8a7734f97b09\",\n  \"createdon\": \"2007-09-27T12:04:50.106Z\",\n  \"modifiedon\": \"1964-10-30T09:34:57.559Z\",\n  \"versionnumber\": 1749\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6136ac94-412c-4e5f-bbf1-faeed276898b",
+              "name": "Authentication credentials are missing or invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "opportunities({{opportunityid}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$expand",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"innererror\": {\n      \"message\": \"string\",\n      \"type\": \"string\",\n      \"stacktrace\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d5332da8-52fa-4c63-afbf-d1839f26a437",
+              "name": "The requested resource was not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "opportunities({{opportunityid}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$expand",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"innererror\": {\n      \"message\": \"string\",\n      \"type\": \"string\",\n      \"stacktrace\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d3e21509-3989-4bd9-9b25-7599a8f38c0f",
+          "name": "Microsoft Dynamics 365 Update an opportunity",
+          "request": {
+            "name": "Microsoft Dynamics 365 Update an opportunity",
+            "description": {
+              "content": "Update an existing opportunity entity record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "opportunities({{opportunityid}})"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The unique name of your Dynamics 365 organization.",
+                  "type": "any",
+                  "value": "{{org}}",
+                  "key": "org"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                "key": "Prefer",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "ETag value for optimistic concurrency control. Use * to match any version.",
+                "key": "If-Match",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"estimatedvalue\": \"<number>\",\n  \"closeprobability\": \"<integer>\",\n  \"estimatedclosedate\": \"<date>\",\n  \"stepname\": \"<string>\",\n  \"salesstage\": \"<integer>\",\n  \"opportunityratingcode\": \"<integer>\",\n  \"prioritycode\": \"<integer>\",\n  \"budgetamount\": \"<number>\",\n  \"budgetstatus\": \"<integer>\",\n  \"purchaseprocess\": \"<integer>\",\n  \"purchasetimeframe\": \"<integer>\",\n  \"timeline\": \"<integer>\",\n  \"customerneed\": \"<string>\",\n  \"customerpainpoints\": \"<string>\",\n  \"currentsituation\": \"<string>\",\n  \"proposedsolution\": \"<string>\",\n  \"decisionmaker\": \"<boolean>\",\n  \"discountamount\": \"<number>\",\n  \"discountpercentage\": \"<number>\",\n  \"freightamount\": \"<number>\",\n  \"totaltax\": \"<number>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"customerid_account@odata.bind\": \"<string>\",\n  \"customerid_contact@odata.bind\": \"<string>\",\n  \"parentaccountid@odata.bind\": \"<string>\",\n  \"parentcontactid@odata.bind\": \"<string>\",\n  \"originatingleadid@odata.bind\": \"<string>\",\n  \"campaignid@odata.bind\": \"<string>\",\n  \"transactioncurrencyid@odata.bind\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "510c3727-a5ce-4f75-bf46-03feec11ac6c",
+              "name": "Opportunity updated successfully (when Prefer return=representation).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "opportunities({{opportunityid}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "return=representation"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "ETag value for optimistic concurrency control. Use * to match any version.",
+                    "key": "If-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"estimatedvalue\": \"<number>\",\n  \"closeprobability\": \"<integer>\",\n  \"estimatedclosedate\": \"<date>\",\n  \"stepname\": \"<string>\",\n  \"salesstage\": \"<integer>\",\n  \"opportunityratingcode\": \"<integer>\",\n  \"prioritycode\": \"<integer>\",\n  \"budgetamount\": \"<number>\",\n  \"budgetstatus\": \"<integer>\",\n  \"purchaseprocess\": \"<integer>\",\n  \"purchasetimeframe\": \"<integer>\",\n  \"timeline\": \"<integer>\",\n  \"customerneed\": \"<string>\",\n  \"customerpainpoints\": \"<string>\",\n  \"currentsituation\": \"<string>\",\n  \"proposedsolution\": \"<string>\",\n  \"decisionmaker\": \"<boolean>\",\n  \"discountamount\": \"<number>\",\n  \"discountpercentage\": \"<number>\",\n  \"freightamount\": \"<number>\",\n  \"totaltax\": \"<number>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"customerid_account@odata.bind\": \"<string>\",\n  \"customerid_contact@odata.bind\": \"<string>\",\n  \"parentaccountid@odata.bind\": \"<string>\",\n  \"parentcontactid@odata.bind\": \"<string>\",\n  \"originatingleadid@odata.bind\": \"<string>\",\n  \"campaignid@odata.bind\": \"<string>\",\n  \"transactioncurrencyid@odata.bind\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"@odata.etag\": \"string\",\n  \"opportunityid\": \"2e95a1a9-07f4-c12c-6644-b9fc241dee50\",\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"estimatedvalue\": 7205.733178134058,\n  \"estimatedvalue_base\": 5290.487435005814,\n  \"actualvalue\": 9163.868099171572,\n  \"actualvalue_base\": 4136.926821180387,\n  \"budgetamount\": 2070.751602936108,\n  \"budgetamount_base\": 6502.0705226041755,\n  \"closeprobability\": 93,\n  \"estimatedclosedate\": \"1990-06-28\",\n  \"actualclosedate\": \"1954-05-15\",\n  \"stepname\": \"string\",\n  \"salesstage\": 9835,\n  \"salesstagecode\": 8478,\n  \"statecode\": 8657,\n  \"statuscode\": 5485,\n  \"opportunityratingcode\": 1678,\n  \"prioritycode\": 570,\n  \"budgetstatus\": 1118,\n  \"purchaseprocess\": 990,\n  \"purchasetimeframe\": 8527,\n  \"timeline\": 3736,\n  \"customerneed\": \"string\",\n  \"customerpainpoints\": \"string\",\n  \"currentsituation\": \"string\",\n  \"proposedsolution\": \"string\",\n  \"qualificationcomments\": \"string\",\n  \"decisionmaker\": false,\n  \"developproposal\": false,\n  \"completefinalproposal\": true,\n  \"presentproposal\": false,\n  \"presentfinalproposal\": false,\n  \"completeinternalreview\": true,\n  \"captureproposalfeedback\": false,\n  \"resolvefeedback\": false,\n  \"discountamount\": 2609.3151110344716,\n  \"discountpercentage\": 5.772522977361538,\n  \"freightamount\": 3291.2969802281323,\n  \"totalamount\": 449.86975405609917,\n  \"totallineitemamount\": 1526.4338547649782,\n  \"totaltax\": 5407.727072275128,\n  \"msdyn_forecastcategory\": 4578,\n  \"_customerid_value\": \"f222567d-a865-649f-9e34-8702bc429dc7\",\n  \"_parentaccountid_value\": \"bd2733af-5d8a-d946-6a62-eefcf827fc8d\",\n  \"_parentcontactid_value\": \"39cc034b-29aa-6659-9e0d-b5a6990325f1\",\n  \"_originatingleadid_value\": \"04dd0aa0-41e7-74a0-5c31-9f942dabacf1\",\n  \"_campaignid_value\": \"56428ea7-128a-3077-b57a-6020b2d47536\",\n  \"_transactioncurrencyid_value\": \"d32b0909-16e4-63e8-3dc8-f158ae75808f\",\n  \"_ownerid_value\": \"3cff9a7f-831f-b431-9247-d460e515b32c\",\n  \"_createdby_value\": \"e3462b6f-5ab4-3b0e-0e0d-dbc358399625\",\n  \"_modifiedby_value\": \"726ea7ec-9c87-2a93-cef6-8a7734f97b09\",\n  \"createdon\": \"2007-09-27T12:04:50.106Z\",\n  \"modifiedon\": \"1964-10-30T09:34:57.559Z\",\n  \"versionnumber\": 1749\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "88b923d0-6adb-4b6f-9ce4-a48360ed1c17",
+              "name": "Opportunity updated successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "opportunities({{opportunityid}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "return=representation"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "ETag value for optimistic concurrency control. Use * to match any version.",
+                    "key": "If-Match",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"estimatedvalue\": \"<number>\",\n  \"closeprobability\": \"<integer>\",\n  \"estimatedclosedate\": \"<date>\",\n  \"stepname\": \"<string>\",\n  \"salesstage\": \"<integer>\",\n  \"opportunityratingcode\": \"<integer>\",\n  \"prioritycode\": \"<integer>\",\n  \"budgetamount\": \"<number>\",\n  \"budgetstatus\": \"<integer>\",\n  \"purchaseprocess\": \"<integer>\",\n  \"purchasetimeframe\": \"<integer>\",\n  \"timeline\": \"<integer>\",\n  \"customerneed\": \"<string>\",\n  \"customerpainpoints\": \"<string>\",\n  \"currentsituation\": \"<string>\",\n  \"proposedsolution\": \"<string>\",\n  \"decisionmaker\": \"<boolean>\",\n  \"discountamount\": \"<number>\",\n  \"discountpercentage\": \"<number>\",\n  \"freightamount\": \"<number>\",\n  \"totaltax\": \"<number>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"customerid_account@odata.bind\": \"<string>\",\n  \"customerid_contact@odata.bind\": \"<string>\",\n  \"parentaccountid@odata.bind\": \"<string>\",\n  \"parentcontactid@odata.bind\": \"<string>\",\n  \"originatingleadid@odata.bind\": \"<string>\",\n  \"campaignid@odata.bind\": \"<string>\",\n  \"transactioncurrencyid@odata.bind\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7b79d853-3c7a-465a-8a92-cf029d15031c",
+              "name": "Authentication credentials are missing or invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "opportunities({{opportunityid}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "return=representation"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "ETag value for optimistic concurrency control. Use * to match any version.",
+                    "key": "If-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"estimatedvalue\": \"<number>\",\n  \"closeprobability\": \"<integer>\",\n  \"estimatedclosedate\": \"<date>\",\n  \"stepname\": \"<string>\",\n  \"salesstage\": \"<integer>\",\n  \"opportunityratingcode\": \"<integer>\",\n  \"prioritycode\": \"<integer>\",\n  \"budgetamount\": \"<number>\",\n  \"budgetstatus\": \"<integer>\",\n  \"purchaseprocess\": \"<integer>\",\n  \"purchasetimeframe\": \"<integer>\",\n  \"timeline\": \"<integer>\",\n  \"customerneed\": \"<string>\",\n  \"customerpainpoints\": \"<string>\",\n  \"currentsituation\": \"<string>\",\n  \"proposedsolution\": \"<string>\",\n  \"decisionmaker\": \"<boolean>\",\n  \"discountamount\": \"<number>\",\n  \"discountpercentage\": \"<number>\",\n  \"freightamount\": \"<number>\",\n  \"totaltax\": \"<number>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"customerid_account@odata.bind\": \"<string>\",\n  \"customerid_contact@odata.bind\": \"<string>\",\n  \"parentaccountid@odata.bind\": \"<string>\",\n  \"parentcontactid@odata.bind\": \"<string>\",\n  \"originatingleadid@odata.bind\": \"<string>\",\n  \"campaignid@odata.bind\": \"<string>\",\n  \"transactioncurrencyid@odata.bind\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"innererror\": {\n      \"message\": \"string\",\n      \"type\": \"string\",\n      \"stacktrace\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "32e79345-e467-43fd-8fa0-d2e867124e0f",
+              "name": "The requested resource was not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "opportunities({{opportunityid}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "return=representation"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "ETag value for optimistic concurrency control. Use * to match any version.",
+                    "key": "If-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"estimatedvalue\": \"<number>\",\n  \"closeprobability\": \"<integer>\",\n  \"estimatedclosedate\": \"<date>\",\n  \"stepname\": \"<string>\",\n  \"salesstage\": \"<integer>\",\n  \"opportunityratingcode\": \"<integer>\",\n  \"prioritycode\": \"<integer>\",\n  \"budgetamount\": \"<number>\",\n  \"budgetstatus\": \"<integer>\",\n  \"purchaseprocess\": \"<integer>\",\n  \"purchasetimeframe\": \"<integer>\",\n  \"timeline\": \"<integer>\",\n  \"customerneed\": \"<string>\",\n  \"customerpainpoints\": \"<string>\",\n  \"currentsituation\": \"<string>\",\n  \"proposedsolution\": \"<string>\",\n  \"decisionmaker\": \"<boolean>\",\n  \"discountamount\": \"<number>\",\n  \"discountpercentage\": \"<number>\",\n  \"freightamount\": \"<number>\",\n  \"totaltax\": \"<number>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"customerid_account@odata.bind\": \"<string>\",\n  \"customerid_contact@odata.bind\": \"<string>\",\n  \"parentaccountid@odata.bind\": \"<string>\",\n  \"parentcontactid@odata.bind\": \"<string>\",\n  \"originatingleadid@odata.bind\": \"<string>\",\n  \"campaignid@odata.bind\": \"<string>\",\n  \"transactioncurrencyid@odata.bind\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"innererror\": {\n      \"message\": \"string\",\n      \"type\": \"string\",\n      \"stacktrace\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0734e816-c8a1-4fc3-abf9-8258e4a1cb32",
+              "name": "The ETag value provided in the If-Match header does not match the current version of the record.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "opportunities({{opportunityid}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "return=representation"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "ETag value for optimistic concurrency control. Use * to match any version.",
+                    "key": "If-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"estimatedvalue\": \"<number>\",\n  \"closeprobability\": \"<integer>\",\n  \"estimatedclosedate\": \"<date>\",\n  \"stepname\": \"<string>\",\n  \"salesstage\": \"<integer>\",\n  \"opportunityratingcode\": \"<integer>\",\n  \"prioritycode\": \"<integer>\",\n  \"budgetamount\": \"<number>\",\n  \"budgetstatus\": \"<integer>\",\n  \"purchaseprocess\": \"<integer>\",\n  \"purchasetimeframe\": \"<integer>\",\n  \"timeline\": \"<integer>\",\n  \"customerneed\": \"<string>\",\n  \"customerpainpoints\": \"<string>\",\n  \"currentsituation\": \"<string>\",\n  \"proposedsolution\": \"<string>\",\n  \"decisionmaker\": \"<boolean>\",\n  \"discountamount\": \"<number>\",\n  \"discountpercentage\": \"<number>\",\n  \"freightamount\": \"<number>\",\n  \"totaltax\": \"<number>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"customerid_account@odata.bind\": \"<string>\",\n  \"customerid_contact@odata.bind\": \"<string>\",\n  \"parentaccountid@odata.bind\": \"<string>\",\n  \"parentcontactid@odata.bind\": \"<string>\",\n  \"originatingleadid@odata.bind\": \"<string>\",\n  \"campaignid@odata.bind\": \"<string>\",\n  \"transactioncurrencyid@odata.bind\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"innererror\": {\n      \"message\": \"string\",\n      \"type\": \"string\",\n      \"stacktrace\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5e2faba1-a3b2-4803-8173-8f82d1a44f86",
+          "name": "Microsoft Dynamics 365 Delete an opportunity",
+          "request": {
+            "name": "Microsoft Dynamics 365 Delete an opportunity",
+            "description": {
+              "content": "Delete an opportunity entity record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "opportunities({{opportunityid}})"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The unique name of your Dynamics 365 organization.",
+                  "type": "any",
+                  "value": "{{org}}",
+                  "key": "org"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f6a4c41d-6b32-4804-8658-b24e5978e9bf",
+              "name": "Opportunity deleted successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "opportunities({{opportunityid}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d27cc83c-2650-4a6c-bfe7-52c50ed2e730",
+              "name": "Authentication credentials are missing or invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "opportunities({{opportunityid}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"innererror\": {\n      \"message\": \"string\",\n      \"type\": \"string\",\n      \"stacktrace\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "333ce2d7-1d04-409d-8cc1-509f19afe88f",
+              "name": "The requested resource was not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "opportunities({{opportunityid}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"innererror\": {\n      \"message\": \"string\",\n      \"type\": \"string\",\n      \"stacktrace\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The unique name of your Dynamics 365 organization.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "yourorg",
+      "key": "org"
+    },
+    {
+      "type": "string",
+      "value": "https://{{org}}.api.crm.dynamics.com/api/data/v9.2",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) Unique identifier of the opportunity record (GUID).",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<uuid>",
+      "key": "opportunityid"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://{org}.api.crm.dynamics.com/.default"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "8590f6c1-0799-4dae-b5b2-a7d990eb3a30",
+    "name": "Microsoft Dynamics 365 Dataverse Web Accounts Opportunities API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "RESTful web service implementing OData v4.0 for interacting with data in Microsoft Dataverse, the underlying data platform for Dynamics 365 and Power Platform applications. This specification covers core CRM entities including accounts, contacts, and opportunities.\n\nContact Support:\n Name: Microsoft Support\n Email: support@microsoft.com",
+      "type": "text/plain"
+    }
+  }
+}

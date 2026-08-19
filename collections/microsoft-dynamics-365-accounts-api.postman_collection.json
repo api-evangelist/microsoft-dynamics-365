@@ -1,0 +1,1570 @@
+{
+  "item": [
+    {
+      "id": "966749e9-9ebe-411f-bb60-c5f27ca3e0f7",
+      "name": "Accounts",
+      "description": {
+        "content": "Business that represents a customer or potential customer. The company that is billed in business transactions.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a5e9256f-4357-4fc3-aece-68f354b7aa2c",
+          "name": "Microsoft Dynamics 365 List accounts",
+          "request": {
+            "name": "Microsoft Dynamics 365 List accounts",
+            "description": {
+              "content": "Retrieve a list of account entity records. Supports OData query options including $select, $filter, $orderby, $top, $skip, and $expand.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "accounts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "$select",
+                  "value": "<string>",
+                  "description": "Comma-separated list of properties to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "$filter",
+                  "value": "<string>",
+                  "description": "OData filter expression to restrict results."
+                },
+                {
+                  "disabled": false,
+                  "key": "$orderby",
+                  "value": "<string>",
+                  "description": "Comma-separated list of properties to sort by, with optional asc or desc."
+                },
+                {
+                  "disabled": false,
+                  "key": "$top",
+                  "value": "<integer>",
+                  "description": "Maximum number of records to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "$skip",
+                  "value": "<integer>",
+                  "description": "Number of records to skip before returning results."
+                },
+                {
+                  "disabled": false,
+                  "key": "$expand",
+                  "value": "<string>",
+                  "description": "Comma-separated list of navigation properties to expand."
+                },
+                {
+                  "disabled": false,
+                  "key": "$count",
+                  "value": "<boolean>",
+                  "description": "Include a count of matching records in the response."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "The unique name of your Dynamics 365 organization.",
+                  "type": "any",
+                  "value": "{{org}}",
+                  "key": "org"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                "key": "Prefer",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c21105fd-9a1c-45e9-8a2c-1196723df801",
+              "name": "Successfully retrieved accounts.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$top",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "$skip",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "$expand",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$count",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "return=representation"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"@odata.context\": \"string\",\n  \"@odata.count\": 9201,\n  \"@odata.nextLink\": \"http://HNKJvMMpAIYvie.ietgPX,fwG+s2,dzL\",\n  \"value\": [\n    {\n      \"@odata.etag\": \"string\",\n      \"accountid\": \"9392e03e-eb9b-3261-c9ea-60b6e880eb2c\",\n      \"name\": \"string\",\n      \"accountnumber\": \"string\",\n      \"description\": \"string\",\n      \"emailaddress1\": \"VtAP@tZsoETwoHIPlRF.au\",\n      \"emailaddress2\": \"7fKpCmRd@BGLsc.zld\",\n      \"emailaddress3\": \"NGRSAH@dUBeZeybBMgRBVqxDPodEtIAlRFqEC.yjv\",\n      \"telephone1\": \"string\",\n      \"telephone2\": \"string\",\n      \"telephone3\": \"string\",\n      \"fax\": \"string\",\n      \"websiteurl\": \"https://kHjRxzHbiCiaR.dbpqoF2MmhnJrIxwXSYJPAw6Ps9fAj7WlfKk+xwTUAJPi5VMjAF6F6rW8BMWgq1\",\n      \"revenue\": 2595.267962601546,\n      \"revenue_base\": 1546.0970462486334,\n      \"numberofemployees\": 2959,\n      \"sic\": \"string\",\n      \"tickersymbol\": \"string\",\n      \"stockexchange\": \"string\",\n      \"industrycode\": 9193,\n      \"ownershipcode\": 3854,\n      \"accountcategorycode\": 9609,\n      \"accountclassificationcode\": 6956,\n      \"accountratingcode\": 3780,\n      \"customertypecode\": 1757,\n      \"customersizecode\": 2455,\n      \"businesstypecode\": 9614,\n      \"preferredcontactmethodcode\": 117,\n      \"paymenttermscode\": 8413,\n      \"shippingmethodcode\": 625,\n      \"creditlimit\": 5344.364893639282,\n      \"creditlimit_base\": 4710.13626940955,\n      \"creditonhold\": true,\n      \"donotemail\": false,\n      \"donotphone\": true,\n      \"donotfax\": true,\n      \"donotpostalmail\": true,\n      \"donotbulkemail\": true,\n      \"donotsendmm\": true,\n      \"marketingonly\": true,\n      \"followemail\": true,\n      \"address1_name\": \"string\",\n      \"address1_line1\": \"string\",\n      \"address1_line2\": \"string\",\n      \"address1_line3\": \"string\",\n      \"address1_city\": \"string\",\n      \"address1_stateorprovince\": \"string\",\n      \"address1_postalcode\": \"string\",\n      \"address1_country\": \"string\",\n      \"address1_county\": \"string\",\n      \"address1_telephone1\": \"string\",\n      \"address1_fax\": \"string\",\n      \"address1_latitude\": 1854.922757681745,\n      \"address1_longitude\": 7284.733374582783,\n      \"address1_addresstypecode\": 1977,\n      \"address1_composite\": \"string\",\n      \"address2_name\": \"string\",\n      \"address2_line1\": \"string\",\n      \"address2_line2\": \"string\",\n      \"address2_city\": \"string\",\n      \"address2_stateorprovince\": \"string\",\n      \"address2_postalcode\": \"string\",\n      \"address2_country\": \"string\",\n      \"statecode\": 1252,\n      \"statuscode\": 1048,\n      \"marketcap\": 4674.424414945046,\n      \"sharesoutstanding\": 7193,\n      \"ftpsiteurl\": \"https://aAisusUFAu.ihzhffi7h2A9B,9qakKtghcgdcENWS6VasA9b,-rju3\",\n      \"yominame\": \"string\",\n      \"_primarycontactid_value\": \"cac4c627-7667-0850-030a-604401e632f9\",\n      \"_parentaccountid_value\": \"431f58f8-d546-49c4-76ba-dc8cf87168fa\",\n      \"_transactioncurrencyid_value\": \"ebf3683d-d59d-c815-d91f-a8e6de12be98\",\n      \"_ownerid_value\": \"2ecd2bb4-abfb-4fee-a9e4-089134e595f6\",\n      \"_owningbusinessunit_value\": \"46b82b83-03e0-307c-c677-7b5c30887d63\",\n      \"_createdby_value\": \"d6f2449d-72a8-5d0f-5c98-f958627dd121\",\n      \"_modifiedby_value\": \"e8706d6f-c0f5-b505-5ba1-66bd43699d5b\",\n      \"createdon\": \"1961-11-10T07:51:49.773Z\",\n      \"modifiedon\": \"2013-08-10T18:19:16.230Z\",\n      \"versionnumber\": 2838,\n      \"exchangerate\": 905.2983657088475,\n      \"merged\": false\n    },\n    {\n      \"@odata.etag\": \"string\",\n      \"accountid\": \"7ba0e132-50cc-79e2-1834-5e05d4d2a348\",\n      \"name\": \"string\",\n      \"accountnumber\": \"string\",\n      \"description\": \"string\",\n      \"emailaddress1\": \"ihdy@cCWtFSympyJhhmHYGohgFSm.syc\",\n      \"emailaddress2\": \"q7eFEkmSa@jbApbrPLLyCeFS.zcn\",\n      \"emailaddress3\": \"KQ1aLlfEvoQ@TXVbLoJiQowXqS.bya\",\n      \"telephone1\": \"string\",\n      \"telephone2\": \"string\",\n      \"telephone3\": \"string\",\n      \"fax\": \"string\",\n      \"websiteurl\": \"https://LZbsSmePASJtUZxJSxvtGVc.vuAvkpARFZh.AxxmFwVgSSmW\",\n      \"revenue\": 9936.567207962678,\n      \"revenue_base\": 1699.0219111621564,\n      \"numberofemployees\": 9716,\n      \"sic\": \"string\",\n      \"tickersymbol\": \"string\",\n      \"stockexchange\": \"string\",\n      \"industrycode\": 9035,\n      \"ownershipcode\": 1973,\n      \"accountcategorycode\": 8096,\n      \"accountclassificationcode\": 1895,\n      \"accountratingcode\": 4007,\n      \"customertypecode\": 8428,\n      \"customersizecode\": 9965,\n      \"businesstypecode\": 4716,\n      \"preferredcontactmethodcode\": 7509,\n      \"paymenttermscode\": 3320,\n      \"shippingmethodcode\": 6959,\n      \"creditlimit\": 1607.0389458607747,\n      \"creditlimit_base\": 3898.6561982580915,\n      \"creditonhold\": true,\n      \"donotemail\": false,\n      \"donotphone\": true,\n      \"donotfax\": false,\n      \"donotpostalmail\": true,\n      \"donotbulkemail\": true,\n      \"donotsendmm\": false,\n      \"marketingonly\": false,\n      \"followemail\": false,\n      \"address1_name\": \"string\",\n      \"address1_line1\": \"string\",\n      \"address1_line2\": \"string\",\n      \"address1_line3\": \"string\",\n      \"address1_city\": \"string\",\n      \"address1_stateorprovince\": \"string\",\n      \"address1_postalcode\": \"string\",\n      \"address1_country\": \"string\",\n      \"address1_county\": \"string\",\n      \"address1_telephone1\": \"string\",\n      \"address1_fax\": \"string\",\n      \"address1_latitude\": 546.8114697823046,\n      \"address1_longitude\": 5656.278479435948,\n      \"address1_addresstypecode\": 881,\n      \"address1_composite\": \"string\",\n      \"address2_name\": \"string\",\n      \"address2_line1\": \"string\",\n      \"address2_line2\": \"string\",\n      \"address2_city\": \"string\",\n      \"address2_stateorprovince\": \"string\",\n      \"address2_postalcode\": \"string\",\n      \"address2_country\": \"string\",\n      \"statecode\": 2128,\n      \"statuscode\": 6788,\n      \"marketcap\": 486.296115016871,\n      \"sharesoutstanding\": 8246,\n      \"ftpsiteurl\": \"https://oWqxhkBnPPEFWZGqMS.kdkqbD19iWYgHOXL2l.Sz8V8y8m9vI4RnVIK-vpPqiqbbh4-MNs\",\n      \"yominame\": \"string\",\n      \"_primarycontactid_value\": \"1f476478-972d-b15a-f46c-e09cdddea6fb\",\n      \"_parentaccountid_value\": \"ceb2ef90-6c35-b94c-0f52-62db83e317f8\",\n      \"_transactioncurrencyid_value\": \"c6fa9a07-340f-8a5a-bf7b-b522f60393b0\",\n      \"_ownerid_value\": \"0c014f3b-9755-5061-5df0-45bbcbb8d8f5\",\n      \"_owningbusinessunit_value\": \"3c6a894c-e7a4-5d58-ff47-3d7384684266\",\n      \"_createdby_value\": \"4f3ed3a8-e1ec-df7d-b756-abdd010b46b8\",\n      \"_modifiedby_value\": \"9af77655-ca84-548e-d5d8-ca3c957c9829\",\n      \"createdon\": \"1977-05-01T09:15:11.518Z\",\n      \"modifiedon\": \"1955-12-14T17:39:54.816Z\",\n      \"versionnumber\": 4838,\n      \"exchangerate\": 1538.058392009608,\n      \"merged\": true\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0f5a52ca-c719-4e96-b283-2516f7c6fb1a",
+              "name": "Authentication credentials are missing or invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$top",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "$skip",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "$expand",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$count",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "return=representation"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"innererror\": {\n      \"message\": \"string\",\n      \"type\": \"string\",\n      \"stacktrace\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "335af7c2-6b15-4164-8c9b-468ef9a4f911",
+              "name": "The authenticated user does not have permission to perform this action.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$top",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "$skip",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "$expand",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$count",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "return=representation"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"innererror\": {\n      \"message\": \"string\",\n      \"type\": \"string\",\n      \"stacktrace\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5a3c3f6f-413e-414a-8045-e1f889cfd48d",
+          "name": "Microsoft Dynamics 365 Create an account",
+          "request": {
+            "name": "Microsoft Dynamics 365 Create an account",
+            "description": {
+              "content": "Create a new account entity record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "accounts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The unique name of your Dynamics 365 organization.",
+                  "type": "any",
+                  "value": "{{org}}",
+                  "key": "org"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                "key": "Prefer",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6296a1e9-c93e-4a3b-a6fd-4a8a6c38e865",
+              "name": "Account created successfully (when Prefer return=representation).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "return=representation"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"accountnumber\": \"string\",\n  \"description\": \"string\",\n  \"emailaddress1\": \"1sHmDWrzOSTt@KBv.ad\",\n  \"telephone1\": \"string\",\n  \"fax\": \"string\",\n  \"websiteurl\": \"http://RBvAC.xrxDiVjvX-g,g\",\n  \"revenue\": 1022.0618757829991,\n  \"numberofemployees\": 4147,\n  \"sic\": \"string\",\n  \"tickersymbol\": \"string\",\n  \"industrycode\": 3470,\n  \"ownershipcode\": 949,\n  \"accountcategorycode\": 7672,\n  \"customertypecode\": 9102,\n  \"preferredcontactmethodcode\": 3397,\n  \"paymenttermscode\": 1273,\n  \"creditlimit\": 8381.761444950514,\n  \"creditonhold\": false,\n  \"donotemail\": false,\n  \"donotphone\": true,\n  \"donotfax\": false,\n  \"donotpostalmail\": false,\n  \"donotbulkemail\": true,\n  \"address1_name\": \"string\",\n  \"address1_line1\": \"string\",\n  \"address1_line2\": \"string\",\n  \"address1_line3\": \"string\",\n  \"address1_city\": \"string\",\n  \"address1_stateorprovince\": \"string\",\n  \"address1_postalcode\": \"string\",\n  \"address1_country\": \"string\",\n  \"address1_telephone1\": \"string\",\n  \"address1_fax\": \"string\",\n  \"address1_latitude\": 7130.678834794631,\n  \"address1_longitude\": 5620.908282355802,\n  \"address1_addresstypecode\": 385,\n  \"statecode\": 9074,\n  \"statuscode\": 8672,\n  \"primarycontactid@odata.bind\": \"string\",\n  \"parentaccountid@odata.bind\": \"string\",\n  \"transactioncurrencyid@odata.bind\": \"string\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"@odata.etag\": \"string\",\n  \"accountid\": \"024c7d88-a1c3-b36f-ccbf-33d80ecdda24\",\n  \"name\": \"string\",\n  \"accountnumber\": \"string\",\n  \"description\": \"string\",\n  \"emailaddress1\": \"1ZB@GPbVmYNHQXPdFZclPZK.dlr\",\n  \"emailaddress2\": \"wleSjIkZM7zcZ4@nrLydMIxRWArLoJ.vacl\",\n  \"emailaddress3\": \"5Wukeo1zBAKA@fofQbFxpsiXAUWBRslRAwWYGmmNvEHGQF.pj\",\n  \"telephone1\": \"string\",\n  \"telephone2\": \"string\",\n  \"telephone3\": \"string\",\n  \"fax\": \"string\",\n  \"websiteurl\": \"http://edmPGsvgIguPEQoSPvTzXwWkp.pxqUkTHKU,Q8u5yJVDa\",\n  \"revenue\": 2908.347735559296,\n  \"revenue_base\": 2705.505535720768,\n  \"numberofemployees\": 3112,\n  \"sic\": \"string\",\n  \"tickersymbol\": \"string\",\n  \"stockexchange\": \"string\",\n  \"industrycode\": 1882,\n  \"ownershipcode\": 8766,\n  \"accountcategorycode\": 2434,\n  \"accountclassificationcode\": 7973,\n  \"accountratingcode\": 729,\n  \"customertypecode\": 3042,\n  \"customersizecode\": 762,\n  \"businesstypecode\": 6966,\n  \"preferredcontactmethodcode\": 1304,\n  \"paymenttermscode\": 5442,\n  \"shippingmethodcode\": 9730,\n  \"creditlimit\": 5300.65626567809,\n  \"creditlimit_base\": 1781.8875026715275,\n  \"creditonhold\": true,\n  \"donotemail\": true,\n  \"donotphone\": false,\n  \"donotfax\": false,\n  \"donotpostalmail\": false,\n  \"donotbulkemail\": false,\n  \"donotsendmm\": false,\n  \"marketingonly\": true,\n  \"followemail\": true,\n  \"address1_name\": \"string\",\n  \"address1_line1\": \"string\",\n  \"address1_line2\": \"string\",\n  \"address1_line3\": \"string\",\n  \"address1_city\": \"string\",\n  \"address1_stateorprovince\": \"string\",\n  \"address1_postalcode\": \"string\",\n  \"address1_country\": \"string\",\n  \"address1_county\": \"string\",\n  \"address1_telephone1\": \"string\",\n  \"address1_fax\": \"string\",\n  \"address1_latitude\": 2063.2567188965468,\n  \"address1_longitude\": 87.03079355909415,\n  \"address1_addresstypecode\": 9134,\n  \"address1_composite\": \"string\",\n  \"address2_name\": \"string\",\n  \"address2_line1\": \"string\",\n  \"address2_line2\": \"string\",\n  \"address2_city\": \"string\",\n  \"address2_stateorprovince\": \"string\",\n  \"address2_postalcode\": \"string\",\n  \"address2_country\": \"string\",\n  \"statecode\": 7449,\n  \"statuscode\": 2914,\n  \"marketcap\": 9834.957352526704,\n  \"sharesoutstanding\": 5727,\n  \"ftpsiteurl\": \"https://Uf.wfkaAVm3GZwmhxVry,yMU66zCWUHNPIX1r.ln\",\n  \"yominame\": \"string\",\n  \"_primarycontactid_value\": \"5d8cec3f-25a5-ea25-daa4-711782308677\",\n  \"_parentaccountid_value\": \"a04c8152-847a-db36-254a-0a5cf3613915\",\n  \"_transactioncurrencyid_value\": \"aa4864c1-d7f5-f356-d23c-0ff09b578ebb\",\n  \"_ownerid_value\": \"3f45040f-9d43-9c41-8d23-7a62907291ec\",\n  \"_owningbusinessunit_value\": \"cdef27a0-b176-89cf-0145-df6175f4f45a\",\n  \"_createdby_value\": \"b807921d-9bcf-522e-0131-2e69814bf0b4\",\n  \"_modifiedby_value\": \"73764669-6fdd-f3ee-633a-1471c6058f84\",\n  \"createdon\": \"2002-03-16T07:01:46.746Z\",\n  \"modifiedon\": \"1977-12-31T03:08:15.242Z\",\n  \"versionnumber\": 2468,\n  \"exchangerate\": 5597.347306062182,\n  \"merged\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a86c932e-42f0-4a5d-b5ad-ead0edd93f06",
+              "name": "Account created successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "return=representation"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"accountnumber\": \"string\",\n  \"description\": \"string\",\n  \"emailaddress1\": \"1sHmDWrzOSTt@KBv.ad\",\n  \"telephone1\": \"string\",\n  \"fax\": \"string\",\n  \"websiteurl\": \"http://RBvAC.xrxDiVjvX-g,g\",\n  \"revenue\": 1022.0618757829991,\n  \"numberofemployees\": 4147,\n  \"sic\": \"string\",\n  \"tickersymbol\": \"string\",\n  \"industrycode\": 3470,\n  \"ownershipcode\": 949,\n  \"accountcategorycode\": 7672,\n  \"customertypecode\": 9102,\n  \"preferredcontactmethodcode\": 3397,\n  \"paymenttermscode\": 1273,\n  \"creditlimit\": 8381.761444950514,\n  \"creditonhold\": false,\n  \"donotemail\": false,\n  \"donotphone\": true,\n  \"donotfax\": false,\n  \"donotpostalmail\": false,\n  \"donotbulkemail\": true,\n  \"address1_name\": \"string\",\n  \"address1_line1\": \"string\",\n  \"address1_line2\": \"string\",\n  \"address1_line3\": \"string\",\n  \"address1_city\": \"string\",\n  \"address1_stateorprovince\": \"string\",\n  \"address1_postalcode\": \"string\",\n  \"address1_country\": \"string\",\n  \"address1_telephone1\": \"string\",\n  \"address1_fax\": \"string\",\n  \"address1_latitude\": 7130.678834794631,\n  \"address1_longitude\": 5620.908282355802,\n  \"address1_addresstypecode\": 385,\n  \"statecode\": 9074,\n  \"statuscode\": 8672,\n  \"primarycontactid@odata.bind\": \"string\",\n  \"parentaccountid@odata.bind\": \"string\",\n  \"transactioncurrencyid@odata.bind\": \"string\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "URI of the newly created account record.",
+                  "key": "OData-EntityId",
+                  "value": "http://iJeyTCwAAjQIApQcJeSEGvROTxuPAB.omxpbSNCkP"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e042af89-a2dd-445b-9c0b-4062681976bc",
+              "name": "Authentication credentials are missing or invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "return=representation"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"accountnumber\": \"string\",\n  \"description\": \"string\",\n  \"emailaddress1\": \"1sHmDWrzOSTt@KBv.ad\",\n  \"telephone1\": \"string\",\n  \"fax\": \"string\",\n  \"websiteurl\": \"http://RBvAC.xrxDiVjvX-g,g\",\n  \"revenue\": 1022.0618757829991,\n  \"numberofemployees\": 4147,\n  \"sic\": \"string\",\n  \"tickersymbol\": \"string\",\n  \"industrycode\": 3470,\n  \"ownershipcode\": 949,\n  \"accountcategorycode\": 7672,\n  \"customertypecode\": 9102,\n  \"preferredcontactmethodcode\": 3397,\n  \"paymenttermscode\": 1273,\n  \"creditlimit\": 8381.761444950514,\n  \"creditonhold\": false,\n  \"donotemail\": false,\n  \"donotphone\": true,\n  \"donotfax\": false,\n  \"donotpostalmail\": false,\n  \"donotbulkemail\": true,\n  \"address1_name\": \"string\",\n  \"address1_line1\": \"string\",\n  \"address1_line2\": \"string\",\n  \"address1_line3\": \"string\",\n  \"address1_city\": \"string\",\n  \"address1_stateorprovince\": \"string\",\n  \"address1_postalcode\": \"string\",\n  \"address1_country\": \"string\",\n  \"address1_telephone1\": \"string\",\n  \"address1_fax\": \"string\",\n  \"address1_latitude\": 7130.678834794631,\n  \"address1_longitude\": 5620.908282355802,\n  \"address1_addresstypecode\": 385,\n  \"statecode\": 9074,\n  \"statuscode\": 8672,\n  \"primarycontactid@odata.bind\": \"string\",\n  \"parentaccountid@odata.bind\": \"string\",\n  \"transactioncurrencyid@odata.bind\": \"string\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"innererror\": {\n      \"message\": \"string\",\n      \"type\": \"string\",\n      \"stacktrace\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1d4f8f92-00b8-49f6-9cba-bd723f431dcb",
+              "name": "The authenticated user does not have permission to perform this action.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "return=representation"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"accountnumber\": \"string\",\n  \"description\": \"string\",\n  \"emailaddress1\": \"1sHmDWrzOSTt@KBv.ad\",\n  \"telephone1\": \"string\",\n  \"fax\": \"string\",\n  \"websiteurl\": \"http://RBvAC.xrxDiVjvX-g,g\",\n  \"revenue\": 1022.0618757829991,\n  \"numberofemployees\": 4147,\n  \"sic\": \"string\",\n  \"tickersymbol\": \"string\",\n  \"industrycode\": 3470,\n  \"ownershipcode\": 949,\n  \"accountcategorycode\": 7672,\n  \"customertypecode\": 9102,\n  \"preferredcontactmethodcode\": 3397,\n  \"paymenttermscode\": 1273,\n  \"creditlimit\": 8381.761444950514,\n  \"creditonhold\": false,\n  \"donotemail\": false,\n  \"donotphone\": true,\n  \"donotfax\": false,\n  \"donotpostalmail\": false,\n  \"donotbulkemail\": true,\n  \"address1_name\": \"string\",\n  \"address1_line1\": \"string\",\n  \"address1_line2\": \"string\",\n  \"address1_line3\": \"string\",\n  \"address1_city\": \"string\",\n  \"address1_stateorprovince\": \"string\",\n  \"address1_postalcode\": \"string\",\n  \"address1_country\": \"string\",\n  \"address1_telephone1\": \"string\",\n  \"address1_fax\": \"string\",\n  \"address1_latitude\": 7130.678834794631,\n  \"address1_longitude\": 5620.908282355802,\n  \"address1_addresstypecode\": 385,\n  \"statecode\": 9074,\n  \"statuscode\": 8672,\n  \"primarycontactid@odata.bind\": \"string\",\n  \"parentaccountid@odata.bind\": \"string\",\n  \"transactioncurrencyid@odata.bind\": \"string\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"innererror\": {\n      \"message\": \"string\",\n      \"type\": \"string\",\n      \"stacktrace\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "db5eec33-52f5-4c1c-b4a9-68aed1423695",
+          "name": "Microsoft Dynamics 365 Retrieve an account",
+          "request": {
+            "name": "Microsoft Dynamics 365 Retrieve an account",
+            "description": {
+              "content": "Retrieve a single account entity record by its unique identifier.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "accounts({{accountid}})"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "$select",
+                  "value": "<string>",
+                  "description": "Comma-separated list of properties to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "$expand",
+                  "value": "<string>",
+                  "description": "Comma-separated list of navigation properties to expand."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "The unique name of your Dynamics 365 organization.",
+                  "type": "any",
+                  "value": "{{org}}",
+                  "key": "org"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cb5ec87d-e118-4dc1-8701-53bb6de31e9b",
+              "name": "Successfully retrieved the account.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts({{accountid}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$expand",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"@odata.etag\": \"string\",\n  \"accountid\": \"024c7d88-a1c3-b36f-ccbf-33d80ecdda24\",\n  \"name\": \"string\",\n  \"accountnumber\": \"string\",\n  \"description\": \"string\",\n  \"emailaddress1\": \"1ZB@GPbVmYNHQXPdFZclPZK.dlr\",\n  \"emailaddress2\": \"wleSjIkZM7zcZ4@nrLydMIxRWArLoJ.vacl\",\n  \"emailaddress3\": \"5Wukeo1zBAKA@fofQbFxpsiXAUWBRslRAwWYGmmNvEHGQF.pj\",\n  \"telephone1\": \"string\",\n  \"telephone2\": \"string\",\n  \"telephone3\": \"string\",\n  \"fax\": \"string\",\n  \"websiteurl\": \"http://edmPGsvgIguPEQoSPvTzXwWkp.pxqUkTHKU,Q8u5yJVDa\",\n  \"revenue\": 2908.347735559296,\n  \"revenue_base\": 2705.505535720768,\n  \"numberofemployees\": 3112,\n  \"sic\": \"string\",\n  \"tickersymbol\": \"string\",\n  \"stockexchange\": \"string\",\n  \"industrycode\": 1882,\n  \"ownershipcode\": 8766,\n  \"accountcategorycode\": 2434,\n  \"accountclassificationcode\": 7973,\n  \"accountratingcode\": 729,\n  \"customertypecode\": 3042,\n  \"customersizecode\": 762,\n  \"businesstypecode\": 6966,\n  \"preferredcontactmethodcode\": 1304,\n  \"paymenttermscode\": 5442,\n  \"shippingmethodcode\": 9730,\n  \"creditlimit\": 5300.65626567809,\n  \"creditlimit_base\": 1781.8875026715275,\n  \"creditonhold\": true,\n  \"donotemail\": true,\n  \"donotphone\": false,\n  \"donotfax\": false,\n  \"donotpostalmail\": false,\n  \"donotbulkemail\": false,\n  \"donotsendmm\": false,\n  \"marketingonly\": true,\n  \"followemail\": true,\n  \"address1_name\": \"string\",\n  \"address1_line1\": \"string\",\n  \"address1_line2\": \"string\",\n  \"address1_line3\": \"string\",\n  \"address1_city\": \"string\",\n  \"address1_stateorprovince\": \"string\",\n  \"address1_postalcode\": \"string\",\n  \"address1_country\": \"string\",\n  \"address1_county\": \"string\",\n  \"address1_telephone1\": \"string\",\n  \"address1_fax\": \"string\",\n  \"address1_latitude\": 2063.2567188965468,\n  \"address1_longitude\": 87.03079355909415,\n  \"address1_addresstypecode\": 9134,\n  \"address1_composite\": \"string\",\n  \"address2_name\": \"string\",\n  \"address2_line1\": \"string\",\n  \"address2_line2\": \"string\",\n  \"address2_city\": \"string\",\n  \"address2_stateorprovince\": \"string\",\n  \"address2_postalcode\": \"string\",\n  \"address2_country\": \"string\",\n  \"statecode\": 7449,\n  \"statuscode\": 2914,\n  \"marketcap\": 9834.957352526704,\n  \"sharesoutstanding\": 5727,\n  \"ftpsiteurl\": \"https://Uf.wfkaAVm3GZwmhxVry,yMU66zCWUHNPIX1r.ln\",\n  \"yominame\": \"string\",\n  \"_primarycontactid_value\": \"5d8cec3f-25a5-ea25-daa4-711782308677\",\n  \"_parentaccountid_value\": \"a04c8152-847a-db36-254a-0a5cf3613915\",\n  \"_transactioncurrencyid_value\": \"aa4864c1-d7f5-f356-d23c-0ff09b578ebb\",\n  \"_ownerid_value\": \"3f45040f-9d43-9c41-8d23-7a62907291ec\",\n  \"_owningbusinessunit_value\": \"cdef27a0-b176-89cf-0145-df6175f4f45a\",\n  \"_createdby_value\": \"b807921d-9bcf-522e-0131-2e69814bf0b4\",\n  \"_modifiedby_value\": \"73764669-6fdd-f3ee-633a-1471c6058f84\",\n  \"createdon\": \"2002-03-16T07:01:46.746Z\",\n  \"modifiedon\": \"1977-12-31T03:08:15.242Z\",\n  \"versionnumber\": 2468,\n  \"exchangerate\": 5597.347306062182,\n  \"merged\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "74419086-4c90-46a2-90b6-f05384874b9e",
+              "name": "Authentication credentials are missing or invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts({{accountid}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$expand",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"innererror\": {\n      \"message\": \"string\",\n      \"type\": \"string\",\n      \"stacktrace\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c75d7e67-3327-4e91-8256-a2ea563ab54b",
+              "name": "The requested resource was not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts({{accountid}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$expand",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"innererror\": {\n      \"message\": \"string\",\n      \"type\": \"string\",\n      \"stacktrace\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a7cd6065-bb57-43b5-ad0b-f0ae4d120a19",
+          "name": "Microsoft Dynamics 365 Update an account",
+          "request": {
+            "name": "Microsoft Dynamics 365 Update an account",
+            "description": {
+              "content": "Update an existing account entity record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "accounts({{accountid}})"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The unique name of your Dynamics 365 organization.",
+                  "type": "any",
+                  "value": "{{org}}",
+                  "key": "org"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                "key": "Prefer",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "ETag value for optimistic concurrency control. Use * to match any version.",
+                "key": "If-Match",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"accountnumber\": \"<string>\",\n  \"description\": \"<string>\",\n  \"emailaddress1\": \"<email>\",\n  \"telephone1\": \"<string>\",\n  \"fax\": \"<string>\",\n  \"websiteurl\": \"<uri>\",\n  \"revenue\": \"<number>\",\n  \"numberofemployees\": \"<integer>\",\n  \"sic\": \"<string>\",\n  \"tickersymbol\": \"<string>\",\n  \"industrycode\": \"<integer>\",\n  \"ownershipcode\": \"<integer>\",\n  \"accountcategorycode\": \"<integer>\",\n  \"customertypecode\": \"<integer>\",\n  \"preferredcontactmethodcode\": \"<integer>\",\n  \"paymenttermscode\": \"<integer>\",\n  \"creditlimit\": \"<number>\",\n  \"creditonhold\": \"<boolean>\",\n  \"donotemail\": \"<boolean>\",\n  \"donotphone\": \"<boolean>\",\n  \"donotfax\": \"<boolean>\",\n  \"donotpostalmail\": \"<boolean>\",\n  \"donotbulkemail\": \"<boolean>\",\n  \"address1_name\": \"<string>\",\n  \"address1_line1\": \"<string>\",\n  \"address1_line2\": \"<string>\",\n  \"address1_line3\": \"<string>\",\n  \"address1_city\": \"<string>\",\n  \"address1_stateorprovince\": \"<string>\",\n  \"address1_postalcode\": \"<string>\",\n  \"address1_country\": \"<string>\",\n  \"address1_telephone1\": \"<string>\",\n  \"address1_fax\": \"<string>\",\n  \"address1_latitude\": \"<double>\",\n  \"address1_longitude\": \"<double>\",\n  \"address1_addresstypecode\": \"<integer>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"primarycontactid@odata.bind\": \"<string>\",\n  \"parentaccountid@odata.bind\": \"<string>\",\n  \"transactioncurrencyid@odata.bind\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7a34327e-4fd2-437f-904c-53716f763922",
+              "name": "Account updated successfully (when Prefer return=representation).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts({{accountid}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "return=representation"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "ETag value for optimistic concurrency control. Use * to match any version.",
+                    "key": "If-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"accountnumber\": \"<string>\",\n  \"description\": \"<string>\",\n  \"emailaddress1\": \"<email>\",\n  \"telephone1\": \"<string>\",\n  \"fax\": \"<string>\",\n  \"websiteurl\": \"<uri>\",\n  \"revenue\": \"<number>\",\n  \"numberofemployees\": \"<integer>\",\n  \"sic\": \"<string>\",\n  \"tickersymbol\": \"<string>\",\n  \"industrycode\": \"<integer>\",\n  \"ownershipcode\": \"<integer>\",\n  \"accountcategorycode\": \"<integer>\",\n  \"customertypecode\": \"<integer>\",\n  \"preferredcontactmethodcode\": \"<integer>\",\n  \"paymenttermscode\": \"<integer>\",\n  \"creditlimit\": \"<number>\",\n  \"creditonhold\": \"<boolean>\",\n  \"donotemail\": \"<boolean>\",\n  \"donotphone\": \"<boolean>\",\n  \"donotfax\": \"<boolean>\",\n  \"donotpostalmail\": \"<boolean>\",\n  \"donotbulkemail\": \"<boolean>\",\n  \"address1_name\": \"<string>\",\n  \"address1_line1\": \"<string>\",\n  \"address1_line2\": \"<string>\",\n  \"address1_line3\": \"<string>\",\n  \"address1_city\": \"<string>\",\n  \"address1_stateorprovince\": \"<string>\",\n  \"address1_postalcode\": \"<string>\",\n  \"address1_country\": \"<string>\",\n  \"address1_telephone1\": \"<string>\",\n  \"address1_fax\": \"<string>\",\n  \"address1_latitude\": \"<double>\",\n  \"address1_longitude\": \"<double>\",\n  \"address1_addresstypecode\": \"<integer>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"primarycontactid@odata.bind\": \"<string>\",\n  \"parentaccountid@odata.bind\": \"<string>\",\n  \"transactioncurrencyid@odata.bind\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"@odata.etag\": \"string\",\n  \"accountid\": \"024c7d88-a1c3-b36f-ccbf-33d80ecdda24\",\n  \"name\": \"string\",\n  \"accountnumber\": \"string\",\n  \"description\": \"string\",\n  \"emailaddress1\": \"1ZB@GPbVmYNHQXPdFZclPZK.dlr\",\n  \"emailaddress2\": \"wleSjIkZM7zcZ4@nrLydMIxRWArLoJ.vacl\",\n  \"emailaddress3\": \"5Wukeo1zBAKA@fofQbFxpsiXAUWBRslRAwWYGmmNvEHGQF.pj\",\n  \"telephone1\": \"string\",\n  \"telephone2\": \"string\",\n  \"telephone3\": \"string\",\n  \"fax\": \"string\",\n  \"websiteurl\": \"http://edmPGsvgIguPEQoSPvTzXwWkp.pxqUkTHKU,Q8u5yJVDa\",\n  \"revenue\": 2908.347735559296,\n  \"revenue_base\": 2705.505535720768,\n  \"numberofemployees\": 3112,\n  \"sic\": \"string\",\n  \"tickersymbol\": \"string\",\n  \"stockexchange\": \"string\",\n  \"industrycode\": 1882,\n  \"ownershipcode\": 8766,\n  \"accountcategorycode\": 2434,\n  \"accountclassificationcode\": 7973,\n  \"accountratingcode\": 729,\n  \"customertypecode\": 3042,\n  \"customersizecode\": 762,\n  \"businesstypecode\": 6966,\n  \"preferredcontactmethodcode\": 1304,\n  \"paymenttermscode\": 5442,\n  \"shippingmethodcode\": 9730,\n  \"creditlimit\": 5300.65626567809,\n  \"creditlimit_base\": 1781.8875026715275,\n  \"creditonhold\": true,\n  \"donotemail\": true,\n  \"donotphone\": false,\n  \"donotfax\": false,\n  \"donotpostalmail\": false,\n  \"donotbulkemail\": false,\n  \"donotsendmm\": false,\n  \"marketingonly\": true,\n  \"followemail\": true,\n  \"address1_name\": \"string\",\n  \"address1_line1\": \"string\",\n  \"address1_line2\": \"string\",\n  \"address1_line3\": \"string\",\n  \"address1_city\": \"string\",\n  \"address1_stateorprovince\": \"string\",\n  \"address1_postalcode\": \"string\",\n  \"address1_country\": \"string\",\n  \"address1_county\": \"string\",\n  \"address1_telephone1\": \"string\",\n  \"address1_fax\": \"string\",\n  \"address1_latitude\": 2063.2567188965468,\n  \"address1_longitude\": 87.03079355909415,\n  \"address1_addresstypecode\": 9134,\n  \"address1_composite\": \"string\",\n  \"address2_name\": \"string\",\n  \"address2_line1\": \"string\",\n  \"address2_line2\": \"string\",\n  \"address2_city\": \"string\",\n  \"address2_stateorprovince\": \"string\",\n  \"address2_postalcode\": \"string\",\n  \"address2_country\": \"string\",\n  \"statecode\": 7449,\n  \"statuscode\": 2914,\n  \"marketcap\": 9834.957352526704,\n  \"sharesoutstanding\": 5727,\n  \"ftpsiteurl\": \"https://Uf.wfkaAVm3GZwmhxVry,yMU66zCWUHNPIX1r.ln\",\n  \"yominame\": \"string\",\n  \"_primarycontactid_value\": \"5d8cec3f-25a5-ea25-daa4-711782308677\",\n  \"_parentaccountid_value\": \"a04c8152-847a-db36-254a-0a5cf3613915\",\n  \"_transactioncurrencyid_value\": \"aa4864c1-d7f5-f356-d23c-0ff09b578ebb\",\n  \"_ownerid_value\": \"3f45040f-9d43-9c41-8d23-7a62907291ec\",\n  \"_owningbusinessunit_value\": \"cdef27a0-b176-89cf-0145-df6175f4f45a\",\n  \"_createdby_value\": \"b807921d-9bcf-522e-0131-2e69814bf0b4\",\n  \"_modifiedby_value\": \"73764669-6fdd-f3ee-633a-1471c6058f84\",\n  \"createdon\": \"2002-03-16T07:01:46.746Z\",\n  \"modifiedon\": \"1977-12-31T03:08:15.242Z\",\n  \"versionnumber\": 2468,\n  \"exchangerate\": 5597.347306062182,\n  \"merged\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2db65f39-86ca-49dd-aa31-cbba18555fb7",
+              "name": "Account updated successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts({{accountid}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "return=representation"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "ETag value for optimistic concurrency control. Use * to match any version.",
+                    "key": "If-Match",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"accountnumber\": \"<string>\",\n  \"description\": \"<string>\",\n  \"emailaddress1\": \"<email>\",\n  \"telephone1\": \"<string>\",\n  \"fax\": \"<string>\",\n  \"websiteurl\": \"<uri>\",\n  \"revenue\": \"<number>\",\n  \"numberofemployees\": \"<integer>\",\n  \"sic\": \"<string>\",\n  \"tickersymbol\": \"<string>\",\n  \"industrycode\": \"<integer>\",\n  \"ownershipcode\": \"<integer>\",\n  \"accountcategorycode\": \"<integer>\",\n  \"customertypecode\": \"<integer>\",\n  \"preferredcontactmethodcode\": \"<integer>\",\n  \"paymenttermscode\": \"<integer>\",\n  \"creditlimit\": \"<number>\",\n  \"creditonhold\": \"<boolean>\",\n  \"donotemail\": \"<boolean>\",\n  \"donotphone\": \"<boolean>\",\n  \"donotfax\": \"<boolean>\",\n  \"donotpostalmail\": \"<boolean>\",\n  \"donotbulkemail\": \"<boolean>\",\n  \"address1_name\": \"<string>\",\n  \"address1_line1\": \"<string>\",\n  \"address1_line2\": \"<string>\",\n  \"address1_line3\": \"<string>\",\n  \"address1_city\": \"<string>\",\n  \"address1_stateorprovince\": \"<string>\",\n  \"address1_postalcode\": \"<string>\",\n  \"address1_country\": \"<string>\",\n  \"address1_telephone1\": \"<string>\",\n  \"address1_fax\": \"<string>\",\n  \"address1_latitude\": \"<double>\",\n  \"address1_longitude\": \"<double>\",\n  \"address1_addresstypecode\": \"<integer>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"primarycontactid@odata.bind\": \"<string>\",\n  \"parentaccountid@odata.bind\": \"<string>\",\n  \"transactioncurrencyid@odata.bind\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "59249c62-e62b-4bfd-ba81-133113b17dbc",
+              "name": "Authentication credentials are missing or invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts({{accountid}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "return=representation"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "ETag value for optimistic concurrency control. Use * to match any version.",
+                    "key": "If-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"accountnumber\": \"<string>\",\n  \"description\": \"<string>\",\n  \"emailaddress1\": \"<email>\",\n  \"telephone1\": \"<string>\",\n  \"fax\": \"<string>\",\n  \"websiteurl\": \"<uri>\",\n  \"revenue\": \"<number>\",\n  \"numberofemployees\": \"<integer>\",\n  \"sic\": \"<string>\",\n  \"tickersymbol\": \"<string>\",\n  \"industrycode\": \"<integer>\",\n  \"ownershipcode\": \"<integer>\",\n  \"accountcategorycode\": \"<integer>\",\n  \"customertypecode\": \"<integer>\",\n  \"preferredcontactmethodcode\": \"<integer>\",\n  \"paymenttermscode\": \"<integer>\",\n  \"creditlimit\": \"<number>\",\n  \"creditonhold\": \"<boolean>\",\n  \"donotemail\": \"<boolean>\",\n  \"donotphone\": \"<boolean>\",\n  \"donotfax\": \"<boolean>\",\n  \"donotpostalmail\": \"<boolean>\",\n  \"donotbulkemail\": \"<boolean>\",\n  \"address1_name\": \"<string>\",\n  \"address1_line1\": \"<string>\",\n  \"address1_line2\": \"<string>\",\n  \"address1_line3\": \"<string>\",\n  \"address1_city\": \"<string>\",\n  \"address1_stateorprovince\": \"<string>\",\n  \"address1_postalcode\": \"<string>\",\n  \"address1_country\": \"<string>\",\n  \"address1_telephone1\": \"<string>\",\n  \"address1_fax\": \"<string>\",\n  \"address1_latitude\": \"<double>\",\n  \"address1_longitude\": \"<double>\",\n  \"address1_addresstypecode\": \"<integer>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"primarycontactid@odata.bind\": \"<string>\",\n  \"parentaccountid@odata.bind\": \"<string>\",\n  \"transactioncurrencyid@odata.bind\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"innererror\": {\n      \"message\": \"string\",\n      \"type\": \"string\",\n      \"stacktrace\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "869ad159-e059-4f61-8480-f2a3ded9a0e6",
+              "name": "The requested resource was not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts({{accountid}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "return=representation"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "ETag value for optimistic concurrency control. Use * to match any version.",
+                    "key": "If-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"accountnumber\": \"<string>\",\n  \"description\": \"<string>\",\n  \"emailaddress1\": \"<email>\",\n  \"telephone1\": \"<string>\",\n  \"fax\": \"<string>\",\n  \"websiteurl\": \"<uri>\",\n  \"revenue\": \"<number>\",\n  \"numberofemployees\": \"<integer>\",\n  \"sic\": \"<string>\",\n  \"tickersymbol\": \"<string>\",\n  \"industrycode\": \"<integer>\",\n  \"ownershipcode\": \"<integer>\",\n  \"accountcategorycode\": \"<integer>\",\n  \"customertypecode\": \"<integer>\",\n  \"preferredcontactmethodcode\": \"<integer>\",\n  \"paymenttermscode\": \"<integer>\",\n  \"creditlimit\": \"<number>\",\n  \"creditonhold\": \"<boolean>\",\n  \"donotemail\": \"<boolean>\",\n  \"donotphone\": \"<boolean>\",\n  \"donotfax\": \"<boolean>\",\n  \"donotpostalmail\": \"<boolean>\",\n  \"donotbulkemail\": \"<boolean>\",\n  \"address1_name\": \"<string>\",\n  \"address1_line1\": \"<string>\",\n  \"address1_line2\": \"<string>\",\n  \"address1_line3\": \"<string>\",\n  \"address1_city\": \"<string>\",\n  \"address1_stateorprovince\": \"<string>\",\n  \"address1_postalcode\": \"<string>\",\n  \"address1_country\": \"<string>\",\n  \"address1_telephone1\": \"<string>\",\n  \"address1_fax\": \"<string>\",\n  \"address1_latitude\": \"<double>\",\n  \"address1_longitude\": \"<double>\",\n  \"address1_addresstypecode\": \"<integer>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"primarycontactid@odata.bind\": \"<string>\",\n  \"parentaccountid@odata.bind\": \"<string>\",\n  \"transactioncurrencyid@odata.bind\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"innererror\": {\n      \"message\": \"string\",\n      \"type\": \"string\",\n      \"stacktrace\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1aef60a6-e899-489d-8b24-f589a553dee5",
+              "name": "The ETag value provided in the If-Match header does not match the current version of the record.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts({{accountid}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "return=representation"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "ETag value for optimistic concurrency control. Use * to match any version.",
+                    "key": "If-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"accountnumber\": \"<string>\",\n  \"description\": \"<string>\",\n  \"emailaddress1\": \"<email>\",\n  \"telephone1\": \"<string>\",\n  \"fax\": \"<string>\",\n  \"websiteurl\": \"<uri>\",\n  \"revenue\": \"<number>\",\n  \"numberofemployees\": \"<integer>\",\n  \"sic\": \"<string>\",\n  \"tickersymbol\": \"<string>\",\n  \"industrycode\": \"<integer>\",\n  \"ownershipcode\": \"<integer>\",\n  \"accountcategorycode\": \"<integer>\",\n  \"customertypecode\": \"<integer>\",\n  \"preferredcontactmethodcode\": \"<integer>\",\n  \"paymenttermscode\": \"<integer>\",\n  \"creditlimit\": \"<number>\",\n  \"creditonhold\": \"<boolean>\",\n  \"donotemail\": \"<boolean>\",\n  \"donotphone\": \"<boolean>\",\n  \"donotfax\": \"<boolean>\",\n  \"donotpostalmail\": \"<boolean>\",\n  \"donotbulkemail\": \"<boolean>\",\n  \"address1_name\": \"<string>\",\n  \"address1_line1\": \"<string>\",\n  \"address1_line2\": \"<string>\",\n  \"address1_line3\": \"<string>\",\n  \"address1_city\": \"<string>\",\n  \"address1_stateorprovince\": \"<string>\",\n  \"address1_postalcode\": \"<string>\",\n  \"address1_country\": \"<string>\",\n  \"address1_telephone1\": \"<string>\",\n  \"address1_fax\": \"<string>\",\n  \"address1_latitude\": \"<double>\",\n  \"address1_longitude\": \"<double>\",\n  \"address1_addresstypecode\": \"<integer>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"primarycontactid@odata.bind\": \"<string>\",\n  \"parentaccountid@odata.bind\": \"<string>\",\n  \"transactioncurrencyid@odata.bind\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"innererror\": {\n      \"message\": \"string\",\n      \"type\": \"string\",\n      \"stacktrace\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "458a1b82-4c0b-49e5-9254-9d0778ee6aac",
+          "name": "Microsoft Dynamics 365 Delete an account",
+          "request": {
+            "name": "Microsoft Dynamics 365 Delete an account",
+            "description": {
+              "content": "Delete an account entity record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "accounts({{accountid}})"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The unique name of your Dynamics 365 organization.",
+                  "type": "any",
+                  "value": "{{org}}",
+                  "key": "org"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "047a6ae5-1f5a-4b47-9e26-a2f8b9dc30f0",
+              "name": "Account deleted successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts({{accountid}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5b50bf75-5f1b-46f8-a4c4-19cec626c2ae",
+              "name": "Authentication credentials are missing or invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts({{accountid}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"innererror\": {\n      \"message\": \"string\",\n      \"type\": \"string\",\n      \"stacktrace\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "10fc2102-d9a5-4c2a-8246-376ba738465c",
+              "name": "The requested resource was not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts({{accountid}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"innererror\": {\n      \"message\": \"string\",\n      \"type\": \"string\",\n      \"stacktrace\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The unique name of your Dynamics 365 organization.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "yourorg",
+      "key": "org"
+    },
+    {
+      "type": "string",
+      "value": "https://{{org}}.api.crm.dynamics.com/api/data/v9.2",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) Unique identifier of the account record (GUID).",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<uuid>",
+      "key": "accountid"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://{org}.api.crm.dynamics.com/.default"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "5a900f2e-3b8e-45a8-859e-b6e5c88ea52d",
+    "name": "Microsoft Dynamics 365 Dataverse Web Accounts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "RESTful web service implementing OData v4.0 for interacting with data in Microsoft Dataverse, the underlying data platform for Dynamics 365 and Power Platform applications. This specification covers core CRM entities including accounts, contacts, and opportunities.\n\nContact Support:\n Name: Microsoft Support\n Email: support@microsoft.com",
+      "type": "text/plain"
+    }
+  }
+}

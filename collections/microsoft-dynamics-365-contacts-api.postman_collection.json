@@ -1,0 +1,1570 @@
+{
+  "item": [
+    {
+      "id": "f42ab09b-faa1-45af-8df1-31f6580dd5a0",
+      "name": "Contacts",
+      "description": {
+        "content": "Person with whom a business unit has a relationship, such as a customer, supplier, or colleague.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a437b914-48c1-4dc1-a35c-b95a36226a2c",
+          "name": "Microsoft Dynamics 365 List contacts",
+          "request": {
+            "name": "Microsoft Dynamics 365 List contacts",
+            "description": {
+              "content": "Retrieve a list of contact entity records. Supports OData query options including $select, $filter, $orderby, $top, $skip, and $expand.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contacts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "$select",
+                  "value": "<string>",
+                  "description": "Comma-separated list of properties to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "$filter",
+                  "value": "<string>",
+                  "description": "OData filter expression to restrict results."
+                },
+                {
+                  "disabled": false,
+                  "key": "$orderby",
+                  "value": "<string>",
+                  "description": "Comma-separated list of properties to sort by, with optional asc or desc."
+                },
+                {
+                  "disabled": false,
+                  "key": "$top",
+                  "value": "<integer>",
+                  "description": "Maximum number of records to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "$skip",
+                  "value": "<integer>",
+                  "description": "Number of records to skip before returning results."
+                },
+                {
+                  "disabled": false,
+                  "key": "$expand",
+                  "value": "<string>",
+                  "description": "Comma-separated list of navigation properties to expand."
+                },
+                {
+                  "disabled": false,
+                  "key": "$count",
+                  "value": "<boolean>",
+                  "description": "Include a count of matching records in the response."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "The unique name of your Dynamics 365 organization.",
+                  "type": "any",
+                  "value": "{{org}}",
+                  "key": "org"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                "key": "Prefer",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d95745b6-9baf-4b05-828b-8013cbc6b83c",
+              "name": "Successfully retrieved contacts.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$top",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "$skip",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "$expand",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$count",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "return=representation"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"@odata.context\": \"string\",\n  \"@odata.count\": 5510,\n  \"@odata.nextLink\": \"http://bBXrFqAV.jkjlXDO+gqkggK1Zsr7pB7NTmLwFJK9MGGm9sNBf\",\n  \"value\": [\n    {\n      \"@odata.etag\": \"string\",\n      \"contactid\": \"14fa7764-dc00-17c9-3606-5e311a78e8db\",\n      \"firstname\": \"string\",\n      \"middlename\": \"string\",\n      \"lastname\": \"string\",\n      \"fullname\": \"string\",\n      \"nickname\": \"string\",\n      \"salutation\": \"string\",\n      \"suffix\": \"string\",\n      \"jobtitle\": \"string\",\n      \"department\": \"string\",\n      \"managername\": \"string\",\n      \"assistantname\": \"string\",\n      \"assistantphone\": \"string\",\n      \"emailaddress1\": \"das1oatd@quqwYVWwvdyIKt.ixex\",\n      \"emailaddress2\": \"4wNw@fNYVpOHywhHDpCoz.tr\",\n      \"emailaddress3\": \"IBkigFHkU@blPXUTuLOHCg.qw\",\n      \"telephone1\": \"string\",\n      \"telephone2\": \"string\",\n      \"telephone3\": \"string\",\n      \"mobilephone\": \"string\",\n      \"fax\": \"string\",\n      \"pager\": \"string\",\n      \"websiteurl\": \"http://yrjLRzDgleutVMbjQgHFHBLppvyr.qnqm0GTPDlsMWiYXgbjWl5QP0lQvJ3av5\",\n      \"description\": \"string\",\n      \"gendercode\": 1192,\n      \"familystatuscode\": 1484,\n      \"spousesname\": \"string\",\n      \"birthday\": \"1970-12-25\",\n      \"anniversary\": \"1979-09-09\",\n      \"preferredcontactmethodcode\": 5462,\n      \"donotemail\": false,\n      \"donotphone\": true,\n      \"donotfax\": true,\n      \"donotpostalmail\": true,\n      \"donotbulkemail\": false,\n      \"donotsendmm\": false,\n      \"followemail\": true,\n      \"address1_name\": \"string\",\n      \"address1_line1\": \"string\",\n      \"address1_line2\": \"string\",\n      \"address1_line3\": \"string\",\n      \"address1_city\": \"string\",\n      \"address1_stateorprovince\": \"string\",\n      \"address1_postalcode\": \"string\",\n      \"address1_country\": \"string\",\n      \"address1_county\": \"string\",\n      \"address1_telephone1\": \"string\",\n      \"address1_fax\": \"string\",\n      \"address1_latitude\": 4032.124274819042,\n      \"address1_longitude\": 896.6064779507466,\n      \"address1_addresstypecode\": 7447,\n      \"address1_composite\": \"string\",\n      \"address2_name\": \"string\",\n      \"address2_line1\": \"string\",\n      \"address2_line2\": \"string\",\n      \"address2_city\": \"string\",\n      \"address2_stateorprovince\": \"string\",\n      \"address2_postalcode\": \"string\",\n      \"address2_country\": \"string\",\n      \"statecode\": 6469,\n      \"statuscode\": 962,\n      \"annualincome\": 135.52452108288705,\n      \"creditlimit\": 6329.13578729785,\n      \"creditonhold\": false,\n      \"_parentcustomerid_value\": \"efa7689f-9f69-e4a6-f4ee-428eab46e450\",\n      \"_ownerid_value\": \"458230d2-7273-7bd4-c698-a82651eaab41\",\n      \"_createdby_value\": \"269a3bbf-a0f7-fd1f-1179-475c202c7a59\",\n      \"_modifiedby_value\": \"c7c41390-8a86-553d-f100-c92d865e1fcb\",\n      \"createdon\": \"2020-03-25T06:17:13.456Z\",\n      \"modifiedon\": \"1985-10-19T12:05:30.920Z\",\n      \"versionnumber\": 7555,\n      \"yomifirstname\": \"string\",\n      \"yomilastname\": \"string\",\n      \"yomimiddlename\": \"string\",\n      \"yomifullname\": \"string\"\n    },\n    {\n      \"@odata.etag\": \"string\",\n      \"contactid\": \"60873e39-51fa-20fe-3f1b-09e339e73aeb\",\n      \"firstname\": \"string\",\n      \"middlename\": \"string\",\n      \"lastname\": \"string\",\n      \"fullname\": \"string\",\n      \"nickname\": \"string\",\n      \"salutation\": \"string\",\n      \"suffix\": \"string\",\n      \"jobtitle\": \"string\",\n      \"department\": \"string\",\n      \"managername\": \"string\",\n      \"assistantname\": \"string\",\n      \"assistantphone\": \"string\",\n      \"emailaddress1\": \"IDPGUjxqos1AQ5O@GIXI.smr\",\n      \"emailaddress2\": \"ItzEOKnokx@qxIAIyXoFDHs.cm\",\n      \"emailaddress3\": \"GZeExKhv@TwfVyZOkwyaezJiJmoJLpdY.gdxg\",\n      \"telephone1\": \"string\",\n      \"telephone2\": \"string\",\n      \"telephone3\": \"string\",\n      \"mobilephone\": \"string\",\n      \"fax\": \"string\",\n      \"pager\": \"string\",\n      \"websiteurl\": \"https://npHOBcDwHmEnXACbEbtDbnZUCmdMnv.brptQKIxzPQqduze0sjvx8,yijqZ\",\n      \"description\": \"string\",\n      \"gendercode\": 9400,\n      \"familystatuscode\": 46,\n      \"spousesname\": \"string\",\n      \"birthday\": \"1948-12-06\",\n      \"anniversary\": \"1964-05-24\",\n      \"preferredcontactmethodcode\": 8926,\n      \"donotemail\": true,\n      \"donotphone\": false,\n      \"donotfax\": true,\n      \"donotpostalmail\": true,\n      \"donotbulkemail\": false,\n      \"donotsendmm\": true,\n      \"followemail\": false,\n      \"address1_name\": \"string\",\n      \"address1_line1\": \"string\",\n      \"address1_line2\": \"string\",\n      \"address1_line3\": \"string\",\n      \"address1_city\": \"string\",\n      \"address1_stateorprovince\": \"string\",\n      \"address1_postalcode\": \"string\",\n      \"address1_country\": \"string\",\n      \"address1_county\": \"string\",\n      \"address1_telephone1\": \"string\",\n      \"address1_fax\": \"string\",\n      \"address1_latitude\": 9177.321591089105,\n      \"address1_longitude\": 5552.892318857724,\n      \"address1_addresstypecode\": 5604,\n      \"address1_composite\": \"string\",\n      \"address2_name\": \"string\",\n      \"address2_line1\": \"string\",\n      \"address2_line2\": \"string\",\n      \"address2_city\": \"string\",\n      \"address2_stateorprovince\": \"string\",\n      \"address2_postalcode\": \"string\",\n      \"address2_country\": \"string\",\n      \"statecode\": 407,\n      \"statuscode\": 1386,\n      \"annualincome\": 9477.773296887368,\n      \"creditlimit\": 836.3873318552905,\n      \"creditonhold\": false,\n      \"_parentcustomerid_value\": \"8dea2ac7-4299-27e5-e365-31c364d2d79e\",\n      \"_ownerid_value\": \"f8f82397-e920-9dc3-8b6a-7747f2024781\",\n      \"_createdby_value\": \"2db58905-a03e-9d57-2f28-41a85c2410b0\",\n      \"_modifiedby_value\": \"fab98c29-1b21-028d-b05a-7c7798488165\",\n      \"createdon\": \"1992-01-03T14:55:00.596Z\",\n      \"modifiedon\": \"1981-12-02T11:52:57.661Z\",\n      \"versionnumber\": 7569,\n      \"yomifirstname\": \"string\",\n      \"yomilastname\": \"string\",\n      \"yomimiddlename\": \"string\",\n      \"yomifullname\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d1789102-69ed-45ce-a98e-fc93d48fb3e3",
+              "name": "Authentication credentials are missing or invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$top",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "$skip",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "$expand",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$count",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "return=representation"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"innererror\": {\n      \"message\": \"string\",\n      \"type\": \"string\",\n      \"stacktrace\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ffa06fc4-df26-4162-a2d0-85c2e308c350",
+              "name": "The authenticated user does not have permission to perform this action.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$top",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "$skip",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "$expand",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$count",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "return=representation"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"innererror\": {\n      \"message\": \"string\",\n      \"type\": \"string\",\n      \"stacktrace\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "df932ab5-9492-4dec-a588-7e938ddcd50c",
+          "name": "Microsoft Dynamics 365 Create a contact",
+          "request": {
+            "name": "Microsoft Dynamics 365 Create a contact",
+            "description": {
+              "content": "Create a new contact entity record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contacts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The unique name of your Dynamics 365 organization.",
+                  "type": "any",
+                  "value": "{{org}}",
+                  "key": "org"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                "key": "Prefer",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "fc2cb3ef-65a2-4895-b6b1-7859c55fdb0d",
+              "name": "Contact created successfully (when Prefer return=representation).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "return=representation"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lastname\": \"<string>\",\n  \"firstname\": \"string\",\n  \"middlename\": \"string\",\n  \"suffix\": \"string\",\n  \"salutation\": \"string\",\n  \"nickname\": \"string\",\n  \"jobtitle\": \"string\",\n  \"department\": \"string\",\n  \"emailaddress1\": \"LIArZ4a@sePrNFvXtUdYcvLSOzzZJHkHUklL.pt\",\n  \"emailaddress2\": \"wOyzZ@tcIMjCaXgsk.ouh\",\n  \"telephone1\": \"string\",\n  \"telephone2\": \"string\",\n  \"mobilephone\": \"string\",\n  \"fax\": \"string\",\n  \"websiteurl\": \"http://dkMbgdqaVVZNtLaZcdsLPkNlvbtGcB.rfkXyWJc7IGkTc\",\n  \"description\": \"string\",\n  \"gendercode\": 6355,\n  \"familystatuscode\": 8169,\n  \"birthday\": \"1964-02-15\",\n  \"preferredcontactmethodcode\": 1988,\n  \"donotemail\": true,\n  \"donotphone\": false,\n  \"donotfax\": true,\n  \"donotpostalmail\": false,\n  \"donotbulkemail\": false,\n  \"address1_name\": \"string\",\n  \"address1_line1\": \"string\",\n  \"address1_line2\": \"string\",\n  \"address1_line3\": \"string\",\n  \"address1_city\": \"string\",\n  \"address1_stateorprovince\": \"string\",\n  \"address1_postalcode\": \"string\",\n  \"address1_country\": \"string\",\n  \"address1_telephone1\": \"string\",\n  \"address1_latitude\": 3967.5560364785356,\n  \"address1_longitude\": 15.385728323373815,\n  \"statecode\": 5328,\n  \"statuscode\": 2602,\n  \"annualincome\": 601.1860253746893,\n  \"parentcustomerid_account@odata.bind\": \"string\",\n  \"parentcustomerid_contact@odata.bind\": \"string\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"@odata.etag\": \"string\",\n  \"contactid\": \"ec147d89-62ec-c19c-e040-4cb50226bd0d\",\n  \"firstname\": \"string\",\n  \"middlename\": \"string\",\n  \"lastname\": \"string\",\n  \"fullname\": \"string\",\n  \"nickname\": \"string\",\n  \"salutation\": \"string\",\n  \"suffix\": \"string\",\n  \"jobtitle\": \"string\",\n  \"department\": \"string\",\n  \"managername\": \"string\",\n  \"assistantname\": \"string\",\n  \"assistantphone\": \"string\",\n  \"emailaddress1\": \"eCjATpH21@zguAJDtBSIegCYfvs.ewtl\",\n  \"emailaddress2\": \"3-xbIo@hrKqYJnGdr.blm\",\n  \"emailaddress3\": \"eXWTeDr1-cz@DaAbCUU.amxa\",\n  \"telephone1\": \"string\",\n  \"telephone2\": \"string\",\n  \"telephone3\": \"string\",\n  \"mobilephone\": \"string\",\n  \"fax\": \"string\",\n  \"pager\": \"string\",\n  \"websiteurl\": \"http://DuK.clbqYHasabipBpR1Ta7EgGqWPT91VE3DL+0Ph4dFCvJq\",\n  \"description\": \"string\",\n  \"gendercode\": 8759,\n  \"familystatuscode\": 5456,\n  \"spousesname\": \"string\",\n  \"birthday\": \"1994-04-20\",\n  \"anniversary\": \"2010-07-28\",\n  \"preferredcontactmethodcode\": 3648,\n  \"donotemail\": true,\n  \"donotphone\": false,\n  \"donotfax\": false,\n  \"donotpostalmail\": true,\n  \"donotbulkemail\": false,\n  \"donotsendmm\": false,\n  \"followemail\": true,\n  \"address1_name\": \"string\",\n  \"address1_line1\": \"string\",\n  \"address1_line2\": \"string\",\n  \"address1_line3\": \"string\",\n  \"address1_city\": \"string\",\n  \"address1_stateorprovince\": \"string\",\n  \"address1_postalcode\": \"string\",\n  \"address1_country\": \"string\",\n  \"address1_county\": \"string\",\n  \"address1_telephone1\": \"string\",\n  \"address1_fax\": \"string\",\n  \"address1_latitude\": 3754.5109713524594,\n  \"address1_longitude\": 3807.1022623865124,\n  \"address1_addresstypecode\": 4686,\n  \"address1_composite\": \"string\",\n  \"address2_name\": \"string\",\n  \"address2_line1\": \"string\",\n  \"address2_line2\": \"string\",\n  \"address2_city\": \"string\",\n  \"address2_stateorprovince\": \"string\",\n  \"address2_postalcode\": \"string\",\n  \"address2_country\": \"string\",\n  \"statecode\": 7937,\n  \"statuscode\": 6494,\n  \"annualincome\": 5392.255516686758,\n  \"creditlimit\": 3582.117053083702,\n  \"creditonhold\": false,\n  \"_parentcustomerid_value\": \"27e3120a-29fb-b5ca-17e0-294f25d786f6\",\n  \"_ownerid_value\": \"fe4bcc82-fb52-ff50-bfa8-c9a7230c3425\",\n  \"_createdby_value\": \"10bdc8ec-5486-cf27-b14f-5a5ff812d099\",\n  \"_modifiedby_value\": \"c1e72b12-6571-9fb4-1d7a-1d6b47b0d887\",\n  \"createdon\": \"2003-09-04T18:32:16.655Z\",\n  \"modifiedon\": \"2020-07-24T15:09:30.063Z\",\n  \"versionnumber\": 912,\n  \"yomifirstname\": \"string\",\n  \"yomilastname\": \"string\",\n  \"yomimiddlename\": \"string\",\n  \"yomifullname\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1eb6319e-b8c2-4400-963d-2160f334e723",
+              "name": "Contact created successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "return=representation"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lastname\": \"<string>\",\n  \"firstname\": \"string\",\n  \"middlename\": \"string\",\n  \"suffix\": \"string\",\n  \"salutation\": \"string\",\n  \"nickname\": \"string\",\n  \"jobtitle\": \"string\",\n  \"department\": \"string\",\n  \"emailaddress1\": \"LIArZ4a@sePrNFvXtUdYcvLSOzzZJHkHUklL.pt\",\n  \"emailaddress2\": \"wOyzZ@tcIMjCaXgsk.ouh\",\n  \"telephone1\": \"string\",\n  \"telephone2\": \"string\",\n  \"mobilephone\": \"string\",\n  \"fax\": \"string\",\n  \"websiteurl\": \"http://dkMbgdqaVVZNtLaZcdsLPkNlvbtGcB.rfkXyWJc7IGkTc\",\n  \"description\": \"string\",\n  \"gendercode\": 6355,\n  \"familystatuscode\": 8169,\n  \"birthday\": \"1964-02-15\",\n  \"preferredcontactmethodcode\": 1988,\n  \"donotemail\": true,\n  \"donotphone\": false,\n  \"donotfax\": true,\n  \"donotpostalmail\": false,\n  \"donotbulkemail\": false,\n  \"address1_name\": \"string\",\n  \"address1_line1\": \"string\",\n  \"address1_line2\": \"string\",\n  \"address1_line3\": \"string\",\n  \"address1_city\": \"string\",\n  \"address1_stateorprovince\": \"string\",\n  \"address1_postalcode\": \"string\",\n  \"address1_country\": \"string\",\n  \"address1_telephone1\": \"string\",\n  \"address1_latitude\": 3967.5560364785356,\n  \"address1_longitude\": 15.385728323373815,\n  \"statecode\": 5328,\n  \"statuscode\": 2602,\n  \"annualincome\": 601.1860253746893,\n  \"parentcustomerid_account@odata.bind\": \"string\",\n  \"parentcustomerid_contact@odata.bind\": \"string\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "URI of the newly created contact record.",
+                  "key": "OData-EntityId",
+                  "value": "https://C.aqmSbX0QU9XLYETp"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "017c9f9f-17c5-49e8-a84b-0c283307ce6f",
+              "name": "Authentication credentials are missing or invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "return=representation"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lastname\": \"<string>\",\n  \"firstname\": \"string\",\n  \"middlename\": \"string\",\n  \"suffix\": \"string\",\n  \"salutation\": \"string\",\n  \"nickname\": \"string\",\n  \"jobtitle\": \"string\",\n  \"department\": \"string\",\n  \"emailaddress1\": \"LIArZ4a@sePrNFvXtUdYcvLSOzzZJHkHUklL.pt\",\n  \"emailaddress2\": \"wOyzZ@tcIMjCaXgsk.ouh\",\n  \"telephone1\": \"string\",\n  \"telephone2\": \"string\",\n  \"mobilephone\": \"string\",\n  \"fax\": \"string\",\n  \"websiteurl\": \"http://dkMbgdqaVVZNtLaZcdsLPkNlvbtGcB.rfkXyWJc7IGkTc\",\n  \"description\": \"string\",\n  \"gendercode\": 6355,\n  \"familystatuscode\": 8169,\n  \"birthday\": \"1964-02-15\",\n  \"preferredcontactmethodcode\": 1988,\n  \"donotemail\": true,\n  \"donotphone\": false,\n  \"donotfax\": true,\n  \"donotpostalmail\": false,\n  \"donotbulkemail\": false,\n  \"address1_name\": \"string\",\n  \"address1_line1\": \"string\",\n  \"address1_line2\": \"string\",\n  \"address1_line3\": \"string\",\n  \"address1_city\": \"string\",\n  \"address1_stateorprovince\": \"string\",\n  \"address1_postalcode\": \"string\",\n  \"address1_country\": \"string\",\n  \"address1_telephone1\": \"string\",\n  \"address1_latitude\": 3967.5560364785356,\n  \"address1_longitude\": 15.385728323373815,\n  \"statecode\": 5328,\n  \"statuscode\": 2602,\n  \"annualincome\": 601.1860253746893,\n  \"parentcustomerid_account@odata.bind\": \"string\",\n  \"parentcustomerid_contact@odata.bind\": \"string\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"innererror\": {\n      \"message\": \"string\",\n      \"type\": \"string\",\n      \"stacktrace\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a1b970ef-afa3-43e1-90f4-8e74a6863fc4",
+              "name": "The authenticated user does not have permission to perform this action.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "return=representation"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lastname\": \"<string>\",\n  \"firstname\": \"string\",\n  \"middlename\": \"string\",\n  \"suffix\": \"string\",\n  \"salutation\": \"string\",\n  \"nickname\": \"string\",\n  \"jobtitle\": \"string\",\n  \"department\": \"string\",\n  \"emailaddress1\": \"LIArZ4a@sePrNFvXtUdYcvLSOzzZJHkHUklL.pt\",\n  \"emailaddress2\": \"wOyzZ@tcIMjCaXgsk.ouh\",\n  \"telephone1\": \"string\",\n  \"telephone2\": \"string\",\n  \"mobilephone\": \"string\",\n  \"fax\": \"string\",\n  \"websiteurl\": \"http://dkMbgdqaVVZNtLaZcdsLPkNlvbtGcB.rfkXyWJc7IGkTc\",\n  \"description\": \"string\",\n  \"gendercode\": 6355,\n  \"familystatuscode\": 8169,\n  \"birthday\": \"1964-02-15\",\n  \"preferredcontactmethodcode\": 1988,\n  \"donotemail\": true,\n  \"donotphone\": false,\n  \"donotfax\": true,\n  \"donotpostalmail\": false,\n  \"donotbulkemail\": false,\n  \"address1_name\": \"string\",\n  \"address1_line1\": \"string\",\n  \"address1_line2\": \"string\",\n  \"address1_line3\": \"string\",\n  \"address1_city\": \"string\",\n  \"address1_stateorprovince\": \"string\",\n  \"address1_postalcode\": \"string\",\n  \"address1_country\": \"string\",\n  \"address1_telephone1\": \"string\",\n  \"address1_latitude\": 3967.5560364785356,\n  \"address1_longitude\": 15.385728323373815,\n  \"statecode\": 5328,\n  \"statuscode\": 2602,\n  \"annualincome\": 601.1860253746893,\n  \"parentcustomerid_account@odata.bind\": \"string\",\n  \"parentcustomerid_contact@odata.bind\": \"string\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"innererror\": {\n      \"message\": \"string\",\n      \"type\": \"string\",\n      \"stacktrace\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "143433bd-3aa6-4436-963a-f49d59a5fa67",
+          "name": "Microsoft Dynamics 365 Retrieve a contact",
+          "request": {
+            "name": "Microsoft Dynamics 365 Retrieve a contact",
+            "description": {
+              "content": "Retrieve a single contact entity record by its unique identifier.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contacts({{contactid}})"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "$select",
+                  "value": "<string>",
+                  "description": "Comma-separated list of properties to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "$expand",
+                  "value": "<string>",
+                  "description": "Comma-separated list of navigation properties to expand."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "The unique name of your Dynamics 365 organization.",
+                  "type": "any",
+                  "value": "{{org}}",
+                  "key": "org"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a95ce6a2-3a2c-4c6b-ba9f-e03f8c9441e7",
+              "name": "Successfully retrieved the contact.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts({{contactid}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$expand",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"@odata.etag\": \"string\",\n  \"contactid\": \"ec147d89-62ec-c19c-e040-4cb50226bd0d\",\n  \"firstname\": \"string\",\n  \"middlename\": \"string\",\n  \"lastname\": \"string\",\n  \"fullname\": \"string\",\n  \"nickname\": \"string\",\n  \"salutation\": \"string\",\n  \"suffix\": \"string\",\n  \"jobtitle\": \"string\",\n  \"department\": \"string\",\n  \"managername\": \"string\",\n  \"assistantname\": \"string\",\n  \"assistantphone\": \"string\",\n  \"emailaddress1\": \"eCjATpH21@zguAJDtBSIegCYfvs.ewtl\",\n  \"emailaddress2\": \"3-xbIo@hrKqYJnGdr.blm\",\n  \"emailaddress3\": \"eXWTeDr1-cz@DaAbCUU.amxa\",\n  \"telephone1\": \"string\",\n  \"telephone2\": \"string\",\n  \"telephone3\": \"string\",\n  \"mobilephone\": \"string\",\n  \"fax\": \"string\",\n  \"pager\": \"string\",\n  \"websiteurl\": \"http://DuK.clbqYHasabipBpR1Ta7EgGqWPT91VE3DL+0Ph4dFCvJq\",\n  \"description\": \"string\",\n  \"gendercode\": 8759,\n  \"familystatuscode\": 5456,\n  \"spousesname\": \"string\",\n  \"birthday\": \"1994-04-20\",\n  \"anniversary\": \"2010-07-28\",\n  \"preferredcontactmethodcode\": 3648,\n  \"donotemail\": true,\n  \"donotphone\": false,\n  \"donotfax\": false,\n  \"donotpostalmail\": true,\n  \"donotbulkemail\": false,\n  \"donotsendmm\": false,\n  \"followemail\": true,\n  \"address1_name\": \"string\",\n  \"address1_line1\": \"string\",\n  \"address1_line2\": \"string\",\n  \"address1_line3\": \"string\",\n  \"address1_city\": \"string\",\n  \"address1_stateorprovince\": \"string\",\n  \"address1_postalcode\": \"string\",\n  \"address1_country\": \"string\",\n  \"address1_county\": \"string\",\n  \"address1_telephone1\": \"string\",\n  \"address1_fax\": \"string\",\n  \"address1_latitude\": 3754.5109713524594,\n  \"address1_longitude\": 3807.1022623865124,\n  \"address1_addresstypecode\": 4686,\n  \"address1_composite\": \"string\",\n  \"address2_name\": \"string\",\n  \"address2_line1\": \"string\",\n  \"address2_line2\": \"string\",\n  \"address2_city\": \"string\",\n  \"address2_stateorprovince\": \"string\",\n  \"address2_postalcode\": \"string\",\n  \"address2_country\": \"string\",\n  \"statecode\": 7937,\n  \"statuscode\": 6494,\n  \"annualincome\": 5392.255516686758,\n  \"creditlimit\": 3582.117053083702,\n  \"creditonhold\": false,\n  \"_parentcustomerid_value\": \"27e3120a-29fb-b5ca-17e0-294f25d786f6\",\n  \"_ownerid_value\": \"fe4bcc82-fb52-ff50-bfa8-c9a7230c3425\",\n  \"_createdby_value\": \"10bdc8ec-5486-cf27-b14f-5a5ff812d099\",\n  \"_modifiedby_value\": \"c1e72b12-6571-9fb4-1d7a-1d6b47b0d887\",\n  \"createdon\": \"2003-09-04T18:32:16.655Z\",\n  \"modifiedon\": \"2020-07-24T15:09:30.063Z\",\n  \"versionnumber\": 912,\n  \"yomifirstname\": \"string\",\n  \"yomilastname\": \"string\",\n  \"yomimiddlename\": \"string\",\n  \"yomifullname\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "af886c2f-0069-4149-b5c4-88a02ec7465d",
+              "name": "Authentication credentials are missing or invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts({{contactid}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$expand",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"innererror\": {\n      \"message\": \"string\",\n      \"type\": \"string\",\n      \"stacktrace\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8ba93b06-0659-4f97-ad05-d9d6499928d1",
+              "name": "The requested resource was not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts({{contactid}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "$select",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$expand",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"innererror\": {\n      \"message\": \"string\",\n      \"type\": \"string\",\n      \"stacktrace\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dca4a6d5-4c99-4164-a69d-589ff2266495",
+          "name": "Microsoft Dynamics 365 Update a contact",
+          "request": {
+            "name": "Microsoft Dynamics 365 Update a contact",
+            "description": {
+              "content": "Update an existing contact entity record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contacts({{contactid}})"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The unique name of your Dynamics 365 organization.",
+                  "type": "any",
+                  "value": "{{org}}",
+                  "key": "org"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                "key": "Prefer",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "ETag value for optimistic concurrency control. Use * to match any version.",
+                "key": "If-Match",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstname\": \"<string>\",\n  \"middlename\": \"<string>\",\n  \"lastname\": \"<string>\",\n  \"suffix\": \"<string>\",\n  \"salutation\": \"<string>\",\n  \"nickname\": \"<string>\",\n  \"jobtitle\": \"<string>\",\n  \"department\": \"<string>\",\n  \"emailaddress1\": \"<email>\",\n  \"emailaddress2\": \"<email>\",\n  \"telephone1\": \"<string>\",\n  \"telephone2\": \"<string>\",\n  \"mobilephone\": \"<string>\",\n  \"fax\": \"<string>\",\n  \"websiteurl\": \"<uri>\",\n  \"description\": \"<string>\",\n  \"gendercode\": \"<integer>\",\n  \"familystatuscode\": \"<integer>\",\n  \"birthday\": \"<date>\",\n  \"preferredcontactmethodcode\": \"<integer>\",\n  \"donotemail\": \"<boolean>\",\n  \"donotphone\": \"<boolean>\",\n  \"donotfax\": \"<boolean>\",\n  \"donotpostalmail\": \"<boolean>\",\n  \"donotbulkemail\": \"<boolean>\",\n  \"address1_name\": \"<string>\",\n  \"address1_line1\": \"<string>\",\n  \"address1_line2\": \"<string>\",\n  \"address1_line3\": \"<string>\",\n  \"address1_city\": \"<string>\",\n  \"address1_stateorprovince\": \"<string>\",\n  \"address1_postalcode\": \"<string>\",\n  \"address1_country\": \"<string>\",\n  \"address1_telephone1\": \"<string>\",\n  \"address1_latitude\": \"<double>\",\n  \"address1_longitude\": \"<double>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"annualincome\": \"<number>\",\n  \"parentcustomerid_account@odata.bind\": \"<string>\",\n  \"parentcustomerid_contact@odata.bind\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6e385e25-a58c-40bf-95fe-0b2ac9624aa4",
+              "name": "Contact updated successfully (when Prefer return=representation).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts({{contactid}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "return=representation"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "ETag value for optimistic concurrency control. Use * to match any version.",
+                    "key": "If-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"firstname\": \"<string>\",\n  \"middlename\": \"<string>\",\n  \"lastname\": \"<string>\",\n  \"suffix\": \"<string>\",\n  \"salutation\": \"<string>\",\n  \"nickname\": \"<string>\",\n  \"jobtitle\": \"<string>\",\n  \"department\": \"<string>\",\n  \"emailaddress1\": \"<email>\",\n  \"emailaddress2\": \"<email>\",\n  \"telephone1\": \"<string>\",\n  \"telephone2\": \"<string>\",\n  \"mobilephone\": \"<string>\",\n  \"fax\": \"<string>\",\n  \"websiteurl\": \"<uri>\",\n  \"description\": \"<string>\",\n  \"gendercode\": \"<integer>\",\n  \"familystatuscode\": \"<integer>\",\n  \"birthday\": \"<date>\",\n  \"preferredcontactmethodcode\": \"<integer>\",\n  \"donotemail\": \"<boolean>\",\n  \"donotphone\": \"<boolean>\",\n  \"donotfax\": \"<boolean>\",\n  \"donotpostalmail\": \"<boolean>\",\n  \"donotbulkemail\": \"<boolean>\",\n  \"address1_name\": \"<string>\",\n  \"address1_line1\": \"<string>\",\n  \"address1_line2\": \"<string>\",\n  \"address1_line3\": \"<string>\",\n  \"address1_city\": \"<string>\",\n  \"address1_stateorprovince\": \"<string>\",\n  \"address1_postalcode\": \"<string>\",\n  \"address1_country\": \"<string>\",\n  \"address1_telephone1\": \"<string>\",\n  \"address1_latitude\": \"<double>\",\n  \"address1_longitude\": \"<double>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"annualincome\": \"<number>\",\n  \"parentcustomerid_account@odata.bind\": \"<string>\",\n  \"parentcustomerid_contact@odata.bind\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"@odata.etag\": \"string\",\n  \"contactid\": \"ec147d89-62ec-c19c-e040-4cb50226bd0d\",\n  \"firstname\": \"string\",\n  \"middlename\": \"string\",\n  \"lastname\": \"string\",\n  \"fullname\": \"string\",\n  \"nickname\": \"string\",\n  \"salutation\": \"string\",\n  \"suffix\": \"string\",\n  \"jobtitle\": \"string\",\n  \"department\": \"string\",\n  \"managername\": \"string\",\n  \"assistantname\": \"string\",\n  \"assistantphone\": \"string\",\n  \"emailaddress1\": \"eCjATpH21@zguAJDtBSIegCYfvs.ewtl\",\n  \"emailaddress2\": \"3-xbIo@hrKqYJnGdr.blm\",\n  \"emailaddress3\": \"eXWTeDr1-cz@DaAbCUU.amxa\",\n  \"telephone1\": \"string\",\n  \"telephone2\": \"string\",\n  \"telephone3\": \"string\",\n  \"mobilephone\": \"string\",\n  \"fax\": \"string\",\n  \"pager\": \"string\",\n  \"websiteurl\": \"http://DuK.clbqYHasabipBpR1Ta7EgGqWPT91VE3DL+0Ph4dFCvJq\",\n  \"description\": \"string\",\n  \"gendercode\": 8759,\n  \"familystatuscode\": 5456,\n  \"spousesname\": \"string\",\n  \"birthday\": \"1994-04-20\",\n  \"anniversary\": \"2010-07-28\",\n  \"preferredcontactmethodcode\": 3648,\n  \"donotemail\": true,\n  \"donotphone\": false,\n  \"donotfax\": false,\n  \"donotpostalmail\": true,\n  \"donotbulkemail\": false,\n  \"donotsendmm\": false,\n  \"followemail\": true,\n  \"address1_name\": \"string\",\n  \"address1_line1\": \"string\",\n  \"address1_line2\": \"string\",\n  \"address1_line3\": \"string\",\n  \"address1_city\": \"string\",\n  \"address1_stateorprovince\": \"string\",\n  \"address1_postalcode\": \"string\",\n  \"address1_country\": \"string\",\n  \"address1_county\": \"string\",\n  \"address1_telephone1\": \"string\",\n  \"address1_fax\": \"string\",\n  \"address1_latitude\": 3754.5109713524594,\n  \"address1_longitude\": 3807.1022623865124,\n  \"address1_addresstypecode\": 4686,\n  \"address1_composite\": \"string\",\n  \"address2_name\": \"string\",\n  \"address2_line1\": \"string\",\n  \"address2_line2\": \"string\",\n  \"address2_city\": \"string\",\n  \"address2_stateorprovince\": \"string\",\n  \"address2_postalcode\": \"string\",\n  \"address2_country\": \"string\",\n  \"statecode\": 7937,\n  \"statuscode\": 6494,\n  \"annualincome\": 5392.255516686758,\n  \"creditlimit\": 3582.117053083702,\n  \"creditonhold\": false,\n  \"_parentcustomerid_value\": \"27e3120a-29fb-b5ca-17e0-294f25d786f6\",\n  \"_ownerid_value\": \"fe4bcc82-fb52-ff50-bfa8-c9a7230c3425\",\n  \"_createdby_value\": \"10bdc8ec-5486-cf27-b14f-5a5ff812d099\",\n  \"_modifiedby_value\": \"c1e72b12-6571-9fb4-1d7a-1d6b47b0d887\",\n  \"createdon\": \"2003-09-04T18:32:16.655Z\",\n  \"modifiedon\": \"2020-07-24T15:09:30.063Z\",\n  \"versionnumber\": 912,\n  \"yomifirstname\": \"string\",\n  \"yomilastname\": \"string\",\n  \"yomimiddlename\": \"string\",\n  \"yomifullname\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d8ab7698-613d-42b6-a00c-ddfae2a8d73b",
+              "name": "Contact updated successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts({{contactid}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "return=representation"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "ETag value for optimistic concurrency control. Use * to match any version.",
+                    "key": "If-Match",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"firstname\": \"<string>\",\n  \"middlename\": \"<string>\",\n  \"lastname\": \"<string>\",\n  \"suffix\": \"<string>\",\n  \"salutation\": \"<string>\",\n  \"nickname\": \"<string>\",\n  \"jobtitle\": \"<string>\",\n  \"department\": \"<string>\",\n  \"emailaddress1\": \"<email>\",\n  \"emailaddress2\": \"<email>\",\n  \"telephone1\": \"<string>\",\n  \"telephone2\": \"<string>\",\n  \"mobilephone\": \"<string>\",\n  \"fax\": \"<string>\",\n  \"websiteurl\": \"<uri>\",\n  \"description\": \"<string>\",\n  \"gendercode\": \"<integer>\",\n  \"familystatuscode\": \"<integer>\",\n  \"birthday\": \"<date>\",\n  \"preferredcontactmethodcode\": \"<integer>\",\n  \"donotemail\": \"<boolean>\",\n  \"donotphone\": \"<boolean>\",\n  \"donotfax\": \"<boolean>\",\n  \"donotpostalmail\": \"<boolean>\",\n  \"donotbulkemail\": \"<boolean>\",\n  \"address1_name\": \"<string>\",\n  \"address1_line1\": \"<string>\",\n  \"address1_line2\": \"<string>\",\n  \"address1_line3\": \"<string>\",\n  \"address1_city\": \"<string>\",\n  \"address1_stateorprovince\": \"<string>\",\n  \"address1_postalcode\": \"<string>\",\n  \"address1_country\": \"<string>\",\n  \"address1_telephone1\": \"<string>\",\n  \"address1_latitude\": \"<double>\",\n  \"address1_longitude\": \"<double>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"annualincome\": \"<number>\",\n  \"parentcustomerid_account@odata.bind\": \"<string>\",\n  \"parentcustomerid_contact@odata.bind\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "52a2a0d8-edec-4b6e-bf6d-758ef04cbb61",
+              "name": "Authentication credentials are missing or invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts({{contactid}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "return=representation"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "ETag value for optimistic concurrency control. Use * to match any version.",
+                    "key": "If-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"firstname\": \"<string>\",\n  \"middlename\": \"<string>\",\n  \"lastname\": \"<string>\",\n  \"suffix\": \"<string>\",\n  \"salutation\": \"<string>\",\n  \"nickname\": \"<string>\",\n  \"jobtitle\": \"<string>\",\n  \"department\": \"<string>\",\n  \"emailaddress1\": \"<email>\",\n  \"emailaddress2\": \"<email>\",\n  \"telephone1\": \"<string>\",\n  \"telephone2\": \"<string>\",\n  \"mobilephone\": \"<string>\",\n  \"fax\": \"<string>\",\n  \"websiteurl\": \"<uri>\",\n  \"description\": \"<string>\",\n  \"gendercode\": \"<integer>\",\n  \"familystatuscode\": \"<integer>\",\n  \"birthday\": \"<date>\",\n  \"preferredcontactmethodcode\": \"<integer>\",\n  \"donotemail\": \"<boolean>\",\n  \"donotphone\": \"<boolean>\",\n  \"donotfax\": \"<boolean>\",\n  \"donotpostalmail\": \"<boolean>\",\n  \"donotbulkemail\": \"<boolean>\",\n  \"address1_name\": \"<string>\",\n  \"address1_line1\": \"<string>\",\n  \"address1_line2\": \"<string>\",\n  \"address1_line3\": \"<string>\",\n  \"address1_city\": \"<string>\",\n  \"address1_stateorprovince\": \"<string>\",\n  \"address1_postalcode\": \"<string>\",\n  \"address1_country\": \"<string>\",\n  \"address1_telephone1\": \"<string>\",\n  \"address1_latitude\": \"<double>\",\n  \"address1_longitude\": \"<double>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"annualincome\": \"<number>\",\n  \"parentcustomerid_account@odata.bind\": \"<string>\",\n  \"parentcustomerid_contact@odata.bind\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"innererror\": {\n      \"message\": \"string\",\n      \"type\": \"string\",\n      \"stacktrace\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e86fd8ef-c8ff-4156-90d9-c22d8b7b49ed",
+              "name": "The requested resource was not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts({{contactid}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "return=representation"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "ETag value for optimistic concurrency control. Use * to match any version.",
+                    "key": "If-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"firstname\": \"<string>\",\n  \"middlename\": \"<string>\",\n  \"lastname\": \"<string>\",\n  \"suffix\": \"<string>\",\n  \"salutation\": \"<string>\",\n  \"nickname\": \"<string>\",\n  \"jobtitle\": \"<string>\",\n  \"department\": \"<string>\",\n  \"emailaddress1\": \"<email>\",\n  \"emailaddress2\": \"<email>\",\n  \"telephone1\": \"<string>\",\n  \"telephone2\": \"<string>\",\n  \"mobilephone\": \"<string>\",\n  \"fax\": \"<string>\",\n  \"websiteurl\": \"<uri>\",\n  \"description\": \"<string>\",\n  \"gendercode\": \"<integer>\",\n  \"familystatuscode\": \"<integer>\",\n  \"birthday\": \"<date>\",\n  \"preferredcontactmethodcode\": \"<integer>\",\n  \"donotemail\": \"<boolean>\",\n  \"donotphone\": \"<boolean>\",\n  \"donotfax\": \"<boolean>\",\n  \"donotpostalmail\": \"<boolean>\",\n  \"donotbulkemail\": \"<boolean>\",\n  \"address1_name\": \"<string>\",\n  \"address1_line1\": \"<string>\",\n  \"address1_line2\": \"<string>\",\n  \"address1_line3\": \"<string>\",\n  \"address1_city\": \"<string>\",\n  \"address1_stateorprovince\": \"<string>\",\n  \"address1_postalcode\": \"<string>\",\n  \"address1_country\": \"<string>\",\n  \"address1_telephone1\": \"<string>\",\n  \"address1_latitude\": \"<double>\",\n  \"address1_longitude\": \"<double>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"annualincome\": \"<number>\",\n  \"parentcustomerid_account@odata.bind\": \"<string>\",\n  \"parentcustomerid_contact@odata.bind\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"innererror\": {\n      \"message\": \"string\",\n      \"type\": \"string\",\n      \"stacktrace\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "91f329ab-e87e-42c9-8489-7772833280e7",
+              "name": "The ETag value provided in the If-Match header does not match the current version of the record.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts({{contactid}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.",
+                    "key": "Prefer",
+                    "value": "return=representation"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "ETag value for optimistic concurrency control. Use * to match any version.",
+                    "key": "If-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"firstname\": \"<string>\",\n  \"middlename\": \"<string>\",\n  \"lastname\": \"<string>\",\n  \"suffix\": \"<string>\",\n  \"salutation\": \"<string>\",\n  \"nickname\": \"<string>\",\n  \"jobtitle\": \"<string>\",\n  \"department\": \"<string>\",\n  \"emailaddress1\": \"<email>\",\n  \"emailaddress2\": \"<email>\",\n  \"telephone1\": \"<string>\",\n  \"telephone2\": \"<string>\",\n  \"mobilephone\": \"<string>\",\n  \"fax\": \"<string>\",\n  \"websiteurl\": \"<uri>\",\n  \"description\": \"<string>\",\n  \"gendercode\": \"<integer>\",\n  \"familystatuscode\": \"<integer>\",\n  \"birthday\": \"<date>\",\n  \"preferredcontactmethodcode\": \"<integer>\",\n  \"donotemail\": \"<boolean>\",\n  \"donotphone\": \"<boolean>\",\n  \"donotfax\": \"<boolean>\",\n  \"donotpostalmail\": \"<boolean>\",\n  \"donotbulkemail\": \"<boolean>\",\n  \"address1_name\": \"<string>\",\n  \"address1_line1\": \"<string>\",\n  \"address1_line2\": \"<string>\",\n  \"address1_line3\": \"<string>\",\n  \"address1_city\": \"<string>\",\n  \"address1_stateorprovince\": \"<string>\",\n  \"address1_postalcode\": \"<string>\",\n  \"address1_country\": \"<string>\",\n  \"address1_telephone1\": \"<string>\",\n  \"address1_latitude\": \"<double>\",\n  \"address1_longitude\": \"<double>\",\n  \"statecode\": \"<integer>\",\n  \"statuscode\": \"<integer>\",\n  \"annualincome\": \"<number>\",\n  \"parentcustomerid_account@odata.bind\": \"<string>\",\n  \"parentcustomerid_contact@odata.bind\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Precondition Failed",
+              "code": 412,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"innererror\": {\n      \"message\": \"string\",\n      \"type\": \"string\",\n      \"stacktrace\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c3d48b05-0fed-4b7f-a773-4e0bc522cd8a",
+          "name": "Microsoft Dynamics 365 Delete a contact",
+          "request": {
+            "name": "Microsoft Dynamics 365 Delete a contact",
+            "description": {
+              "content": "Delete a contact entity record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "contacts({{contactid}})"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The unique name of your Dynamics 365 organization.",
+                  "type": "any",
+                  "value": "{{org}}",
+                  "key": "org"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "586b81b5-e1ae-437b-a8d7-2d36d1d74252",
+              "name": "Contact deleted successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts({{contactid}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e974dcc3-7db1-407b-93a4-c5a112369f29",
+              "name": "Authentication credentials are missing or invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts({{contactid}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"innererror\": {\n      \"message\": \"string\",\n      \"type\": \"string\",\n      \"stacktrace\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c15739e1-3149-47dc-a3d6-85277d8429e9",
+              "name": "The requested resource was not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contacts({{contactid}})"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The unique name of your Dynamics 365 organization.",
+                      "type": "any",
+                      "value": "{{org}}",
+                      "key": "org"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\",\n    \"innererror\": {\n      \"message\": \"string\",\n      \"type\": \"string\",\n      \"stacktrace\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The unique name of your Dynamics 365 organization.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "yourorg",
+      "key": "org"
+    },
+    {
+      "type": "string",
+      "value": "https://{{org}}.api.crm.dynamics.com/api/data/v9.2",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) Unique identifier of the contact record (GUID).",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<uuid>",
+      "key": "contactid"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://{org}.api.crm.dynamics.com/.default"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "38e2ed86-23a7-4339-930e-58a7643fa3ac",
+    "name": "Microsoft Dynamics 365 Dataverse Web Accounts Contacts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "RESTful web service implementing OData v4.0 for interacting with data in Microsoft Dataverse, the underlying data platform for Dynamics 365 and Power Platform applications. This specification covers core CRM entities including accounts, contacts, and opportunities.\n\nContact Support:\n Name: Microsoft Support\n Email: support@microsoft.com",
+      "type": "text/plain"
+    }
+  }
+}
