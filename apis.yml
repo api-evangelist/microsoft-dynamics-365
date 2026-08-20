@@ -31,6 +31,10 @@ apis:
   - Accounting
   - ERP
   - Finance
+  tags_raw:
+  - Accounting
+  - ERP
+  - Finance
   - Operations
   properties:
   - type: Documentation
@@ -89,6 +93,11 @@ apis:
   tags:
   - E-Commerce
   - Omnichannel
+  - Point-of-Sale
+  - Retail
+  tags_raw:
+  - E-Commerce
+  - Omnichannel
   - POS
   - Retail
   properties:
@@ -123,6 +132,11 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/dynamics365/customer-insights/journeys/
   baseURL: https://[org].api.crm.dynamics.com/api/data/v9.2
   tags:
+  - Event
+  - Journeys
+  - Marketing Automation
+  - Real-Time Marketing
+  tags_raw:
   - Events
   - Journeys
   - Marketing Automation
@@ -210,6 +224,8 @@ apis:
   humanURL: https://docs.microsoft.com/dynamics365/sales/
   baseURL: https://[org].api.crm.dynamics.com/api/data/v9.2
   tags:
+  - Account
+  tags_raw:
   - Accounts
   properties:
   - type: OpenAPI
