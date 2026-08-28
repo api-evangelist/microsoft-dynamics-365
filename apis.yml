@@ -1,3 +1,15 @@
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: paid
   onboarding: self-serve
@@ -398,6 +410,9 @@ apis:
   - type: Developer Guide
     url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/overview
 common:
+  - type: CapabilityMap
+    url: capabilities/microsoft-dynamics-365-capability-edges.yml
+    name: Microsoft Dynamics 365 Business Capability Map
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/microsoft-dynamics-365/overview
   - type: AgenticAccess
