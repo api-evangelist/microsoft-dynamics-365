@@ -410,6 +410,8 @@ apis:
   - type: Developer Guide
     url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/overview
 common:
+  - type: Website
+    url: https://www.microsoft.com/
   - type: CapabilityMap
     url: capabilities/microsoft-dynamics-365-capability-edges.yml
     name: Microsoft Dynamics 365 Business Capability Map
@@ -464,3 +466,5 @@ tags:
   - Enterprise
   - ERP
   - Microsoft
+x-parent: microsoft
+x-relationship: product

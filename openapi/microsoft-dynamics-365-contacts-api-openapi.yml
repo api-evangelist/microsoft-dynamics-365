@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Microsoft Dynamics 365 Dataverse Web Accounts Contacts API
   description: RESTful web service implementing OData v4.0 for interacting with data in Microsoft Dataverse, the underlying data platform for Dynamics 365 and Power Platform applications. This specification covers core CRM entities including accounts, contacts, and opportunities.
@@ -167,12 +167,37 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
+  responses:
+    Forbidden:
+      description: The authenticated user does not have permission to perform this action.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ODataError'
+    NotFound:
+      description: The requested resource was not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ODataError'
+    PreconditionFailed:
+      description: The ETag value provided in the If-Match header does not match the current version of the record.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ODataError'
+    Unauthorized:
+      description: Authentication credentials are missing or invalid.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ODataError'
   parameters:
-    OrderBy:
-      name: $orderby
+    Expand:
+      name: $expand
       in: query
       required: false
-      description: Comma-separated list of properties to sort by, with optional asc or desc.
+      description: Comma-separated list of navigation properties to expand.
       schema:
         type: string
     Count:
@@ -182,50 +207,6 @@ components:
       description: Include a count of matching records in the response.
       schema:
         type: boolean
-    ContactId:
-      name: contactid
-      in: path
-      required: true
-      description: Unique identifier of the contact record (GUID).
-      schema:
-        type: string
-        format: uuid
-    Expand:
-      name: $expand
-      in: query
-      required: false
-      description: Comma-separated list of navigation properties to expand.
-      schema:
-        type: string
-    Filter:
-      name: $filter
-      in: query
-      required: false
-      description: OData filter expression to restrict results.
-      schema:
-        type: string
-    IfMatch:
-      name: If-Match
-      in: header
-      required: false
-      description: ETag value for optimistic concurrency control. Use * to match any version.
-      schema:
-        type: string
-    Skip:
-      name: $skip
-      in: query
-      required: false
-      description: Number of records to skip before returning results.
-      schema:
-        type: integer
-        minimum: 0
-    Select:
-      name: $select
-      in: query
-      required: false
-      description: Comma-separated list of properties to return.
-      schema:
-        type: string
     Top:
       name: $top
       in: query
@@ -246,31 +227,50 @@ components:
         - return=representation
         - odata.include-annotations="*"
         - odata.maxpagesize=100
-  responses:
-    Forbidden:
-      description: The authenticated user does not have permission to perform this action.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ODataError'
-    PreconditionFailed:
-      description: The ETag value provided in the If-Match header does not match the current version of the record.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ODataError'
-    NotFound:
-      description: The requested resource was not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ODataError'
-    Unauthorized:
-      description: Authentication credentials are missing or invalid.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ODataError'
+    OrderBy:
+      name: $orderby
+      in: query
+      required: false
+      description: Comma-separated list of properties to sort by, with optional asc or desc.
+      schema:
+        type: string
+    Select:
+      name: $select
+      in: query
+      required: false
+      description: Comma-separated list of properties to return.
+      schema:
+        type: string
+    Filter:
+      name: $filter
+      in: query
+      required: false
+      description: OData filter expression to restrict results.
+      schema:
+        type: string
+    Skip:
+      name: $skip
+      in: query
+      required: false
+      description: Number of records to skip before returning results.
+      schema:
+        type: integer
+        minimum: 0
+    IfMatch:
+      name: If-Match
+      in: header
+      required: false
+      description: ETag value for optimistic concurrency control. Use * to match any version.
+      schema:
+        type: string
+    ContactId:
+      name: contactid
+      in: path
+      required: true
+      description: Unique identifier of the contact record (GUID).
+      schema:
+        type: string
+        format: uuid
   schemas:
     ContactUpdate:
       type: object
@@ -416,31 +416,6 @@ components:
         parentcustomerid_contact@odata.bind:
           type: string
           description: 'Bind reference to a parent contact. Format: /contacts(GUID).'
-    ODataError:
-      type: object
-      description: OData error response from the Dataverse Web API.
-      properties:
-        error:
-          type: object
-          properties:
-            code:
-              type: string
-              description: Error code.
-            message:
-              type: string
-              description: Human-readable error message.
-            innererror:
-              type: object
-              properties:
-                message:
-                  type: string
-                  description: Detailed error message.
-                type:
-                  type: string
-                  description: Exception type.
-                stacktrace:
-                  type: string
-                  description: Stack trace (available in non-production environments).
     Contact:
       type: object
       description: Person with whom a business unit has a relationship, such as customer, supplier, and colleague.
@@ -746,6 +721,31 @@ components:
           maxLength: 450
           description: Combined phonetic full name (Japanese).
           readOnly: true
+    ODataError:
+      type: object
+      description: OData error response from the Dataverse Web API.
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+              description: Error code.
+            message:
+              type: string
+              description: Human-readable error message.
+            innererror:
+              type: object
+              properties:
+                message:
+                  type: string
+                  description: Detailed error message.
+                type:
+                  type: string
+                  description: Exception type.
+                stacktrace:
+                  type: string
+                  description: Stack trace (available in non-production environments).
     ContactCreate:
       type: object
       description: Properties for creating a new contact.
