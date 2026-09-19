@@ -192,6 +192,10 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/dynamics365/human-resources/
   baseURL: https://[org].operations.dynamics.com/data
   tags:
+  - Human Resources
+  - Payroll
+  - Recruiting
+  tags_raw:
   - HR
   - Human Resources
   - Payroll
