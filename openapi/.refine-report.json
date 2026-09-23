@@ -1,9 +1,7 @@
 {
   "provider": "microsoft-dynamics-365",
   "sources": [
-    "microsoft-dynamics-365-accounts-api-openapi.yml",
-    "microsoft-dynamics-365-contacts-api-openapi.yml",
-    "microsoft-dynamics-365-opportunities-api-openapi.yml"
+    "_original/microsoft-dynamics-365-dataverse-web-api-openapi.yml"
   ],
   "outputs": [
     "microsoft-dynamics-365-accounts-api-openapi.yml",
@@ -14,10 +12,13 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "microsoft-dynamics-365-accounts-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "microsoft-dynamics-365-contacts-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "microsoft-dynamics-365-opportunities-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "microsoft-dynamics-365-dataverse-web-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "microsoft-dynamics-365-accounts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "microsoft-dynamics-365-contacts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "microsoft-dynamics-365-opportunities-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Microsoft Dynamics 365 Dataverse Web Accounts Opportunities API
+  title: Microsoft Dynamics 365 Dataverse Web Opportunities API
   description: RESTful web service implementing OData v4.0 for interacting with data in Microsoft Dataverse, the underlying data platform for Dynamics 365 and Power Platform applications. This specification covers core CRM entities including accounts, contacts, and opportunities.
   version: 9.2.0
   contact:
@@ -167,85 +167,6 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
-  parameters:
-    OpportunityId:
-      name: opportunityid
-      in: path
-      required: true
-      description: Unique identifier of the opportunity record (GUID).
-      schema:
-        type: string
-        format: uuid
-    Expand:
-      name: $expand
-      in: query
-      required: false
-      description: Comma-separated list of navigation properties to expand.
-      schema:
-        type: string
-    Count:
-      name: $count
-      in: query
-      required: false
-      description: Include a count of matching records in the response.
-      schema:
-        type: boolean
-    Top:
-      name: $top
-      in: query
-      required: false
-      description: Maximum number of records to return.
-      schema:
-        type: integer
-        minimum: 1
-        maximum: 5000
-    Prefer:
-      name: Prefer
-      in: header
-      required: false
-      description: OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.
-      schema:
-        type: string
-        examples:
-        - return=representation
-        - odata.include-annotations="*"
-        - odata.maxpagesize=100
-    OrderBy:
-      name: $orderby
-      in: query
-      required: false
-      description: Comma-separated list of properties to sort by, with optional asc or desc.
-      schema:
-        type: string
-    Select:
-      name: $select
-      in: query
-      required: false
-      description: Comma-separated list of properties to return.
-      schema:
-        type: string
-    Skip:
-      name: $skip
-      in: query
-      required: false
-      description: Number of records to skip before returning results.
-      schema:
-        type: integer
-        minimum: 0
-    Filter:
-      name: $filter
-      in: query
-      required: false
-      description: OData filter expression to restrict results.
-      schema:
-        type: string
-    IfMatch:
-      name: If-Match
-      in: header
-      required: false
-      description: ETag value for optimistic concurrency control. Use * to match any version.
-      schema:
-        type: string
   responses:
     Forbidden:
       description: The authenticated user does not have permission to perform this action.
@@ -259,18 +180,97 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/ODataError'
-    PreconditionFailed:
-      description: The ETag value provided in the If-Match header does not match the current version of the record.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ODataError'
     Unauthorized:
       description: Authentication credentials are missing or invalid.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/ODataError'
+    PreconditionFailed:
+      description: The ETag value provided in the If-Match header does not match the current version of the record.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ODataError'
+  parameters:
+    OpportunityId:
+      name: opportunityid
+      in: path
+      required: true
+      description: Unique identifier of the opportunity record (GUID).
+      schema:
+        type: string
+        format: uuid
+    Select:
+      name: $select
+      in: query
+      required: false
+      description: Comma-separated list of properties to return.
+      schema:
+        type: string
+    Prefer:
+      name: Prefer
+      in: header
+      required: false
+      description: OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.
+      schema:
+        type: string
+        examples:
+        - return=representation
+        - odata.include-annotations="*"
+        - odata.maxpagesize=100
+    IfMatch:
+      name: If-Match
+      in: header
+      required: false
+      description: ETag value for optimistic concurrency control. Use * to match any version.
+      schema:
+        type: string
+    Skip:
+      name: $skip
+      in: query
+      required: false
+      description: Number of records to skip before returning results.
+      schema:
+        type: integer
+        minimum: 0
+    Expand:
+      name: $expand
+      in: query
+      required: false
+      description: Comma-separated list of navigation properties to expand.
+      schema:
+        type: string
+    Filter:
+      name: $filter
+      in: query
+      required: false
+      description: OData filter expression to restrict results.
+      schema:
+        type: string
+    Top:
+      name: $top
+      in: query
+      required: false
+      description: Maximum number of records to return.
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 5000
+    OrderBy:
+      name: $orderby
+      in: query
+      required: false
+      description: Comma-separated list of properties to sort by, with optional asc or desc.
+      schema:
+        type: string
+    Count:
+      name: $count
+      in: query
+      required: false
+      description: Include a count of matching records in the response.
+      schema:
+        type: boolean
   schemas:
     Opportunity:
       type: object
