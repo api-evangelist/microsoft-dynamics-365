@@ -1,0 +1,133 @@
+openapi: 3.2.0
+info:
+  title: Microsoft Dynamics 365 Dataverse Web Activities API
+  description: The Microsoft Dynamics 365 Dataverse Web API provides a RESTful endpoint for interacting with Dataverse data used by Dynamics 365 Sales, Customer Service, Field Service, and other customer engagement applications. It implements OData v4 and supports CRUD operations on core CRM entities including accounts, contacts, leads, and opportunities. Authentication is handled via Microsoft Entra ID (Azure AD).
+  version: '9.2'
+  contact:
+    name: Microsoft
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/overview
+  license:
+    name: Microsoft APIs Terms of Use
+    url: https://learn.microsoft.com/en-us/legal/microsoft-apis/terms-of-use
+servers:
+- url: https://{organization}.api.crm.dynamics.com/api/data/v9.2
+  description: Dynamics 365 Online (North America)
+  variables:
+    organization:
+      default: org
+      description: The unique name of your Dataverse organization.
+- url: https://{baseUrl}/api/data/v9.2
+  description: Dynamics 365 On-Premises
+  variables:
+    baseUrl:
+      default: localhost
+security:
+- oauth2: []
+tags:
+- name: Activities
+paths:
+  /activities:
+    get:
+      summary: Microsoft Dynamics List activities
+      description: Retrieves a collection of activity records.
+      operationId: listActivities
+      tags:
+      - Activities
+      parameters:
+      - $ref: '#/components/parameters/top'
+      - $ref: '#/components/parameters/skip'
+      - $ref: '#/components/parameters/filter'
+      - $ref: '#/components/parameters/select'
+      - $ref: '#/components/parameters/orderby'
+      responses:
+        '200':
+          description: A collection of activities.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Activity'
+components:
+  parameters:
+    orderby:
+      name: $orderby
+      in: query
+      description: Comma-separated list of properties to sort by.
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      description: OData filter expression.
+      schema:
+        type: string
+    top:
+      name: $top
+      in: query
+      description: Maximum number of records to return.
+      schema:
+        type: integer
+    skip:
+      name: $skip
+      in: query
+      description: Number of records to skip.
+      schema:
+        type: integer
+    select:
+      name: $select
+      in: query
+      description: Comma-separated list of properties to include.
+      schema:
+        type: string
+  schemas:
+    Activity:
+      type: object
+      properties:
+        activityid:
+          type: string
+          format: uuid
+          readOnly: true
+        subject:
+          type: string
+        description:
+          type: string
+        activitytypecode:
+          type: string
+          readOnly: true
+        scheduledstart:
+          type: string
+          format: date-time
+        scheduledend:
+          type: string
+          format: date-time
+        actualdurationminutes:
+          type: integer
+        prioritycode:
+          type: integer
+          description: 0 = Low, 1 = Normal, 2 = High
+        statecode:
+          type: integer
+        statuscode:
+          type: integer
+        createdon:
+          type: string
+          format: date-time
+          readOnly: true
+        modifiedon:
+          type: string
+          format: date-time
+          readOnly: true
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: Microsoft Entra ID (Azure AD) OAuth 2.0 authentication.
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes:
+            https://org.crm.dynamics.com/.default: Access Dataverse API

@@ -1,0 +1,150 @@
+openapi: 3.2.0
+info:
+  title: Microsoft Dynamics 365 Finance & Operations Data … Products…
+  description: The Microsoft Dynamics 365 Finance & Operations Data API exposes business data entities via OData v4 RESTful endpoints. It provides access to finance, supply chain, manufacturing, and human resources data including customers, vendors, products, sales orders, purchase orders, and general ledger journals. Authentication is handled via Microsoft Entra ID (Azure AD).
+  version: '1.0'
+  contact:
+    name: Microsoft
+    url: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/data-entities/odata
+  license:
+    name: Microsoft APIs Terms of Use
+    url: https://learn.microsoft.com/en-us/legal/microsoft-apis/terms-of-use
+servers:
+- url: https://{environment}.operations.dynamics.com/data
+  description: Dynamics 365 Finance & Operations Online
+  variables:
+    environment:
+      default: myorg
+      description: The environment-specific subdomain.
+security:
+- oauth2: []
+tags:
+- name: Products
+paths:
+  /ReleasedProducts:
+    get:
+      summary: Microsoft Dynamics List released products
+      description: Retrieves the collection of released product data entities.
+      operationId: listReleasedProducts
+      tags:
+      - Products
+      parameters:
+      - $ref: '#/components/parameters/top'
+      - $ref: '#/components/parameters/skip'
+      - $ref: '#/components/parameters/filter'
+      - $ref: '#/components/parameters/select'
+      - $ref: '#/components/parameters/orderby'
+      - $ref: '#/components/parameters/crossCompany'
+      responses:
+        '200':
+          description: A collection of released product entities.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ReleasedProductEntity'
+    post:
+      summary: Microsoft Dynamics Create a released product
+      description: Creates a new released product data entity.
+      operationId: createReleasedProduct
+      tags:
+      - Products
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReleasedProductEntity'
+      responses:
+        '201':
+          description: The created product entity.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReleasedProductEntity'
+components:
+  schemas:
+    ReleasedProductEntity:
+      type: object
+      properties:
+        ItemNumber:
+          type: string
+        ProductName:
+          type: string
+        ProductDescription:
+          type: string
+        ProductType:
+          type: string
+          enum:
+          - Item
+          - Service
+        ProductSubType:
+          type: string
+        ItemModelGroupId:
+          type: string
+        ProductGroupId:
+          type: string
+        SalesPrice:
+          type: number
+          format: decimal
+        PurchasePrice:
+          type: number
+          format: decimal
+        SalesUnitSymbol:
+          type: string
+        PurchaseUnitSymbol:
+          type: string
+        InventoryUnitSymbol:
+          type: string
+        dataAreaId:
+          type: string
+  parameters:
+    orderby:
+      name: $orderby
+      in: query
+      description: Comma-separated list of properties to sort by.
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      description: OData filter expression.
+      schema:
+        type: string
+    top:
+      name: $top
+      in: query
+      description: Maximum number of records to return (max 10000).
+      schema:
+        type: integer
+    crossCompany:
+      name: cross-company
+      in: query
+      description: Set to true to retrieve data across all legal entities.
+      schema:
+        type: boolean
+    skip:
+      name: $skip
+      in: query
+      description: Number of records to skip.
+      schema:
+        type: integer
+    select:
+      name: $select
+      in: query
+      description: Comma-separated list of properties to include.
+      schema:
+        type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: Microsoft Entra ID (Azure AD) OAuth 2.0 authentication.
+      flows:
+        clientCredentials:
+          tokenUrl: https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/token
+          scopes:
+            https://myorg.operations.dynamics.com/.default: Access Finance & Operations API

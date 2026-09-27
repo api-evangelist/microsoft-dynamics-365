@@ -167,6 +167,85 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
+  parameters:
+    ContactId:
+      name: contactid
+      in: path
+      required: true
+      description: Unique identifier of the contact record (GUID).
+      schema:
+        type: string
+        format: uuid
+    Count:
+      name: $count
+      in: query
+      required: false
+      description: Include a count of matching records in the response.
+      schema:
+        type: boolean
+    Prefer:
+      name: Prefer
+      in: header
+      required: false
+      description: OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.
+      schema:
+        type: string
+        examples:
+        - return=representation
+        - odata.include-annotations="*"
+        - odata.maxpagesize=100
+    Select:
+      name: $select
+      in: query
+      required: false
+      description: Comma-separated list of properties to return.
+      schema:
+        type: string
+    Skip:
+      name: $skip
+      in: query
+      required: false
+      description: Number of records to skip before returning results.
+      schema:
+        type: integer
+        minimum: 0
+    OrderBy:
+      name: $orderby
+      in: query
+      required: false
+      description: Comma-separated list of properties to sort by, with optional asc or desc.
+      schema:
+        type: string
+    Top:
+      name: $top
+      in: query
+      required: false
+      description: Maximum number of records to return.
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 5000
+    IfMatch:
+      name: If-Match
+      in: header
+      required: false
+      description: ETag value for optimistic concurrency control. Use * to match any version.
+      schema:
+        type: string
+    Filter:
+      name: $filter
+      in: query
+      required: false
+      description: OData filter expression to restrict results.
+      schema:
+        type: string
+    Expand:
+      name: $expand
+      in: query
+      required: false
+      description: Comma-separated list of navigation properties to expand.
+      schema:
+        type: string
   schemas:
     ContactUpdate:
       type: object
@@ -312,6 +391,31 @@ components:
         parentcustomerid_contact@odata.bind:
           type: string
           description: 'Bind reference to a parent contact. Format: /contacts(GUID).'
+    ODataError:
+      type: object
+      description: OData error response from the Dataverse Web API.
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+              description: Error code.
+            message:
+              type: string
+              description: Human-readable error message.
+            innererror:
+              type: object
+              properties:
+                message:
+                  type: string
+                  description: Detailed error message.
+                type:
+                  type: string
+                  description: Exception type.
+                stacktrace:
+                  type: string
+                  description: Stack trace (available in non-production environments).
     Contact:
       type: object
       description: Person with whom a business unit has a relationship, such as customer, supplier, and colleague.
@@ -630,46 +734,9 @@ components:
             type: string
             maxLength: 50
             description: Last name of the contact.
-    ODataError:
-      type: object
-      description: OData error response from the Dataverse Web API.
-      properties:
-        error:
-          type: object
-          properties:
-            code:
-              type: string
-              description: Error code.
-            message:
-              type: string
-              description: Human-readable error message.
-            innererror:
-              type: object
-              properties:
-                message:
-                  type: string
-                  description: Detailed error message.
-                type:
-                  type: string
-                  description: Exception type.
-                stacktrace:
-                  type: string
-                  description: Stack trace (available in non-production environments).
   responses:
-    Forbidden:
-      description: The authenticated user does not have permission to perform this action.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ODataError'
     NotFound:
       description: The requested resource was not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ODataError'
-    Unauthorized:
-      description: Authentication credentials are missing or invalid.
       content:
         application/json:
           schema:
@@ -680,85 +747,18 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/ODataError'
-  parameters:
-    Select:
-      name: $select
-      in: query
-      required: false
-      description: Comma-separated list of properties to return.
-      schema:
-        type: string
-    ContactId:
-      name: contactid
-      in: path
-      required: true
-      description: Unique identifier of the contact record (GUID).
-      schema:
-        type: string
-        format: uuid
-    Prefer:
-      name: Prefer
-      in: header
-      required: false
-      description: OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.
-      schema:
-        type: string
-        examples:
-        - return=representation
-        - odata.include-annotations="*"
-        - odata.maxpagesize=100
-    IfMatch:
-      name: If-Match
-      in: header
-      required: false
-      description: ETag value for optimistic concurrency control. Use * to match any version.
-      schema:
-        type: string
-    Skip:
-      name: $skip
-      in: query
-      required: false
-      description: Number of records to skip before returning results.
-      schema:
-        type: integer
-        minimum: 0
-    Expand:
-      name: $expand
-      in: query
-      required: false
-      description: Comma-separated list of navigation properties to expand.
-      schema:
-        type: string
-    Filter:
-      name: $filter
-      in: query
-      required: false
-      description: OData filter expression to restrict results.
-      schema:
-        type: string
-    Top:
-      name: $top
-      in: query
-      required: false
-      description: Maximum number of records to return.
-      schema:
-        type: integer
-        minimum: 1
-        maximum: 5000
-    OrderBy:
-      name: $orderby
-      in: query
-      required: false
-      description: Comma-separated list of properties to sort by, with optional asc or desc.
-      schema:
-        type: string
-    Count:
-      name: $count
-      in: query
-      required: false
-      description: Include a count of matching records in the response.
-      schema:
-        type: boolean
+    Unauthorized:
+      description: Authentication credentials are missing or invalid.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ODataError'
+    Forbidden:
+      description: The authenticated user does not have permission to perform this action.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ODataError'
   securitySchemes:
     oauth2:
       type: oauth2

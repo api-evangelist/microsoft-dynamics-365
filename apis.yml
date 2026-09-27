@@ -413,6 +413,697 @@ apis:
     url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/api-limits
   - type: Developer Guide
     url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/overview
+- aid: microsoft-dynamics-365:microsoft-dynamics-365-activities-api
+  name: Microsoft Dynamics 365 Activities API
+  description: The Activities API from Microsoft Dynamics 365 — 1 operation(s) for activities.
+  humanURL: https://docs.microsoft.com/dynamics365/finance/
+  baseURL: https://[org].operations.dynamics.com/data
+  tags:
+  - Activities
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-dynamics-365-activities-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
+  - type: JSONSchema
+    url: json-schema/customer.json
+  - type: JSONSchema
+    url: json-schema/vendor.json
+  - type: JSONSchema
+    url: json-schema/item.json
+  - type: JSONSchema
+    url: json-schema/sales-order.json
+  - type: JSONSchema
+    url: json-schema/sales-invoice.json
+  - type: JSONSchema
+    url: json-schema/employee.json
+  - type: JSONLD
+    url: json-ld/microsoft-dynamics-context.jsonld
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/overview
+  - type: AsyncAPI
+    url: openapi/microsoft-dynamics-dataverse-webhooks-asyncapi.yml
+  - type: WebhookDocumentation
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/use-webhooks
+  - type: JSONSchema
+    url: json-schema/account.json
+  - type: JSONSchema
+    url: json-schema/contact.json
+  - type: JSONSchema
+    url: json-schema/lead.json
+  - type: JSONSchema
+    url: json-schema/opportunity.json
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/data-entities/odata
+- aid: microsoft-dynamics-365:microsoft-dynamics-365-cases-api
+  name: Microsoft Dynamics 365 Cases API
+  description: The Cases API from Microsoft Dynamics 365 — 1 operation(s) for cases.
+  humanURL: https://docs.microsoft.com/dynamics365/finance/
+  baseURL: https://[org].operations.dynamics.com/data
+  tags:
+  - Cases
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-dynamics-365-cases-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
+  - type: JSONSchema
+    url: json-schema/customer.json
+  - type: JSONSchema
+    url: json-schema/vendor.json
+  - type: JSONSchema
+    url: json-schema/item.json
+  - type: JSONSchema
+    url: json-schema/sales-order.json
+  - type: JSONSchema
+    url: json-schema/sales-invoice.json
+  - type: JSONSchema
+    url: json-schema/employee.json
+  - type: JSONLD
+    url: json-ld/microsoft-dynamics-context.jsonld
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/overview
+  - type: AsyncAPI
+    url: openapi/microsoft-dynamics-dataverse-webhooks-asyncapi.yml
+  - type: WebhookDocumentation
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/use-webhooks
+  - type: JSONSchema
+    url: json-schema/account.json
+  - type: JSONSchema
+    url: json-schema/contact.json
+  - type: JSONSchema
+    url: json-schema/lead.json
+  - type: JSONSchema
+    url: json-schema/opportunity.json
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/data-entities/odata
+- aid: microsoft-dynamics-365:microsoft-dynamics-365-companies-api
+  name: Microsoft Dynamics 365 Companies API
+  description: The Companies API from Microsoft Dynamics 365 — 1 operation(s) for companies.
+  humanURL: https://docs.microsoft.com/dynamics365/finance/
+  baseURL: https://[org].operations.dynamics.com/data
+  tags:
+  - Companies
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-dynamics-365-companies-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
+  - type: JSONSchema
+    url: json-schema/customer.json
+  - type: JSONSchema
+    url: json-schema/vendor.json
+  - type: JSONSchema
+    url: json-schema/item.json
+  - type: JSONSchema
+    url: json-schema/sales-order.json
+  - type: JSONSchema
+    url: json-schema/sales-invoice.json
+  - type: JSONSchema
+    url: json-schema/employee.json
+  - type: JSONLD
+    url: json-ld/microsoft-dynamics-context.jsonld
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/overview
+  - type: AsyncAPI
+    url: openapi/microsoft-dynamics-dataverse-webhooks-asyncapi.yml
+  - type: WebhookDocumentation
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/use-webhooks
+  - type: JSONSchema
+    url: json-schema/account.json
+  - type: JSONSchema
+    url: json-schema/contact.json
+  - type: JSONSchema
+    url: json-schema/lead.json
+  - type: JSONSchema
+    url: json-schema/opportunity.json
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/data-entities/odata
+- aid: microsoft-dynamics-365:microsoft-dynamics-365-customers-api
+  name: Microsoft Dynamics 365 Customers API
+  description: The Customers API from Microsoft Dynamics 365 — 3 operation(s) for customers.
+  humanURL: https://docs.microsoft.com/dynamics365/finance/
+  baseURL: https://[org].operations.dynamics.com/data
+  tags:
+  - Customers
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-dynamics-365-customers-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
+  - type: JSONSchema
+    url: json-schema/customer.json
+  - type: JSONSchema
+    url: json-schema/vendor.json
+  - type: JSONSchema
+    url: json-schema/item.json
+  - type: JSONSchema
+    url: json-schema/sales-order.json
+  - type: JSONSchema
+    url: json-schema/sales-invoice.json
+  - type: JSONSchema
+    url: json-schema/employee.json
+  - type: JSONLD
+    url: json-ld/microsoft-dynamics-context.jsonld
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/overview
+  - type: AsyncAPI
+    url: openapi/microsoft-dynamics-dataverse-webhooks-asyncapi.yml
+  - type: WebhookDocumentation
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/use-webhooks
+  - type: JSONSchema
+    url: json-schema/account.json
+  - type: JSONSchema
+    url: json-schema/contact.json
+  - type: JSONSchema
+    url: json-schema/lead.json
+  - type: JSONSchema
+    url: json-schema/opportunity.json
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/data-entities/odata
+- aid: microsoft-dynamics-365:microsoft-dynamics-365-employees-api
+  name: Microsoft Dynamics 365 Employees API
+  description: The Employees API from Microsoft Dynamics 365 — 1 operation(s) for employees.
+  humanURL: https://docs.microsoft.com/dynamics365/finance/
+  baseURL: https://[org].operations.dynamics.com/data
+  tags:
+  - Employees
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-dynamics-365-employees-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
+  - type: JSONSchema
+    url: json-schema/customer.json
+  - type: JSONSchema
+    url: json-schema/vendor.json
+  - type: JSONSchema
+    url: json-schema/item.json
+  - type: JSONSchema
+    url: json-schema/sales-order.json
+  - type: JSONSchema
+    url: json-schema/sales-invoice.json
+  - type: JSONSchema
+    url: json-schema/employee.json
+  - type: JSONLD
+    url: json-ld/microsoft-dynamics-context.jsonld
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/overview
+  - type: AsyncAPI
+    url: openapi/microsoft-dynamics-dataverse-webhooks-asyncapi.yml
+  - type: WebhookDocumentation
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/use-webhooks
+  - type: JSONSchema
+    url: json-schema/account.json
+  - type: JSONSchema
+    url: json-schema/contact.json
+  - type: JSONSchema
+    url: json-schema/lead.json
+  - type: JSONSchema
+    url: json-schema/opportunity.json
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/data-entities/odata
+- aid: microsoft-dynamics-365:microsoft-dynamics-365-general-ledger-api
+  name: Microsoft Dynamics 365 General Ledger API
+  description: The General Ledger API from Microsoft Dynamics 365 — 2 operation(s) for general ledger.
+  humanURL: https://docs.microsoft.com/dynamics365/finance/
+  baseURL: https://[org].operations.dynamics.com/data
+  tags:
+  - General Ledger
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-dynamics-365-general-ledger-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
+  - type: JSONSchema
+    url: json-schema/customer.json
+  - type: JSONSchema
+    url: json-schema/vendor.json
+  - type: JSONSchema
+    url: json-schema/item.json
+  - type: JSONSchema
+    url: json-schema/sales-order.json
+  - type: JSONSchema
+    url: json-schema/sales-invoice.json
+  - type: JSONSchema
+    url: json-schema/employee.json
+  - type: JSONLD
+    url: json-ld/microsoft-dynamics-context.jsonld
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/overview
+  - type: AsyncAPI
+    url: openapi/microsoft-dynamics-dataverse-webhooks-asyncapi.yml
+  - type: WebhookDocumentation
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/use-webhooks
+  - type: JSONSchema
+    url: json-schema/account.json
+  - type: JSONSchema
+    url: json-schema/contact.json
+  - type: JSONSchema
+    url: json-schema/lead.json
+  - type: JSONSchema
+    url: json-schema/opportunity.json
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/data-entities/odata
+- aid: microsoft-dynamics-365:microsoft-dynamics-365-human-resources-api
+  name: Microsoft Dynamics 365 Human Resources API
+  description: >-
+    The Human Resources API from Microsoft Dynamics 365 — 1 operation(s) for human resources.
+  humanURL: https://docs.microsoft.com/dynamics365/finance/
+  baseURL: https://[org].operations.dynamics.com/data
+  tags:
+  - Human Resources
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-dynamics-365-human-resources-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
+  - type: JSONSchema
+    url: json-schema/customer.json
+  - type: JSONSchema
+    url: json-schema/vendor.json
+  - type: JSONSchema
+    url: json-schema/item.json
+  - type: JSONSchema
+    url: json-schema/sales-order.json
+  - type: JSONSchema
+    url: json-schema/sales-invoice.json
+  - type: JSONSchema
+    url: json-schema/employee.json
+  - type: JSONLD
+    url: json-ld/microsoft-dynamics-context.jsonld
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/overview
+  - type: AsyncAPI
+    url: openapi/microsoft-dynamics-dataverse-webhooks-asyncapi.yml
+  - type: WebhookDocumentation
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/use-webhooks
+  - type: JSONSchema
+    url: json-schema/account.json
+  - type: JSONSchema
+    url: json-schema/contact.json
+  - type: JSONSchema
+    url: json-schema/lead.json
+  - type: JSONSchema
+    url: json-schema/opportunity.json
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/data-entities/odata
+- aid: microsoft-dynamics-365:microsoft-dynamics-365-items-api
+  name: Microsoft Dynamics 365 Items API
+  description: The Items API from Microsoft Dynamics 365 — 1 operation(s) for items.
+  humanURL: https://docs.microsoft.com/dynamics365/finance/
+  baseURL: https://[org].operations.dynamics.com/data
+  tags:
+  - Items
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-dynamics-365-items-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
+  - type: JSONSchema
+    url: json-schema/customer.json
+  - type: JSONSchema
+    url: json-schema/vendor.json
+  - type: JSONSchema
+    url: json-schema/item.json
+  - type: JSONSchema
+    url: json-schema/sales-order.json
+  - type: JSONSchema
+    url: json-schema/sales-invoice.json
+  - type: JSONSchema
+    url: json-schema/employee.json
+  - type: JSONLD
+    url: json-ld/microsoft-dynamics-context.jsonld
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/overview
+  - type: AsyncAPI
+    url: openapi/microsoft-dynamics-dataverse-webhooks-asyncapi.yml
+  - type: WebhookDocumentation
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/use-webhooks
+  - type: JSONSchema
+    url: json-schema/account.json
+  - type: JSONSchema
+    url: json-schema/contact.json
+  - type: JSONSchema
+    url: json-schema/lead.json
+  - type: JSONSchema
+    url: json-schema/opportunity.json
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/data-entities/odata
+- aid: microsoft-dynamics-365:microsoft-dynamics-365-journals-api
+  name: Microsoft Dynamics 365 Journals API
+  description: The Journals API from Microsoft Dynamics 365 — 1 operation(s) for journals.
+  humanURL: https://docs.microsoft.com/dynamics365/finance/
+  baseURL: https://[org].operations.dynamics.com/data
+  tags:
+  - Journals
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-dynamics-365-journals-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
+  - type: JSONSchema
+    url: json-schema/customer.json
+  - type: JSONSchema
+    url: json-schema/vendor.json
+  - type: JSONSchema
+    url: json-schema/item.json
+  - type: JSONSchema
+    url: json-schema/sales-order.json
+  - type: JSONSchema
+    url: json-schema/sales-invoice.json
+  - type: JSONSchema
+    url: json-schema/employee.json
+  - type: JSONLD
+    url: json-ld/microsoft-dynamics-context.jsonld
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/overview
+  - type: AsyncAPI
+    url: openapi/microsoft-dynamics-dataverse-webhooks-asyncapi.yml
+  - type: WebhookDocumentation
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/use-webhooks
+  - type: JSONSchema
+    url: json-schema/account.json
+  - type: JSONSchema
+    url: json-schema/contact.json
+  - type: JSONSchema
+    url: json-schema/lead.json
+  - type: JSONSchema
+    url: json-schema/opportunity.json
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/data-entities/odata
+- aid: microsoft-dynamics-365:microsoft-dynamics-365-leads-api
+  name: Microsoft Dynamics 365 Leads API
+  description: The Leads API from Microsoft Dynamics 365 — 2 operation(s) for leads.
+  humanURL: https://docs.microsoft.com/dynamics365/finance/
+  baseURL: https://[org].operations.dynamics.com/data
+  tags:
+  - Leads
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-dynamics-365-leads-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
+  - type: JSONSchema
+    url: json-schema/customer.json
+  - type: JSONSchema
+    url: json-schema/vendor.json
+  - type: JSONSchema
+    url: json-schema/item.json
+  - type: JSONSchema
+    url: json-schema/sales-order.json
+  - type: JSONSchema
+    url: json-schema/sales-invoice.json
+  - type: JSONSchema
+    url: json-schema/employee.json
+  - type: JSONLD
+    url: json-ld/microsoft-dynamics-context.jsonld
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/overview
+  - type: AsyncAPI
+    url: openapi/microsoft-dynamics-dataverse-webhooks-asyncapi.yml
+  - type: WebhookDocumentation
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/use-webhooks
+  - type: JSONSchema
+    url: json-schema/account.json
+  - type: JSONSchema
+    url: json-schema/contact.json
+  - type: JSONSchema
+    url: json-schema/lead.json
+  - type: JSONSchema
+    url: json-schema/opportunity.json
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/data-entities/odata
+- aid: microsoft-dynamics-365:microsoft-dynamics-365-products-api
+  name: Microsoft Dynamics 365 Products API
+  description: The Products API from Microsoft Dynamics 365 — 1 operation(s) for products.
+  humanURL: https://docs.microsoft.com/dynamics365/finance/
+  baseURL: https://[org].operations.dynamics.com/data
+  tags:
+  - Products
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-dynamics-365-products-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
+  - type: JSONSchema
+    url: json-schema/customer.json
+  - type: JSONSchema
+    url: json-schema/vendor.json
+  - type: JSONSchema
+    url: json-schema/item.json
+  - type: JSONSchema
+    url: json-schema/sales-order.json
+  - type: JSONSchema
+    url: json-schema/sales-invoice.json
+  - type: JSONSchema
+    url: json-schema/employee.json
+  - type: JSONLD
+    url: json-ld/microsoft-dynamics-context.jsonld
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/overview
+  - type: AsyncAPI
+    url: openapi/microsoft-dynamics-dataverse-webhooks-asyncapi.yml
+  - type: WebhookDocumentation
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/use-webhooks
+  - type: JSONSchema
+    url: json-schema/account.json
+  - type: JSONSchema
+    url: json-schema/contact.json
+  - type: JSONSchema
+    url: json-schema/lead.json
+  - type: JSONSchema
+    url: json-schema/opportunity.json
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/data-entities/odata
+- aid: microsoft-dynamics-365:microsoft-dynamics-365-purchase-invoices-api
+  name: Microsoft Dynamics 365 Purchase Invoices API
+  description: >-
+    The Purchase Invoices API from Microsoft Dynamics 365 — 1 operation(s) for purchase invoices.
+  humanURL: https://docs.microsoft.com/dynamics365/finance/
+  baseURL: https://[org].operations.dynamics.com/data
+  tags:
+  - Purchase Invoices
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-dynamics-365-purchase-invoices-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
+  - type: JSONSchema
+    url: json-schema/customer.json
+  - type: JSONSchema
+    url: json-schema/vendor.json
+  - type: JSONSchema
+    url: json-schema/item.json
+  - type: JSONSchema
+    url: json-schema/sales-order.json
+  - type: JSONSchema
+    url: json-schema/sales-invoice.json
+  - type: JSONSchema
+    url: json-schema/employee.json
+  - type: JSONLD
+    url: json-ld/microsoft-dynamics-context.jsonld
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/overview
+  - type: AsyncAPI
+    url: openapi/microsoft-dynamics-dataverse-webhooks-asyncapi.yml
+  - type: WebhookDocumentation
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/use-webhooks
+  - type: JSONSchema
+    url: json-schema/account.json
+  - type: JSONSchema
+    url: json-schema/contact.json
+  - type: JSONSchema
+    url: json-schema/lead.json
+  - type: JSONSchema
+    url: json-schema/opportunity.json
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/data-entities/odata
+- aid: microsoft-dynamics-365:microsoft-dynamics-365-purchase-orders-api
+  name: Microsoft Dynamics 365 Purchase Orders API
+  description: >-
+    The Purchase Orders API from Microsoft Dynamics 365 — 2 operation(s) for purchase orders.
+  humanURL: https://docs.microsoft.com/dynamics365/finance/
+  baseURL: https://[org].operations.dynamics.com/data
+  tags:
+  - Purchase Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-dynamics-365-purchase-orders-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
+  - type: JSONSchema
+    url: json-schema/customer.json
+  - type: JSONSchema
+    url: json-schema/vendor.json
+  - type: JSONSchema
+    url: json-schema/item.json
+  - type: JSONSchema
+    url: json-schema/sales-order.json
+  - type: JSONSchema
+    url: json-schema/sales-invoice.json
+  - type: JSONSchema
+    url: json-schema/employee.json
+  - type: JSONLD
+    url: json-ld/microsoft-dynamics-context.jsonld
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/overview
+  - type: AsyncAPI
+    url: openapi/microsoft-dynamics-dataverse-webhooks-asyncapi.yml
+  - type: WebhookDocumentation
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/use-webhooks
+  - type: JSONSchema
+    url: json-schema/account.json
+  - type: JSONSchema
+    url: json-schema/contact.json
+  - type: JSONSchema
+    url: json-schema/lead.json
+  - type: JSONSchema
+    url: json-schema/opportunity.json
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/data-entities/odata
+- aid: microsoft-dynamics-365:microsoft-dynamics-365-sales-invoices-api
+  name: Microsoft Dynamics 365 Sales Invoices API
+  description: The Sales Invoices API from Microsoft Dynamics 365 — 1 operation(s) for sales invoices.
+  humanURL: https://docs.microsoft.com/dynamics365/finance/
+  baseURL: https://[org].operations.dynamics.com/data
+  tags:
+  - Sales Invoices
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-dynamics-365-sales-invoices-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
+  - type: JSONSchema
+    url: json-schema/customer.json
+  - type: JSONSchema
+    url: json-schema/vendor.json
+  - type: JSONSchema
+    url: json-schema/item.json
+  - type: JSONSchema
+    url: json-schema/sales-order.json
+  - type: JSONSchema
+    url: json-schema/sales-invoice.json
+  - type: JSONSchema
+    url: json-schema/employee.json
+  - type: JSONLD
+    url: json-ld/microsoft-dynamics-context.jsonld
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/overview
+  - type: AsyncAPI
+    url: openapi/microsoft-dynamics-dataverse-webhooks-asyncapi.yml
+  - type: WebhookDocumentation
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/use-webhooks
+  - type: JSONSchema
+    url: json-schema/account.json
+  - type: JSONSchema
+    url: json-schema/contact.json
+  - type: JSONSchema
+    url: json-schema/lead.json
+  - type: JSONSchema
+    url: json-schema/opportunity.json
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/data-entities/odata
+- aid: microsoft-dynamics-365:microsoft-dynamics-365-sales-orders-api
+  name: Microsoft Dynamics 365 Sales Orders API
+  description: The Sales Orders API from Microsoft Dynamics 365 — 2 operation(s) for sales orders.
+  humanURL: https://docs.microsoft.com/dynamics365/finance/
+  baseURL: https://[org].operations.dynamics.com/data
+  tags:
+  - Sales Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-dynamics-365-sales-orders-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
+  - type: JSONSchema
+    url: json-schema/customer.json
+  - type: JSONSchema
+    url: json-schema/vendor.json
+  - type: JSONSchema
+    url: json-schema/item.json
+  - type: JSONSchema
+    url: json-schema/sales-order.json
+  - type: JSONSchema
+    url: json-schema/sales-invoice.json
+  - type: JSONSchema
+    url: json-schema/employee.json
+  - type: JSONLD
+    url: json-ld/microsoft-dynamics-context.jsonld
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/overview
+  - type: AsyncAPI
+    url: openapi/microsoft-dynamics-dataverse-webhooks-asyncapi.yml
+  - type: WebhookDocumentation
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/use-webhooks
+  - type: JSONSchema
+    url: json-schema/account.json
+  - type: JSONSchema
+    url: json-schema/contact.json
+  - type: JSONSchema
+    url: json-schema/lead.json
+  - type: JSONSchema
+    url: json-schema/opportunity.json
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/data-entities/odata
+- aid: microsoft-dynamics-365:microsoft-dynamics-365-vendors-api
+  name: Microsoft Dynamics 365 Vendors API
+  description: The Vendors API from Microsoft Dynamics 365 — 2 operation(s) for vendors.
+  humanURL: https://docs.microsoft.com/dynamics365/finance/
+  baseURL: https://[org].operations.dynamics.com/data
+  tags:
+  - Vendors
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-dynamics-365-vendors-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/
+  - type: JSONSchema
+    url: json-schema/customer.json
+  - type: JSONSchema
+    url: json-schema/vendor.json
+  - type: JSONSchema
+    url: json-schema/item.json
+  - type: JSONSchema
+    url: json-schema/sales-order.json
+  - type: JSONSchema
+    url: json-schema/sales-invoice.json
+  - type: JSONSchema
+    url: json-schema/employee.json
+  - type: JSONLD
+    url: json-ld/microsoft-dynamics-context.jsonld
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/overview
+  - type: AsyncAPI
+    url: openapi/microsoft-dynamics-dataverse-webhooks-asyncapi.yml
+  - type: WebhookDocumentation
+    url: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/use-webhooks
+  - type: JSONSchema
+    url: json-schema/account.json
+  - type: JSONSchema
+    url: json-schema/contact.json
+  - type: JSONSchema
+    url: json-schema/lead.json
+  - type: JSONSchema
+    url: json-schema/opportunity.json
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/data-entities/odata
 common:
   - type: Website
     url: https://www.microsoft.com/
