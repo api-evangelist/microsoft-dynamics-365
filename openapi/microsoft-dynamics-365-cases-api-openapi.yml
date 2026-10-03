@@ -69,10 +69,16 @@ paths:
           description: Case created successfully.
 components:
   parameters:
-    expand:
-      name: $expand
+    skip:
+      name: $skip
       in: query
-      description: Related entities to expand inline.
+      description: Number of records to skip.
+      schema:
+        type: integer
+    filter:
+      name: $filter
+      in: query
+      description: OData filter expression.
       schema:
         type: string
     orderby:
@@ -81,22 +87,16 @@ components:
       description: Comma-separated list of properties to sort by.
       schema:
         type: string
-    filter:
-      name: $filter
+    expand:
+      name: $expand
       in: query
-      description: OData filter expression.
+      description: Related entities to expand inline.
       schema:
         type: string
     top:
       name: $top
       in: query
       description: Maximum number of records to return.
-      schema:
-        type: integer
-    skip:
-      name: $skip
-      in: query
-      description: Number of records to skip.
       schema:
         type: integer
     select:

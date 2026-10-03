@@ -61,6 +61,12 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   parameters:
+    skip:
+      name: $skip
+      in: query
+      description: Number of records to skip.
+      schema:
+        type: integer
     filter:
       name: $filter
       in: query
@@ -71,12 +77,6 @@ components:
       name: $top
       in: query
       description: Maximum number of records to return.
-      schema:
-        type: integer
-    skip:
-      name: $skip
-      in: query
-      description: Number of records to skip.
       schema:
         type: integer
     select:

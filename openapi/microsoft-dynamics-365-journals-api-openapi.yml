@@ -81,6 +81,18 @@ paths:
                 $ref: '#/components/schemas/Journal'
 components:
   parameters:
+    skip:
+      name: $skip
+      in: query
+      description: Number of records to skip.
+      schema:
+        type: integer
+    filter:
+      name: $filter
+      in: query
+      description: OData filter expression.
+      schema:
+        type: string
     companyId:
       name: companyId
       in: path
@@ -89,22 +101,10 @@ components:
       schema:
         type: string
         format: uuid
-    filter:
-      name: $filter
-      in: query
-      description: OData filter expression.
-      schema:
-        type: string
     top:
       name: $top
       in: query
       description: Maximum number of records to return.
-      schema:
-        type: integer
-    skip:
-      name: $skip
-      in: query
-      description: Number of records to skip.
       schema:
         type: integer
     select:

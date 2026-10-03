@@ -80,6 +80,39 @@ paths:
               schema:
                 $ref: '#/components/schemas/PurchaseInvoice'
 components:
+  parameters:
+    skip:
+      name: $skip
+      in: query
+      description: Number of records to skip.
+      schema:
+        type: integer
+    filter:
+      name: $filter
+      in: query
+      description: OData filter expression.
+      schema:
+        type: string
+    companyId:
+      name: companyId
+      in: path
+      required: true
+      description: The ID of the company.
+      schema:
+        type: string
+        format: uuid
+    top:
+      name: $top
+      in: query
+      description: Maximum number of records to return.
+      schema:
+        type: integer
+    select:
+      name: $select
+      in: query
+      description: Comma-separated list of properties to include.
+      schema:
+        type: string
   schemas:
     PurchaseInvoice:
       type: object
@@ -124,39 +157,6 @@ components:
           type: string
           format: date-time
           readOnly: true
-  parameters:
-    companyId:
-      name: companyId
-      in: path
-      required: true
-      description: The ID of the company.
-      schema:
-        type: string
-        format: uuid
-    filter:
-      name: $filter
-      in: query
-      description: OData filter expression.
-      schema:
-        type: string
-    top:
-      name: $top
-      in: query
-      description: Maximum number of records to return.
-      schema:
-        type: integer
-    skip:
-      name: $skip
-      in: query
-      description: Number of records to skip.
-      schema:
-        type: integer
-    select:
-      name: $select
-      in: query
-      description: Comma-separated list of properties to include.
-      schema:
-        type: string
   securitySchemes:
     oauth2:
       type: oauth2

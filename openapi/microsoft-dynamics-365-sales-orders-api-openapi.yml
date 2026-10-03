@@ -155,12 +155,18 @@ paths:
                 $ref: '#/components/schemas/SalesOrderHeaderEntity'
 components:
   parameters:
-    top_2:
-      name: $top
+    skip:
+      name: $skip
       in: query
-      description: Maximum number of records to return (max 10000).
+      description: Number of records to skip.
       schema:
         type: integer
+    filter:
+      name: $filter
+      in: query
+      description: OData filter expression.
+      schema:
+        type: string
     orderby:
       name: $orderby
       in: query
@@ -175,28 +181,22 @@ components:
       schema:
         type: string
         format: uuid
-    filter:
-      name: $filter
-      in: query
-      description: OData filter expression.
-      schema:
-        type: string
-    top:
-      name: $top
-      in: query
-      description: Maximum number of records to return.
-      schema:
-        type: integer
     crossCompany:
       name: cross-company
       in: query
       description: Set to true to retrieve data across all legal entities.
       schema:
         type: boolean
-    skip:
-      name: $skip
+    top:
+      name: $top
       in: query
-      description: Number of records to skip.
+      description: Maximum number of records to return.
+      schema:
+        type: integer
+    top_2:
+      name: $top
+      in: query
+      description: Maximum number of records to return (max 10000).
       schema:
         type: integer
     select:

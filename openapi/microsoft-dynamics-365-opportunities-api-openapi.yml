@@ -167,20 +167,111 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
+  parameters:
+    Top:
+      name: $top
+      in: query
+      required: false
+      description: Maximum number of records to return.
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 5000
+    Count:
+      name: $count
+      in: query
+      required: false
+      description: Include a count of matching records in the response.
+      schema:
+        type: boolean
+    Prefer:
+      name: Prefer
+      in: header
+      required: false
+      description: OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.
+      schema:
+        type: string
+        examples:
+        - return=representation
+        - odata.include-annotations="*"
+        - odata.maxpagesize=100
+    Skip:
+      name: $skip
+      in: query
+      required: false
+      description: Number of records to skip before returning results.
+      schema:
+        type: integer
+        minimum: 0
+    IfMatch:
+      name: If-Match
+      in: header
+      required: false
+      description: ETag value for optimistic concurrency control. Use * to match any version.
+      schema:
+        type: string
+    OpportunityId:
+      name: opportunityid
+      in: path
+      required: true
+      description: Unique identifier of the opportunity record (GUID).
+      schema:
+        type: string
+        format: uuid
+    Select:
+      name: $select
+      in: query
+      required: false
+      description: Comma-separated list of properties to return.
+      schema:
+        type: string
+    OrderBy:
+      name: $orderby
+      in: query
+      required: false
+      description: Comma-separated list of properties to sort by, with optional asc or desc.
+      schema:
+        type: string
+    Expand:
+      name: $expand
+      in: query
+      required: false
+      description: Comma-separated list of navigation properties to expand.
+      schema:
+        type: string
+    Filter:
+      name: $filter
+      in: query
+      required: false
+      description: OData filter expression to restrict results.
+      schema:
+        type: string
+  responses:
+    NotFound:
+      description: The requested resource was not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ODataError'
+    Forbidden:
+      description: The authenticated user does not have permission to perform this action.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ODataError'
+    PreconditionFailed:
+      description: The ETag value provided in the If-Match header does not match the current version of the record.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ODataError'
+    Unauthorized:
+      description: Authentication credentials are missing or invalid.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ODataError'
   schemas:
-    OpportunityCreate:
-      type: object
-      description: Properties for creating a new opportunity.
-      required:
-      - name
-      allOf:
-      - $ref: '#/components/schemas/OpportunityUpdate'
-      - type: object
-        properties:
-          name:
-            type: string
-            maxLength: 300
-            description: Subject or descriptive name (topic) for the opportunity.
     ODataError:
       type: object
       description: OData error response from the Dataverse Web API.
@@ -317,6 +408,19 @@ components:
         transactioncurrencyid@odata.bind:
           type: string
           description: 'Bind reference to a currency record. Format: /transactioncurrencies(GUID).'
+    OpportunityCreate:
+      type: object
+      description: Properties for creating a new opportunity.
+      required:
+      - name
+      allOf:
+      - $ref: '#/components/schemas/OpportunityUpdate'
+      - type: object
+        properties:
+          name:
+            type: string
+            maxLength: 300
+            description: Subject or descriptive name (topic) for the opportunity.
     Opportunity:
       type: object
       description: Potential revenue-generating event or sale to an account that needs to be tracked through the sales process to completion.
@@ -534,110 +638,6 @@ components:
           format: int64
           description: Version number of the opportunity.
           readOnly: true
-  parameters:
-    Count:
-      name: $count
-      in: query
-      required: false
-      description: Include a count of matching records in the response.
-      schema:
-        type: boolean
-    OpportunityId:
-      name: opportunityid
-      in: path
-      required: true
-      description: Unique identifier of the opportunity record (GUID).
-      schema:
-        type: string
-        format: uuid
-    Prefer:
-      name: Prefer
-      in: header
-      required: false
-      description: OData preference header. Use odata.include-annotations to request formatted values, or return=representation to return the created/updated record.
-      schema:
-        type: string
-        examples:
-        - return=representation
-        - odata.include-annotations="*"
-        - odata.maxpagesize=100
-    Filter:
-      name: $filter
-      in: query
-      required: false
-      description: OData filter expression to restrict results.
-      schema:
-        type: string
-    Select:
-      name: $select
-      in: query
-      required: false
-      description: Comma-separated list of properties to return.
-      schema:
-        type: string
-    Skip:
-      name: $skip
-      in: query
-      required: false
-      description: Number of records to skip before returning results.
-      schema:
-        type: integer
-        minimum: 0
-    OrderBy:
-      name: $orderby
-      in: query
-      required: false
-      description: Comma-separated list of properties to sort by, with optional asc or desc.
-      schema:
-        type: string
-    Top:
-      name: $top
-      in: query
-      required: false
-      description: Maximum number of records to return.
-      schema:
-        type: integer
-        minimum: 1
-        maximum: 5000
-    IfMatch:
-      name: If-Match
-      in: header
-      required: false
-      description: ETag value for optimistic concurrency control. Use * to match any version.
-      schema:
-        type: string
-    Expand:
-      name: $expand
-      in: query
-      required: false
-      description: Comma-separated list of navigation properties to expand.
-      schema:
-        type: string
-  responses:
-    NotFound:
-      description: The requested resource was not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ODataError'
-    PreconditionFailed:
-      description: The ETag value provided in the If-Match header does not match the current version of the record.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ODataError'
-    Unauthorized:
-      description: Authentication credentials are missing or invalid.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ODataError'
-    Forbidden:
-      description: The authenticated user does not have permission to perform this action.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ODataError'
   securitySchemes:
     oauth2:
       type: oauth2

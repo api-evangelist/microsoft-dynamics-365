@@ -49,16 +49,22 @@ paths:
                       $ref: '#/components/schemas/WorkerEntity'
 components:
   parameters:
-    orderby:
-      name: $orderby
+    skip:
+      name: $skip
       in: query
-      description: Comma-separated list of properties to sort by.
+      description: Number of records to skip.
       schema:
-        type: string
+        type: integer
     filter:
       name: $filter
       in: query
       description: OData filter expression.
+      schema:
+        type: string
+    orderby:
+      name: $orderby
+      in: query
+      description: Comma-separated list of properties to sort by.
       schema:
         type: string
     top:
@@ -73,12 +79,6 @@ components:
       description: Set to true to retrieve data across all legal entities.
       schema:
         type: boolean
-    skip:
-      name: $skip
-      in: query
-      description: Number of records to skip.
-      schema:
-        type: integer
     select:
       name: $select
       in: query

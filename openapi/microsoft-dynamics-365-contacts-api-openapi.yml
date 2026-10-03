@@ -168,14 +168,15 @@ paths:
           $ref: '#/components/responses/NotFound'
 components:
   parameters:
-    ContactId:
-      name: contactid
-      in: path
-      required: true
-      description: Unique identifier of the contact record (GUID).
+    Top:
+      name: $top
+      in: query
+      required: false
+      description: Maximum number of records to return.
       schema:
-        type: string
-        format: uuid
+        type: integer
+        minimum: 1
+        maximum: 5000
     Count:
       name: $count
       in: query
@@ -194,13 +195,6 @@ components:
         - return=representation
         - odata.include-annotations="*"
         - odata.maxpagesize=100
-    Select:
-      name: $select
-      in: query
-      required: false
-      description: Comma-separated list of properties to return.
-      schema:
-        type: string
     Skip:
       name: $skip
       in: query
@@ -209,22 +203,6 @@ components:
       schema:
         type: integer
         minimum: 0
-    OrderBy:
-      name: $orderby
-      in: query
-      required: false
-      description: Comma-separated list of properties to sort by, with optional asc or desc.
-      schema:
-        type: string
-    Top:
-      name: $top
-      in: query
-      required: false
-      description: Maximum number of records to return.
-      schema:
-        type: integer
-        minimum: 1
-        maximum: 5000
     IfMatch:
       name: If-Match
       in: header
@@ -232,11 +210,18 @@ components:
       description: ETag value for optimistic concurrency control. Use * to match any version.
       schema:
         type: string
-    Filter:
-      name: $filter
+    Select:
+      name: $select
       in: query
       required: false
-      description: OData filter expression to restrict results.
+      description: Comma-separated list of properties to return.
+      schema:
+        type: string
+    OrderBy:
+      name: $orderby
+      in: query
+      required: false
+      description: Comma-separated list of properties to sort by, with optional asc or desc.
       schema:
         type: string
     Expand:
@@ -246,7 +231,72 @@ components:
       description: Comma-separated list of navigation properties to expand.
       schema:
         type: string
+    ContactId:
+      name: contactid
+      in: path
+      required: true
+      description: Unique identifier of the contact record (GUID).
+      schema:
+        type: string
+        format: uuid
+    Filter:
+      name: $filter
+      in: query
+      required: false
+      description: OData filter expression to restrict results.
+      schema:
+        type: string
+  responses:
+    NotFound:
+      description: The requested resource was not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ODataError'
+    Forbidden:
+      description: The authenticated user does not have permission to perform this action.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ODataError'
+    PreconditionFailed:
+      description: The ETag value provided in the If-Match header does not match the current version of the record.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ODataError'
+    Unauthorized:
+      description: Authentication credentials are missing or invalid.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ODataError'
   schemas:
+    ODataError:
+      type: object
+      description: OData error response from the Dataverse Web API.
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+              description: Error code.
+            message:
+              type: string
+              description: Human-readable error message.
+            innererror:
+              type: object
+              properties:
+                message:
+                  type: string
+                  description: Detailed error message.
+                type:
+                  type: string
+                  description: Exception type.
+                stacktrace:
+                  type: string
+                  description: Stack trace (available in non-production environments).
     ContactUpdate:
       type: object
       description: Properties for updating an existing contact.
@@ -391,31 +441,6 @@ components:
         parentcustomerid_contact@odata.bind:
           type: string
           description: 'Bind reference to a parent contact. Format: /contacts(GUID).'
-    ODataError:
-      type: object
-      description: OData error response from the Dataverse Web API.
-      properties:
-        error:
-          type: object
-          properties:
-            code:
-              type: string
-              description: Error code.
-            message:
-              type: string
-              description: Human-readable error message.
-            innererror:
-              type: object
-              properties:
-                message:
-                  type: string
-                  description: Detailed error message.
-                type:
-                  type: string
-                  description: Exception type.
-                stacktrace:
-                  type: string
-                  description: Stack trace (available in non-production environments).
     Contact:
       type: object
       description: Person with whom a business unit has a relationship, such as customer, supplier, and colleague.
@@ -734,31 +759,6 @@ components:
             type: string
             maxLength: 50
             description: Last name of the contact.
-  responses:
-    NotFound:
-      description: The requested resource was not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ODataError'
-    PreconditionFailed:
-      description: The ETag value provided in the If-Match header does not match the current version of the record.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ODataError'
-    Unauthorized:
-      description: Authentication credentials are missing or invalid.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ODataError'
-    Forbidden:
-      description: The authenticated user does not have permission to perform this action.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ODataError'
   securitySchemes:
     oauth2:
       type: oauth2

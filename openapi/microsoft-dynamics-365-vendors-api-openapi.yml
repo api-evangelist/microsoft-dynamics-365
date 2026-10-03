@@ -158,87 +158,7 @@ paths:
       x-operation-id-source: normalized
       x-operation-id-original: createVendor
 components:
-  parameters:
-    top_2:
-      name: $top
-      in: query
-      description: Maximum number of records to return (max 10000).
-      schema:
-        type: integer
-    orderby:
-      name: $orderby
-      in: query
-      description: Comma-separated list of properties to sort by.
-      schema:
-        type: string
-    companyId:
-      name: companyId
-      in: path
-      required: true
-      description: The ID of the company.
-      schema:
-        type: string
-        format: uuid
-    filter:
-      name: $filter
-      in: query
-      description: OData filter expression.
-      schema:
-        type: string
-    top:
-      name: $top
-      in: query
-      description: Maximum number of records to return.
-      schema:
-        type: integer
-    crossCompany:
-      name: cross-company
-      in: query
-      description: Set to true to retrieve data across all legal entities.
-      schema:
-        type: boolean
-    skip:
-      name: $skip
-      in: query
-      description: Number of records to skip.
-      schema:
-        type: integer
-    select:
-      name: $select
-      in: query
-      description: Comma-separated list of properties to include.
-      schema:
-        type: string
   schemas:
-    VendorEntity:
-      type: object
-      properties:
-        VendorAccountNumber:
-          type: string
-        VendorGroupId:
-          type: string
-        VendorOrganizationName:
-          type: string
-        AddressStreet:
-          type: string
-        AddressCity:
-          type: string
-        AddressState:
-          type: string
-        AddressZipCode:
-          type: string
-        AddressCountryRegionId:
-          type: string
-        PrimaryContactPhone:
-          type: string
-        PrimaryContactEmail:
-          type: string
-        PurchaseCurrencyCode:
-          type: string
-        PaymentTermsName:
-          type: string
-        dataAreaId:
-          type: string
     Vendor:
       type: object
       properties:
@@ -280,6 +200,86 @@ components:
           type: string
           format: date-time
           readOnly: true
+    VendorEntity:
+      type: object
+      properties:
+        VendorAccountNumber:
+          type: string
+        VendorGroupId:
+          type: string
+        VendorOrganizationName:
+          type: string
+        AddressStreet:
+          type: string
+        AddressCity:
+          type: string
+        AddressState:
+          type: string
+        AddressZipCode:
+          type: string
+        AddressCountryRegionId:
+          type: string
+        PrimaryContactPhone:
+          type: string
+        PrimaryContactEmail:
+          type: string
+        PurchaseCurrencyCode:
+          type: string
+        PaymentTermsName:
+          type: string
+        dataAreaId:
+          type: string
+  parameters:
+    skip:
+      name: $skip
+      in: query
+      description: Number of records to skip.
+      schema:
+        type: integer
+    filter:
+      name: $filter
+      in: query
+      description: OData filter expression.
+      schema:
+        type: string
+    orderby:
+      name: $orderby
+      in: query
+      description: Comma-separated list of properties to sort by.
+      schema:
+        type: string
+    companyId:
+      name: companyId
+      in: path
+      required: true
+      description: The ID of the company.
+      schema:
+        type: string
+        format: uuid
+    crossCompany:
+      name: cross-company
+      in: query
+      description: Set to true to retrieve data across all legal entities.
+      schema:
+        type: boolean
+    top:
+      name: $top
+      in: query
+      description: Maximum number of records to return.
+      schema:
+        type: integer
+    top_2:
+      name: $top
+      in: query
+      description: Maximum number of records to return (max 10000).
+      schema:
+        type: integer
+    select:
+      name: $select
+      in: query
+      description: Comma-separated list of properties to include.
+      schema:
+        type: string
   securitySchemes:
     oauth2:
       type: oauth2

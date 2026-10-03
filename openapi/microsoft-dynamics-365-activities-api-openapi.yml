@@ -53,28 +53,28 @@ paths:
                       $ref: '#/components/schemas/Activity'
 components:
   parameters:
-    orderby:
-      name: $orderby
+    skip:
+      name: $skip
       in: query
-      description: Comma-separated list of properties to sort by.
+      description: Number of records to skip.
       schema:
-        type: string
+        type: integer
     filter:
       name: $filter
       in: query
       description: OData filter expression.
       schema:
         type: string
+    orderby:
+      name: $orderby
+      in: query
+      description: Comma-separated list of properties to sort by.
+      schema:
+        type: string
     top:
       name: $top
       in: query
       description: Maximum number of records to return.
-      schema:
-        type: integer
-    skip:
-      name: $skip
-      in: query
-      description: Number of records to skip.
       schema:
         type: integer
     select:

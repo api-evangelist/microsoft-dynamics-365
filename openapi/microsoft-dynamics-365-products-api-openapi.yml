@@ -67,6 +67,43 @@ paths:
               schema:
                 $ref: '#/components/schemas/ReleasedProductEntity'
 components:
+  parameters:
+    skip:
+      name: $skip
+      in: query
+      description: Number of records to skip.
+      schema:
+        type: integer
+    filter:
+      name: $filter
+      in: query
+      description: OData filter expression.
+      schema:
+        type: string
+    orderby:
+      name: $orderby
+      in: query
+      description: Comma-separated list of properties to sort by.
+      schema:
+        type: string
+    crossCompany:
+      name: cross-company
+      in: query
+      description: Set to true to retrieve data across all legal entities.
+      schema:
+        type: boolean
+    top:
+      name: $top
+      in: query
+      description: Maximum number of records to return (max 10000).
+      schema:
+        type: integer
+    select:
+      name: $select
+      in: query
+      description: Comma-separated list of properties to include.
+      schema:
+        type: string
   schemas:
     ReleasedProductEntity:
       type: object
@@ -102,43 +139,6 @@ components:
           type: string
         dataAreaId:
           type: string
-  parameters:
-    orderby:
-      name: $orderby
-      in: query
-      description: Comma-separated list of properties to sort by.
-      schema:
-        type: string
-    filter:
-      name: $filter
-      in: query
-      description: OData filter expression.
-      schema:
-        type: string
-    top:
-      name: $top
-      in: query
-      description: Maximum number of records to return (max 10000).
-      schema:
-        type: integer
-    crossCompany:
-      name: cross-company
-      in: query
-      description: Set to true to retrieve data across all legal entities.
-      schema:
-        type: boolean
-    skip:
-      name: $skip
-      in: query
-      description: Number of records to skip.
-      schema:
-        type: integer
-    select:
-      name: $select
-      in: query
-      description: Comma-separated list of properties to include.
-      schema:
-        type: string
   securitySchemes:
     oauth2:
       type: oauth2

@@ -253,13 +253,31 @@ paths:
       x-operation-id-source: normalized
       x-operation-id-original: createCustomer
 components:
+  responses:
+    NotFound:
+      description: The requested resource was not found.
+    Unauthorized:
+      description: Authentication required or token is invalid.
   parameters:
-    top_2:
-      name: $top
+    ifMatch:
+      name: If-Match
+      in: header
+      description: ETag for optimistic concurrency control.
+      required: true
+      schema:
+        type: string
+    skip:
+      name: $skip
       in: query
-      description: Maximum number of records to return (max 10000).
+      description: Number of records to skip.
       schema:
         type: integer
+    filter:
+      name: $filter
+      in: query
+      description: OData filter expression.
+      schema:
+        type: string
     orderby:
       name: $orderby
       in: query
@@ -274,41 +292,28 @@ components:
       schema:
         type: string
         format: uuid
-    filter:
-      name: $filter
-      in: query
-      description: OData filter expression.
-      schema:
-        type: string
-    top:
-      name: $top
-      in: query
-      description: Maximum number of records to return.
-      schema:
-        type: integer
     crossCompany:
       name: cross-company
       in: query
       description: Set to true to retrieve data across all legal entities.
       schema:
         type: boolean
-    skip:
-      name: $skip
+    top:
+      name: $top
       in: query
-      description: Number of records to skip.
+      description: Maximum number of records to return.
+      schema:
+        type: integer
+    top_2:
+      name: $top
+      in: query
+      description: Maximum number of records to return (max 10000).
       schema:
         type: integer
     select:
       name: $select
       in: query
       description: Comma-separated list of properties to include.
-      schema:
-        type: string
-    ifMatch:
-      name: If-Match
-      in: header
-      description: ETag for optimistic concurrency control.
-      required: true
       schema:
         type: string
   schemas:
@@ -397,11 +402,6 @@ components:
           type: string
         dataAreaId:
           type: string
-  responses:
-    NotFound:
-      description: The requested resource was not found.
-    Unauthorized:
-      description: Authentication required or token is invalid.
   securitySchemes:
     oauth2:
       type: oauth2
