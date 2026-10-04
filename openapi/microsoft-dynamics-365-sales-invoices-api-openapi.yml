@@ -81,26 +81,6 @@ paths:
                 $ref: '#/components/schemas/SalesInvoice'
 components:
   parameters:
-    skip:
-      name: $skip
-      in: query
-      description: Number of records to skip.
-      schema:
-        type: integer
-    filter:
-      name: $filter
-      in: query
-      description: OData filter expression.
-      schema:
-        type: string
-    companyId:
-      name: companyId
-      in: path
-      required: true
-      description: The ID of the company.
-      schema:
-        type: string
-        format: uuid
     top:
       name: $top
       in: query
@@ -111,6 +91,26 @@ components:
       name: $select
       in: query
       description: Comma-separated list of properties to include.
+      schema:
+        type: string
+    companyId:
+      name: companyId
+      in: path
+      required: true
+      description: The ID of the company.
+      schema:
+        type: string
+        format: uuid
+    skip:
+      name: $skip
+      in: query
+      description: Number of records to skip.
+      schema:
+        type: integer
+    filter:
+      name: $filter
+      in: query
+      description: OData filter expression.
       schema:
         type: string
   schemas:

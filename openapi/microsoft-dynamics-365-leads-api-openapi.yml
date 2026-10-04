@@ -136,22 +136,22 @@ paths:
           description: Lead deleted successfully.
 components:
   parameters:
+    top:
+      name: $top
+      in: query
+      description: Maximum number of records to return.
+      schema:
+        type: integer
     ifMatch:
       name: If-Match
       in: header
       description: ETag value for optimistic concurrency.
       schema:
         type: string
-    skip:
-      name: $skip
+    select:
+      name: $select
       in: query
-      description: Number of records to skip.
-      schema:
-        type: integer
-    filter:
-      name: $filter
-      in: query
-      description: OData filter expression.
+      description: Comma-separated list of properties to include.
       schema:
         type: string
     orderby:
@@ -160,22 +160,22 @@ components:
       description: Comma-separated list of properties to sort by.
       schema:
         type: string
+    skip:
+      name: $skip
+      in: query
+      description: Number of records to skip.
+      schema:
+        type: integer
     expand:
       name: $expand
       in: query
       description: Related entities to expand inline.
       schema:
         type: string
-    top:
-      name: $top
+    filter:
+      name: $filter
       in: query
-      description: Maximum number of records to return.
-      schema:
-        type: integer
-    select:
-      name: $select
-      in: query
-      description: Comma-separated list of properties to include.
+      description: OData filter expression.
       schema:
         type: string
   schemas:

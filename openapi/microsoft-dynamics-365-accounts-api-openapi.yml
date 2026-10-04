@@ -171,15 +171,13 @@ paths:
           $ref: '#/components/responses/NotFound'
 components:
   parameters:
-    Top:
-      name: $top
-      in: query
+    IfMatch:
+      name: If-Match
+      in: header
       required: false
-      description: Maximum number of records to return.
+      description: ETag value for optimistic concurrency control. Use * to match any version.
       schema:
-        type: integer
-        minimum: 1
-        maximum: 5000
+        type: string
     Count:
       name: $count
       in: query
@@ -187,14 +185,20 @@ components:
       description: Include a count of matching records in the response.
       schema:
         type: boolean
-    Skip:
-      name: $skip
+    OrderBy:
+      name: $orderby
       in: query
       required: false
-      description: Number of records to skip before returning results.
+      description: Comma-separated list of properties to sort by, with optional asc or desc.
       schema:
-        type: integer
-        minimum: 0
+        type: string
+    Filter:
+      name: $filter
+      in: query
+      required: false
+      description: OData filter expression to restrict results.
+      schema:
+        type: string
     Prefer:
       name: Prefer
       in: header
@@ -206,13 +210,6 @@ components:
         - return=representation
         - odata.include-annotations="*"
         - odata.maxpagesize=100
-    IfMatch:
-      name: If-Match
-      in: header
-      required: false
-      description: ETag value for optimistic concurrency control. Use * to match any version.
-      schema:
-        type: string
     AccountId:
       name: accountid
       in: path
@@ -221,6 +218,14 @@ components:
       schema:
         type: string
         format: uuid
+    Skip:
+      name: $skip
+      in: query
+      required: false
+      description: Number of records to skip before returning results.
+      schema:
+        type: integer
+        minimum: 0
     Select:
       name: $select
       in: query
@@ -228,13 +233,15 @@ components:
       description: Comma-separated list of properties to return.
       schema:
         type: string
-    OrderBy:
-      name: $orderby
+    Top:
+      name: $top
       in: query
       required: false
-      description: Comma-separated list of properties to sort by, with optional asc or desc.
+      description: Maximum number of records to return.
       schema:
-        type: string
+        type: integer
+        minimum: 1
+        maximum: 5000
     Expand:
       name: $expand
       in: query
@@ -242,22 +249,9 @@ components:
       description: Comma-separated list of navigation properties to expand.
       schema:
         type: string
-    Filter:
-      name: $filter
-      in: query
-      required: false
-      description: OData filter expression to restrict results.
-      schema:
-        type: string
   responses:
     NotFound:
       description: The requested resource was not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ODataError'
-    Forbidden:
-      description: The authenticated user does not have permission to perform this action.
       content:
         application/json:
           schema:
@@ -274,20 +268,13 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/ODataError'
+    Forbidden:
+      description: The authenticated user does not have permission to perform this action.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ODataError'
   schemas:
-    AccountCreate:
-      type: object
-      description: Properties for creating a new account.
-      required:
-      - name
-      allOf:
-      - $ref: '#/components/schemas/AccountUpdate'
-      - type: object
-        properties:
-          name:
-            type: string
-            maxLength: 160
-            description: The company or business name.
     ODataError:
       type: object
       description: OData error response from the Dataverse Web API.
@@ -450,6 +437,19 @@ components:
         transactioncurrencyid@odata.bind:
           type: string
           description: 'Bind reference to a currency record. Format: /transactioncurrencies(GUID).'
+    AccountCreate:
+      type: object
+      description: Properties for creating a new account.
+      required:
+      - name
+      allOf:
+      - $ref: '#/components/schemas/AccountUpdate'
+      - type: object
+        properties:
+          name:
+            type: string
+            maxLength: 160
+            description: The company or business name.
     Account:
       type: object
       description: Business that represents a customer or potential customer. The company that is billed in business transactions.

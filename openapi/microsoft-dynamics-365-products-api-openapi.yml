@@ -68,16 +68,16 @@ paths:
                 $ref: '#/components/schemas/ReleasedProductEntity'
 components:
   parameters:
-    skip:
-      name: $skip
+    top:
+      name: $top
       in: query
-      description: Number of records to skip.
+      description: Maximum number of records to return (max 10000).
       schema:
         type: integer
-    filter:
-      name: $filter
+    select:
+      name: $select
       in: query
-      description: OData filter expression.
+      description: Comma-separated list of properties to include.
       schema:
         type: string
     orderby:
@@ -92,16 +92,16 @@ components:
       description: Set to true to retrieve data across all legal entities.
       schema:
         type: boolean
-    top:
-      name: $top
+    skip:
+      name: $skip
       in: query
-      description: Maximum number of records to return (max 10000).
+      description: Number of records to skip.
       schema:
         type: integer
-    select:
-      name: $select
+    filter:
+      name: $filter
       in: query
-      description: Comma-separated list of properties to include.
+      description: OData filter expression.
       schema:
         type: string
   schemas:

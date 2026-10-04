@@ -158,6 +158,57 @@ paths:
       x-operation-id-source: normalized
       x-operation-id-original: createVendor
 components:
+  parameters:
+    top:
+      name: $top
+      in: query
+      description: Maximum number of records to return.
+      schema:
+        type: integer
+    select:
+      name: $select
+      in: query
+      description: Comma-separated list of properties to include.
+      schema:
+        type: string
+    orderby:
+      name: $orderby
+      in: query
+      description: Comma-separated list of properties to sort by.
+      schema:
+        type: string
+    crossCompany:
+      name: cross-company
+      in: query
+      description: Set to true to retrieve data across all legal entities.
+      schema:
+        type: boolean
+    companyId:
+      name: companyId
+      in: path
+      required: true
+      description: The ID of the company.
+      schema:
+        type: string
+        format: uuid
+    top_2:
+      name: $top
+      in: query
+      description: Maximum number of records to return (max 10000).
+      schema:
+        type: integer
+    skip:
+      name: $skip
+      in: query
+      description: Number of records to skip.
+      schema:
+        type: integer
+    filter:
+      name: $filter
+      in: query
+      description: OData filter expression.
+      schema:
+        type: string
   schemas:
     Vendor:
       type: object
@@ -229,57 +280,6 @@ components:
           type: string
         dataAreaId:
           type: string
-  parameters:
-    skip:
-      name: $skip
-      in: query
-      description: Number of records to skip.
-      schema:
-        type: integer
-    filter:
-      name: $filter
-      in: query
-      description: OData filter expression.
-      schema:
-        type: string
-    orderby:
-      name: $orderby
-      in: query
-      description: Comma-separated list of properties to sort by.
-      schema:
-        type: string
-    companyId:
-      name: companyId
-      in: path
-      required: true
-      description: The ID of the company.
-      schema:
-        type: string
-        format: uuid
-    crossCompany:
-      name: cross-company
-      in: query
-      description: Set to true to retrieve data across all legal entities.
-      schema:
-        type: boolean
-    top:
-      name: $top
-      in: query
-      description: Maximum number of records to return.
-      schema:
-        type: integer
-    top_2:
-      name: $top
-      in: query
-      description: Maximum number of records to return (max 10000).
-      schema:
-        type: integer
-    select:
-      name: $select
-      in: query
-      description: Comma-separated list of properties to include.
-      schema:
-        type: string
   securitySchemes:
     oauth2:
       type: oauth2
