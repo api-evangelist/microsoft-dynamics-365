@@ -721,6 +721,8 @@ apis:
   humanURL: https://docs.microsoft.com/dynamics365/finance/
   baseURL: https://[org].operations.dynamics.com/data
   tags:
+  - Item
+  tags_raw:
   - Items
   properties:
   - type: OpenAPI
@@ -850,6 +852,8 @@ apis:
   humanURL: https://docs.microsoft.com/dynamics365/finance/
   baseURL: https://[org].operations.dynamics.com/data
   tags:
+  - Product
+  tags_raw:
   - Products
   properties:
   - type: OpenAPI
