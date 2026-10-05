@@ -12,8 +12,18 @@ capability_model:
   attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
     CC BY 4.0
   notice: NOTICE
-edge_count: 3
+edge_count: 12
 edges:
+- tag: General Ledger
+  spec_file: microsoft-dynamics-365-general-ledger-api-openapi.yml
+  capability_id: BC-200.10
+  capability_id_l1: BC-200
+  capability_name: General Ledger Management
+  confidence: 0.92
+  evidence: GET /companies({companyId})/generalLedgerEntries 'List general ledger entries'; schemas GeneralLedgerEntry,
+    GeneralJournalAccountEntry
+  reason: Operations expose general ledger and general journal account entries — unambiguously General
+    Ledger Management.
 - tag: Opportunities
   spec_file: microsoft-dynamics-365-opportunities-api-openapi.yml
   capability_id: BC-410.30
@@ -22,6 +32,37 @@ edges:
   confidence: 0.9
   evidence: POST /opportunities createOpportunity; GET /opportunities listOpportunities
   reason: CRM opportunity lifecycle CRUD is squarely opportunity & pipeline management in sales.
+- tag: Purchase Orders
+  spec_file: microsoft-dynamics-365-purchase-orders-api-openapi.yml
+  capability_id: BC-500.30
+  capability_id_l1: BC-500
+  capability_name: Purchase Order Management
+  confidence: 0.88
+  evidence: POST /companies({companyId})/purchaseOrders  createPurchaseOrder  Microsoft Dynamics Create
+    a purchase order; schemas PurchaseOrderHeaderEntity, PurchaseOrder
+  reason: Operations create and list purchase orders and PO headers — directly PO creation and execution
+    within procurement.
+- tag: Cases
+  spec_file: microsoft-dynamics-365-cases-api-openapi.yml
+  capability_id: BC-430
+  capability_id_l1: BC-430
+  capability_name: Customer Service Management
+  confidence: 0.85
+  evidence: GET /incidents listCases 'List cases'; POST /incidents createCase 'Create a case'; schema
+    Incident
+  reason: Case/incident records in Dynamics Customer Service are support tickets — clearly Customer Service
+    Management; ambiguous between inquiry handling and complaint/issue management so no L2 chosen.
+- tag: Purchase Invoices
+  spec_file: microsoft-dynamics-365-purchase-invoices-api-openapi.yml
+  capability_id: BC-200.20
+  capability_id_l1: BC-200
+  capability_name: Accounts Payable Management
+  confidence: 0.82
+  evidence: POST /companies({companyId})/purchaseInvoices  createPurchaseInvoice  Microsoft Dynamics Create
+    a purchase invoice; schema PurchaseInvoice
+  reason: Purchase (vendor) invoices in an ERP are the core artefact of invoice processing and vendor
+    accounting, i.e. Accounts Payable Management. Slight ambiguity with procure-to-pay operations, hence
+    not maximal confidence.
 - tag: Contacts
   spec_file: microsoft-dynamics-365-contacts-api-openapi.yml
   capability_id: BC-420.10
@@ -32,6 +73,26 @@ edges:
     accounts, contacts, and opportunities"
   reason: CRUD over CRM contact records in Dataverse — maintenance of customer/contact master data, i.e.
     customer data management.
+- tag: Journals
+  spec_file: microsoft-dynamics-365-journals-api-openapi.yml
+  capability_id: BC-200.10
+  capability_id_l1: BC-200
+  capability_name: General Ledger Management
+  confidence: 0.8
+  evidence: GET /companies({companyId})/journals listJournals; POST .../journals createJournal; 'journals,
+    and general ledger entries'
+  reason: Business Central journals are accounting journal batches posted to the ledger, placing this
+    in General Ledger Management.
+- tag: Sales Invoices
+  spec_file: microsoft-dynamics-365-sales-invoices-api-openapi.yml
+  capability_id: BC-200.30
+  capability_id_l1: BC-200
+  capability_name: Accounts Receivable Management
+  confidence: 0.8
+  evidence: POST /companies({companyId})/salesInvoices  createSalesInvoice  Microsoft Dynamics Create
+    a sales invoice; schema SalesInvoice
+  reason: Creating and listing customer-facing sales invoices is customer invoicing, the core of Accounts
+    Receivable Management in an ERP context.
 - tag: Accounts
   spec_file: microsoft-dynamics-365-accounts-api-openapi.yml
   capability_id: BC-420.10
@@ -43,3 +104,33 @@ edges:
   reason: CRUD over the Dataverse CRM account entity — the customer master record. 'Account' here is a
     customer organisation record, not a bank deposit account nor a login account; mapped to customer data
     management rather than sales account management as the surface is pure record maintenance.
+- tag: Employees
+  spec_file: microsoft-dynamics-365-employees-api-openapi.yml
+  capability_id: BC-300.70
+  capability_id_l1: BC-300
+  capability_name: HR Operations Management
+  confidence: 0.75
+  evidence: GET /companies({companyId})/employees listEmployees; POST .../employees createEmployee; schema
+    Employee
+  reason: Create and list employee master records in Business Central — maintenance of employee records
+    falls under HR Operations Management.
+- tag: Human Resources
+  spec_file: microsoft-dynamics-365-human-resources-api-openapi.yml
+  capability_id: BC-300.70
+  capability_id_l1: BC-300
+  capability_name: HR Operations Management
+  confidence: 0.75
+  evidence: GET /Workers listWorkers 'Microsoft Dynamics List workers'; schema WorkerEntity
+  reason: The HR-tagged surface exposes worker master records from Finance & Operations HR data, i.e.
+    employee record keeping under HR Operations; only one read operation so confidence moderate.
+- tag: Customers
+  spec_file: microsoft-dynamics-365-customers-api-openapi.yml
+  capability_id: BC-420.10
+  capability_id_l1: BC-420
+  capability_name: Customer Data Management
+  confidence: 0.7
+  evidence: POST /companies({companyId})/customers createCustomer; PATCH .../customers({customerId}) updateCustomer;
+    schemas Customer, CustomerEntity
+  reason: Full CRUD over the customer master record across Business Central and Finance & Operations —
+    customer data/master record management. Some chance it is better read as master data management, hence
+    0.7.
