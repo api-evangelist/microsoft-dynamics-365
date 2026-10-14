@@ -1,5 +1,5 @@
 generated: '2026-10-12'
-method: none
+method: searched
 source:
 - https://zapier.com/apps/microsoft-dynamics-365/integrations
 - https://n8n.io/integrations/microsoft-dynamics-365/
@@ -7,10 +7,35 @@ source:
 - https://monid.ai/tools/microsoft-dynamics-365
 checked:
 - https://composio.dev/toolkits/microsoft-dynamics-365
+- https://hightouch.com/docs/destinations/microsoft-dynamics
 - https://monid.ai/tools/microsoft-dynamics-365
 - https://n8n.io/integrations/microsoft-dynamics-365/
 - https://zapier.com/apps/microsoft-dynamics-365/integrations
 summary: null
 marketplace_apps: []
-edges: []
+edges:
+- partner_name: Hightouch
+  partner: hightouch
+  partner_match: aggregator
+  marketplace: coverage
+  channel: partner-built
+  direction: partner-built
+  type: coverage
+  relationship: connector-coverage
+  evidence: https://hightouch.com/docs/destinations/microsoft-dynamics
+  coverage_role:
+  - destination
+  cdp_signals:
+    destination:
+      catalog_entries:
+      - microsoft-dynamics
+      status: released
+      sync_types:
+      - Objects
+      sync_modes:
+      - insert
+      - update
+      - upsert
+  detected_by: sweep-cdp.py
+  first_seen: '2026-10-14'
 templates: []
