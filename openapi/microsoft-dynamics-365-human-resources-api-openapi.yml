@@ -55,12 +55,6 @@ components:
       description: Maximum number of records to return (max 10000).
       schema:
         type: integer
-    select:
-      name: $select
-      in: query
-      description: Comma-separated list of properties to include.
-      schema:
-        type: string
     orderby:
       name: $orderby
       in: query
@@ -79,6 +73,12 @@ components:
       description: Number of records to skip.
       schema:
         type: integer
+    select:
+      name: $select
+      in: query
+      description: Comma-separated list of properties to include.
+      schema:
+        type: string
     filter:
       name: $filter
       in: query

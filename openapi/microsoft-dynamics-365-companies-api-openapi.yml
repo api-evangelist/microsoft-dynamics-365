@@ -60,11 +60,20 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
 components:
+  responses:
+    Unauthorized:
+      description: Authentication required or token is invalid.
   parameters:
     top:
       name: $top
       in: query
       description: Maximum number of records to return.
+      schema:
+        type: integer
+    skip:
+      name: $skip
+      in: query
+      description: Number of records to skip.
       schema:
         type: integer
     select:
@@ -73,21 +82,12 @@ components:
       description: Comma-separated list of properties to include.
       schema:
         type: string
-    skip:
-      name: $skip
-      in: query
-      description: Number of records to skip.
-      schema:
-        type: integer
     filter:
       name: $filter
       in: query
       description: OData filter expression.
       schema:
         type: string
-  responses:
-    Unauthorized:
-      description: Authentication required or token is invalid.
   schemas:
     Company:
       type: object

@@ -142,18 +142,6 @@ components:
       description: Maximum number of records to return.
       schema:
         type: integer
-    ifMatch:
-      name: If-Match
-      in: header
-      description: ETag value for optimistic concurrency.
-      schema:
-        type: string
-    select:
-      name: $select
-      in: query
-      description: Comma-separated list of properties to include.
-      schema:
-        type: string
     orderby:
       name: $orderby
       in: query
@@ -166,10 +154,22 @@ components:
       description: Number of records to skip.
       schema:
         type: integer
+    ifMatch:
+      name: If-Match
+      in: header
+      description: ETag value for optimistic concurrency.
+      schema:
+        type: string
     expand:
       name: $expand
       in: query
       description: Related entities to expand inline.
+      schema:
+        type: string
+    select:
+      name: $select
+      in: query
+      description: Comma-separated list of properties to include.
       schema:
         type: string
     filter:

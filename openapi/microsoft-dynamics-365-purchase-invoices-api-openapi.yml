@@ -87,12 +87,12 @@ components:
       description: Maximum number of records to return.
       schema:
         type: integer
-    select:
-      name: $select
+    skip:
+      name: $skip
       in: query
-      description: Comma-separated list of properties to include.
+      description: Number of records to skip.
       schema:
-        type: string
+        type: integer
     companyId:
       name: companyId
       in: path
@@ -101,12 +101,12 @@ components:
       schema:
         type: string
         format: uuid
-    skip:
-      name: $skip
+    select:
+      name: $select
       in: query
-      description: Number of records to skip.
+      description: Comma-separated list of properties to include.
       schema:
-        type: integer
+        type: string
     filter:
       name: $filter
       in: query
