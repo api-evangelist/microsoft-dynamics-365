@@ -1,4 +1,4 @@
-# Microsoft Dynamics 365 (microsoft-dynamics-365)
+# Microsoft Dynamics 365
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,345 +66,209 @@
 
 Microsoft Dynamics 365 is a cloud-based suite of business applications that unify CRM and ERP capabilities to help organizations manage sales, marketing, customer service, finance, operations, and commerce.
 
-**APIs.json:** [https://dynamics.microsoft.com/](https://dynamics.microsoft.com/)
+**Areas:** Business Applications · Cloud · CRM · Enterprise · ERP · Microsoft · Microsoft Dynamics 365
+
+## Microsoft Dynamics 365 on APIs.io
+
+Everything profiled for Microsoft Dynamics 365 is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/microsoft-dynamics-365/](https://apis.io/providers/microsoft-dynamics-365/)** — or go straight to one of the APIs or properties below.
+
+### APIs (28)
 
-## Tags
+- [Dynamics 365 Finance & Operations API](https://apis.io/apis/microsoft-dynamics-365/dynamics-365-finance-operations-api/) — API for managing financial operations, accounting, budgeting, and enterprise resource planning.
+- [Dynamics 365 Marketing API](https://apis.io/apis/microsoft-dynamics-365/dynamics-365-marketing-api/) — API for managing marketing campaigns, customer journeys, email marketing, and lead scoring.
+- [Dynamics 365 Supply Chain Management API](https://apis.io/apis/microsoft-dynamics-365/dynamics-365-supply-chain-management-api/) — API for managing inventory, warehouse operations, procurement, and supply chain processes.
+- [Dynamics 365 Commerce API](https://apis.io/apis/microsoft-dynamics-365/dynamics-365-commerce-api/) — API for managing e-commerce operations, retail stores, omnichannel commerce, and customer experiences.
+- [Dynamics 365 Customer Insights Data API](https://apis.io/apis/microsoft-dynamics-365/dynamics-365-customer-insights-data-api/) — API for building applications based on unified customer data, enabling customer data unification, segmentation, and enrichment through programmatic access.
+- [Dynamics 365 Customer Insights Journeys API](https://apis.io/apis/microsoft-dynamics-365/dynamics-365-customer-insights-journeys-api/) — API for managing real-time customer journeys, segments, and event-driven marketing interactions programmatically.
+- [Dynamics 365 Field Service API](https://apis.io/apis/microsoft-dynamics-365/dynamics-365-field-service-api/) — API for managing field service operations including work orders, scheduling, resource availability, and work hour calendars.
+- [Dynamics 365 Human Resources API](https://apis.io/apis/microsoft-dynamics-365/dynamics-365-human-resources-api/) — API for managing human resources operations including employee data, payroll integration, applicant tracking, and benefits administration.
+- [Dynamics 365 Project Operations API](https://apis.io/apis/microsoft-dynamics-365/dynamics-365-project-operations-api/) — API for managing project operations including project scheduling, resource management, time and expense tracking, and project financials.
+- [Microsoft Dynamics 365 Accounts API](https://apis.io/apis/microsoft-dynamics-365/microsoft-dynamics-365-accounts-api/) — Business that represents a customer or potential customer. The company that is billed in business transactions.
+- [Microsoft Dynamics 365 Contacts API](https://apis.io/apis/microsoft-dynamics-365/microsoft-dynamics-365-contacts-api/) — Person with whom a business unit has a relationship, such as a customer, supplier, or colleague.
+- [Microsoft Dynamics 365 Opportunities API](https://apis.io/apis/microsoft-dynamics-365/microsoft-dynamics-365-opportunities-api/) — Potential revenue-generating event or sale to an account that needs to be tracked through the sales process to completion.
+- [Microsoft Dynamics 365 Activities API](https://apis.io/apis/microsoft-dynamics-365/microsoft-dynamics-365-activities-api/) — The Activities API from Microsoft Dynamics 365 — 1 operation(s) for activities.
+- [Microsoft Dynamics 365 Cases API](https://apis.io/apis/microsoft-dynamics-365/microsoft-dynamics-365-cases-api/) — The Cases API from Microsoft Dynamics 365 — 1 operation(s) for cases.
+- [Microsoft Dynamics 365 Companies API](https://apis.io/apis/microsoft-dynamics-365/microsoft-dynamics-365-companies-api/) — The Companies API from Microsoft Dynamics 365 — 1 operation(s) for companies.
+- [Microsoft Dynamics 365 Customers API](https://apis.io/apis/microsoft-dynamics-365/microsoft-dynamics-365-customers-api/) — The Customers API from Microsoft Dynamics 365 — 3 operation(s) for customers.
+- [Microsoft Dynamics 365 Employees API](https://apis.io/apis/microsoft-dynamics-365/microsoft-dynamics-365-employees-api/) — The Employees API from Microsoft Dynamics 365 — 1 operation(s) for employees.
+- [Microsoft Dynamics 365 General Ledger API](https://apis.io/apis/microsoft-dynamics-365/microsoft-dynamics-365-general-ledger-api/) — The General Ledger API from Microsoft Dynamics 365 — 2 operation(s) for general ledger.
+- [Microsoft Dynamics 365 Human Resources API](https://apis.io/apis/microsoft-dynamics-365/microsoft-dynamics-365-human-resources-api/) — The Human Resources API from Microsoft Dynamics 365 — 1 operation(s) for human resources.
+- [Microsoft Dynamics 365 Items API](https://apis.io/apis/microsoft-dynamics-365/microsoft-dynamics-365-items-api/) — The Items API from Microsoft Dynamics 365 — 1 operation(s) for items.
+- [Microsoft Dynamics 365 Journals API](https://apis.io/apis/microsoft-dynamics-365/microsoft-dynamics-365-journals-api/) — The Journals API from Microsoft Dynamics 365 — 1 operation(s) for journals.
+- [Microsoft Dynamics 365 Leads API](https://apis.io/apis/microsoft-dynamics-365/microsoft-dynamics-365-leads-api/) — The Leads API from Microsoft Dynamics 365 — 2 operation(s) for leads.
+- [Microsoft Dynamics 365 Products API](https://apis.io/apis/microsoft-dynamics-365/microsoft-dynamics-365-products-api/) — The Products API from Microsoft Dynamics 365 — 1 operation(s) for products.
+- [Microsoft Dynamics 365 Purchase Invoices API](https://apis.io/apis/microsoft-dynamics-365/microsoft-dynamics-365-purchase-invoices-api/) — The Purchase Invoices API from Microsoft Dynamics 365 — 1 operation(s) for purchase invoices.
+- [Microsoft Dynamics 365 Purchase Orders API](https://apis.io/apis/microsoft-dynamics-365/microsoft-dynamics-365-purchase-orders-api/) — The Purchase Orders API from Microsoft Dynamics 365 — 2 operation(s) for purchase orders.
+- [Microsoft Dynamics 365 Sales Invoices API](https://apis.io/apis/microsoft-dynamics-365/microsoft-dynamics-365-sales-invoices-api/) — The Sales Invoices API from Microsoft Dynamics 365 — 1 operation(s) for sales invoices.
+- [Microsoft Dynamics 365 Sales Orders API](https://apis.io/apis/microsoft-dynamics-365/microsoft-dynamics-365-sales-orders-api/) — The Sales Orders API from Microsoft Dynamics 365 — 2 operation(s) for sales orders.
+- [Microsoft Dynamics 365 Vendors API](https://apis.io/apis/microsoft-dynamics-365/microsoft-dynamics-365-vendors-api/) — The Vendors API from Microsoft Dynamics 365 — 2 operation(s) for vendors.
 
-- Business Applications
-- Cloud
-- CRM
-- Enterprise
-- ERP
-- Microsoft
+### Published properties
 
-## Timestamps
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-- **Created:** 2025-01-20
-- **Modified:** 2026-05-19
+#### Agentic access (1)
 
-## APIs
+Which operations an agent can call, which act, and which need a human in the loop.
 
-### Dynamics 365 Sales API
+- [Microsoft Dynamics 365 Agentic Access](https://apis.io/agentic-access/microsoft-dynamics-365/microsoft-dynamics-365-agentic-access/)
 
-API for managing sales processes, leads, opportunities, accounts, and contacts in Dynamics 365 Sales.
+#### JSON Schema (20)
 
-- **Human URL:** [https://docs.microsoft.com/dynamics365/sales/](https://docs.microsoft.com/dynamics365/sales/)
-- **Base URL:** `https://[org].api.crm.dynamics.com/api/data/v9.2`
+The data models the API reads and writes.
 
-#### Tags
+- [Account](https://apis.io/schemas/microsoft-dynamics-365/account/)
+- [Contact](https://apis.io/schemas/microsoft-dynamics-365/contact/)
+- [Customer](https://apis.io/schemas/microsoft-dynamics-365/customer/)
+- [Employee](https://apis.io/schemas/microsoft-dynamics-365/employee/)
+- [Item](https://apis.io/schemas/microsoft-dynamics-365/item/)
+- [Lead](https://apis.io/schemas/microsoft-dynamics-365/lead/)
+- [Microsoft Dynamics 365 Account](https://apis.io/schemas/microsoft-dynamics-365/microsoft-dynamics-365-account/)
+- [AccountCreate](https://apis.io/schemas/microsoft-dynamics-365/microsoft-dynamics-365-accountcreate/)
+- [AccountUpdate](https://apis.io/schemas/microsoft-dynamics-365/microsoft-dynamics-365-accountupdate/)
+- [Contact](https://apis.io/schemas/microsoft-dynamics-365/microsoft-dynamics-365-contact/)
+- [ContactCreate](https://apis.io/schemas/microsoft-dynamics-365/microsoft-dynamics-365-contactcreate/)
+- [ContactUpdate](https://apis.io/schemas/microsoft-dynamics-365/microsoft-dynamics-365-contactupdate/)
+- [ODataError](https://apis.io/schemas/microsoft-dynamics-365/microsoft-dynamics-365-odataerror/)
+- [Opportunity](https://apis.io/schemas/microsoft-dynamics-365/microsoft-dynamics-365-opportunity/)
+- [OpportunityCreate](https://apis.io/schemas/microsoft-dynamics-365/microsoft-dynamics-365-opportunitycreate/)
+- [OpportunityUpdate](https://apis.io/schemas/microsoft-dynamics-365/microsoft-dynamics-365-opportunityupdate/)
+- [Opportunity](https://apis.io/schemas/microsoft-dynamics-365/opportunity/)
+- [Sales Invoice](https://apis.io/schemas/microsoft-dynamics-365/sales-invoice/)
+- [Sales Order](https://apis.io/schemas/microsoft-dynamics-365/sales-order/)
+- [Vendor](https://apis.io/schemas/microsoft-dynamics-365/vendor/)
 
-- CRM
-- Leads
-- Opportunities
-- Sales
+#### JSON Structure (1)
 
-#### Properties
+Data models expressed in JSON Structure.
 
-- [Documentation](https://docs.microsoft.com/dynamics365/sales/developer/developer-guide)
-- [OpenAPI](https://[org].api.crm.dynamics.com/api/data/v9.2/$metadata) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Authentication](https://docs.microsoft.com/powerapps/developer/data-platform/authenticate)
-- [Rate Limits](https://docs.microsoft.com/powerapps/developer/data-platform/api-limits)
-- [Postman Collection](collections/microsoft-dynamics-365-dataverse-web-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/microsoft-dynamics-365-dataverse-web-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Microsoft Dynamics 365 Structure](https://apis.io/json-structure/microsoft-dynamics-365/microsoft-dynamics-365-structure/)
 
-### Dynamics 365 Customer Service API
+#### JSON-LD (2)
 
-API for managing customer service cases, knowledge articles, queues, and service level agreements.
+Linked-data contexts for the provider's vocabulary.
 
-- **Human URL:** [https://docs.microsoft.com/dynamics365/customer-service/](https://docs.microsoft.com/dynamics365/customer-service/)
-- **Base URL:** `https://[org].api.crm.dynamics.com/api/data/v9.2`
+- [Microsoft Dynamics 365 Context](https://apis.io/jsonld/microsoft-dynamics-365/microsoft-dynamics-365-context/)
+- [Microsoft Dynamics Context](https://apis.io/jsonld/microsoft-dynamics-365/microsoft-dynamics-context/)
 
-#### Tags
+#### Vocabulary (1)
 
-- Cases
-- Customer Service
-- Knowledge Base
-- Support
+The provider's domain terms, defined.
 
-#### Properties
+- [Microsoft Dynamics 365 Domain Vocabulary](https://apis.io/vocabularies/microsoft-dynamics-365/microsoft-dynamics-365-vocabulary/)
 
-- [Documentation](https://docs.microsoft.com/dynamics365/customer-service/developer/developer-guide)
-- [OpenAPI](https://[org].api.crm.dynamics.com/api/data/v9.2/$metadata) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Webhooks](https://docs.microsoft.com/powerapps/developer/data-platform/use-webhooks)
-- [Postman Collection](collections/microsoft-dynamics-365-dataverse-web-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/microsoft-dynamics-365-dataverse-web-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Collections (7)
 
-### Dynamics 365 Finance & Operations API
+Postman and Open Collection request collections.
 
-API for managing financial operations, accounting, budgeting, and enterprise resource planning.
+- [Microsoft Dynamics 365 Dataverse Web Accounts API](https://apis.io/collections/microsoft-dynamics-365/open-microsoft-dynamics-365-accounts-api/)
+- [Microsoft Dynamics 365 Dataverse Web Accounts Contacts API](https://apis.io/collections/microsoft-dynamics-365/open-microsoft-dynamics-365-contacts-api/)
+- [Microsoft Dynamics 365 Dataverse Web API](https://apis.io/collections/microsoft-dynamics-365/open-microsoft-dynamics-365-dataverse-web-api/)
+- [Microsoft Dynamics 365 Dataverse Web Accounts Opportunities API](https://apis.io/collections/microsoft-dynamics-365/open-microsoft-dynamics-365-opportunities-api/)
+- [Microsoft Dynamics 365 Dataverse Web Accounts API](https://apis.io/collections/microsoft-dynamics-365/postman-microsoft-dynamics-365-accounts-api/)
+- [Microsoft Dynamics 365 Dataverse Web Accounts Contacts API](https://apis.io/collections/microsoft-dynamics-365/postman-microsoft-dynamics-365-contacts-api/)
+- [Microsoft Dynamics 365 Dataverse Web Accounts Opportunities API](https://apis.io/collections/microsoft-dynamics-365/postman-microsoft-dynamics-365-opportunities-api/)
 
-- **Human URL:** [https://docs.microsoft.com/dynamics365/finance/](https://docs.microsoft.com/dynamics365/finance/)
-- **Base URL:** `https://[org].operations.dynamics.com/data`
+#### Governance rules (1)
 
-#### Tags
+Spectral rulesets for the provider's contracts.
 
-- Accounting
-- ERP
-- Finance
-- Operations
+- [Microsoft Dynamics 365 — jsonschema rules](https://apis.io/rules/microsoft-dynamics-365/microsoft-dynamics-365-jsonschema-spectral-rules/)
 
-#### Properties
+#### Security (2)
 
-- [Documentation](https://docs.microsoft.com/dynamics365/fin-ops-core/dev-itpro/data-entities/data-entities)
-- [O Data](https://docs.microsoft.com/dynamics365/fin-ops-core/dev-itpro/data-entities/odata)
-- [Authentication](https://docs.microsoft.com/dynamics365/fin-ops-core/dev-itpro/data-entities/services-home-page)
-- [API Reference](https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/dev-ref/api-reference)
-- [Data  Management  R E S T  A P I](https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/data-entities/data-management-api)
-- [Postman Collection](collections/microsoft-dynamics-365-dataverse-web-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/microsoft-dynamics-365-dataverse-web-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-### Dynamics 365 Marketing API
+- [Microsoft Dynamics 365 Authentication](https://apis.io/security/microsoft-dynamics-365/microsoft-dynamics-365-authentication/)
+- [Microsoft Dynamics 365 Domain Security](https://apis.io/security/microsoft-dynamics-365/microsoft-dynamics-365-domain-security/)
 
-API for managing marketing campaigns, customer journeys, email marketing, and lead scoring.
+#### OAuth scopes (1)
 
-- **Human URL:** [https://docs.microsoft.com/dynamics365/marketing/](https://docs.microsoft.com/dynamics365/marketing/)
-- **Base URL:** `https://[org].api.crm.dynamics.com/api/data/v9.2`
+The permissions the API asks for.
 
-#### Tags
+- [Microsoft Dynamics 365 Scopes](https://apis.io/scopes/microsoft-dynamics-365/microsoft-dynamics-365-scopes/)
 
-- Campaigns
-- Email Marketing
-- Lead Scoring
-- Marketing
+#### Plans and pricing (1)
 
-#### Properties
+Published plans, tiers and prices.
 
-- [Documentation](https://docs.microsoft.com/dynamics365/marketing/developer/marketing-developer-guide)
-- [API Reference](https://docs.microsoft.com/dynamics365/marketing/developer/extend-marketing-api)
-- [Postman Collection](collections/microsoft-dynamics-365-dataverse-web-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/microsoft-dynamics-365-dataverse-web-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Microsoft Dynamics 365 Plans Pricing](https://apis.io/plans/microsoft-dynamics-365/microsoft-dynamics-365-plans-pricing/)
 
-### Dynamics 365 Supply Chain Management API
+#### Rate limits (1)
 
-API for managing inventory, warehouse operations, procurement, and supply chain processes.
+Published request limits.
 
-- **Human URL:** [https://docs.microsoft.com/dynamics365/supply-chain/](https://docs.microsoft.com/dynamics365/supply-chain/)
-- **Base URL:** `https://[org].operations.dynamics.com/data`
+- [Microsoft Dynamics 365 Rate Limits](https://apis.io/rate-limits/microsoft-dynamics-365/microsoft-dynamics-365-rate-limits/)
 
-#### Tags
+#### FinOps (1)
 
-- Inventory
-- Procurement
-- Supply Chain
-- Warehouse
+What the API costs to run, by operation.
 
-#### Properties
+- [Microsoft Dynamics 365 Finops](https://apis.io/finops/microsoft-dynamics-365/microsoft-dynamics-365-finops/)
 
-- [Documentation](https://docs.microsoft.com/dynamics365/supply-chain/dev-itpro/)
-- [Data  Entities](https://docs.microsoft.com/dynamics365/fin-ops-core/dev-itpro/data-entities/data-entities-data-packages)
-- [Postman Collection](collections/microsoft-dynamics-365-dataverse-web-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/microsoft-dynamics-365-dataverse-web-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+## Where to find this API
 
-### Dynamics 365 Business Central API
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-API for managing small to medium business operations including finance, sales, service, and operations.
-
-- **Human URL:** [https://docs.microsoft.com/dynamics365/business-central/](https://docs.microsoft.com/dynamics365/business-central/)
-- **Base URL:** `https://api.businesscentral.dynamics.com/v2.0/[tenant]/[environment]/api/v2.0`
-
-#### Tags
-
-- Business Management
-- Finance
-- Operations
-- SMB
-
-#### Properties
-
-- [Documentation](https://docs.microsoft.com/dynamics365/business-central/dev-itpro/api-reference/v2.0/)
-- [OpenAPI](https://docs.microsoft.com/dynamics365/business-central/dev-itpro/api-reference/v2.0/openapi) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Getting Started](https://docs.microsoft.com/dynamics365/business-central/dev-itpro/api-reference/v2.0/enabling-apis-for-dynamics-nav)
-- [Webhooks](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/dynamics-subscriptions)
-- [Custom  A P I  Development](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/developer/devenv-develop-custom-api)
-- [A P I  Endpoints](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/endpoints-apis-for-dynamics)
-- [R E S T  A P I  Overview](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/webservices/api-overview)
-- [Postman Collection](collections/microsoft-dynamics-365-dataverse-web-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/microsoft-dynamics-365-dataverse-web-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Dynamics 365 Commerce API
-
-API for managing e-commerce operations, retail stores, omnichannel commerce, and customer experiences.
-
-- **Human URL:** [https://docs.microsoft.com/dynamics365/commerce/](https://docs.microsoft.com/dynamics365/commerce/)
-- **Base URL:** `https://[org].commerce.dynamics.com/api`
-
-#### Tags
-
-- E-Commerce
-- Omnichannel
-- POS
-- Retail
-
-#### Properties
-
-- [Documentation](https://docs.microsoft.com/dynamics365/commerce/e-commerce-extensibility/overview)
-- [Retail  Server  A P I](https://docs.microsoft.com/dynamics365/commerce/dev-itpro/retail-server-architecture)
-- [Postman Collection](collections/microsoft-dynamics-365-dataverse-web-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/microsoft-dynamics-365-dataverse-web-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Microsoft Dataverse Web API
-
-RESTful web service API implementing OData v4.0 for interacting with data in Microsoft Dataverse, the underlying data platform for Dynamics 365 and Power Platform applications.
-
-- **Human URL:** [https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/overview](https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/overview)
-- **Base URL:** `https://[org].api.crm.dynamics.com/api/data/v9.2`
-
-#### Tags
-
-- Data Platform
-- Dataverse
-- OData
-- Power Platform
-- REST
-
-#### Properties
-
-- [Documentation](https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/overview)
-- [API Reference](https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/reference/about)
-- [OpenAPI](openapi/microsoft-dynamics-365-dataverse-web-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/microsoft-dynamics-365-dataverse-web-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/microsoft-dynamics-365-dataverse-web-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [JSON Schema](json-schema/microsoft-dynamics-365-account-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON-LD](json-ld/microsoft-dynamics-365-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [Web  A P I  Types and  Operations](https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/web-api-types-operations)
-- [Web  A P I  Service  Documents](https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/web-api-service-documents)
-- [Authentication](https://learn.microsoft.com/en-us/power-apps/developer/data-platform/authenticate-oauth)
-- [Rate Limits](https://learn.microsoft.com/en-us/power-apps/developer/data-platform/api-limits)
-- [Developer  Guide](https://learn.microsoft.com/en-us/power-apps/developer/data-platform/overview)
-
-### Dynamics 365 Customer Insights Data API
-
-API for building applications based on unified customer data, enabling customer data unification, segmentation, and enrichment through programmatic access.
-
-- **Human URL:** [https://learn.microsoft.com/en-us/dynamics365/customer-insights/](https://learn.microsoft.com/en-us/dynamics365/customer-insights/)
-- **Base URL:** `https://api.ci.ai.dynamics.com/`
-
-#### Tags
-
-- Analytics
-- CDP
-- Customer Data
-- Customer Insights
-- Segmentation
-
-#### Properties
-
-- [Documentation](https://learn.microsoft.com/en-us/dynamics365/customer-insights/data/apis)
-- [A P I  Management](https://learn.microsoft.com/en-us/dynamics365/customer-insights/data/apis-manage)
-- [Dataverse  A P Is](https://learn.microsoft.com/en-us/dynamics365/customer-insights/data/dv-odata)
-- [Developer  Portal](https://developer.ci.ai.dynamics.com/)
-- [Postman Collection](collections/microsoft-dynamics-365-dataverse-web-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/microsoft-dynamics-365-dataverse-web-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Dynamics 365 Customer Insights Journeys API
-
-API for managing real-time customer journeys, segments, and event-driven marketing interactions programmatically.
-
-- **Human URL:** [https://learn.microsoft.com/en-us/dynamics365/customer-insights/journeys/](https://learn.microsoft.com/en-us/dynamics365/customer-insights/journeys/)
-- **Base URL:** `https://[org].api.crm.dynamics.com/api/data/v9.2`
-
-#### Tags
-
-- Events
-- Journeys
-- Marketing Automation
-- Real-Time Marketing
-
-#### Properties
-
-- [Documentation](https://learn.microsoft.com/en-us/dynamics365/customer-insights/journeys/)
-- [Segment  A P I](https://learn.microsoft.com/en-us/dynamics365/customer-insights/journeys/real-time-marketing-api-segment)
-- [Events  A P I](https://learn.microsoft.com/en-us/dynamics365/customer-insights/journeys/developer/using-rtm-events-api)
-- [Postman Collection](collections/microsoft-dynamics-365-dataverse-web-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/microsoft-dynamics-365-dataverse-web-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Dynamics 365 Field Service API
-
-API for managing field service operations including work orders, scheduling, resource availability, and work hour calendars.
-
-- **Human URL:** [https://learn.microsoft.com/en-us/dynamics365/field-service/](https://learn.microsoft.com/en-us/dynamics365/field-service/)
-- **Base URL:** `https://[org].api.crm.dynamics.com/api/data/v9.2`
-
-#### Tags
-
-- Field Service
-- Resource Management
-- Scheduling
-- Work Orders
-
-#### Properties
-
-- [Documentation](https://learn.microsoft.com/en-us/dynamics365/field-service/)
-- [Resource  Availability  A P I](https://learn.microsoft.com/en-us/dynamics365/field-service/search-resource-availability-api)
-- [Work  Hours  Calendar  A P I](https://learn.microsoft.com/en-us/dynamics365/field-service/field-service-work-hours-calendar-api)
-- [Entity  Reference](https://learn.microsoft.com/en-us/dynamics365/field-service/developer/reference/about-entity-reference)
-- [Postman Collection](collections/microsoft-dynamics-365-dataverse-web-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/microsoft-dynamics-365-dataverse-web-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Dynamics 365 Human Resources API
-
-API for managing human resources operations including employee data, payroll integration, applicant tracking, and benefits administration.
-
-- **Human URL:** [https://learn.microsoft.com/en-us/dynamics365/human-resources/](https://learn.microsoft.com/en-us/dynamics365/human-resources/)
-- **Base URL:** `https://[org].operations.dynamics.com/data`
-
-#### Tags
-
-- HR
-- Human Resources
-- Payroll
-- Recruiting
-
-#### Properties
-
-- [Documentation](https://learn.microsoft.com/en-us/dynamics365/human-resources/hr-developer-overview)
-- [Authentication](https://learn.microsoft.com/en-us/dynamics365/human-resources/hr-developer-api-authentication)
-- [Payroll  Integration  A P I](https://learn.microsoft.com/en-us/dynamics365/human-resources/hr-admin-integration-payroll-api-introduction)
-- [Applicant  Tracking  A P I](https://learn.microsoft.com/en-us/dynamics365/human-resources/hr-admin-integration-ats-api-introduction)
-- [Postman Collection](collections/microsoft-dynamics-365-dataverse-web-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/microsoft-dynamics-365-dataverse-web-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Dynamics 365 Project Operations API
-
-API for managing project operations including project scheduling, resource management, time and expense tracking, and project financials.
-
-- **Human URL:** [https://learn.microsoft.com/en-us/dynamics365/project-operations/](https://learn.microsoft.com/en-us/dynamics365/project-operations/)
-- **Base URL:** `https://[org].api.crm.dynamics.com/api/data/v9.2`
-
-#### Tags
-
-- Project Accounting
-- Project Management
-- Resource Management
-- Time Tracking
-
-#### Properties
-
-- [Documentation](https://learn.microsoft.com/en-us/dynamics365/project-operations/)
-- [Schedule  A P I](https://learn.microsoft.com/en-us/dynamics365/project-operations/project-management/schedule-api-preview)
-- [Schedule  A P I with  Power  Automate](https://learn.microsoft.com/en-us/dynamics365/project-operations/project-management/scheduling-apis-powerautomate)
-- [Postman Collection](collections/microsoft-dynamics-365-dataverse-web-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/microsoft-dynamics-365-dataverse-web-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [GitHub Organization](https://github.com/microsoft)
-- [LinkedIn](https://www.linkedin.com/showcase/microsoft-dynamics)
-- [Portal](https://portal.azure.com/)
-- [Authentication](https://docs.microsoft.com/azure/active-directory/develop/)
-- [S D Ks](https://docs.microsoft.com/powerapps/developer/data-platform/sdk/)
-- [Status Page](https://status.dynamics.com/)
-- [Terms of Service](https://www.microsoft.com/licensing/terms/)
-- [Privacy Policy](https://privacy.microsoft.com/)
+- [Website](https://www.microsoft.com/)
 - [Support](https://dynamics.microsoft.com/support/)
-- [R E S T  A P I  Reference](https://learn.microsoft.com/en-us/rest/dynamics365/)
-- [Release  Plans](https://learn.microsoft.com/en-us/dynamics365/release-plans/)
-- [Community  Forums](https://community.dynamics.com/)
-- [Power  Platform  Admin  Center](https://learn.microsoft.com/en-us/power-platform/admin/admin-documentation)
-- [A P I  Limits  Overview](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/api-limits-overview)
+- [Blog](https://www.microsoft.com/en-us/dynamics-365/blog/feed/)
+- [Terms of service](https://www.microsoft.com/licensing/terms/)
+- [Privacy policy](https://privacy.microsoft.com/)
+- [GitHub](https://github.com/microsoft)
+- [Status](https://status.dynamics.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
-**URL:** https://apievangelist.com/
+**Kin Score 47.8** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 78.6 |
+| Contract quality | 66.6 |
+| Contract governance | 9.8 |
+| Operational transparency | 26.3 |
+| Developer ergonomics | 53.6 |
+| Access clarity | 28.9 |
+
+**Agent readiness 28.1** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | unknown |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | documented (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | — |
+
+**Regulatory alignment 34.3** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/microsoft-dynamics-365/](https://apis.io/providers/microsoft-dynamics-365/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Microsoft Dynamics 365: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/microsoft-dynamics-365/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
